@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-	<meta name="title" content="Cédula de intervención de material cerámico"/>
+	<meta name="title" content="Cédula de intervención de material concológico"/>
 	<meta name="description" content="Análisis regional del sureste Mesoamericano. Proyecto marco de salvamento arqueológico. Tren Maya"/>
 	<meta name="author" content="Jonatan Lara Ortiz, Ing; Diana Paulina Serrano Roldan, Urb" />
 	<meta name="generator" content= "Atom" />
@@ -465,7 +465,7 @@
 							<p class="text-col2">Orificios</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Oricios') = 1
+										array_count(string_to_array("Factores de degradación concha", ','),'Orificios') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
@@ -561,11 +561,12 @@
           let images = str.split(',');
           let principal = document.getElementById('cont-princ-1');
           let valor = images.length;
+          var liga_fotos = "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/NUEVOS FORMATOS DE CEDULAS/CÉDULAS DE REGISTRO/CÉDULAS DE REGISTRO/BIENES INMUEBLES/REGISTRO/Procesos/"
           for(i=0;i<images.length;i++){
             if(valor==2 || valor==1){
               let creaimg = document.createElement('img');
               let crearDiv = document.createElement('div');
-              creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/NUEVOS FORMATOS DE CEDULAS/CÉDULAS DE REGISTRO/CÉDULAS DE REGISTRO/BIENES INMUEBLES/REGISTRO/Procesos/"+images[i]+".jpg");
+              creaimg.setAttribute('src',  liga_fotos +images[i]+".jpg");
               creaimg.setAttribute('width','395');
               crearDiv.setAttribute('width','100%');
               creaimg.setAttribute('style','padding:3px;');
@@ -576,7 +577,7 @@
             } else if(valor<=4){
               let creaimg = document.createElement('img');
               let crearDiv = document.createElement('div');
-              creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/NUEVOS FORMATOS DE CEDULAS/CÉDULAS DE REGISTRO/CÉDULAS DE REGISTRO/BIENES INMUEBLES/REGISTRO/Procesos/"+images[i]+".jpg");
+              creaimg.setAttribute('src',  liga_fotos +images[i]+".jpg");
               creaimg.setAttribute('width','260');
               creaimg.setAttribute('style','padding:3px;');
               principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
@@ -585,7 +586,7 @@
 
             } else if(valor<=6){
               let creaimg = document.createElement('img');
-              creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/NUEVOS FORMATOS DE CEDULAS/CÉDULAS DE REGISTRO/CÉDULAS DE REGISTRO/BIENES INMUEBLES/REGISTRO/Procesos/"+images[i]+".jpg");
+              creaimg.setAttribute('src',  liga_fotos +images[i]+".jpg");
               creaimg.setAttribute('width','255');
               creaimg.setAttribute('style','padding:3px');
               creaimg.setAttribute('style','padding:3px;');
@@ -593,7 +594,7 @@
 
             }else if(valor=>7){
               let creaimg = document.createElement('img');
-              creaimg.setAttribute('src', "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/NUEVOS FORMATOS DE CEDULAS/CÉDULAS DE REGISTRO/CÉDULAS DE REGISTRO/BIENES INMUEBLES/REGISTRO/Procesos/"+images[i]+".jpg");
+              creaimg.setAttribute('src', liga_fotos +images[i]+".jpg");
               creaimg.setAttribute('width','200');
               creaimg.setAttribute('style','padding:3px');
               principal.appendChild(creaimg);
