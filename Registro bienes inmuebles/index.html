@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta name="title" content="Cédula de intervención de material cerámico"/>
+	<meta name="description" content="Análisis regional del sureste Mesoamericano. Proyecto marco de salvamento arqueológico. Tren Maya"/>
+	<meta name="author" content="Jonatan Lara Ortiz, Ing; Diana Paulina Serrano Roldan, Urb." />
+	<meta name="generator" content= "Atom" />
+	<meta name="copyright" content="Dirección de Salvamento Arqueológico" />
+	<meta name="created" content="2023-01-25"/>
+  <link rel="stylesheet" href="css/style.css">
+  <title></title>
+</head>
+<body onload="onReady()">
+	<header>
+		<table class="head">
+				<td class="col0"><img src="banner.png" width=840px height=60 hspace=0 vspace=0></td>
+		</table>
+		<section class="row-alt">
+		    	<div class="container ">
+		      	<div class="col-30">
+		        	<img class="logo" src="tren.png">
+		      	</div>
+		      	<div class="col-70">
+		        	<h1 class="titulos">U LU'UMIL MAAYA WÍINIKO'OB</h1>
+		        	<p class="" style="font-size: 12px;color: #691C32;font-weight: bold;text-align: center;">
+		          	Análisis Regional del Sureste Mesoamericano Proyecto Marco de Salvamento <br>Arqueológico del Tren Maya.
+	            	</p>
+	            	<h5 class="" style="font-size: 10px;color: #691C32;font-weight: bold;text-align: center;">Responsable académico: Dr. Manuel E. Pérez Rivas. Diseño de contenido: Félix Albano Camacho Zamora</h5>
+		      	</div>
+		    	</div>
+		</section>
+	</header>
+	<h1 class="center">CÉDULA DE REGISTRO IN SITU DE BIENES Y INMUEBLES</h1>
+	<div class="tabla container">
+		<div class="col-50 diseño-tabla">
+			<h1 class="text-sub">DATOS GENERALES</h1>
+			<p class="text-col2 text-align-left">ID Monumento: <strong>[%"ID Monumento"%]</strong></p>
+			<p class="text-col2 text-align-left">ID Asociado: <strong>[%"Monumentos asociados"%]</strong></p>
+			<p class="text-col2 text-align-left">Categoría: <strong>[%"Categoría"%]</strong></p>
+			<p class="text-col2 text-align-left">Tipo: <strong>[%"Tipo"%]</strong></p>
+			<p class="text-col2 text-align-left">Forma: <strong>[%"Forma"%]</strong></p>
+			<p class="text-col2 text-align-left">Materiales constructivos: <strong>[%"Materiales constructivos"%]</strong></p>			
+		</div>
+		<div class="col-50 diseño-tabla">
+			<p class="text-col2 text-align-left">Condición dral. edo. de const: <strong>[%"Condición gral. edo. de cons."%]</strong></p>
+			<p class="text-col2 text-align-left">Material asociado: <strong>[%"Material asociado"%]</strong></p>
+			<p class="text-col2 text-align-left">Mampostería: <strong>[%"Mampostería"%]</strong></p>
+			<p class="text-col2 text-align-left">Mortero: <strong>[%"Mortero"%]</strong></p>
+			<p class="text-col2 text-align-left">Acabados de estuco:<strong> [%"Acabados de estuco"%]</strong></p>
+			<p class="text-col2 text-align-left">Medidas: <strong>[%"Medidas"%]</strong></p>
+			<p class="text-col2 text-align-left">Número de dictamen: <strong>[%"Tipo de dictaminación"%]</strong></p>
+			<p class="text-col2 text-align-left">Registró: <strong>[%"Registró"%]</strong></p>
+		</div>
+	</div>
+	<div class="tabla diseño-tabla">
+		<h1  class="text-sub">ESTADO DE CONSERVACIÓN</h1>
+		<p class="text-align-left">Alteraciones Físico químicas</p>
+		<div class="container">
+			<div class="col-25">
+				<div class="flex space-between">
+				  	<p class="text-col2">Acumulación de escombro</p>
+	              	<p class="col-50 rectangulo" 
+		              	[%CASE WHEN 
+						array_count(string_to_array("Alteraciones físico químicas", ','),'Acumulación de escombro') = 1
+						THEN 'style="background:#BC955C"'
+						else 'style="background:none"'
+						END%] 
+					> </p>
+		        </div>
+		        <div class="flex space-between">
+				  	<p class="text-col2">Grietas estructurales</p>
+	              	<p class="col-50 rectangulo"
+	                  [%CASE WHEN 
+						array_count(string_to_array("Alteraciones físico químicas", ','),'Grietas estructurales') = 1
+						THEN 'style="background:#BC955C"'
+						else 'style="background:none"'
+						END%] ></p>
+		        </div>
+		        <div class="flex space-between">
+				  	<p class="text-col2">Derrumbes</p>
+	              	<p class="col-50 rectangulo"
+	                  [%CASE WHEN 
+						array_count(string_to_array("Alteraciones físico químicas", ','),'Derrumbes') = 1
+						THEN 'style="background:#BC955C"'
+						else 'style="background:none"'
+						END%]></p>
+		        </div>
+		        <div class="flex space-between">
+				  	<p class="text-col2">Hundimientos</p>
+	              	<p class="col-50 rectangulo"
+	                  [%CASE WHEN 
+						array_count(string_to_array("Alteraciones físico químicas", ','),'Hundimientos') = 1
+						THEN 'style="background:#BC955C"'
+						else 'style="background:none"'
+						END%]></p>
+		        </div>
+			</div>
+			<div class="col-25">
+				<div class="flex space-between">
+				  	<p class="text-col2">Desplome</p>
+	              	<p class="col-50 rectangulo"
+	                  [%CASE WHEN 
+						array_count(string_to_array("Alteraciones físico químicas", ','),'Desplome') = 1
+						THEN 'style="background:#BC955C"'
+						else 'style="background:none"'
+						END%]></p>
+		        </div>
+		        <div class="flex space-between">
+				  	<p class="text-col2">Inestabilidad estructural</p>
+	              	<p class="col-50 rectangulo"
+	                  [%CASE WHEN 
+						array_count(string_to_array("Alteraciones físico químicas", ','),'Inestabilidad estructural') = 1
+						THEN 'style="background:#BC955C"'
+						else 'style="background:none"'
+						END%]></p>
+		        </div>
+		        <div class="flex space-between">
+				  	<p class="text-col2">Destrucción elem. const.</p>
+	              	<p class="col-50 rectangulo"
+	                  [%CASE WHEN 
+						array_count(string_to_array("Alteraciones físico químicas", ','),'Destrucción elem. const.') = 1
+						THEN 'style="background:#BC955C"'
+						else 'style="background:none"'
+						END%]></p>
+		        </div>
+		        <div class="flex space-between">
+				  	<p class="text-col2">Núcleos expuestos</p>
+	              	<p class="col-50 rectangulo"
+	                  [%CASE WHEN 
+						array_count(string_to_array("Alteraciones físico químicas", ','),'Núcleos expuestos') = 1
+						THEN 'style="background:#BC955C"'
+						else 'style="background:none"'
+						END%]></p>
+		        </div>
+			</div>
+			<div class="col-25">
+				<div class="flex space-between">
+				  	<p class="text-col2">Fisura</p>
+	              	<p class="col-50 rectangulo"
+	                  [%CASE WHEN 
+						array_count(string_to_array("Alteraciones físico químicas", ','),'Fisura') = 1
+						THEN 'style="background:#BC955C"'
+						else 'style="background:none"'
+						END%]></p>
+		        </div>
+		        <div class="flex space-between">
+				  	<p class="text-col2">Pérdida de elem. const.</p>
+	              	<p class="col-50 rectangulo"
+	                 [%CASE WHEN 
+						array_count(string_to_array("Alteraciones físico químicas", ','),'Pérdida de elem. const.') = 1
+						THEN 'style="background:#BC955C"'
+						else 'style="background:none"'
+						END%]></p>
+		        </div>
+		        <div class="flex space-between">
+				  	<p class="text-col2">Alveolización</p>
+	              	<p class="col-50 rectangulo"
+	                  [%CASE WHEN 
+						array_count(string_to_array("Alteraciones físico químicas", ','),'Alveolización') = 1
+						THEN 'style="background:#BC955C"'
+						else 'style="background:none"'
+						END%]></p>
+		        </div>
+		        <div class="flex space-between">
+				  	<p class="text-col2">Pérdida recubrimiento estuco</p>
+	              	<p class="col-50 rectangulo"
+	                  [%CASE WHEN 
+						array_count(string_to_array("Alteraciones físico químicas", ','),'Pérdida recubrimiento estuco') = 1
+						THEN 'style="background:#BC955C"'
+						else 'style="background:none"'
+						END%]></p>
+		        </div>
+			</div>
+			<div class="col-25">
+				<div class="flex space-between">
+				  	<p class="text-col2">Agrietamiento de suelo</p>
+	              	<p class="col-50 rectangulo"
+	                 [%CASE WHEN 
+						array_count(string_to_array("Alteraciones físico químicas", ','),'Agrietamiento de suelo') = 1
+						THEN 'style="background:#BC955C"'
+						else 'style="background:none"'
+						END%]></p>
+		        </div>
+		        <div class="flex space-between">
+				  	<p class="text-col2">No presenta</p>
+	              	<p class="col-50 rectangulo"
+	                  [%CASE WHEN 
+						array_count(string_to_array("Alteraciones físico químicas", ','),'No presenta') = 1
+						THEN 'style="background:#BC955C"'
+						else 'style="background:none"'
+						END%]></p>
+		        </div>
+		        <div class="flex space-between">
+				  	<p class="text-col2">Otro: <strong>[%"Otro AFQ"%]</strong></p>
+		        </div>
+			</div>
+		</div>
+		<br>
+		<p class="text-align-left">Alteraciones Biológicas</p>
+		<div class="container">
+			<div class="flex" style="width: 100%;">
+				<div class="col-100">
+					<div class="flex space-between">
+					  	<p class="text-col2">Árboles</p>
+		              	<p class="col-50 rectangulo"
+		                  [%CASE WHEN 
+							array_count(string_to_array("Alteraciones biológicas", ','),'Árboles') = 1
+							THEN 'style="background:#BC955C"'
+							else 'style="background:none"'
+							END%]></p>
+			        </div>
+			        <div class="flex space-between">
+					  	<p class="text-col2">Ganado</p>
+		              	<p class="col-50 rectangulo"
+		                  [%CASE WHEN 
+							array_count(string_to_array("Alteraciones biológicas", ','),'Ganado') = 1
+							THEN 'style="background:#BC955C"'
+							else 'style="background:none"'
+							END%]></p>
+			        </div>
+			        <div class="flex space-between">
+					  	<p class="text-col2">Roedores</p>
+		              	<p class="col-50 rectangulo"
+		                  [%CASE WHEN 
+							array_count(string_to_array("Alteraciones biológicas", ','),'Roedores') = 1
+							THEN 'style="background:#BC955C"'
+							else 'style="background:none"'
+							END%]></p>
+			        </div>
+				</div>
+				<div class="col-100">
+					<div class="flex space-between">
+					  	<p class="text-col2">Insectos</p>
+		              	<p class="col-50 rectangulo"
+		                  [%CASE WHEN 
+							array_count(string_to_array("Alteraciones biológicas", ','),'Insectos') = 1
+							THEN 'style="background:#BC955C"'
+							else 'style="background:none"'
+							END%]></p>
+			        </div>
+			        <div class="flex space-between">
+					  	<p class="text-col2">Hierbas</p>
+		              	<p class="col-50 rectangulo"
+		                  [%CASE WHEN 
+							array_count(string_to_array("Alteraciones biológicas", ','),'Hierbas') = 1
+							THEN 'style="background:#BC955C"'
+							else 'style="background:none"'
+							END%]></p>
+			        </div>
+			        <div class="flex space-between">
+					  	<p class="text-col2">Nidos o madrigueras</p>
+		              	<p class="col-50 rectangulo"
+		                  [%CASE WHEN 
+							array_count(string_to_array("Alteraciones biológicas", ','),'Nidos o madrigueras') = 1
+							THEN 'style="background:#BC955C"'
+							else 'style="background:none"'
+							END%]></p>
+			        </div>
+				</div>
+				<div class="col-100">
+					<div class="flex space-between">
+					  	<p class="text-col2">Microorganismos</p>
+		              	<p class="col-50 rectangulo"
+		                  [%CASE WHEN 
+							array_count(string_to_array("Alteraciones biológicas", ','),'Microorganismos') = 1
+							THEN 'style="background:#BC955C"'
+							else 'style="background:none"'
+							END%]></p>
+			        </div>
+			        <div class="flex space-between">
+					  	<p class="text-col2">Afección por raices</p>
+		              	<p class="col-50 rectangulo"
+		                  [%CASE WHEN 
+							array_count(string_to_array("Alteraciones biológicas", ','),'Afección por raíces') = 1
+							THEN 'style="background:#BC955C"'
+							else 'style="background:none"'
+							END%]></p>
+			        </div>
+			        <div class="flex space-between">
+					  	<p class="text-col2">Otro: <strong>[%"Otro AB"%]</strong></p>
+			        </div>
+				</div>
+			</div>
+		</div>
+		<br>
+		<p class="text-align-left">Alteraciones Ambientales</p>
+		<div class="flex">
+			<div class="col-50">
+				<div class="flex space-between">
+				  	<p class="text-col2">Frente de secado sobre elementos</p>
+	              	<p class="col-50 rectangulo"
+	                  [%CASE WHEN 
+							array_count(string_to_array("AAlteraciones Ambientales", ','),'Frente de secado sobre elementos') = 1
+							THEN 'style="background:#BC955C"'
+							else 'style="background:none"'
+							END%]></p>
+		        </div>
+		        <div class="flex space-between">
+				  	<p class="text-col2">Escurrimiento de agua</p>
+	              	<p class="col-50 rectangulo text-align-left"
+	                  [%CASE WHEN 
+							array_count(string_to_array("Alteraciones Ambientales", ','),'Escurrimiento de agua') = 1
+							THEN 'style="background:#BC955C"'
+							else 'style="background:none"'
+							END%]></p>
+		        </div>
+		        <div class="flex space-between">
+				  	<p class="text-col2">Otro: <strong></strong></p>
+		        </div>
+			</div>
+			<div class="col-50">
+		        <div class="flex space-between">
+				  	<p class="text-col2">Estancamiento de lluvia</p>
+	              	<p class="col-50 rectangulo"
+	                  [%CASE WHEN 
+							array_count(string_to_array("Alteraciones Ambientales", ','),'Estancamiento de lluvia') = 1
+							THEN 'style="background:#BC955C"'
+							else 'style="background:none"'
+							END%]></p>
+		        </div>
+				<div class="flex space-between">
+				  	<p class="text-col2">Filtración de agua</p>
+	              	<p class="col-50 rectangulo"
+	                  [%CASE WHEN 
+							array_count(string_to_array("Alteraciones Ambientales", ','),'Filtración de agua') = 1
+							THEN 'style="background:#BC955C"'
+							else 'style="background:none"'
+							END%]></p>
+		        </div>
+			</div>
+		</div>
+		<br>
+		<p class="text-align-left">Alteraciones Humanas</p>
+		<div class="flex">
+			<div class="col-50">
+				<div class="flex space-between">
+				  	<p class="text-col2">Agricultura</p>
+	              	<p class="col-50 rectangulo"
+	                  [%CASE WHEN 
+							array_count(string_to_array("Alteraciones humanas", ','),'Agricultura') = 1
+							THEN 'style="background:#BC955C"'
+							else 'style="background:none"'
+							END%]></p>
+		        </div>
+		        <div class="flex space-between">
+				  	<p class="text-col2">Vandalismo</p>
+	              	<p class="col-50 rectangulo"
+	                  [%CASE WHEN 
+							array_count(string_to_array("Alteraciones humanas", ','),'Vandalismo') = 1
+							THEN 'style="background:#BC955C"'
+							else 'style="background:none"'
+							END%]></p>
+		        </div>
+		        <div class="flex space-between">
+				  	<p class="text-col2">Robo de piedras</p>
+	              	<p class="col-50 rectangulo"
+	                  [%CASE WHEN 
+							array_count(string_to_array("Alteraciones humanas", ','),'Robo de piedras') = 1
+							THEN 'style="background:#BC955C"'
+							else 'style="background:none"'
+							END%]></p>
+		        </div>
+			</div>
+			<div class="col-50">
+				<div class="flex space-between">
+				  	<p class="text-col2">Disociación de elementos</p>
+	              	<p class="col-50 rectangulo"
+	                  [%CASE WHEN 
+							array_count(string_to_array("Alteraciones humanas", ','),'Disociación de elementos') = 1
+							THEN 'style="background:#BC955C"'
+							else 'style="background:none"'
+							END%]></p>
+		        </div>
+		        <div class="flex space-between">
+				  	<p class="text-col2">Saqueo</p>
+	              	<p class="col-50 rectangulo"
+	                  [%CASE WHEN 
+							array_count(string_to_array("Alteraciones humanas", ','),'Saqueo') = 1
+							THEN 'style="background:#BC955C"'
+							else 'style="background:none"'
+							END%]></p>
+		        </div>
+		        <div class="flex space-between">
+				  	<p class="text-col2">Otro: <strong>[%"Otro H"%]</strong></p>
+		        </div>
+			</div>
+		</div>
+	</div>
+	<div class="tabla diseño-tabla">
+		<h1  class="text-sub">CONCLUSIÓN DEL ESTADO DE CONSERVACIÓN</h1>
+		<div class="flex">
+			<div class="col-50">
+				<div class="">
+					<div class="flex space-between">
+					  	<p class="text-col2">Estable con menor número de deterioros</p>
+		              	<p class="col-50 rectangulo"
+		                  [%CASE WHEN 
+								array_count(string_to_array("Conclusión del estado de conservación", ','),'Estable con menor número de deterioros') = 1
+								THEN 'style="background:#BC955C"'
+								else 'style="background:none"'
+								END%]></p>
+			        </div>
+				</div>
+				<div class="">
+					<div class="flex space-between">
+					  	<p class="text-col2">Estable con regular número de deterioros</p>
+		              	<p class="col-50 rectangulo"
+		                  [%CASE WHEN 
+								array_count(string_to_array("Conclusión del estado de conservación", ','),'Estable con regular número de deterioros') = 1
+								THEN 'style="background:#BC955C"'
+								else 'style="background:none"'
+								END%]></p>
+			        </div>
+				</div>
+			</div>
+			<div class="col-50">
+				<div class="">
+					<div class="flex space-between">
+					  	<p class="text-col2">Inestable con altro grado de deterioro</p>
+		              	<p class="col-50 rectangulo"
+		                  [%CASE WHEN 
+								array_count(string_to_array("Conclusión del estado de conservación", ','),'Inestable con altro grado de deterioro') = 1
+								THEN 'style="background:#BC955C"'
+								else 'style="background:none"'
+								END%]></p>
+			        </div>
+				</div>
+				<div class=""><div class="flex space-between">
+					  	<p class="text-col2">Porcentaje de conservación: <strong>[%CASE WHEN length("Porcentaje de conservación")=3 THEN "Porcentaje de conservación" ELSE "Porcentaje de conservación" || '%' END%]</strong></p>
+			        </div>
+			    </div>
+			</div>
+		</div>
+	</div>
+	<div class="tabla diseño-tabla flex">
+		<div class="col-50">
+			<h1  class="text-sub">DIANGÓSTICO GENERAL DEL ESTADO DE CONSERVACIÓN</h1>
+			<p class="text-col2" style ="text-align: justify;" ><strong>[%"Diagnóstico general del estado de conservación"%]</strong></p>
+		</div>
+		<div class="col-50" style="min-height: 270px;">
+			<div>
+				<h1 class="text-sub">REQUERIMIENTO DE INTERVENCIÓN</h1>
+				<div class="">
+					<div class="flex space-between">
+					  	<p class="text-col2">Tratamiento de conservación emergente</p>
+		              	<p class="col-50 rectangulo"
+		                  [%CASE WHEN 
+								array_count(string_to_array("Requerimiento de intervención", ','),'Tratamiento de conservación emergente') = 1
+								THEN 'style="background:#BC955C"'
+								else 'style="background:none"'
+								END%]></p>
+			        </div>
+			        <div class="flex space-between">
+					  	<p class="text-col2">Tratamiento de conservación y restauración</p>
+		              	<p class="col-50 rectangulo"
+		                  [%CASE WHEN 
+								array_count(string_to_array("Requerimiento de intervención", ','),'Tratamiento de conservación y restauración') = 1
+								THEN 'style="background:#BC955C"'
+								else 'style="background:none"'
+								END%]></p>
+			        </div>
+			        <div class="flex space-between">
+					  	<p class="text-col2">Tratamiento de conservación preventiva</p>
+		              	<p class="col-50 rectangulo"
+		                  [%CASE WHEN 
+								array_count(string_to_array("Requerimiento de intervención", ','),'Tratamiento de conservación preventiva') = 1
+								THEN 'style="background:#BC955C"'
+								else 'style="background:none"'
+								END%]></p>
+			        </div>
+				</div>
+			</div>
+			<div>
+				<h1 class="text-sub">RECOMENDACIONES DE CONSERVACIÓN</h1>
+				<p class="text-col2" style ="text-align: justify;"><strong>[%"Recomendaciones de conservación"%]</strong></p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
