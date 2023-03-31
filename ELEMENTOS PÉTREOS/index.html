@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta name="title" content="Cédula de intervención de material cerámico"/>
+	<meta name="description" content="Análisis regional del sureste Mesoamericano. Proyecto marco de salvamento arqueológico. Tren Maya"/>
+	<meta name="author" content="Jonatan Lara Ortiz, Ing; Diana Paulina Serrano Roldan, " />
+	<meta name="generator" content= "Atom" />
+	<meta name="copyright" content="Dirección de Salvamento Arqueológico" />
+	<meta name="created" content="2023-01-24"/>
+  <link rel="stylesheet" href="sass/style.css">
+  <title></title>
+</head>
+<body onload="Carga();">
+	<header>
+		<table class="head">
+				<td class="col0"><img src="banner.png" width=840px height=60 hspace=0 vspace=0></td>
+		</table>
+		<section class="row-alt">
+		    <div class="flex">
+			      <div class="col-30">
+			        <img class="logo" src="tren.png">
+			      </div>
+			      <div class="col-70">
+			        <h1 class="titulos text-center">U LU'UMIL MAAYA WÍINIKO'OB</h1>
+			        <p class="h2 color-rojo bold text-center">
+			          Análisis Regional del Sureste Mesoamericano Proyecto Marco de Salvamento <br>Arqueológico del Tren Maya.</p>
+		            <h5 class="h3 color-rojo bold text-center" >Responsable académico:Dr. Manuel E. Pérez Rivas. Diseño de contenido: Félix Albano Camacho Zamora</h5>
+			      </div>
+		    </div>
+		</section>
+	</header>
+	<h1 class="center">CÉDULA DE REGISTRO IN SITU DE ELEMENTOS PÉTREOS</h1>
+	<h1 class="h2 bold color-rojo text-align-left ">DATOS GENERALES</h1>
+	<div class="tabla diseño-tabla" style="display:flex">
+		<table class="generales" style=" width: 100%;">
+			<tr>
+				<td class="col1">Tramo</td>
+				<td class="col2">[%"Tramo"%]</td>
+				<td class="col1">Estructura</td>
+				<td class="col2">[%"ID Monumento"%]</td>
+        		<td class="col1">Número ID</td>
+				<td class="col2">[%"Clave de excavación"%]</td>
+			</tr>
+			<tr>
+				<td class="col1">Descripción de la píeza</td>
+				<td class="col2">[%"Descripción de pieza"%]</td>
+				<td class="col1">Estado de conservación</td>
+				<td class="col2">[%"Estado de conservación"%]</td>
+				<td class="col1">Dimensiones</td>
+				<td class="col2">
+					<strong>Alto: </strong>[%%]<br>
+			        <strong>Ancho: </strong>[%%]<br>
+			        <strong>Profundo: </strong>[%%]
+			    </td>
+
+			</tr>
+			<tr>
+        		<td class="col1">Nombre de quien realiza el registro: </td>
+				<td class="col2">[%"Nombre quien registra"%]</td>
+				<td class="col1">Estado:</td>
+				<td class="col2">[%"Estado"%]</td>
+				<td class="col1">Capa</td>
+	      		<td class="col2">[%"Capa"%]</td>
+	      		
+			</tr>
+			<tr>
+		      	<td class="col1">Fecha inicio de intervención</td>
+		      	<td class="col2">[%"Fecha inicio de intervención"%]</td>
+		      	<td class="col1">Fecha fin de intervención</td>
+		      	<td class="col2">[%"Fecha fin de intervención"%]</td>
+			</tr>
+		</table>
+	</div>
+	<div class="flex">
+		<div class="col-33">
+			<div class="diseño-tabla" style="min-height: 118px;">
+				<h1 class="h2 bold color-rojo text-align-left">CARACTERÍSICAS FORMALES</h1>
+				<div class="text-align-left text-col2">
+					<p class="text-align-left text-col2">Identificación de roca: [%"Identificación de roca"%]</p>
+					<p class="text-align-left text-col2">Tipo de roca: [%"Tipo de roca"%]</p>
+					<p class="text-align-left text-col2">Cementante: [%"Cementante"%]</p>
+					<p class="text-align-left text-col2">No. Elementos: [%"Núm. elementos"%]</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-33">
+			<div class="diseño-tabla" style="min-height: 118px;">
+				<h1 class="h2 bold color-rojo text-align-left">CONTEXTO DE PROCEDENCIA</h1>
+				<div>
+					<div class="flex">
+						<div class="col-50">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Elemento de conjunto</p>
+	                				<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Contexto de procedencia", ','),'Elemento de conjunto') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+							</div>
+						</div>
+					</div>
+					<div class="flex">
+						<div class="col-50">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Elemento único</p>
+	                				<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Contexto de procedencia", ','),'Elemento único') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+							</div>
+						</div>
+					</div>
+					<div class="flex">
+						<div class="col-50">
+							<div class="flex justify-content-between">
+									<p class="text-col2">En bloque</p>
+	                				<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Contexto de procedencia", ','),'En bloque') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-33">
+			<div class="diseño-tabla" style="min-height: 118px;">
+				<h1 class="h2 bold color-rojo text-align-left">DECORACIÓN</h1>
+				<div>
+					<div class="flex">
+						<div class="col-50">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Incisa</p>
+	                				<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Decoración", ','),'Incisa') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+							</div>
+						</div>
+						<div class="col-50">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Esgrafiado</p>
+	                				<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Decoración", ','),'Esgrafiado') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+							</div>
+						</div>
+					</div>
+					<div class="flex">
+						<div class="col-50">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Policromía</p>
+	                				<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Decoración", ','),'Policromía') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+							</div>
+						</div>
+						<div class="col-50">
+							<div class="">
+								<p class="text-col2">Color [%"Color"%]</p>
+							</div>
+						</div>
+					</div>
+					<divy class="flex">
+						<div class="col-50">
+							<div class="flex justify-content-between">
+									<p class="text-col2">
+									Tallado</p>
+	                				<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Decoración", ','),'Tallado') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+							</div>
+						</div>
+						<div class="col-50">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Incrustación</p>
+	                				<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Decoración", ','),'Incrustación') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+							</div>
+						</div>
+						
+					</div>
+					<div class="flex">
+						<div class="col-50">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Teselas</p>
+	                				<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Decoración", ','),'Teselas') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+							</div>
+						</div>
+						<div class="col-50">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Acanalado</p>
+	                				<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Decoración", ','),'Acanalado') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+							</div>
+						</div>
+					</div>
+					<div class="flex">
+						<div class="col-50">
+							<p class="text-align-left text-col2">Otro: [%"Otro D"%]</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="flex">
+		<div class="col-100">
+			<div class="diseño-tabla">
+				<h1 class="h2 bold color-rojo text-align-left">FACTORES DE DEGRADACIÓN</h1>
+				<div class="flex">
+					<div class="col-25">
+						<div class="flex justify-content-between">
+							<p class="text-col2">Termoalteraciones</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha", ','),'Termoalteraciones') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Abrasión</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha", ','),'Abrasión') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Concreción de sales</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha", ','),'Concreción de sales') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Subflorescencia</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha", ','),'Subflorescencia') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Velo blanquecino</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha", ','),'Velo blanquecino') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Eflorescencia</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha", ','),'Eflorescencia') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Exfoliación</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha", ','),'Exfoliación') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Fragmentado</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha", ','),'Fragmentado') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+					</div>
+
+					<div class="col-25">
+						<div class="flex justify-content-between">
+							<p class="text-col2">Fisuras</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha, ','),'Fisuras') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Pulverulencia</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha", ','),'Pulverulencia') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Friabilidad</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha", ','),'Friabilidad') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Marcas de corte</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha", ','),'Marcas de corte') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Marcas dentales</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha", ','),'Marcas dentales') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Concreaciones (tierra)</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha", ','),'Concreciones (tierra)') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Suciedad superficial</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha", ','),'Suciedad superficial') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>				
+						<div class="flex justify-content-between">
+							<p class="text-col2">Manchas</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha", ','),'Manchas') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+					</div>
+					
+
+					<div class="col-25">
+						<div class="flex justify-content-between">
+							<p class="text-col2">Decoloración</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha", ','),'Decoloración') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Escala munsell [%"Decoloración (Escala Munsell)"%]</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha", ','),'Termoalteraciones') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Microorganismos</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha", ','),'Microorganismos') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Deyecciones</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha", ','),'Deyecciones') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Raicillas</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha", ','),'Raicillas') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Mineralización</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha", ','),'Mineralización') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Orificios</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha", ','),'Oricios') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Grietas</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha", ','),'Grietas') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+					</div>
+
+					<div class="col-25">
+						<div class="flex justify-content-between">
+							<p class="text-col2">Faltantes</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha", ','),'Faltantes') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Restos pigmento</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha", ','),'Restos pigmento') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Restos de adhesivo</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha", ','),'Restos de adhesivo') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Deformación</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha", ','),'Deformación') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Craqueladuras</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha", ','),'Craqueladuras') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Desprendimiento</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación concha", ','),'Desprendimiento') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+	</div>
+	<div class="flex">
+		<div style="width: 100%;">
+			<div class="diseño-tabla">
+				<h1 class="h2 bold color-rojo text-align-left">ESTADO DE CONSERVACIÓN</h1>
+				<p class="text-col2">Localización de efectos en esquema</p>
+				<div class="" id="cont-princ-1">
+		         	<input type="hidden" id="conservacion" value=[%"Fotos conservación"%]>
+		        </div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+    	function Carga(){
+	      imagenesEstadoDeConservacion();
+	    }
+    	function imagenesEstadoDeConservacion(){
+          let str = document.getElementById("conservacion").value;
+          let images = str.split(',');
+          let principal = document.getElementById('cont-princ-1');
+          let valor = images.length;
+          for(i=0;i<images.length;i++){
+            if(valor==2 || valor==1){
+              let creaimg = document.createElement('img');
+              let crearDiv = document.createElement('div');
+              creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/NUEVOS FORMATOS DE CEDULAS/CÉDULAS DE REGISTRO/CÉDULAS DE REGISTRO/BIENES INMUEBLES/REGISTRO/Procesos/"+images[i]+".jpg");
+              creaimg.setAttribute('width','395');
+              crearDiv.setAttribute('width','100%');
+              creaimg.setAttribute('style','padding:3px;');
+              principal.setAttribute('style', 'display:flex; flex-wrap: wrap;')
+              principal.appendChild(crearDiv);
+              crearDiv.appendChild(creaimg);
+
+            } else if(valor<=4){
+              let creaimg = document.createElement('img');
+              let crearDiv = document.createElement('div');
+              creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/NUEVOS FORMATOS DE CEDULAS/CÉDULAS DE REGISTRO/CÉDULAS DE REGISTRO/BIENES INMUEBLES/REGISTRO/Procesos/"+images[i]+".jpg");
+              creaimg.setAttribute('width','260');
+              creaimg.setAttribute('style','padding:3px;');
+              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
+              principal.appendChild(crearDiv);
+              crearDiv.appendChild(creaimg);
+
+            } else if(valor<=6){
+              let creaimg = document.createElement('img');
+              creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/NUEVOS FORMATOS DE CEDULAS/CÉDULAS DE REGISTRO/CÉDULAS DE REGISTRO/BIENES INMUEBLES/REGISTRO/Procesos/"+images[i]+".jpg");
+              creaimg.setAttribute('width','255');
+              creaimg.setAttribute('style','padding:3px');
+              creaimg.setAttribute('style','padding:3px;');
+              principal.appendChild(creaimg);
+
+            }else if(valor=>7){
+              let creaimg = document.createElement('img');
+              creaimg.setAttribute('src', "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/NUEVOS FORMATOS DE CEDULAS/CÉDULAS DE REGISTRO/CÉDULAS DE REGISTRO/BIENES INMUEBLES/REGISTRO/Procesos/"+images[i]+".jpg");
+              creaimg.setAttribute('width','200');
+              creaimg.setAttribute('style','padding:3px');
+              principal.appendChild(creaimg);
+            }
+          }
+      }
+  	</script>
+</body>
+</html>

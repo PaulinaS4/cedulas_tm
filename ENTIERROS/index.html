@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta name="title" content="Cédula de intervención de material cerámico"/>
+	<meta name="description" content="Análisis regional del sureste Mesoamericano. Proyecto marco de salvamento arqueológico. Tren Maya"/>
+	<meta name="author" content="Jonatan Lara Ortiz, Ing; Diana Paulina Serrano Roldan, " />
+	<meta name="generator" content= "Atom" />
+	<meta name="copyright" content="Dirección de Salvamento Arqueológico" />
+	<meta name="created" content="2023-01-24"/>
+  <link rel="stylesheet" href="sass/style.css">
+  	<title></title>
+  	<style type="text/css">
+  	body{
+  		min-height: 1081.670px;
+  	}
+  </style>
+</head>
+<body>
+	<header>
+		<table class="head">
+				<td class="col0"><img src="banner.png" width=840px height=60 hspace=0 vspace=0></td>
+		</table>
+		<section class="row-alt">
+		    <div class="flex">
+			      <div class="col-30">
+			        <img class="logo" src="tren.png">
+			      </div>
+			      <div class="col-70">
+			        <h1 class="titulos text-center">U LU'UMIL MAAYA WÍINIKO'OB</h1>
+			        <p class="h2 color-rojo bold text-center">
+			          Análisis Regional del Sureste Mesoamericano Proyecto Marco de Salvamento <br>Arqueológico del Tren Maya.</p>
+		            <h5 class="h3 color-rojo bold text-center" >Responsable académico:Dr. Manuel E. Pérez Rivas. Diseño de contenido: Félix Albano Camacho Zamora</h5>
+			      </div>
+		    </div>
+		</section>
+	</header>
+	<h1 class="center">CÉDULA DE REGISTRO IN SITU DE ENTIERROS</h1>
+	<h1 class="h2 bold color-rojo text-align-left">DATOS GENERALES</h1>
+	<div class="tabla diseño-tabla" style="display:flex">
+			<table class="generales" style=" width: 100%;">
+				<tr>
+				<td class="col1">Tramo</td>
+				<td class="col2">[%"Tramo"%]</td>
+				<td class="col1">Estructura</td>
+				<td class="col2">[%"ID Monumento"%]</td>
+        		<td class="col1">Número ID</td>
+				<td class="col2">[%"Clave de excavación"%]</td>
+			</tr>
+			<tr>
+				<td class="col1">Descripción de la píeza</td>
+				<td class="col2">[%"Descripción de pieza"%]</td>
+				<td class="col1">Estado de conservación</td>
+				<td class="col2">[%"Estado de conservación"%]</td>
+				<td class="col1">Dimensiones</td>
+				<td class="col2">
+					<strong>Alto: </strong>[%string_to_array("Dimensiones",'x')[0]%]<br>
+	                         <strong>Largo: </strong>[%string_to_array("Dimensiones",'x')[1]%]<br>
+	                         <strong>Ancho: </strong>[%string_to_array("Dimensiones",'x')[2]%]
+			    </td>
+
+			</tr>
+			<tr>
+        		<td class="col1">Nombre de quien realiza el registro: </td>
+				<td class="col2">[%"Nombre quien registra"%]</td>
+				<td class="col1">Estado:</td>
+				<td class="col2">[%"Estado"%]</td>
+				<td class="col1">Capa</td>
+	      		<td class="col2">[%"Capa"%]</td>
+	      		
+			</tr>
+			<tr>
+		      	<td class="col1">Fecha inicio de intervención</td>
+		      	<td class="col2">[%"Fecha inicio de intervención"%]</td>
+		      	<td class="col1">Fecha fin de intervención</td>
+		      	<td class="col2">[%"Fecha fin de intervención"%]</td>
+			</tr>
+			</table>
+	</div>
+	<div class="flex">
+		<div class="col-50">
+			<div class="diseño-tabla" style="min-height: 133px;">
+				<h1 class="h2 bold color-rojo text-align-left">TIPO DE MATRIZ</h1>
+				<div>
+					<div class="flex">
+						<div class="col-100">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Arenoso</p>
+	                				<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Tipo de matriz", ','),'Arenoso') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+							</div>
+						</div>
+					</div>
+					<div class="flex">
+						<div class="col-100">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Limoso</p>
+	                				<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Tipo de matriz", ','),'Limoso') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+							</div>
+						</div>
+					</div>
+					<div class="flex">
+						<div class="col-100">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Arcilloso</p>
+	                				<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Tipo de matriz", ','),'Arcilloso') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+							</div>
+						</div>
+					</div>
+					<div class="flex">
+						<div class="col-100">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Otro</p>
+	                				<p class="h4">[%"Otro TM"%]</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-50">
+			<div class="diseño-tabla" style="min-height: 133px;">
+				<h1 class="h2 bold color-rojo text-align-left">DUREZA DEL MATERIAL</h1>
+				<div>
+					<div class="flex">
+						<div class="col-100">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Alta:</p>
+	                				<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Dureza del material", ','),'Alta') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+							</div>
+						</div>
+					</div>
+					<div class="flex">
+						<div class="col-100">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Baja</p>
+	                				<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Dureza del material", ','),'Regular') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+							</div>
+						</div>
+					</div>
+					<div class="flex">
+						<div class="col-100">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Regualar</p>
+	                				<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Dureza del material", ','),'Baja') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="flex">
+		<div class="col-100">
+			<div class="diseño-tabla" >
+				<h1 class="h2 bold color-rojo text-align-left">PROCESOS DE CONSERVACIÓN REALIZADOS IN SITU</h1>
+				<div class="fila">
+					<div class="flex">
+						<div class="col-30">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Limpieza superficial</p>
+	                				<p class="col-50 rectangulo"
+	                    				[%case
+		          						when "Moldeado" = 'TRUE'
+		          						then 'style="background:#BC955C"'
+		          						else 'style="background:none"'
+	        					  	end%]></p>
+							</div>
+						</div>
+						<div class="col-90">
+							<p class="text-col2 text-align-left">[%"Limpieza superficial"%]</p>
+						</div>
+					</div>
+				</div>
+				<div class="fila">
+					<div class="flex">
+						<div class="col-30">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Micro excavación</p>
+	                				<p class="col-50 rectangulo"
+	                    				[%case
+		          						when "Moldeado" = 'TRUE'
+		          						then 'style="background:#BC955C"'
+		          						else 'style="background:none"'
+	        					  	end%]></p>
+							</div>
+						</div>
+						<div class="col-90">
+							<p class="text-col2 text-align-left">[%"Microexcavación"%]</p>
+						</div>
+					</div>
+				</div>
+				<div class="fila">
+					<div class="flex">
+						<div class="col-30">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Limpieza físico química</p>
+	                				<p class="col-50 rectangulo"
+	                    				[%case
+		          						when "Moldeado" = 'TRUE'
+		          						then 'style="background:#BC955C"'
+		          						else 'style="background:none"'
+	        					  	end%]></p>
+							</div>
+						</div>
+						<div class="col-90">
+							<p class="text-col2 text-align-left">[%"Limpieza físico química"%]</p>
+						</div>
+					</div>
+				</div>
+				<div class="fila">
+					<div class="flex">
+						<div class="col-30">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Consolidación</p>
+	                				<p class="col-50 rectangulo"
+	                    				[%case
+		          						when "Moldeado" = 'TRUE'
+		          						then 'style="background:#BC955C"'
+		          						else 'style="background:none"'
+	        					  	end%]></p>
+							</div>
+						</div>
+						<div class="col-90">
+							<p class="text-col2 text-align-left">[%"Consolidación"%]</p>
+						</div>
+					</div>
+				</div>
+				<div class="fila">
+					<div class="flex">
+						<div class="col-30">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Unión de fragmentos</p>
+	                				<p class="col-50 rectangulo"
+	                    				[%case
+		          						when "Moldeado" = 'TRUE'
+		          						then 'style="background:#BC955C"'
+		          						else 'style="background:none"'
+	        					  	end%]></p>
+							</div>
+						</div>
+						<div class="col-90">
+							<p class="text-col2 text-align-left">[%"Unión de fragmentos"%]</p>
+						</div>
+					</div>
+				</div>
+				<div class="fila">
+					<div class="flex">
+						<div class="col-30">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Otro</p>
+	                				<p class="col-50 rectangulo"
+	                    				[%case
+		          						when "Moldeado" = 'TRUE'
+		          						then 'style="background:#BC955C"'
+		          						else 'style="background:none"'
+	        					  	end%]></p>
+							</div>
+						</div>
+						<div class="col-90">
+							<p class="text-col2 text-align-left">[%"Otro PC"%]</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="flex">
+		<div style="width: 100%;">
+			<div class="diseño-tabla" style="height: 380px;">
+				<h1 class="h2 bold color-rojo text-align-left">TIPO DE BIEN ENCONTRADO</h1>
+				<div class="flex">
+					<div class="col-20"></div>
+					<div class="col-15">
+						<div class="">
+							<p class="text-col2">Número de elementos</p>
+						</div>
+					</div>
+					<div class="col-25">
+						<div class="">
+							<p class="text-col2">Estado de conservación</p>
+							<div class="col-100">
+								<div class="flex">
+									<div class="col-33">
+										<p class="text-col2">Bueno</p>
+									</div>
+									<div class="col-33">
+										<p class="text-col2">Regular</p>
+									</div>
+									<div class="col-33">
+										<p class="text-col2">Malo</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-20">
+						<div class="">
+							<p class="text-col2">Prioridad de intervención</p>
+						</div>
+						<div class="col-100">
+							<div class="flex">
+								<div class="col-33">
+									<p class="text-col2">Urgente</p>
+								</div>
+								<div class="col-33">
+									<p class="text-col2">Regular</p>
+								</div>
+								<div class="col-33">
+									<p class="text-col2">Baja</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-20">
+						<div class="">
+							<p class="text-col2">Método de extracción</p>
+						</div>
+						<div class="col-100">
+							<div class="flex">
+								<div class="col-33">
+									<p class="text-col2">Bloque</p>
+								</div>
+								<div class="col-33">
+									<p class="text-col2">Elemento</p>
+								</div>
+								<div class="col-33">
+									<p class="text-col2">Matriz</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="flex">
+					<div class="col-20">
+						<div class="col-100">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Restos óseos</p>
+	                				<p class="col-50 rectangulo"
+	                    				[%case
+		          						when "Moldeado" = 'TRUE'
+		          						then 'style="background:#BC955C"'
+		          						else 'style="background:none"'
+	        					  	end%]></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-15">
+						<div class="">
+							<p>[%"No. restos óseos"%]</p>
+						</div>
+					</div>
+					<div class="col-25">
+						<div class="col-100">
+							<div class="flex">
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Estado de conservación REOS", ','),'Bueno') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Estado de conservación REOS", ','),'Regular') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Estado de conservación REOS", ','),'Baja') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-20">
+						<div class="col-100">
+							<div class="flex">
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Prioridad de intrvención REOS", ','),'Urgente') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Prioridad de intrvención REOS", ','),'Regular') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Prioridad de intrvención REOS", ','),'Baja') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-20">
+						<div class="col-100">
+							<div class="flex">
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Método de extracción REOS", ','),'Bloque') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Método de extracción REOS", ','),'Elemento') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Método de extracción REOS", ','),'Matriz') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="flex">
+					<div class="col-20">
+						<div class="col-100">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Objeto cerámico</p>
+	                				<p class="col-50 rectangulo"
+	                    				[%case
+		          						when "Moldeado" = 'TRUE'
+		          						then 'style="background:#BC955C"'
+		          						else 'style="background:none"'
+	        					  	end%]></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-15">
+						<div class="">
+							<p>[%"No. objetos cerámicos"%]</p>
+						</div>
+					</div>
+					<div class="col-25">
+						<div class="col-100">
+							<div class="flex">
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Estado de conservación OCER", ','),'Bueno') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Estado de conservación OCER", ','),'Regular') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Estado de conservación OCER", ','),'Baja') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-20">
+						<div class="col-100">
+							<div class="flex">
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Prioridad de intrvención OCER", ','),'Urgente') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Prioridad de intrvención OCER", ','),'Regular') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Prioridad de intrvención OCER", ','),'Baja') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-20">
+						<div class="col-100">
+							<div class="flex">
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Método de extracción OCER", ','),'Bloque') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Método de extracción OCER", ','),'Elemento') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Método de extracción OCER", ','),'Matriz') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="flex">
+					<div class="col-20">
+						<div class="col-100">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Objeto malacológico</p>
+	                				<p class="col-50 rectangulo"
+	                    				[%case
+		          						when "Moldeado" = 'TRUE'
+		          						then 'style="background:#BC955C"'
+		          						else 'style="background:none"'
+	        					  	end%]></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-15">
+						<div class="">
+							<p>[%"No. objetos malacológicos"%]</p>
+						</div>
+					</div>
+					<div class="col-25">
+						<div class="col-100">
+							<div class="flex">
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Estado de conservación OMAL", ','),'Bueno') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Estado de conservación OMAL", ','),'Regular') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Estado de conservación OMAL", ','),'Baja') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-20">
+						<div class="col-100">
+							<div class="flex">
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Prioridad de intrvención OMAL", ','),'Urgente') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Prioridad de intrvención OMAL", ','),'Regular') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Prioridad de intrvención OMAL", ','),'Baja') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-20">
+						<div class="col-100">
+							<div class="flex">
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Método de extracción OMAL", ','),'Bloque') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Método de extracción OMAL", ','),'Elemento') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Método de extracción OMAL", ','),'Matriz') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="flex">
+					<div class="col-20">
+						<div class="col-100">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Objeto lítico</p>
+	                				<p class="col-50 rectangulo"
+	                    				[%case
+		          						when "Moldeado" = 'TRUE'
+		          						then 'style="background:#BC955C"'
+		          						else 'style="background:none"'
+	        					  	end%]></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-15">
+						<div class="">
+							<p>[%"No. objetos líticos"%]</p>
+						</div>
+					</div>
+					<div class="col-25">
+						<div class="col-100">
+							<div class="flex">
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Estado de conservación OLIT", ','),'Bueno') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Estado de conservación OLIT", ','),'Regular') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Estado de conservación OLIT", ','),'Baja') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-20">
+						<div class="col-100">
+							<div class="flex">
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Prioridad de intrvención OLIT", ','),'Urgente') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Prioridad de intrvención OLIT", ','),'Regular') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Prioridad de intrvención OLIT", ','),'Baja') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-20">
+						<div class="col-100">
+							<div class="flex">
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Método de extracción OLIT", ','),'Bloque') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Método de extracción OLIT", ','),'Elemento') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Método de extracción OLIT", ','),'Matriz') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="flex">
+					<div class="col-20">
+						<div class="col-100">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Objeto metálico</p>
+	                				<p class="col-50 rectangulo"
+	                    				[%case
+		          						when "Moldeado" = 'TRUE'
+		          						then 'style="background:#BC955C"'
+		          						else 'style="background:none"'
+	        					  	end%]></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-15">
+						<div class="">
+							<p>[%"No. objetos metálicos"%]</p>
+						</div>
+					</div>
+					<div class="col-25">
+						<div class="col-100">
+							<div class="flex">
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Estado de conservación OMET", ','),'Bueno') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Estado de conservación OMET", ','),'Regular') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Estado de conservación OMET", ','),'Baja') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-20">
+						<div class="col-100">
+							<div class="flex">
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Prioridad de intrvención OMET", ','),'Urgente') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Prioridad de intrvención OMET", ','),'Regular') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Prioridad de intrvención OMET", ','),'Baja') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-20">
+						<div class="col-100">
+							<div class="flex">
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Método de extracción OMET", ','),'Bloque') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Método de extracción OMET", ','),'Elemento') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Método de extracción OMET", ','),'Matriz') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="flex">
+					<div class="col-20">
+						<div class="col-100">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Objeto madera</p>
+	                				<p class="col-50 rectangulo"
+	                    				[%case
+		          						when "Moldeado" = 'TRUE'
+		          						then 'style="background:#BC955C"'
+		          						else 'style="background:none"'
+	        					  	end%]></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-15">
+						<div class="">
+							<p>[%"No. objetos madera"%]</p>
+						</div>
+					</div>
+					<div class="col-25">
+						<div class="col-100">
+							<div class="flex">
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Estado de conservación MADE", ','),'Bueno') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Estado de conservación MADE", ','),'Regular') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Estado de conservación MADE", ','),'Baja') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-20">
+						<div class="col-100">
+							<div class="flex">
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Prioridad de intrvención MADE", ','),'Urgente') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Prioridad de intrvención MADE", ','),'Regular') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Prioridad de intrvención MADE", ','),'Baja') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-20">
+						<div class="col-100">
+							<div class="flex">
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Método de extracción MADE", ','),'Bloque') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Método de extracción MADE", ','),'Elemento') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Método de extracción MADE", ','),'Matriz') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="flex">
+					<div class="col-20">
+						<div class="col-100">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Otro 1</p>
+	                				<p class="col-50 rectangulo"
+	                    				[%case
+		          						when "Moldeado" = 'TRUE'
+		          						then 'style="background:#BC955C"'
+		          						else 'style="background:none"'
+	        					  	end%]></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-15">
+						<div class="">
+							<p>[%"No. otro"%]</p>
+						</div>
+					</div>
+										<div class="col-25">
+						<div class="col-100">
+							<div class="flex">
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Estado de conservación OTRO", ','),'Bueno') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Estado de conservación OTRO", ','),'Regular') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Estado de conservación OTRO", ','),'Baja') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-20">
+						<div class="col-100">
+							<div class="flex">
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Prioridad de intrvención OTRO", ','),'Urgente') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Prioridad de intrvención OTRO", ','),'Regular') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Prioridad de intrvención OTRO", ','),'Baja') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-20">
+						<div class="col-100">
+							<div class="flex">
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Método de extracción OTRO", ','),'Bloque') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Método de extracción OTRO", ','),'Elemento') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+								<div class="col-33 center">
+									<p class="col-50 rectangulo" 
+							              	[%CASE WHEN 
+											array_count(string_to_array("Método de extracción OTRO", ','),'Matriz') = 1
+											THEN 'style="background:#BC955C"'
+											else 'style="background:none"'
+											END%] > </p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

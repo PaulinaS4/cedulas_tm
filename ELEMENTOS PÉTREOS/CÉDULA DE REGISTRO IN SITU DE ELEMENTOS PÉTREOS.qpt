@@ -1,0 +1,233 @@
+<Layout worldFileMap="" name="CÉDULA DE REGISTRO IN SITU DE ELEMENTOS PÉTREOS" units="mm" printResolution="300">
+ <Snapper snapToItems="1" tolerance="5" snapToGrid="0" snapToGuides="1"/>
+ <Grid offsetUnits="mm" resolution="10" offsetX="0" offsetY="0" resUnits="mm"/>
+ <PageCollection>
+  <symbol force_rhr="0" name="" type="fill" clip_to_extent="1" alpha="1">
+   <data_defined_properties>
+    <Option type="Map">
+     <Option name="name" type="QString" value=""/>
+     <Option name="properties"/>
+     <Option name="type" type="QString" value="collection"/>
+    </Option>
+   </data_defined_properties>
+   <layer enabled="1" class="SimpleFill" pass="0" locked="0">
+    <Option type="Map">
+     <Option name="border_width_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+     <Option name="color" type="QString" value="255,255,255,255"/>
+     <Option name="joinstyle" type="QString" value="miter"/>
+     <Option name="offset" type="QString" value="0,0"/>
+     <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+     <Option name="offset_unit" type="QString" value="MM"/>
+     <Option name="outline_color" type="QString" value="35,35,35,255"/>
+     <Option name="outline_style" type="QString" value="no"/>
+     <Option name="outline_width" type="QString" value="0.26"/>
+     <Option name="outline_width_unit" type="QString" value="MM"/>
+     <Option name="style" type="QString" value="solid"/>
+    </Option>
+    <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+    <prop k="color" v="255,255,255,255"/>
+    <prop k="joinstyle" v="miter"/>
+    <prop k="offset" v="0,0"/>
+    <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+    <prop k="offset_unit" v="MM"/>
+    <prop k="outline_color" v="35,35,35,255"/>
+    <prop k="outline_style" v="no"/>
+    <prop k="outline_width" v="0.26"/>
+    <prop k="outline_width_unit" v="MM"/>
+    <prop k="style" v="solid"/>
+    <data_defined_properties>
+     <Option type="Map">
+      <Option name="name" type="QString" value=""/>
+      <Option name="properties"/>
+      <Option name="type" type="QString" value="collection"/>
+     </Option>
+    </data_defined_properties>
+   </layer>
+  </symbol>
+  <LayoutItem type="65638" visibility="1" background="true" opacity="1" templateUuid="{a4506d95-fbc8-42f8-8c5f-52eb77d3fd9b}" positionOnPage="0,0,mm" frame="false" blendMode="0" frameJoinStyle="miter" size="215.9,279.4,mm" position="0,0,mm" excludeFromExports="0" itemRotation="0" zValue="0" groupUuid="" referencePoint="0" outlineWidthM="0.3,mm" id="" positionLock="false" uuid="{a4506d95-fbc8-42f8-8c5f-52eb77d3fd9b}">
+   <FrameColor blue="0" red="0" green="0" alpha="255"/>
+   <BackgroundColor blue="255" red="255" green="255" alpha="255"/>
+   <LayoutObject>
+    <dataDefinedProperties>
+     <Option type="Map">
+      <Option name="name" type="QString" value=""/>
+      <Option name="properties"/>
+      <Option name="type" type="QString" value="collection"/>
+     </Option>
+    </dataDefinedProperties>
+    <customproperties>
+     <Option/>
+    </customproperties>
+   </LayoutObject>
+   <symbol force_rhr="0" name="" type="fill" clip_to_extent="1" alpha="1">
+    <data_defined_properties>
+     <Option type="Map">
+      <Option name="name" type="QString" value=""/>
+      <Option name="properties"/>
+      <Option name="type" type="QString" value="collection"/>
+     </Option>
+    </data_defined_properties>
+    <layer enabled="1" class="SimpleFill" pass="0" locked="0">
+     <Option type="Map">
+      <Option name="border_width_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+      <Option name="color" type="QString" value="255,255,255,255"/>
+      <Option name="joinstyle" type="QString" value="miter"/>
+      <Option name="offset" type="QString" value="0,0"/>
+      <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+      <Option name="offset_unit" type="QString" value="MM"/>
+      <Option name="outline_color" type="QString" value="35,35,35,255"/>
+      <Option name="outline_style" type="QString" value="no"/>
+      <Option name="outline_width" type="QString" value="0.26"/>
+      <Option name="outline_width_unit" type="QString" value="MM"/>
+      <Option name="style" type="QString" value="solid"/>
+     </Option>
+     <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+     <prop k="color" v="255,255,255,255"/>
+     <prop k="joinstyle" v="miter"/>
+     <prop k="offset" v="0,0"/>
+     <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+     <prop k="offset_unit" v="MM"/>
+     <prop k="outline_color" v="35,35,35,255"/>
+     <prop k="outline_style" v="no"/>
+     <prop k="outline_width" v="0.26"/>
+     <prop k="outline_width_unit" v="MM"/>
+     <prop k="style" v="solid"/>
+     <data_defined_properties>
+      <Option type="Map">
+       <Option name="name" type="QString" value=""/>
+       <Option name="properties"/>
+       <Option name="type" type="QString" value="collection"/>
+      </Option>
+     </data_defined_properties>
+    </layer>
+   </symbol>
+  </LayoutItem>
+  <LayoutItem type="65638" visibility="1" background="true" opacity="1" templateUuid="{f23284ca-161f-423f-96e3-3939264cb254}" positionOnPage="0,0,mm" frame="false" blendMode="0" frameJoinStyle="miter" size="215.9,279.4,mm" position="0,289.4,mm" excludeFromExports="0" itemRotation="0" zValue="0" groupUuid="" referencePoint="0" outlineWidthM="0.3,mm" id="" positionLock="false" uuid="{f23284ca-161f-423f-96e3-3939264cb254}">
+   <FrameColor blue="0" red="0" green="0" alpha="255"/>
+   <BackgroundColor blue="255" red="255" green="255" alpha="255"/>
+   <LayoutObject>
+    <dataDefinedProperties>
+     <Option type="Map">
+      <Option name="name" type="QString" value=""/>
+      <Option name="properties"/>
+      <Option name="type" type="QString" value="collection"/>
+     </Option>
+    </dataDefinedProperties>
+    <customproperties>
+     <Option/>
+    </customproperties>
+   </LayoutObject>
+   <symbol force_rhr="0" name="" type="fill" clip_to_extent="1" alpha="1">
+    <data_defined_properties>
+     <Option type="Map">
+      <Option name="name" type="QString" value=""/>
+      <Option name="properties"/>
+      <Option name="type" type="QString" value="collection"/>
+     </Option>
+    </data_defined_properties>
+    <layer enabled="1" class="SimpleFill" pass="0" locked="0">
+     <Option type="Map">
+      <Option name="border_width_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+      <Option name="color" type="QString" value="255,255,255,255"/>
+      <Option name="joinstyle" type="QString" value="miter"/>
+      <Option name="offset" type="QString" value="0,0"/>
+      <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+      <Option name="offset_unit" type="QString" value="MM"/>
+      <Option name="outline_color" type="QString" value="35,35,35,255"/>
+      <Option name="outline_style" type="QString" value="no"/>
+      <Option name="outline_width" type="QString" value="0.26"/>
+      <Option name="outline_width_unit" type="QString" value="MM"/>
+      <Option name="style" type="QString" value="solid"/>
+     </Option>
+     <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+     <prop k="color" v="255,255,255,255"/>
+     <prop k="joinstyle" v="miter"/>
+     <prop k="offset" v="0,0"/>
+     <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+     <prop k="offset_unit" v="MM"/>
+     <prop k="outline_color" v="35,35,35,255"/>
+     <prop k="outline_style" v="no"/>
+     <prop k="outline_width" v="0.26"/>
+     <prop k="outline_width_unit" v="MM"/>
+     <prop k="style" v="solid"/>
+     <data_defined_properties>
+      <Option type="Map">
+       <Option name="name" type="QString" value=""/>
+       <Option name="properties"/>
+       <Option name="type" type="QString" value="collection"/>
+      </Option>
+     </data_defined_properties>
+    </layer>
+   </symbol>
+  </LayoutItem>
+  <GuideCollection visible="1"/>
+ </PageCollection>
+ <LayoutItem type="65647" visibility="1" background="false" opacity="1" templateUuid="{f6b0920a-fab4-471d-9b42-565b9940689d}" positionOnPage="3.94514,4.31262,mm" frame="false" hidePageIfEmpty="0" blendMode="0" frameJoinStyle="miter" hideBackgroundIfEmpty="0" multiFrameTemplateUuid="{5b16a69e-8564-4687-ae94-c1b774d3ad84}" size="208.01,270.775,mm" position="3.94514,293.713,mm" excludeFromExports="0" itemRotation="0" zValue="2" groupUuid="" sectionHeight="267.36" referencePoint="0" sectionY="0" outlineWidthM="0.3,mm" sectionX="0" sectionWidth="208.01" multiFrame="{5b16a69e-8564-4687-ae94-c1b774d3ad84}" id="" positionLock="false" uuid="{f6b0920a-fab4-471d-9b42-565b9940689d}">
+  <FrameColor blue="0" red="0" green="0" alpha="255"/>
+  <BackgroundColor blue="255" red="255" green="255" alpha="255"/>
+  <LayoutObject>
+   <dataDefinedProperties>
+    <Option type="Map">
+     <Option name="name" type="QString" value=""/>
+     <Option name="properties"/>
+     <Option name="type" type="QString" value="collection"/>
+    </Option>
+   </dataDefinedProperties>
+   <customproperties>
+    <Option/>
+   </customproperties>
+  </LayoutObject>
+ </LayoutItem>
+ <LayoutItem type="65647" visibility="1" background="false" opacity="1" templateUuid="{5af4f82a-f2a3-470a-a647-deb5d52692b0}" positionOnPage="5.35333,4.31262,mm" frame="false" hidePageIfEmpty="0" blendMode="0" frameJoinStyle="miter" hideBackgroundIfEmpty="0" multiFrameTemplateUuid="{1e718e06-78ee-4f18-bedd-3956bfee7256}" size="208.01,270.775,mm" position="5.35333,4.31262,mm" excludeFromExports="0" itemRotation="0" zValue="1" groupUuid="" sectionHeight="270.775" referencePoint="0" sectionY="0" outlineWidthM="0.3,mm" sectionX="0" sectionWidth="208.01" multiFrame="{1e718e06-78ee-4f18-bedd-3956bfee7256}" id="" positionLock="false" uuid="{5af4f82a-f2a3-470a-a647-deb5d52692b0}">
+  <FrameColor blue="0" red="0" green="0" alpha="255"/>
+  <BackgroundColor blue="255" red="255" green="255" alpha="255"/>
+  <LayoutObject>
+   <dataDefinedProperties>
+    <Option type="Map">
+     <Option name="name" type="QString" value=""/>
+     <Option name="properties"/>
+     <Option name="type" type="QString" value="collection"/>
+    </Option>
+   </dataDefinedProperties>
+   <customproperties>
+    <Option/>
+   </customproperties>
+  </LayoutObject>
+ </LayoutItem>
+ <LayoutMultiFrame resizeMode="0" html="" stylesheet="" evaluateExpressions="true" stylesheetEnabled="false" type="65648" contentMode="0" url="file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/NUEVOS FORMATOS DE CEDULAS/CÉDULAS DE REGISTRO/CÉDULAS DE REGISTRO/ELEMENTOS PÉTREOS/index.html" templateUuid="{1e718e06-78ee-4f18-bedd-3956bfee7256}" uuid="{1e718e06-78ee-4f18-bedd-3956bfee7256}" maxBreakDistance="10" useSmartBreaks="true">
+  <childFrame templateUuid="{5af4f82a-f2a3-470a-a647-deb5d52692b0}" uuid="{5af4f82a-f2a3-470a-a647-deb5d52692b0}"/>
+  <LayoutObject>
+   <dataDefinedProperties>
+    <Option type="Map">
+     <Option name="name" type="QString" value=""/>
+     <Option name="properties"/>
+     <Option name="type" type="QString" value="collection"/>
+    </Option>
+   </dataDefinedProperties>
+   <customproperties>
+    <Option/>
+   </customproperties>
+  </LayoutObject>
+ </LayoutMultiFrame>
+ <LayoutMultiFrame resizeMode="0" html="" stylesheet="" evaluateExpressions="true" stylesheetEnabled="false" type="65648" contentMode="0" url="file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/NUEVOS FORMATOS DE CEDULAS/CÉDULAS DE REGISTRO/CÉDULAS DE REGISTRO/ELEMENTOS PÉTREOS/index2.html" templateUuid="{5b16a69e-8564-4687-ae94-c1b774d3ad84}" uuid="{5b16a69e-8564-4687-ae94-c1b774d3ad84}" maxBreakDistance="10" useSmartBreaks="true">
+  <childFrame templateUuid="{f6b0920a-fab4-471d-9b42-565b9940689d}" uuid="{f6b0920a-fab4-471d-9b42-565b9940689d}"/>
+  <LayoutObject>
+   <dataDefinedProperties>
+    <Option type="Map">
+     <Option name="name" type="QString" value=""/>
+     <Option name="properties"/>
+     <Option name="type" type="QString" value="collection"/>
+    </Option>
+   </dataDefinedProperties>
+   <customproperties>
+    <Option/>
+   </customproperties>
+  </LayoutObject>
+ </LayoutMultiFrame>
+ <customproperties>
+  <Option type="Map">
+   <Option name="atlasRasterFormat" type="QString" value="png"/>
+  </Option>
+ </customproperties>
+ <Atlas enabled="1" filterFeatures="0" pageNameExpression="" sortFeatures="0" coverageLayerName="FA_bd_cedula - Pétreos" coverageLayerSource="file:///C:/Users/ADMIN/Downloads/FA_bd_cedula%20-%20P%C3%A9treos.csv?type=csv&amp;maxFields=10000&amp;detectTypes=no&amp;geomType=none&amp;subsetIndex=no&amp;watchFile=no" coverageLayerProvider="delimitedtext" coverageLayer="FA_bd_cedula___Pétreos_1ed4ea24_fdc6_44b3_a98d_4db9bbda1572" hideCoverage="0" filenamePattern="'output_'||@atlas_featurenumber"/>
+</Layout>

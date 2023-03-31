@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta name="title" content="Cédula de intervención de material cerámico"/>
+	<meta name="description" content="Análisis regional del sureste Mesoamericano. Proyecto marco de salvamento arqueológico. Tren Maya"/>
+	<meta name="author" content="Jonatan Lara Ortiz, Ing; Diana Paulina Serrano Roldan, " />
+	<meta name="generator" content= "Atom" />
+	<meta name="copyright" content="Dirección de Salvamento Arqueológico" />
+	<meta name="created" content="2023-01-24"/>
+  	<link rel="stylesheet" href="sass/style.css">
+  	<title></title>
+</head>
+<body>
+	<header>
+		<table class="head">
+				<td class="col0"><img src="banner.png" width=840px height=60 hspace=0 vspace=0></td>
+		</table>
+		<section class="row-alt">
+		    <div class="flex">
+			      <div class="col-30">
+			        <img class="logo" src="tren.png">
+			      </div>
+			      <div class="col-70">
+			        <h1 class="titulos text-center">U LU'UMIL MAAYA WÍINIKO'OB</h1>
+			        <p class="h2 color-rojo bold text-center">
+			          Análisis Regional del Sureste Mesoamericano Proyecto Marco de Salvamento <br>Arqueológico del Tren Maya.</p>
+		            <h5 class="h3 color-rojo bold text-center" >Responsable académico:Dr. Manuel E. Pérez Rivas. Diseño de contenido: Félix Albano Camacho Zamora</h5>
+			      </div>
+		    </div>
+		</section>
+	</header>
+	<h1 class="center">CÉDULA DE REGISTRO IN SITU DE METALES</h1>
+	<h1 class="h2 bold color-rojo text-align-left">DATOS GENERALES</h1>
+	<div class="tabla diseño-tabla" style="display:flex">
+		<table class="generales" style=" width: 100%;">
+			<tr>
+				<td class="col1">Tramo</td>
+				<td class="col2">[%"Tramo"%]</td>
+				<td class="col1">Estructura</td>
+				<td class="col2">[%"ID Monumento"%]</td>
+        		<td class="col1">Número ID</td>
+				<td class="col2">[%"Clave de excavación"%]</td>
+			</tr>
+			<tr>
+				<td class="col1">Descripción de la píeza</td>
+				<td class="col2">[%"Descripción de pieza"%]</td>
+				<td class="col1">Estado de conservación</td>
+				<td class="col2">[%"Estado de conservación"%]</td>
+				<td class="col1">Dimensiones</td>
+				<td class="col2">
+					<strong>Alto: </strong>[%string_to_array("Dimensiones",'x')[0]%]<br>
+	                         <strong>Largo: </strong>[%string_to_array("Dimensiones",'x')[1]%]<br>
+	                         <strong>Ancho: </strong>[%string_to_array("Dimensiones",'x')[2]%]
+			    </td>
+
+			</tr>
+			<tr>
+        		<td class="col1">Nombre de quien realiza el registro: </td>
+				<td class="col2">[%"Nombre quien registra"%]</td>
+				<td class="col1">Estado:</td>
+				<td class="col2">[%"Estado"%]</td>
+				<td class="col1">Capa</td>
+	      		<td class="col2">[%"Capa"%]</td>
+	      		
+			</tr>
+			<tr>
+		      	<td class="col1">Fecha inicio de intervención</td>
+		      	<td class="col2">[%"Fecha inicio de intervención"%]</td>
+		      	<td class="col1">Fecha fin de intervención</td>
+		      	<td class="col2">[%"Fecha fin de intervención"%]</td>
+			</tr>
+		</table>
+	</div>
+	<div class="flex">
+		<div class="col-30">
+			<div class="diseño-tabla" style="height: 132px;">
+				<h1 class="h2 bold color-rojo text-align-left">TÉCNICA DE MANUFACTURA</h1>
+				<div>
+					<div class="flex">
+						<div class="col-100">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Martillado</p>
+	                				<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Técnica de manufactura", ','),'Martillado') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+							</div>
+						</div>
+					</div>
+					<div class="flex">
+						<div class="col-100">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Laminado</p>
+	                				<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Técnica de manufactura", ','),'Laminado') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+							</div>
+						</div>
+					</div>
+					<div class="flex">
+						<div class="col-100">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Fundición</p>
+	                				<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Técnica de manufactura", ','),'Fundición') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+							</div>
+						</div>
+					</div>
+					<div class="flex">
+						<div class="col-100">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Forja</p>
+	                				<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Técnica de manufactura", ','),'Forja') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+							</div>
+						</div>
+					</div>
+					<div class="flex">
+						<div class="col-100">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Plegado</p>
+	                				<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Técnica de manufactura", ','),'Plegado') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+							</div>
+						</div>
+					</div>
+					<div class="flex">
+						<div class="col-100">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Otro</p>
+	                				<p></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-30">
+			<div class="diseño-tabla" style="height: 132px;">
+				<h1 class="h2 bold color-rojo text-align-left">DETALLES DE FUNDICIÓN</h1>
+				<div>
+					<div class="flex">
+						<div class="col-100">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Remaches</p>
+	                				<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Detalles de fundición", ','),'Remaches') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+							</div>
+						</div>
+					</div>
+					<div class="flex">
+						<div class="col-100">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Soldaduras</p>
+	                				<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Detalles de fundición", ','),'Soldaduras') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+							</div>
+						</div>
+					</div>
+					<div class="flex">
+						<div class="col-100">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Huella de molde</p>
+	                				<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Detalles de fundición", ','),'Huella de molde') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+							</div>
+						</div>
+					</div>
+					<div class="flex">
+						<div class="col-100">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Faltante de rellenado</p>
+	                				<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Detalles de fundición", ','),'Faltante de rellenado') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+							</div>
+						</div>
+					</div>
+					<div class="flex">
+						<div class="col-100">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Porosidad</p>
+	                				<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Detalles de fundición", ','),'Porosidad') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+							</div>
+						</div>
+					</div>
+					<div class="flex">
+						<div class="col-100">
+							<div class="flex justify-content-between">
+									<p class="text-col2">Restos de molde</p>
+	                				<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Detalles de fundición", ','),'Restos de molde') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-60">
+			<div class="diseño-tabla" style="height: 132px;">
+				<h1 class="h2 bold color-rojo text-align-left">IDENTIFICACIÓN  DE BIEN</h1>
+				<div>
+					<div class="col-100">
+						<div class="flex justify-content-between">
+								<p class="text-col2">Objeto: [%"Objeto"%]</p>
+	                			<p></p>
+						</div>
+					</div>
+					<div class="col-100">
+						<div class="flex justify-content-between">
+								<p class="text-col2">Número de elementos: [%"Número de elementos"%]</p>
+	                			<p ></p>
+						</div>
+					</div>
+					<div class="col-100">
+						<div class="flex justify-content-between">
+								<p class="text-col2">Descripción formal: [%"Descripción formal"%]</p>
+	                			<p ></p>
+						</div>
+					</div>
+				</div>
+				<h1 class="h2 bold color-rojo text-align-left">SOPORTE</h1>
+				<div>
+					<div class="col-100">
+						<div class="flex justify-content-between">
+								<p class="text-col2">Aleación: [%"Aleación"%]</p>
+	                			<p></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="flex">
+		<div class="col-80">
+			<div class="diseño-tabla" style="height:155px">
+				<h1 class="h2 bold color-rojo text-align-left">ACABADOS DE SUPERFICIE Y DECORACIÓN</h1>
+				<div>
+					<div class="flex">
+						<div class="col-25">
+							<div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Esmaltado</p>
+	                		   <p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Acabados de superficie y deocración", ','),'Esmaltado') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						    </div>
+						    <div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Niquelado</p>
+	                		   <p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Acabados de superficie y deocración", ','),'Niquelado') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						    </div>
+						    <div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Grabado c/buril</p>
+	                		   <p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Acabados de superficie y deocración", ','),'Grabado c/buril') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						    </div>
+						    <div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Grabado c/Agua fuerte</p>
+	                		   <p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Acabados de superficie y deocración", ','),'Grabado c/agua fuerte') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						    </div>
+						    <div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Grabado c/Cincelado</p>
+	                		   <p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Acabados de superficie y deocración", ','),'Grabado c/cincelado') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						    </div>
+						</div>
+						<div class="col-25">
+							<div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Cera perdida</p>
+	                		   <p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Acabados de superficie y deocración", ','),'Cara perdida') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						    </div>
+						    <div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Embutido</p>
+	                		   <p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Acabados de superficie y deocración", ','),'Embutido') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						    </div>
+						    <div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Soldadura patrón</p>
+	                		   <p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Acabados de superficie y deocración", ','),'Soldadura patrón') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						    </div>
+						    <div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Repujado</p>
+	                		   <p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Acabados de superficie y deocración", ','),'Repujado') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						    </div>
+						    <div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Coloración(pátina)</p>
+	                		   <p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Acabados de superficie y deocración", ','),'Coloración (pátina)') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						    </div>
+						</div>
+						<div class="col-25">
+							<div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Filigrana</p>
+	                		   <p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Acabados de superficie y deocración", ','),'Filigrana') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						    </div>
+						    <div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Moldeado</p>
+	                		   <p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Acabados de superficie y deocración", ','),'Moldeado') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						    </div>
+						    <div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Coloración p/calor</p>
+	                		   <p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Acabados de superficie y deocración", ','),'Coloración p/calor') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						    </div>
+						    <div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Anodizado</p>
+	                		   <p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Acabados de superficie y deocración", ','),'Anodizado') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						    </div>
+						    <div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Dorado</p>
+	                		   <p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Acabados de superficie y deocración", ','),'Dorado') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						    </div>
+						</div>
+						<div class="col-25">
+							<div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Pintado</p>
+	                		   <p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Acabados de superficie y deocración", ','),'Pintado') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						    </div>
+						    <div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Joyería</p>
+	                		   <p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Acabados de superficie y deocración", ','),'Joyería') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						    </div>
+						    <div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Incrustado</p>
+	                		   <p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Acabados de superficie y deocración", ','),'Incrustado') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						    </div>
+						    <div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Incisión</p>
+	                		   <p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Acabados de superficie y deocración", ','),'Incisión') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						    </div>
+						    <div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Otros</p>
+	                		   <p ></p>
+						    </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-40">
+			<div class="diseño-tabla" >
+				<h1 class="h2 bold color-rojo text-align-left">INTERVENCIONES ANTERIORES </h1>
+				<div>
+					<div class="flex">
+						<div class="col-50">
+							<div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Unión por soldadura</p>
+	                		   <p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Intervenciones anteriores", ','),'Unión por soldadura') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						    </div>
+						    <div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Aplicación de pastas</p>
+	                		   <p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Intervenciones anteriores", ','),'Aplicación de pastas') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						    </div>
+						    <div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Restos de adhesivo</p>
+	                		   <p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Intervenciones anteriores", ','),'Restos de adhesivo') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						    </div>
+						    <div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Consolidación</p>
+	                		   <p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Intervenciones anteriores", ','),'Consolidación') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						    </div>
+						    <div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Reposición</p>
+	                		   <p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Intervenciones anteriores", ','),'Reposición') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						    </div>
+
+						</div>
+						<div class="col-50">
+							<div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Perforaciones</p>
+	                		   <p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Intervenciones anteriores", ','),'Perforaciones') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						    </div>
+						    <div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Recubrimiento</p>
+	                		   <p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Intervenciones anteriores", ','),'Recubrimiento') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						    </div>
+						    <div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left"></p>
+	                		   <p></p>
+						    </div>
+						    <div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Toma de muestra</p>
+	                		   <p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Intervenciones anteriores", ','),'Toma muestra') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						    </div>
+						    <div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Repinte</p>
+	                		   <p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Intervenciones anteriores", ','),'Repinte') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						    </div>
+								<div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Capa de protección</p>
+	                		   <p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Intervenciones anteriores", ','),'Capa de protección') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						    </div>
+						    <div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Otro: [%"Otro IA"%]</p>
+	                		   <p></p>
+						    </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="flex">
+		<div class="col-40">
+			<div class="diseño-tabla" style="height:300px
+			">
+				<h1 class="h2 bold color-rojo text-align-left">ESTADO DE CONSERVACIÓN</h1>
+				<div class="flex">
+					<div class="col-40">
+						<p class="text-col2">ALTERACIÓN FÍSICA</p>
+					</div>
+					<div class="col-50">
+						<p class="text-col2">Ubicación</p>
+					</div>
+					<div class="col-10">
+						<p class="text-col2">%</p>
+					</div>
+				</div>
+				<div class="flex">
+					<div class="col-40">
+						<div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Polvo</p>
+	                		   <p class="col-50 rectangulo"
+	                    		   [%case
+		          				   when "Moldeado" = 'TRUE'
+		          				   then 'style="background:#BC955C"'
+		          				   else 'style="background:none"'
+	        					    end%]></p>
+						    </div>
+					</div>
+					<div class="col-50">
+						<p class="h4">[%"Polvo"%]</p>
+					</div>
+					<div class="col-10">
+						<p class="h4">[%"Porcentaje Polvo"%]</p>
+					</div>
+				</div>
+				<div class="flex">
+					<div class="col-40">
+						<div class="flex justify-content-between">
+							<p class="text-col2 text-align-left">Suciedad</p>
+	                		   <p class="col-50 rectangulo"
+	                    		   [%case
+		          				   when "Moldeado" = 'TRUE'
+		          				   then 'style="background:#BC955C"'
+		          				   else 'style="background:none"'
+	        					    end%]></p>
+						    </div>
+					</div>
+					<div class="col-50">
+						<p class="h4">[%"Suciedad"%]</p>
+					</div>
+					<div class="col-10">
+						<p class="h4">[%"Porcentaje suciedad"%]</p>
+					</div>
+				</div>
+				<div class="flex">
+					<div class="col-40">
+						<div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Manchas</p>
+	                		   <p class="col-50 rectangulo"
+	                    		   [%case
+		          				   when "Moldeado" = 'TRUE'
+		          				   then 'style="background:#BC955C"'
+		          				   else 'style="background:none"'
+	        					    end%]></p>
+						    </div>
+					</div>
+					<div class="col-50">
+						<p class="h4">[%"Manchas"%]</p>
+					</div>
+					<div class="col-10">
+						<p class="h4">[%"Porcentaje manchas"%]</p>
+					</div>
+				</div>
+				<div class="flex">
+					<div class="col-40">
+						<div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Concreción</p>
+	                		   <p class="col-50 rectangulo"
+	                    		   [%case
+		          				   when "Moldeado" = 'TRUE'
+		          				   then 'style="background:#BC955C"'
+		          				   else 'style="background:none"'
+	        					    end%]></p>
+						    </div>
+					</div>
+					<div class="col-50">
+						<p class="h4">[%"Concreción"%]</p>
+					</div>
+					<div class="col-10">
+						<p class="h4">[%"Porcentaje concreción"%]</p>
+					</div>
+				</div>
+				<div class="flex">
+					<div class="col-40">
+						<div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Melladura</p>
+	                		   <p class="col-50 rectangulo"
+	                    		   [%case
+		          				   when "Moldeado" = 'TRUE'
+		          				   then 'style="background:#BC955C"'
+		          				   else 'style="background:none"'
+	        					    end%]></p>
+						</div>
+					</div>
+					<div class="col-50">
+						<p class="h4">[%"Melladura"%]</p>
+					</div>
+					<div class="col-10">
+						<p class="h4">[%"Porcentaje melladura"%]</p>
+					</div>
+				</div>
+				<div class="flex">
+					<div class="col-40">
+						<div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Perforaciones</p>
+	                		   <p class="col-50 rectangulo"
+	                    		   [%case
+		          				   when "Moldeado" = 'TRUE'
+		          				   then 'style="background:#BC955C"'
+		          				   else 'style="background:none"'
+	        					    end%]></p>
+						</div>
+					</div>
+					<div class="col-50">
+						<p class="h4">[%"Perforaciones"%]</p>
+					</div>
+					<div class="col-10">
+						<p class="h4">[%"Porcentaje perforaciones"%]</p>
+					</div>
+				</div>
+				<div class="flex">
+					<div class="col-40">
+						<div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Pérdida de resistencia</p>
+	                		   <p class="col-50 rectangulo"
+	                    		   [%case
+		          				   when "Moldeado" = 'TRUE'
+		          				   then 'style="background:#BC955C"'
+		          				   else 'style="background:none"'
+	        					    end%]></p>
+						</div>
+					</div>
+					<div class="col-50">
+						<p class="h4">[%"Pérdida resistencia"%]</p>
+					</div>
+					<div class="col-10">
+						<p class="h4">[%"Porcentaje pérdida de resistencia"%]</p>
+					</div>
+				</div>
+				<div class="flex">
+					<div class="col-40">
+						<div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Físuras</p>
+	                		   <p class="col-50 rectangulo"
+	                    		   [%case
+		          				   when "Moldeado" = 'TRUE'
+		          				   then 'style="background:#BC955C"'
+		          				   else 'style="background:none"'
+	        					    end%]></p>
+						</div>
+					</div>
+					<div class="col-50">
+						<p class="h4">[%"Fisuras"%]</p>
+					</div>
+					<div class="col-10">
+						<p class="h4">[%"Porcentaje fisuras"%]</p>
+					</div>
+				</div>
+				<div class="flex">
+					<div class="col-40">
+						<div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Separación de elementos</p>
+	                		   <p class="col-50 rectangulo"
+	                    		   [%case
+		          				   when "Moldeado" = 'TRUE'
+		          				   then 'style="background:#BC955C"'
+		          				   else 'style="background:none"'
+	        					    end%]></p>
+						    </div>
+					</div>
+					<div class="col-50">
+						<p class="h4">[%"Separación de elementos"%]</p>
+					</div>
+					<div class="col-10">
+						<p class="h4">[%"Porcentaje separación de elementos"%]</p>
+					</div>
+				</div>
+				<div class="flex">
+					<div class="col-40">
+						<div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Faltantes</p>
+	                		   <p class="col-50 rectangulo"
+	                    		   [%case
+		          				   when "Moldeado" = 'TRUE'
+		          				   then 'style="background:#BC955C"'
+		          				   else 'style="background:none"'
+	        					    end%]></p>
+						    </div>
+					</div>
+					<div class="col-50">
+						<p class="h4">[%"Faltantes"%]</p>
+					</div>
+					<div class="col-10">
+						<p class="h4">[%"Porcentaje faltantes"%]</p>
+					</div>
+				</div>
+				<div class="flex">
+					<div class="col-40">
+						<div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Factura</p>
+	                		   <p class="col-50 rectangulo"
+	                    		   [%case
+		          				   when "Moldeado" = 'TRUE'
+		          				   then 'style="background:#BC955C"'
+		          				   else 'style="background:none"'
+	        					    end%]></p>
+						    </div>
+					</div>
+					<div class="col-50">
+						<p class="h4">[%"Factura"%]</p>
+					</div>
+					<div class="col-10">
+						<p class="h4">[%"Porcentaje factura"%]</p>
+					</div>
+				</div>
+				<div class="flex">
+					<div class="col-40">
+						<div class="flex justify-content-between">
+							   <p class="text-col2 text-align-left">Fragmentación</p>
+	                		   <p class="col-50 rectangulo"
+	                    		   [%case
+		          				   when "Moldeado" = 'TRUE'
+		          				   then 'style="background:#BC955C"'
+		          				   else 'style="background:none"'
+	        					    end%]></p>
+						    </div>
+					</div>
+					<div class="col-50">
+						<p class="h4">[%"Fragmentación"%]</p>
+					</div>
+					<div class="col-10">
+						<p class="h4">[%"Porcentaje fragmentación"%]</p>
+					</div>
+				</div>
+				<div class="flex">
+					<div class="col-40">
+						<div class="flex justify-content-between">
+							 <p class="text-col2 text-align-left">Otro</p>
+						</div>
+					</div>
+					<div class="col-50">
+						<p class="h4">[%"Otra alteración"%]</p>
+					</div>
+					<div class="col-10">
+						<p class="h4">[%"Pocentaje otra alteración"%]</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-60">
+				<div class="diseño-tabla" style="height:300px"
+				>
+					<h1 class="h2 bold color-rojo text-align-left">ESTADO DE CONSERVACIÓN</h1>
+					<div class="flex">
+						<div class="col-30">
+							<p class="text-col2">ALTERACIÓN QUÍMICA CORROSIÓN</p>
+						</div>
+						<div class="col-20">
+							<p class="text-col2">COLOR</p>
+						</div>
+						<div class="col-20">
+							<p class="text-col2">ACTIVIDAD</p>
+						</div>
+						<div class="col-20">
+							<p class="text-col2">UBICACIÓN</p>
+						</div>
+						<div class="col-10">
+							<p class="text-col2">%</p>
+						</div>
+					</div>
+					<div class="flex">
+						<div class="col-30">
+							<div class="flex justify-content-between">
+								   <p class="text-col2 text-align-left">Uniforme</p>
+		                		   <p class="col-50 rectangulo"
+		                    		   [%case
+			          				   when "Uniforme" = 'TRUE'
+			          				   then 'style="background:#BC955C"'
+			          				   else 'style="background:none"'
+		        					    end%]></p>
+							    </div>
+						</div>
+						<div class="col-20">
+							<p class="h4">[%"Color producto de corrosión"%]</p>
+						</div>
+						<div class="col-20">
+							<p class="h4">[%"Actividad"%]</p>
+						</div>
+						<div class="col-20">
+							<p class="h4">[%"Ubicación"%]</p>
+						</div>
+						<div class="col-10">
+							<p class="h4">[%"Porcentaje U"%]</p>
+						</div>
+					</div>
+					<div class="flex">
+						<div class="col-30">
+							<div class="flex justify-content-between">
+								   <p class="text-col2 text-align-left">Bajo tensión</p>
+		                		   <p class="col-50 rectangulo"
+		                    		   [%case
+			          				   when "Bajo tensión" = 'TRUE'
+			          				   then 'style="background:#BC955C"'
+			          				   else 'style="background:none"'
+		        					    end%]></p>
+							    </div>
+						</div>
+						<div class="col-20">
+							<p class="h4">[%"Color producto de corrosión_1"%]</p>
+						</div>
+						<div class="col-20">
+							<p class="h4">[%"Actividad_1"%]</p>
+						</div>
+						<div class="col-20">
+							<p class="h4">[%"Ubicación_1"%]</p>
+						</div>
+						<div class="col-10">
+							<p class="h4">[%"Porcentaje BT"%]</p>
+						</div>
+					</div>
+					<div class="flex">
+						<div class="col-30">
+							<div class="flex justify-content-between">
+								   <p class="text-col2 text-align-left">Por picaduras</p>
+		                		   <p class="col-50 rectangulo"
+		                    		   [%case
+			          				   when "Por picaduras" = 'TRUE'
+			          				   then 'style="background:#BC955C"'
+			          				   else 'style="background:none"'
+		        					    end%]></p>
+							    </div>
+						</div>
+						<div class="col-20">
+							<p class="h4">[%"Color producto de corrosión_2"%]</p>
+						</div>
+						<div class="col-20">
+							<p class="h4">[%"Actividad_2"%]</p>
+						</div>
+						<div class="col-20">
+							<p class="h4">[%"Ubicación_2"%]</p>
+						</div>
+						<div class="col-10">
+							<p class="h4">[%"Porcentaje PP"%]</p>
+						</div>
+					</div>
+					<div class="flex">
+						<div class="col-30">
+							<div class="flex justify-content-between">
+								   <p class="text-col2 text-align-left">por erosión</p>
+		                		   <p class="col-50 rectangulo"
+		                    		   [%case
+			          				   when "Por erosión" = 'TRUE'
+			          				   then 'style="background:#BC955C"'
+			          				   else 'style="background:none"'
+		        					    end%]></p>
+							    </div>
+						</div>
+						<div class="col-20">
+							<p class="h4">[%"Color producto de corrosión_3"%]</p>
+						</div>
+						<div class="col-20">
+							<p class="h4">[%"Actividad_3"%]</p>
+						</div>
+						<div class="col-20">
+							<p class="h4">[%"Ubicación_3"%]</p>
+						</div>
+						<div class="col-10">
+							<p class="h4">[%"Porcentaje PE"%]</p>
+						</div>
+					</div>
+					<div class="flex">
+						<div class="col-30">
+							<div class="flex justify-content-between">
+								   <p class="text-col2 text-align-left">Por endiduras</p>
+		                		   <p class="col-50 rectangulo"
+		                    		   [%case
+			          				   when "Por endiduras" = 'TRUE'
+			          				   then 'style="background:#BC955C"'
+			          				   else 'style="background:none"'
+		        					    end%]></p>
+							    </div>
+						</div>
+						<div class="col-20">
+							<p class="h4">[%"Color producto de corrosión_4"%]</p>
+						</div>
+						<div class="col-20">
+							<p class="h4">[%"Actividad_4"%]</p>
+						</div>
+						<div class="col-20">
+							<p class="h4">[%"Ubicación_4"%]</p>
+						</div>
+						<div class="col-10">
+							<p class="h4">[%"Porcentaje PE_1"%]</p>
+						</div>
+					</div>
+					<div class="flex">
+						<div class="col-30">
+							<div class="flex justify-content-between">
+								   <p class="text-col2 text-align-left">Otros</p>
+							 </div>
+						</div>
+						<div class="col-20">
+							<p class="h4">[%"Color producto de corrosión_5"%]</p>
+						</div>
+						<div class="col-20">
+							<p class="h4">[%"Actividad_5"%]</p>
+						</div>
+						<div class="col-20">
+							<p class="h4">[%"Ubicación_5"%]</p>
+						</div>
+						<div class="col-10">
+							<p class="h4">[%"Porcentaje O"%]</p>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+</body>
+</html>
