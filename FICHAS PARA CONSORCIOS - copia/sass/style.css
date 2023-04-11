@@ -221,8 +221,8 @@ body {
     font-weight: bold;
     text-align: center;
     color: #691C32;
-    width: 10px;
-    height: 30px !important; }
+    width: 25%;
+    height: 54px !important; }
   body td.col2 {
     border: 1px #BC955C solid;
     border-radius: 4px;
@@ -231,7 +231,7 @@ body {
     font-size: 9px;
     text-align: center;
     color: #691C32;
-    width: 50px;
-    height: 30px !important; }
+    width: 25%;
+    height: 54px !important; }
 
 /*# sourceMappingURL=style.css.map */
