@@ -55,43 +55,52 @@
 			</tr>
 		</table>
 	</div>
+
 	<div class="flex" id="content-general">
 			<div class="col-50 diseño-tabla">
 				<h1 class="h2 bold color-rojo text-align-left">REGISTRO FOTOGRÁFICO DE INICIO</h1>
 						<div class="" id="cont-princ-1">
-		         	<input type="hidden" id="inicio" value=[%"Fotos inicio"%]>
+		         	<!-- <input type="hidden" id="inicio" value=[%"Fotos inicio"%]> -->
+		         	<input type="hidden" id="inicio" value="">
 		        </div>
 			</div>
 			<div class="col-50 diseño-tabla">
 				<h1 class="h2 bold color-rojo text-align-left">REGISTRO FOTOGRÁFICO DE FIN</h1>
 						<div class="" id="cont-princ-2">
-		         	<input type="hidden" id="fin" value=[%"Fotos fin"%]>
+		         	<!-- <input type="hidden" id="fin" value=[%"Fotos fin"%]> -->
+		         	<input type="hidden" id="fin" value="T1_05197_100_0001768_1,T1_05197_100_0001768_2,T1_05197_100_0001768_3">
 		        </div>
 			</div>
 	</div>
-	<div class="flex">
+
+	<div class="flex" id="content-intervencion">
 		<div class="col-100 diseño-tabla" style="height:409px;">
 				<h1 class="h2 bold color-rojo text-align-left">REGISTRO FOTOGRÁFICO DE INTERVENCIÓN</h1>
 					<div class="" id="cont-princ-3">
-		         <input type="hidden" id="intervencion" value=[%"Fotos intervención"%]> 
+		         <!-- <input type="hidden" id="intervencion" value=[%"Fotos intervención"%]>  -->
 		         <!--<input type="hidden" id="intervencion" value="T1_05197_100_0001768_1,T1_05197_100_0001768_2,T1_05197_100_0001768_3">-->
-		       </div>
+		         <input type="hidden" id="intervencion" value="">
+		      </div>
 		</div>
 	</div>
+
 	<div class="flex" id="content-entierro">
-		<div class="diseño-tabla">
+		<div class="col-100 diseño-tabla">
 				<h1 class="h2 bold color-rojo text-align-left">REGISTRO FOTOGRÁFICO</h1>
 				<div class="" id="cont-princ-1-entierro">
-		        <input type="hidden" id="entierro" value=[%"Fotos"%]>
+		        <!-- <input type="hidden" id="entierro" value=[%"Fotos"%]> -->
+		        <input type="hidden" id="entierro"  value="">
 		    </div>
 			</div>
 	</div>
+
 	<div class="" id="content-registro">
 		<div class="">
 			<div class="diseño-tabla">
 				<h1 class="h2 bold color-rojo text-align-left">REGISTRO DE DETERIOROS</h1>
 				<div class="" id="cont-princ-1-registro">
-         	<input type="hidden" id="deterioros-registro" value=[%"Fotos deterioros"%]>
+         	<!-- <input type="hidden" id="deterioros-registro" value=[%"Fotos deterioros"%]> -->
+         	<input type="hidden" id="deterioros-registro" value="">
         </div>
 			</div>
 		</div>
@@ -99,67 +108,55 @@
 			<div class="diseño-tabla">
 				<h1 class="h2 bold color-rojo text-align-left">REGISTRO GENERAL</h1>
 					<div class="" id="cont-princ-2-registro">
-	         	<input type="hidden" id="general" value=[%"Fotos registro"%]>
+	         	<!-- <input type="hidden" id="general" value=[%"Fotos registro"%]> -->
+	         	<input type="hidden" id="general"  value="T1_05197_100_0001768_1,T1_05197_100_0001768_2,T1_05197_100_0001768_3">
 	        </div>
 			</div>
 		</div>
 	</div>
+
 	<script type="text/javascript">
 		function Carga(){
       imagenesInicio();
       imagenesFin();
       imagenesIntervencion();
-
-      let content_general = document.getElementById('content-general');
-      
-      let entierro = document.getElementById('entierro').value;
-      let content_entierro = document.getElementById('content-entierro');
-      content_entierro.setAttribute("style","display:none;")
-
-      let registro = document.getElementById('deterioros-registro').value;
-      let content_registro = document.getElementById('content-registro');
-      content_registro.setAttribute("style","display:none;")
-
-
-
-      if(entierro != '[%"Fotos"%]'){
-      	content_entierro.setAttribute("style","display:block;")
-      	imagenesEntierro();
-
-      	//OCULTO LAS FOTOS DE REGISTRO INICIO Y FIN
-      	content_general.setAttribute("style","display:none;")
-
-      }
-      if(registro != '[%"Fotos deterioros"%]'){
-      	content_registro.setAttribute("style","display:block;")
-      	imagenesRegistrosDeterioros()
-      	imagenesRegistroGeneral()
-      }
+      imagenesEntierro();
+      imagenesRegistrosDeterioros();
+      imagenesRegistroGeneral();
     }
 
     function imagenesInicio(){
           let str = document.getElementById("inicio").value;
-          let images = str.split(',');
-          let principal = document.getElementById('cont-princ-1');
-          let valor = images.length;
-          for(i=0;i<images.length;i++){
-          	if(i<2){
-          		let creaimg = document.createElement('img');
-	            let crearDiv = document.createElement('div');
-	            creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/FICHAS PARA CONSORCIOS/fotos/"+images[i]+".jpg");
-	            creaimg.setAttribute('width','260');
-	            crearDiv.setAttribute('width','100%');
-	            creaimg.setAttribute('style','padding:3px;');
-	            principal.setAttribute('style', 'display:flex; flex-wrap: wrap; justify-content: center;')
-	            principal.appendChild(crearDiv);
-	            crearDiv.appendChild(creaimg);
+          if(str == null || str == ""){
+						console.log('ocultar content-general')
+          	let content_registro = document.getElementById('content-general');
+      			content_registro.setAttribute("style","display:none;")
           }else{
+          	
+      			console.log(str)
+          	let images = str.split(',');
+	          let principal = document.getElementById('cont-princ-1');
+	          let valor = images.length;
+	          for(i=0;i<images.length;i++){
+	          	if(i<2){
+	          		let creaimg = document.createElement('img');
+		            let crearDiv = document.createElement('div');
 
-         }
-       }
+		            creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+		            creaimg.setAttribute('width','260');
+		            crearDiv.setAttribute('width','100%');
+		            creaimg.setAttribute('style','padding:3px;');
+		            principal.setAttribute('style', 'display:flex; flex-wrap: wrap; justify-content: center;')
+		            principal.appendChild(crearDiv);
+		            crearDiv.appendChild(creaimg);
+          	}
+        	}
+        }
      }
+
     function imagenesFin(){
           let str = document.getElementById("fin").value;
+
           let images = str.split(',');
           let principal = document.getElementById('cont-princ-2');
           let valor = images.length;
@@ -167,7 +164,7 @@
           	if(i<2){
           		let creaimg = document.createElement('img');
 	            let crearDiv = document.createElement('div');
-	            creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/FICHAS PARA CONSORCIOS/fotos/"+images[i]+".jpg");
+	            creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
 	            creaimg.setAttribute('width','260');
 	            crearDiv.setAttribute('width','100%');
 	            creaimg.setAttribute('style','padding:3px;');
@@ -178,72 +175,85 @@
 
           	}
           }
-      }
+    }
+
 		function imagenesIntervencion(){
 		 		let str = document.getElementById("intervencion").value;
-		    let images = str.split(',');
-		    let principal = document.getElementById('cont-princ-3');
-		    let valor = images.length;
-		    for(i=0;i<images.length;i++){
-		      if(valor==2 || valor==1){
-		        let creaimg = document.createElement('img');
-		        let crearDiv = document.createElement('div');
-	          creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/FICHAS PARA CONSORCIOS/fotos/"+images[i]+".jpg");
-		        creaimg.setAttribute('width','400');
-		        crearDiv.setAttribute('width','100%');
-		        creaimg.setAttribute('style','padding:3px;');
-		        principal.setAttribute('style', 'display:flex; flex-wrap: wrap;  justify-content: center;')
-		        principal.appendChild(crearDiv);
-		        crearDiv.appendChild(creaimg);
+		    if(str == null || str == ""){
+		    	console.log('ocultar content-general')
+          let content_registro = document.getElementById('content-intervencion');
+      		content_registro.setAttribute("style","display:none;")
+		    }else{
+		    	let images = str.split(',');
+			    let principal = document.getElementById('cont-princ-3');
+			    let valor = images.length;
+			    for(i=0;i<images.length;i++){
+			      if(valor==2 || valor==1){
+			        let creaimg = document.createElement('img');
+			        let crearDiv = document.createElement('div');
+		          creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+		          creaimg.setAttribute('width','400');
+			        crearDiv.setAttribute('width','100%');
+			        creaimg.setAttribute('style','padding:3px;');
+			        principal.setAttribute('style', 'display:flex; flex-wrap: wrap;  justify-content: center;')
+			        principal.appendChild(crearDiv);
+			        crearDiv.appendChild(creaimg);
 
-		      }  else if(valor<=4){
-		        let creaimg = document.createElement('img');
-		        let crearDiv = document.createElement('div');
-		        creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/FICHAS PARA CONSORCIOS/fotos/"+images[i]+".jpg");
-		        creaimg.setAttribute('width','265');
-		        creaimg.setAttribute('style','padding:3px;');
-		        principal.setAttribute('style',' display:flex; flex-wrap: wrap; ')
-		        principal.appendChild(crearDiv);
-		        crearDiv.appendChild(creaimg);
+			      }  else if(valor<=4){
+			        let creaimg = document.createElement('img');
+			        let crearDiv = document.createElement('div');
+			        creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+		          creaimg.setAttribute('width','265');
+			        creaimg.setAttribute('style','padding:3px;');
+			        principal.setAttribute('style',' display:flex; flex-wrap: wrap; ')
+			        principal.appendChild(crearDiv);
+			        crearDiv.appendChild(creaimg);
 
-		      } else if(valor<=6){
-		        let creaimg = document.createElement('img');
-		        creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/FICHAS PARA CONSORCIOS/fotos/"+images[i]+".jpg");
-		        creaimg.setAttribute('width','270');
-		        creaimg.setAttribute('style','padding:3px');
-		        creaimg.setAttribute('style','padding:3px;');
-		        principal.appendChild(creaimg);
+			      } else if(valor<=6){
+			        let creaimg = document.createElement('img');
+			        creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+		          creaimg.setAttribute('width','270');
+			        creaimg.setAttribute('style','padding:3px');
+			        creaimg.setAttribute('style','padding:3px;');
+			        principal.appendChild(creaimg);
 
-		      }else if(valor<=8){
-		        let creaimg = document.createElement('img');
-		        creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/FICHAS PARA CONSORCIOS/fotos/"+images[i]+".jpg");
-		        creaimg.setAttribute('width','200');
-		        creaimg.setAttribute('style','padding:3px');
-		        principal.setAttribute('style', 'display:flex; flex-wrap: wrap; justify-content: center;')
-		        principal.appendChild(creaimg);
+			      }else if(valor<=8){
+			        let creaimg = document.createElement('img');
+			        creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+		          creaimg.setAttribute('width','200');
+			        creaimg.setAttribute('style','padding:3px');
+			        principal.setAttribute('style', 'display:flex; flex-wrap: wrap; justify-content: center;')
+			        principal.appendChild(creaimg);
 
-		      }else if(valor=>9){
-		        let creaimg = document.createElement('img');
-		        creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/FICHAS PARA CONSORCIOS/fotos/"+images[i]+".jpg");
-		        creaimg.setAttribute('width','170');
-		        creaimg.setAttribute('style','padding:3px');
-		        principal.setAttribute('style', 'display:flex; flex-wrap: wrap; justify-content: center;')
-		        principal.appendChild(creaimg);
-		      }
+			      }else if(valor=>9){
+			        let creaimg = document.createElement('img');
+			        creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+		          creaimg.setAttribute('width','170');
+			        creaimg.setAttribute('style','padding:3px');
+			        principal.setAttribute('style', 'display:flex; flex-wrap: wrap; justify-content: center;')
+			        principal.appendChild(creaimg);
+			      }
+			    }
 		    }
 		 	}
+
 		 // Entierros
 		function imagenesEntierro(){
       let str = document.getElementById("entierro").value;
-	          let images = str.split(',');
+	    if(str == null || str == ""){
+	    	console.log('ocultar content-entierro')
+        let content_registro = document.getElementById('content-entierro');
+      	content_registro.setAttribute("style","display:none;")
+	    }else{
+	    			let images = str.split(',');
 	          let principal = document.getElementById('cont-princ-1-entierro');
 	          let valor = images.length;
 	          for(i=0;i<images.length;i++){
 	            if(valor==2 || valor==1){
 	              let creaimg = document.createElement('img');
 	              let crearDiv = document.createElement('div');
-	              creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/FICHAS PARA CONSORCIOS/fotos/"+images[i]+".jpg");
-	              creaimg.setAttribute('width','260');
+	              creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	            	creaimg.setAttribute('width','260');
 	              crearDiv.setAttribute('width','100%');
 	              creaimg.setAttribute('style','padding:3px;');
 	              principal.setAttribute('style', 'display:flex; flex-wrap: wrap;  justify-content: center;')
@@ -253,8 +263,8 @@
 	            }  else if(valor<=4){
 	              let creaimg = document.createElement('img');
 	              let crearDiv = document.createElement('div');
-	              creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/FICHAS PARA CONSORCIOS/fotos/"+images[i]+".jpg");
-	              creaimg.setAttribute('width','188');
+	              creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	            	creaimg.setAttribute('width','188');
 	              creaimg.setAttribute('style','padding:3px;');
 	              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
 	              principal.appendChild(crearDiv);
@@ -262,27 +272,123 @@
 
 	            } else if(valor<=6){
 	              let creaimg = document.createElement('img');
-	              creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/FICHAS PARA CONSORCIOS/fotos/"+images[i]+".jpg");
-	              creaimg.setAttribute('width','190');
+	              creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	            	creaimg.setAttribute('width','190');
 	              creaimg.setAttribute('style','padding:3px');
 	              creaimg.setAttribute('style','padding:3px;');
 	              principal.appendChild(creaimg);
 
 	            }else if(valor=>7){
-	              creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/FICHAS PARA CONSORCIOS/fotos/"+images[i]+".jpg");
-	              creaimg.setAttribute('width','260');
+	              creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	            	creaimg.setAttribute('width','260');
 	              creaimg.setAttribute('style','padding:3px');
 	              principal.appendChild(creaimg);
 	            }
 	          }
-	      }
-	   // registro de bienes inmuebles
+	    }
+	  }
+
+	  // registro de bienes inmuebles
 	  function imagenesRegistrosDeterioros(){
+	  	let str = document.getElementById("deterioros-registro").value;
+	  	if(str == null || str == ""){
+				console.log('ocultar content-general')
+        let content_registro = document.getElementById('content-registro');
+      	content_registro.setAttribute("style","display:none;")
+	  	}else{
+ 						let images = str.split(',');
+	          let principal = document.getElementById('cont-princ-1-registro');
+	          let valor = images.length;
+	          for(i=0;i<images.length;i++){
+	            if(valor==2 || valor==1){
+	              let creaimg = document.createElement('img');
+	              let crearDiv = document.createElement('div');
+	              creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	            	creaimg.setAttribute('width','260');
+	              crearDiv.setAttribute('width','100%');
+	              creaimg.setAttribute('style','padding:3px;');
+	              principal.setAttribute('style', 'display:flex; flex-wrap: wrap;  justify-content: center;')
+	              principal.appendChild(crearDiv);
+	              crearDiv.appendChild(creaimg);
 
+	            }  else if(valor<=4){
+	              let creaimg = document.createElement('img');
+	              let crearDiv = document.createElement('div');
+	              creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	            	creaimg.setAttribute('width','188');
+	              creaimg.setAttribute('style','padding:3px;');
+	              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
+	              principal.appendChild(crearDiv);
+	              crearDiv.appendChild(creaimg);
+
+	            } else if(valor<=6){
+	              let creaimg = document.createElement('img');
+	              creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	            	creaimg.setAttribute('width','190');
+	              creaimg.setAttribute('style','padding:3px');
+	              creaimg.setAttribute('style','padding:3px;');
+	              principal.appendChild(creaimg);
+
+	            }else if(valor=>7){
+	              creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	            	creaimg.setAttribute('width','260');
+	              creaimg.setAttribute('style','padding:3px');
+	              principal.appendChild(creaimg);
+	            }
+	          }
+	  	}
 	  }
+
 	  function imagenesRegistroGeneral(){
+	  	let str = document.getElementById("general").value;
+	  	if(str == null || str == ""){
+				console.log('ocultar content-registro')
+        let content_registro = document.getElementById('content-registro');
+      	content_registro.setAttribute("style","display:none;")
+	  	}else{
+	  		let images = str.split(',');
+	          let principal = document.getElementById('cont-princ-2-registro');
+	          let valor = images.length;
+	          for(i=0;i<images.length;i++){
+	            if(valor==2 || valor==1){
+	              let creaimg = document.createElement('img');
+	              let crearDiv = document.createElement('div');
+	              creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	            	creaimg.setAttribute('width','260');
+	              crearDiv.setAttribute('width','100%');
+	              creaimg.setAttribute('style','padding:3px;');
+	              principal.setAttribute('style', 'display:flex; flex-wrap: wrap;  justify-content: center;')
+	              principal.appendChild(crearDiv);
+	              crearDiv.appendChild(creaimg);
 
+	            }  else if(valor<=4){
+	              let creaimg = document.createElement('img');
+	              let crearDiv = document.createElement('div');
+	              creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	            	creaimg.setAttribute('width','188');
+	              creaimg.setAttribute('style','padding:3px;');
+	              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
+	              principal.appendChild(crearDiv);
+	              crearDiv.appendChild(creaimg);
+
+	            } else if(valor<=6){
+	              let creaimg = document.createElement('img');
+	              creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	            	creaimg.setAttribute('width','190');
+	              creaimg.setAttribute('style','padding:3px');
+	              creaimg.setAttribute('style','padding:3px;');
+	              principal.appendChild(creaimg);
+
+	            }else if(valor=>7){
+	              creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	            	creaimg.setAttribute('width','260');
+	              creaimg.setAttribute('style','padding:3px');
+	              principal.appendChild(creaimg);
+	            }
+	          }
+	  	}
 	  }
+
   </script>
 </body>
 </html>
