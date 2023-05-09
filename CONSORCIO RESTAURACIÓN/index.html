@@ -30,8 +30,10 @@
 		    </div>
 		</section>
 	</header>
-	<h1 class="center">CÉDULA DE REGISTRO "TÍTULO"</h1>
-	
+	<h1 class="center" style="text-transform: uppercase;">CÉDULA DE REGISTRO [%"material_cedula"%]</h1>
+
+	<input type="hidden" value=[%"material_cedula"%] id="tipo_cedula">
+
 	<h1 class="h2 bold color-rojo text-align-left">DATOS GENERALES</h1>
 	<div class="tabla diseño-tabla" style="display:flex">
 		<table class="generales" style=" width: 100%;">
@@ -56,12 +58,12 @@
 		</table>
 	</div>
 
-	<div class="flex" id="content-general">
+	<div class="flex" id="content-general" style="display:none">
 			<div class="col-50 diseño-tabla">
 				<h1 class="h2 bold color-rojo text-align-left">REGISTRO FOTOGRÁFICO DE INICIO</h1>
 						<div class="" id="cont-princ-1">
 		         	<!-- <input type="hidden" id="inicio" value=[%"Fotos inicio"%]> -->
-		         	<input type="hidden" id="inicio" value="">
+		         	<input type="hidden" id="inicio" value="T1_05197_100_0001768_1,T1_05197_100_0001768_2,T1_05197_100_0001768_3">
 		        </div>
 			</div>
 			<div class="col-50 diseño-tabla">
@@ -73,34 +75,34 @@
 			</div>
 	</div>
 
-	<div class="flex" id="content-intervencion">
+	<div class="flex" id="content-intervencion" style="display:none">
 		<div class="col-100 diseño-tabla" style="height:409px;">
 				<h1 class="h2 bold color-rojo text-align-left">REGISTRO FOTOGRÁFICO DE INTERVENCIÓN</h1>
 					<div class="" id="cont-princ-3">
 		         <!-- <input type="hidden" id="intervencion" value=[%"Fotos intervención"%]>  -->
 		         <!--<input type="hidden" id="intervencion" value="T1_05197_100_0001768_1,T1_05197_100_0001768_2,T1_05197_100_0001768_3">-->
-		         <input type="hidden" id="intervencion" value="">
+		         <input type="hidden" id="intervencion" value="T1_05197_100_0001768_1,T1_05197_100_0001768_2,T1_05197_100_0001768_3">
 		      </div>
 		</div>
 	</div>
 
-	<div class="flex" id="content-entierro">
+	<div class="flex" id="content-entierro" style="display:none">
 		<div class="col-100 diseño-tabla">
 				<h1 class="h2 bold color-rojo text-align-left">REGISTRO FOTOGRÁFICO</h1>
 				<div class="" id="cont-princ-1-entierro">
 		        <!-- <input type="hidden" id="entierro" value=[%"Fotos"%]> -->
-		        <input type="hidden" id="entierro"  value="">
+		        <input type="hidden" id="entierro"  value="T1_05197_100_0001768_1,T1_05197_100_0001768_2,T1_05197_100_0001768_3">
 		    </div>
 			</div>
 	</div>
 
-	<div class="" id="content-registro">
+	<div class="" id="content-registro" style="display:none">
 		<div class="">
 			<div class="diseño-tabla">
 				<h1 class="h2 bold color-rojo text-align-left">REGISTRO DE DETERIOROS</h1>
 				<div class="" id="cont-princ-1-registro">
          	<!-- <input type="hidden" id="deterioros-registro" value=[%"Fotos deterioros"%]> -->
-         	<input type="hidden" id="deterioros-registro" value="">
+         	<input type="hidden" id="deterioros-registro" value="T1_05197_100_0001768_1,T1_05197_100_0001768_2,T1_05197_100_0001768_3">
         </div>
 			</div>
 		</div>
@@ -117,22 +119,47 @@
 
 	<script type="text/javascript">
 		function Carga(){
-      imagenesInicio();
-      imagenesFin();
-      imagenesIntervencion();
-      imagenesEntierro();
-      imagenesRegistrosDeterioros();
-      imagenesRegistroGeneral();
+      let str = document.getElementById("tipo_cedula").value;
+      console.log(str)
+      if(str == "Céramica"){
+				imagenesInicio();
+	      imagenesFin();
+	      imagenesIntervencion();
+
+      }else if(str == "Concha"){
+      	imagenesInicio();
+	      imagenesFin();
+	      imagenesIntervencion();
+
+      }else if(str == "Pétreos"){
+				imagenesInicio();
+	      imagenesFin();
+	      imagenesIntervencion();
+      }else if(str == "Entierros"){
+				imagenesEntierro();
+      }else if(str == "Metales"){
+      	imagenesInicio();
+	      imagenesFin();
+	      imagenesIntervencion();
+      }else if(str == "Inmuebles-Registro"){
+				imagenesRegistrosDeterioros();
+	      imagenesRegistroGeneral();
+      }else if(str == "Inmuebles-Proceso"){
+      	imagenesInicio();
+	      imagenesFin();
+	      imagenesIntervencion();
+      }
     }
 
     function imagenesInicio(){
           let str = document.getElementById("inicio").value;
+          console.log(str)
+          let content_registro = document.getElementById('content-general');
           if(str == null || str == ""){
 						console.log('ocultar content-general')
-          	let content_registro = document.getElementById('content-general');
-      			content_registro.setAttribute("style","display:none;")
+      			
           }else{
-          	
+          	content_registro.setAttribute("style","display: flex;")
       			console.log(str)
           	let images = str.split(',');
 	          let principal = document.getElementById('cont-princ-1');
@@ -176,14 +203,15 @@
           	}
           }
     }
-
 		function imagenesIntervencion(){
 		 		let str = document.getElementById("intervencion").value;
+		 		let content_registro = document.getElementById('content-intervencion');
 		    if(str == null || str == ""){
 		    	console.log('ocultar content-general')
-          let content_registro = document.getElementById('content-intervencion');
-      		content_registro.setAttribute("style","display:none;")
+          
+      		/*content_registro.setAttribute("style","display:none;")*/
 		    }else{
+		    	content_registro.setAttribute("style","display: flex;")
 		    	let images = str.split(',');
 			    let principal = document.getElementById('cont-princ-3');
 			    let valor = images.length;
@@ -240,11 +268,13 @@
 		 // Entierros
 		function imagenesEntierro(){
       let str = document.getElementById("entierro").value;
+      let content_registro = document.getElementById('content-entierro');
 	    if(str == null || str == ""){
 	    	console.log('ocultar content-entierro')
-        let content_registro = document.getElementById('content-entierro');
-      	content_registro.setAttribute("style","display:none;")
+        
+      	
 	    }else{
+	    	content_registro.setAttribute("style","display:flex;")
 	    			let images = str.split(',');
 	          let principal = document.getElementById('cont-princ-1-entierro');
 	          let valor = images.length;
@@ -288,15 +318,18 @@
 	    }
 	  }
 
+
 	  // registro de bienes inmuebles
 	  function imagenesRegistrosDeterioros(){
 	  	let str = document.getElementById("deterioros-registro").value;
+
+        let content_registro = document.getElementById('content-registro');
+      	
 	  	if(str == null || str == ""){
 				console.log('ocultar content-general')
-        let content_registro = document.getElementById('content-registro');
-      	content_registro.setAttribute("style","display:none;")
 	  	}else{
  						let images = str.split(',');
+ 						content_registro.setAttribute("style","display:flex;")
 	          let principal = document.getElementById('cont-princ-1-registro');
 	          let valor = images.length;
 	          for(i=0;i<images.length;i++){
@@ -341,11 +374,13 @@
 
 	  function imagenesRegistroGeneral(){
 	  	let str = document.getElementById("general").value;
+	  	let content_registro = document.getElementById('content-registro');
 	  	if(str == null || str == ""){
 				console.log('ocultar content-registro')
-        let content_registro = document.getElementById('content-registro');
-      	content_registro.setAttribute("style","display:none;")
+        
+      	
 	  	}else{
+	  		content_registro.setAttribute("style","display:flex;")
 	  		let images = str.split(',');
 	          let principal = document.getElementById('cont-princ-2-registro');
 	          let valor = images.length;
