@@ -49,9 +49,9 @@
 				<td class="col2">[%"Estado de conservación"%]</td>
 				<td class="col1">Dimensiones</td>
 				<td class="col2">
-					<strong>Alto: </strong>[%%]<br>
-			        <strong>Ancho: </strong>[%%]<br>
-			        <strong>Profundo: </strong>[%%]
+					<strong>Alto: </strong>[%array_first(string_to_array("Dimensiones",'x'))%]<br>
+			        <strong>Ancho: </strong>[%array_get(string_to_array("Dimensiones",'x'),1)%]<br>
+			        <strong>Profundo: </strong>[%CASE WHEN array_length(string_to_array("Dimensiones",'x')) = 3 THEN array_last(string_to_array("Dimensiones",'x')) END%]
 			    </td>
 
 			</tr>
@@ -550,7 +550,7 @@
             if(valor==2 || valor==1){
               let creaimg = document.createElement('img');
               let crearDiv = document.createElement('div');
-              creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/NUEVOS FORMATOS DE CEDULAS/CÉDULAS DE REGISTRO/CÉDULAS DE REGISTRO/BIENES INMUEBLES/REGISTRO/Procesos/"+images[i]+".jpg");
+              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/04_Elementos pétreos/01_Estado de conservación/"+images[i]+".jpg");
               creaimg.setAttribute('width','395');
               crearDiv.setAttribute('width','100%');
               creaimg.setAttribute('style','padding:3px;');
@@ -561,7 +561,7 @@
             } else if(valor<=4){
               let creaimg = document.createElement('img');
               let crearDiv = document.createElement('div');
-              creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/NUEVOS FORMATOS DE CEDULAS/CÉDULAS DE REGISTRO/CÉDULAS DE REGISTRO/BIENES INMUEBLES/REGISTRO/Procesos/"+images[i]+".jpg");
+              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/04_Elementos pétreos/01_Estado de conservación/"+images[i]+".jpg");
               creaimg.setAttribute('width','260');
               creaimg.setAttribute('style','padding:3px;');
               principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
@@ -570,7 +570,7 @@
 
             } else if(valor<=6){
               let creaimg = document.createElement('img');
-              creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/NUEVOS FORMATOS DE CEDULAS/CÉDULAS DE REGISTRO/CÉDULAS DE REGISTRO/BIENES INMUEBLES/REGISTRO/Procesos/"+images[i]+".jpg");
+              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/04_Elementos pétreos/01_Estado de conservación/"+images[i]+".jpg");
               creaimg.setAttribute('width','255');
               creaimg.setAttribute('style','padding:3px');
               creaimg.setAttribute('style','padding:3px;');
@@ -578,7 +578,7 @@
 
             }else if(valor=>7){
               let creaimg = document.createElement('img');
-              creaimg.setAttribute('src', "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/NUEVOS FORMATOS DE CEDULAS/CÉDULAS DE REGISTRO/CÉDULAS DE REGISTRO/BIENES INMUEBLES/REGISTRO/Procesos/"+images[i]+".jpg");
+              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/04_Elementos pétreos/01_Estado de conservación/"+images[i]+".jpg");
               creaimg.setAttribute('width','200');
               creaimg.setAttribute('style','padding:3px');
               principal.appendChild(creaimg);
