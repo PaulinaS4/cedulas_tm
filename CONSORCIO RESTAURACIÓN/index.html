@@ -30,10 +30,15 @@
 		    </div>
 		</section>
 	</header>
+<<<<<<< Updated upstream
 	<h1 class="center" style="text-transform: uppercase;">CÉDULA DE REGISTRO [%"material_cedula"%]</h1>
 
 	<input type="hidden" value=[%"material_cedula"%] id="tipo_cedula">
 
+=======
+	<h1 class="center">CÉDULA DE RESTAURACIÓN DE [%"material_cedula"%]</h1>
+	
+>>>>>>> Stashed changes
 	<h1 class="h2 bold color-rojo text-align-left">DATOS GENERALES</h1>
 	<div class="tabla diseño-tabla" style="display:flex">
 		<table class="generales" style=" width: 100%;">
@@ -43,7 +48,11 @@
 				<td class="col1">ID Monumento</td>
         <td class="col2">[%"ID Monumento"%]</td>
 				<td class="col1">Cadenamiento</td>
+<<<<<<< Updated upstream
 				<td class="col2">[%CASE WHEN "km" IS NULL THEN 'No aplica' ELSE "km" END %]</td>
+=======
+				<td class="col2">[% CASE WHEN "km" IS NULL THEN 'No aplica' ELSE "km" END %]</td>
+>>>>>>> Stashed changes
 			</tr>
 			<tr>
 				<td class="col1">Fecha de inicio intervención</td>
@@ -52,12 +61,16 @@
 				<td class="col2">[%"Fecha fin de intervención"%]</td>
 				<td class="col1">Persona que intervino</td>
 				<td class="col2">[%"Nombre quien registra"%] <br>
+<<<<<<< Updated upstream
 					Se contó con el apoyo de [%CASE WHEN "Tramo" = 'T1' THEN '4 personas'
 																					 WHEN "Tramo" = 'T2' THEN '4 personas'
 																					 WHEN "Tramo" = 'T3' THEN '1 persona'
 																					 WHEN "Tramo" = 'T4' THEN '3 personas'
 																					 WHEN "Tramo" = 'T5' THEN 'ninguna persona'
 																					 END%] 
+=======
+					Se contó con el apoyo de [%CASE WHEN "Tramo" = 'T1' THEN '4 personas'WHEN "Tramo" = 'T2' THEN '4 personas' WHEN "Tramo" = 'T3' THEN '1 persona'WHEN "Tramo" = 'T4' THEN '3 personas'WHEN "Tramo" = 'T5' THEN 'ninguna persona'END%] 
+>>>>>>> Stashed changes
 				</td>
 			</tr>
 		</table>

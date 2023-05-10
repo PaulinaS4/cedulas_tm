@@ -7,7 +7,7 @@
 	<meta name="author" content="Jonatan Lara Ortiz, Ing; Diana Paulina Serrano Roldan, " />
 	<meta name="generator" content= "Atom" />
 	<meta name="copyright" content="Dirección de Salvamento Arqueológico" />
-	<meta name="created" content="2023-01-24"/>
+	<meta name="created" content="2023-04-14"/>
   	<link rel="stylesheet" href="sass/style.css">
   <title></title>
 </head>
@@ -30,28 +30,26 @@
 		    </div>
 		</section>
 	</header>
-	<h1 class="center">CÉDULA DE ANÁLISIS CERÁMICO</h1>
+	<h1 class="center">CÉDULA DE ANÁLISIS DE OBJETO CERÁMICO</h1>
 	
 	<h1 class="h2 bold color-rojo text-align-left">DATOS GENERALES DEL MONUMENTO</h1>
 	<div class="tabla diseño-tabla" style="display:flex">
 		<table class="generales" style=" width: 100%;">
 			<tr>
-				<td class="col1 col-25 h-54 col-25 h-54">Tramo</td>
-				<td class="col2">[%"Tramo" %]</td>
-				<td class="col1 col-25 h-54">ID Monumento</td>
-       			<td class="col2">[% "ID Monumento" %]</td>
+				<td class="col1 col-16 h-30">Tramo</td>
+				<td class="col2 col-16">[%"tramo" %]</td>
+				<td class="col1 col-16 h-30">ID Monumento</td>
+       			<td class="col2 col-16">[% "id_monumento" %]</td>
+       			<td class="col1 col-16 h-30">Tipo</td>
+				<td class="col2 col-16">[%"tipo"%]</td>
        		</tr>
        		<tr>
-        		<td class="col1 col-25 h-54">Tipo</td>
-				<td class="col2">[%"Tipo"%]</td>
-				<td class="col1 col-25 h-54">Subtipo</td>
-				<td class="col2">[%"Subtipo"%]</td>
-			</tr>
-			<tr>
-				<td class="col1 col-25 h-54">Cadenamiento</td>
-				<td class="col2">[%"km"%]</td>
-				<td class="col1 col-25 h-54">ID Arqueólogo</td>
-				<td class="col2">[%"arqlgo"%]</td>
+				<td class="col1 col-16 h-30">Subtipo</td>
+				<td class="col2 col-16">[%"subtipo"%]</td>
+				<td class="col1 col-16 h-30">Cadenamiento</td>
+				<td class="col2 col-16">[%"km"%]</td>
+				<td class="col1 col-16 h-30">ID Arqueólogo</td>
+				<td class="col2 col-16">[%upper("arqueologo_p")%]</td>
 			</tr>
 		</table>
 	</div>	
@@ -60,23 +58,31 @@
 		<table class="generales" style=" width: 100%;">
 
 			<tr>
-				<td class="col1 col-25 h-54">Persona que analizó</td>
-				<td class="col2">[%"Ceramista"%]</td>
-				<td class="col1 col-25 h-54">Trabajadores de apoyo</td>
-				<td class="col2">[%"c_trabajadores"%]</td>
+				<td class="col1 col-16 h-30">Persona que analizó</td>
+				<td class="col2 col-16">[%"analizador"%]</td>
+				<td class="col1 col-16 h-30">Trabajadores de apoyo</td>
+				<td class="col2 col-16">[%"c_trabajadores"%]</td>
+				<td class="col1 col-16 h-30">Fecha de análisis</td>
+				<td class="col2 col-16">[%"fecha_analisis"%]</td>
 			</tr>
 			<tr>
-				<td class="col1 col-25 h-54">Cantidad de bolsas</td>
-				<td class="col2">[%"c_bolsas"%]</td>
-				<td class="col1 col-25 h-54">Cantidad de tiestos</td>
-				<td class="col2">[%"c_tiestos"%]</td>
+				
+				<td class="col1 col-16 h-30">Nomenclatura</td>
+				<td class="col2 col-16">[%"nomenclatura"%]</td>
+				<td class="col1 col-16 h-30">Tipología</td>
+				<td class="col2 col-16">[%"tipologia"%]</td>
+				<td class="col1 col-16 h-30">Forma</td>
+				<td class="col2 col-16">[%"forma"%]</td>
 			</tr>
-			<tr>
-				<td class="col1 col-25 h-54">Fecha inicial</td>
-				<td class="col2">[%"Fecha inicio"%]</td>
-				<td class="col1 col-25 h-54">Fecha final</td>
-				<td class="col2">[%"Fecha fin"%]</td>
+			<tr>	
+				<td class="col1 col-16 h-30">Altura cm</td>
+				<td class="col2 col-16">[%"altura_cm"%]</td>
+				<td class="col1 col-16 h-30">Diámetro cm</td>
+				<td class="col2 col-16">[%"diametro_cm"%]</td>
+				<td class="col1 col-16 h-30">Soporte</td>
+				<td class="col2 col-16">[%title("soportes")%]</td>
 			</tr>
+
 		</table>
 	</div>
 	
