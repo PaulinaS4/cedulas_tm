@@ -1,0 +1,295 @@
+
+	body,div,table,thead,tbody,tfoot,tr,th,td,p,h5{ font-family:"Montserrat"; margin: 2px}
+
+	body{
+		box-sizing: border-box;
+		max-width: 840px;
+	}
+	.color-rojo{
+		color: #691C32;
+	}
+	.subtitulo{
+		font: 'Montserrat';
+		font-size: 8px;
+		font-weight:normal ;
+	}
+	.small{
+		font-family:"Montserrat"; font-size:small ;
+	}
+	.color{
+		color:#691C32;
+	}
+	.grids{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.col-20{
+    width: 20%;
+    height: auto;
+  }
+	.col-25{
+		width: 25%;
+    height: auto;
+	}
+  .col-30{
+    width: 30%;
+    height: auto;
+  }
+  .col-40{
+    width: 40%;
+    height: auto;
+  }
+  .col-50{
+    width: 50%;
+    height: auto;
+  }
+  .col-60{
+    width: 60%;
+    height: auto;
+  }
+  .col-70{
+    width: 70%;
+    height: auto;
+  }
+	.col-80{
+    width: 70%;
+    height: auto;
+  }
+	.col-90{
+		width: 90%;
+    height: auto;
+	}
+	.col-100{
+		width: 90%;
+    height: auto;
+	}
+	.rectangulo{
+		border:3px #BC955C solid;
+		width: 20px;
+		height: 8px;
+	}
+	.flex{
+		display: flex;
+	}
+	.space-between{
+		justify-content: space-between;
+	}
+	.flex-start{
+		justify-content: flex-start;
+	}
+	.flex-end{
+		justify-content: flex-end;
+	}
+	.flex-reverse{
+		flex-direction: row-reverse;
+	}
+	.wrap{
+		flex-wrap: wrap;
+	}
+	.nowrap{
+		flex-wrap: nowrap;
+	}
+  .container{
+    display: flex;
+
+  }
+	.fotografia{
+		padding: 5px;
+	}
+	.center{
+		display: flex;
+		align-items: center;
+		text-align: center;
+		justify-content: center;
+		align-content: center;
+	}
+	.text-col2{
+		padding: 1px;
+		font: Montserrat;
+		font-size: 9px;
+		text-align:center;
+		color:#691C32;
+	}
+	.img-responsable{
+		width: 100%;
+		object-fit: contain;
+	}
+	.diseño-tabla{
+		border:3px #BC955C solid;
+		border
+		width:100%;
+		border-radius: 8px;
+		border-spacing: 3px 3px;
+		margin: 2px;
+		padding: 2px;
+	}
+  .tabla-1{
+    border: 1px #BC955C solid;
+    border-radius: 4px;
+    background: #DDC9A3;
+    padding: 3px;
+    font: Montserrat;
+    font-size: 10px;
+    font-weight: bold;
+    text-align:center;
+    color:#691C32;
+    height: 30px !important;
+  }
+	table.head{
+			border:3px #691C32 solid;
+			width:285px;
+			border-radius: 8px;
+			margin: 2px;
+			}
+
+	table.head2{
+			border:3px #691C32 solid;
+			width:285px;
+			column-count: 3;
+			border-radius: 8px;
+			margin: 2px;
+			}
+
+	table.div3{
+	  text-align: center;
+	}
+
+	h2 {
+ 	 text-align: center;
+	}
+
+	table.generales{
+				/*table-layout: fixed;*/
+				border:3px #BC955C solid;
+				border
+				width:570px;
+				border-radius: 8px;
+				border-spacing: 3px 3px;
+				/*margin: 2px;
+				margin-top: 6px;
+				padding: 2px;
+				width:850px;*/
+				}
+					td.col0 {
+					border: 1px #691C32 solid;
+					border-radius: 3px;
+					background: #691C32;
+					padding: 0px;
+					}
+
+					td.col1 {
+					border: 1px #BC955C solid;
+					border-radius: 4px;
+					background: #DDC9A3;
+					/*padding: 3px;*/
+					font: Montserrat;
+					font-size: 10px;
+					font-weight: bold;
+					text-align:center;
+					color:#691C32;
+					width:10px;
+					height: 30px !important;
+					}
+
+					td.col2 {
+					border: 1px #BC955C solid;
+					border-radius: 4px;
+					background: #FFFFFF;
+					padding: 3px;
+					font: Montserrat;
+					font-size: 9px;
+					text-align:center;
+					color:#691C32;
+					width:50px;
+					height: 30px !important;
+					}
+
+
+	table.columnas{
+				table-layout: fixed;
+				border:3px #BC955C solid;
+				border
+				width:570px;
+				border-radius: 8px;
+				border-spacing: 3px 3px;
+				margin: 2px;
+				margin-top: 6px;
+				padding: 2px;
+				width:324px; -- ancho tabla 1
+				}
+				td.col0 {
+				border: 1px #691C32 solid;
+				border-radius: 3px;
+				background: #691C32;
+				padding: 0px;
+				}
+
+				td.col1 {
+				border: 1px #BC955C solid;
+				border-radius: 4px;
+				background: #DDC9A3;
+				padding: 3px;
+				font: Montserrat;
+				font-size: 10px;
+				font-weight: bold;
+				text-align:center;
+				color:#691C32;
+				width:35px;
+				height: 30px !important;
+				}
+
+				td.col2 {
+				border: 1px #BC955C solid;
+				border-radius: 4px;
+				background: #FFFFFF;
+				padding: 3px;
+				font: Montserrat;
+				font-size: 9px;
+				text-align:center;
+				color:#691C32;
+				width:45px; -- tamagno de celdas
+				height: 35px !important; -- tamagno de celdas
+				}
+
+
+	.row, .row-alt{
+
+		  	border-radius: 8px;
+		   	margin-top: 6px;
+		   	width:850px;
+			}
+			.row {
+		 	background: #fff;
+		  	padding: 50px 0 24px 0;
+			}
+			.row-alt {
+		  	background: linear-gradient(to right, #FFFFFF, #DDC9A3);
+		   	padding: 7px 0;
+ 			}
+
+ 	.logo{
+		     float:left;
+		     width: 150px;
+		     height:75px;
+		     display:block;
+		     margin-left: 50px;
+			}
+
+		h1 {
+			color: #691C32;
+			font: Montserrat;
+			font-size: 16px;
+			font-weight: bold;
+			margin-top: 5px;
+			margin-bottom: 0px;
+			}
+
+ 	 	div {
+			font: Montserrat;
+			font-size:12px;
+			color:#691C32;
+			font-weight: bold;
+			margin-top: 0px;
+			margin-bottom: 0px;
+			text-align:center;
+			}

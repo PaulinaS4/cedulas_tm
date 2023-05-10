@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta name="title" content="Cédula de intervención de material cerámico"/>
+	<meta name="description" content="Análisis regional del sureste Mesoamericano. Proyecto marco de salvamento arqueológico. Tren Maya"/>
+	<meta name="author" content="Jonatan Lara Ortiz, Ing; Diana Paulina Serrano Roldan, " />
+	<meta name="generator" content= "Atom" />
+	<meta name="copyright" content="Dirección de Salvamento Arqueológico" />
+	<meta name="created" content="2022-08-10"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="Carga();">
+  <header>
+    <table class="head">
+        <td class="col0"><img src="banner.png" width=840px height=60 hspace=0 vspace=0></td>
+    </table>
+  </header>
+  <div>
+
+    <div class="main flex" style="width:850px">
+      <div class="diseño-tabla"style="width:850px">
+        <p>Registro fotográfico de inicio</p>
+        <input type="hidden" id="inicioFoto" value=[% array_to_string( array_filter( array("Foto_inicio_1" , "Foto_inicio_2"  , "Foto_inicio_3" , "Foto_inicio_4"), @element is not null)) %]>
+        <div class="flex wrap center" id="cont-princ-2"></div>
+      </div>
+    </div>
+
+    <div class="main flex" style="width:850px">
+      <div class="diseño-tabla " style="width:850px">
+        <p>Registro fotográfico de fin</p>
+        <input type="hidden" id="inicioFin" value=[% array_to_string( array_filter( array("Foto_fin_1" , "Foto_fin_2"  , "Foto_fin_3" , "Foto_fin_4"), @element is not null)) %]>
+        <div class="flex wrap center " id="cont-princ-4"></div>
+      </div>
+    </div>
+
+    <div class="main flex" style="width:850px">
+      <div class="diseño-tabla "style="width:850px">
+        <p>Resultado de análisis ceramico:</p>
+        <p class="subtitulo"><strong>Grupo: </strong> [%"Grupo"%] / <strong>Tipo:</strong> [%"Tipo"%] / <strong>Variedad:</strong> [%"Variedad"%] / <strong>Cronología: </strong>[%"Cronología"%] / <strong>Análisis cerámico: </strong> [%"Análisis cerámico"%] / <strong>Arqueólogo que analiza: </strong>  [%"Arqueólogo que analiza"%]</p>
+
+      </div>
+    </div>
+    <!-- <div class="diseño-tabla" style="width:837px">
+      <p>Resultado de análisis ceramico:</p>
+      <p class="subtitulo">[%"Observaciones_1"%]</p>
+    </div> -->
+  </div>
+  <script type="text/javascript">
+    //var cadena = document.getElementById("valor").value;
+    //console.log(cadena);
+    function Carga(){
+      imagenesInicio();
+      imagenesFin();
+    }
+    function imagenesInicio(){
+      /// creacion de imagenes
+      let str = document.getElementById("inicioFoto").value;
+      let images = str.split(',');
+      let principal = document.getElementById('cont-princ-2');
+       let valor = images.length;
+      for(i=0;i<images.length;i++){
+        if(valor>=2 & valor<3){
+          let creaimg = document.createElement('img');
+          let crearDiv = document.createElement('div');
+          creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/IMAGENES/Inicio/"+images[i]+".jpg");
+          creaimg.setAttribute('width','386');
+          creaimg.setAttribute('height','260');
+          crearDiv.setAttribute('class','fotografia');
+          principal.appendChild(crearDiv);
+          crearDiv.appendChild(creaimg);
+
+        } else if(valor>=3 & valor<4){
+          let creaimg = document.createElement('img');
+          creaimg.setAttribute('src', "file:///C:/Users/ADMIN/Documents/IMAGENES/Inicio/"+images[i]+".jpg");
+          creaimg.setAttribute('width','266');
+          creaimg.setAttribute('height','216');
+          creaimg.setAttribute('style','padding:3px');
+          principal.appendChild(creaimg);
+
+        }else if(valor==4){
+
+          let creaimg = document.createElement('img');
+          creaimg.setAttribute('src', "file:///C:/Users/ADMIN/Documents/IMAGENES/Inicio/"+images[i]+".jpg");
+          creaimg.setAttribute('width','328');
+          creaimg.setAttribute('height','195');
+          creaimg.setAttribute('style','padding:6px');
+          principal.appendChild(creaimg);
+        }
+      }
+    }
+
+    function imagenesFin(){
+      /// creacion de imagenes
+      let str = document.getElementById("inicioFin").value;
+      let images = str.split(',');
+      let principal = document.getElementById('cont-princ-4');
+      let valor = images.length;
+      for(i=0;i<images.length;i++){
+        if(valor>=2 & valor<3){
+          let creaimg = document.createElement('img');
+          let crearDiv = document.createElement('div');
+          creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/IMAGENES/Fin/"+images[i]+".jpg");
+          creaimg.setAttribute('width','386');
+          creaimg.setAttribute('height','260');
+          crearDiv.setAttribute('class','fotografia');
+          principal.appendChild(crearDiv);
+          crearDiv.appendChild(creaimg);
+
+        } else if(valor>=3 & valor<4){
+          let creaimg = document.createElement('img');
+          creaimg.setAttribute('src', "file:///C:/Users/ADMIN/Documents/IMAGENES/Fin/"+images[i]+".jpg");
+          creaimg.setAttribute('width','266');
+          creaimg.setAttribute('height','216');
+          creaimg.setAttribute('style','padding:3px');
+          principal.appendChild(creaimg);
+
+        }else if(valor==4){
+
+          let creaimg = document.createElement('img');
+          creaimg.setAttribute('src', "file:///C:/Users/ADMIN/Documents/IMAGENES/Fin/"+images[i]+".jpg");
+          creaimg.setAttribute('width','328');
+          creaimg.setAttribute('height','195');
+          creaimg.setAttribute('style','padding:6px');
+          principal.appendChild(creaimg);
+        }
+      }
+    }
+  </script>
+</body>
+</html>
