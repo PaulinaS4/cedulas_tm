@@ -1,0 +1,82 @@
+<head>
+  <!-- Plotly.js -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- Numeric JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
+</head>
+
+<body onload="Prueba();">
+  
+  <div id="myDiv" style="background-color:transparent;">
+    <input type="hidden" id="pm1" value=[%"preclasico_medio_1"%]>
+    <input type="hidden" id="pm2" value=[%"preclasico_medio_2"%]>
+    <input type="hidden" id="pt" value=[%"preclasico_tardio"%]>
+    <input type="hidden" id="prt" value=[%"protoclasico"%]>
+    <input type="hidden" id="ct" value=[%"clasico_temprano"%]>
+    <input type="hidden" id="cta" value=[%"clasico_tardio"%]>
+    <input type="hidden" id="ctt" value=[%"clasico_tardio_terminal"%]>
+    <input type="hidden" id="pc" value=[%"posclasico"%]>
+    <input type="hidden" id="c" value=[%"colonial"%]>
+    <input type="hidden" id="pcl" value=[%"poscolonial"%]>
+  </div>
+  </div>
+  <script>
+    var pm1 = document.getElementById("pm1").value;
+    var pm2 = document.getElementById("pm2").value;
+    var pt = document.getElementById("pt").value;
+    var prt = document.getElementById("prt").value;
+    var ct = document.getElementById("ct").value;
+    var cta = document.getElementById("cta").value;
+    var ctt = document.getElementById("ctt").value;
+    var pc = document.getElementById("pc").value;
+    var c = document.getElementById("c").value;
+    var pcl = document.getElementById("pcl").value;
+
+var yvalue = [pm1,pm2,pt,prt,ct,cta,ctt,pc,c,pcl
+
+];
+
+var xvalue = ['Preclasico Medio 1',
+                'Preclásico Medio 2',
+                'Preclásico Tardío',
+                'Protoclásico',
+                'Clásico Temprano',
+                'Clásico Tardío',
+                'Clásico Tardío/Terminal',
+                'Posclásico',
+                'Colonial',
+                'Poscolonial'];
+                     
+var trace1 = {
+  x: xvalue,
+  y: yvalue,
+  name: 'Periodo',
+  mode: 'lines',
+  type: 'scatter',
+  visible: true,
+  line:{ width: 3, color:'#691C32'}
+};
+
+var data = [trace1];
+
+var layout = {width: 600, height: 295,
+  font: {
+    family: 'Arial',
+    size: 10,
+    color: '#691C32'
+        },
+  barmode: 'group',
+  bargap: 0.1,
+   legend: {
+    x: 1,
+    y: 0.0,
+    bgcolor: '#DDC9A3',
+    bordercolor: '#DDC9A3'
+      },
+  paper_bgcolor: 'rgba(0,0,0,0)',
+  plot_bgcolor: 'rgba(0,0,0,0)'
+  };
+
+Plotly.newPlot('myDiv', data, layout, {displayModeBar: false});
+</script>
+</body>

@@ -43,7 +43,7 @@
 				<td class="col1">ID Monumento</td>
         <td class="col2">[%"ID Monumento"%]</td>
 				<td class="col1">Cadenamiento</td>
-				<td class="col2">[%"Km"%]</td>
+				<td class="col2">[%CASE WHEN "km" IS NULL THEN 'No aplica' ELSE "km" END %]</td>
 			</tr>
 			<tr>
 				<td class="col1">Fecha de inicio intervención</td>
@@ -52,7 +52,12 @@
 				<td class="col2">[%"Fecha fin de intervención"%]</td>
 				<td class="col1">Persona que intervino</td>
 				<td class="col2">[%"Nombre quien registra"%] <br>
-					Se contó con el apoyo de [%""%] personas
+					Se contó con el apoyo de [%CASE WHEN "Tramo" = 'T1' THEN '4 personas'
+																					 WHEN "Tramo" = 'T2' THEN '4 personas'
+																					 WHEN "Tramo" = 'T3' THEN '1 persona'
+																					 WHEN "Tramo" = 'T4' THEN '3 personas'
+																					 WHEN "Tramo" = 'T5' THEN 'ninguna persona'
+																					 END%] 
 				</td>
 			</tr>
 		</table>
@@ -62,15 +67,19 @@
 			<div class="col-50 diseño-tabla">
 				<h1 class="h2 bold color-rojo text-align-left">REGISTRO FOTOGRÁFICO DE INICIO</h1>
 						<div class="" id="cont-princ-1">
-		         	<!-- <input type="hidden" id="inicio" value=[%"Fotos inicio"%]> -->
-		         	<input type="hidden" id="inicio" value="T1_05197_100_0001768_1,T1_05197_100_0001768_2,T1_05197_100_0001768_3">
+		         <input type="hidden" id="ruta_inicio" value=[%"ruta_inicio"%]> 
+		         <input type="hidden" id="inicio" value=[%"Fotos inicio"%]> 
+		         <!-- <input type="hidden" id="inicio" value=[%"Fotos inicio"%]> 
+		         	<input type="hidden" id="inicio" value="T1_05197_100_0001768_1,T1_05197_100_0001768_2,T1_05197_100_0001768_3">-->
 		        </div>
 			</div>
 			<div class="col-50 diseño-tabla">
 				<h1 class="h2 bold color-rojo text-align-left">REGISTRO FOTOGRÁFICO DE FIN</h1>
 						<div class="" id="cont-princ-2">
-		         	<!-- <input type="hidden" id="fin" value=[%"Fotos fin"%]> -->
-		         	<input type="hidden" id="fin" value="T1_05197_100_0001768_1,T1_05197_100_0001768_2,T1_05197_100_0001768_3">
+							<input type="hidden" id="ruta_fin" value=[%"ruta_fin"%]> 
+		         <input type="hidden" id="fin" value=[%"Fotos fin"%]>
+		         	<!-- <input type="hidden" id="fin" value=[%"Fotos fin"%]>
+		         	<input type="hidden" id="fin" value="T1_05197_100_0001768_1,T1_05197_100_0001768_2,T1_05197_100_0001768_3"> -->
 		        </div>
 			</div>
 	</div>
@@ -81,7 +90,8 @@
 					<div class="" id="cont-princ-3">
 		         <!-- <input type="hidden" id="intervencion" value=[%"Fotos intervención"%]>  -->
 		         <!--<input type="hidden" id="intervencion" value="T1_05197_100_0001768_1,T1_05197_100_0001768_2,T1_05197_100_0001768_3">-->
-		         <input type="hidden" id="intervencion" value="T1_05197_100_0001768_1,T1_05197_100_0001768_2,T1_05197_100_0001768_3">
+		         <input type="hidden" id="intervencion" value=[%"Fotos intervención"%]>
+		         <input type="hidden" id="ruta_intervencion" value=[%"ruta_intervencion"%]>
 		      </div>
 		</div>
 	</div>
@@ -90,8 +100,10 @@
 		<div class="col-100 diseño-tabla">
 				<h1 class="h2 bold color-rojo text-align-left">REGISTRO FOTOGRÁFICO</h1>
 				<div class="" id="cont-princ-1-entierro">
-		        <!-- <input type="hidden" id="entierro" value=[%"Fotos"%]> -->
-		        <input type="hidden" id="entierro"  value="T1_05197_100_0001768_1,T1_05197_100_0001768_2,T1_05197_100_0001768_3">
+		        <!-- <input type="hidden" id="entierro" value=[%"Fotos"%]>
+		        <input type="hidden" id="entierro"  value="T1_05197_100_0001768_1,T1_05197_100_0001768_2,T1_05197_100_0001768_3"> -->
+		        <input type="hidden" id="entierro"  value=[%"Fotos"%]>
+		        <input type="hidden" id="ruta_fotos"  value=[%"ruta_fotos"%]>
 		    </div>
 			</div>
 	</div>
@@ -101,8 +113,10 @@
 			<div class="diseño-tabla">
 				<h1 class="h2 bold color-rojo text-align-left">REGISTRO DE DETERIOROS</h1>
 				<div class="" id="cont-princ-1-registro">
-         	<!-- <input type="hidden" id="deterioros-registro" value=[%"Fotos deterioros"%]> -->
-         	<input type="hidden" id="deterioros-registro" value="T1_05197_100_0001768_1,T1_05197_100_0001768_2,T1_05197_100_0001768_3">
+         	<!-- <input type="hidden" id="deterioros-registro" value=[%"Fotos deterioros"%]> 
+         	<input type="hidden" id="deterioros-registro" value="T1_05197_100_0001768_1,T1_05197_100_0001768_2,T1_05197_100_0001768_3">-->
+         	<input type="hidden" id="deterioros-registro" value=[%"Fotos deterioros"%]>
+         	<input type="hidden" id="ruta_deterioros" value=[%"ruta_deterioros"%]>
         </div>
 			</div>
 		</div>
@@ -110,8 +124,10 @@
 			<div class="diseño-tabla">
 				<h1 class="h2 bold color-rojo text-align-left">REGISTRO GENERAL</h1>
 					<div class="" id="cont-princ-2-registro">
-	         	<!-- <input type="hidden" id="general" value=[%"Fotos registro"%]> -->
-	         	<input type="hidden" id="general"  value="T1_05197_100_0001768_1,T1_05197_100_0001768_2,T1_05197_100_0001768_3">
+	         	<!-- <input type="hidden" id="general" value=[%"Fotos registro"%]> 
+	         	<input type="hidden" id="general"  value="T1_05197_100_0001768_1,T1_05197_100_0001768_2,T1_05197_100_0001768_3">-->
+						<input type="hidden" id="general" value=[%"Fotos registro"%]>
+	         	<input type="hidden" id="ruta_registro" value=[%"ruta_registro"%]>
 	        </div>
 			</div>
 		</div>
@@ -153,6 +169,7 @@
 
     function imagenesInicio(){
           let str = document.getElementById("inicio").value;
+          let ri = document.getElementById("ruta_inicio").value;
           console.log(str)
           let content_registro = document.getElementById('content-general');
           if(str == null || str == ""){
@@ -169,7 +186,8 @@
 	          		let creaimg = document.createElement('img');
 		            let crearDiv = document.createElement('div');
 
-		            creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+		            //creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+		            creaimg.setAttribute('src', "file:///"+ri+images[i]+".jpg");
 		            creaimg.setAttribute('width','260');
 		            crearDiv.setAttribute('width','100%');
 		            creaimg.setAttribute('style','padding:3px;');
@@ -183,6 +201,7 @@
 
     function imagenesFin(){
           let str = document.getElementById("fin").value;
+          let rf = document.getElementById("ruta_fin").value;
 
           let images = str.split(',');
           let principal = document.getElementById('cont-princ-2');
@@ -191,7 +210,8 @@
           	if(i<2){
           		let creaimg = document.createElement('img');
 	            let crearDiv = document.createElement('div');
-	            creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	            //creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	            creaimg.setAttribute('src', "file:///"+rf+images[i]+".jpg");
 	            creaimg.setAttribute('width','260');
 	            crearDiv.setAttribute('width','100%');
 	            creaimg.setAttribute('style','padding:3px;');
@@ -205,6 +225,7 @@
     }
 		function imagenesIntervencion(){
 		 		let str = document.getElementById("intervencion").value;
+		 		let rin = document.getElementById("ruta_intervencion").value;
 		 		let content_registro = document.getElementById('content-intervencion');
 		    if(str == null || str == ""){
 		    	console.log('ocultar content-general')
@@ -219,7 +240,8 @@
 			      if(valor==2 || valor==1){
 			        let creaimg = document.createElement('img');
 			        let crearDiv = document.createElement('div');
-		          creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+		          //creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+		          creaimg.setAttribute('src', "file:///"+rin+images[i]+".jpg");
 		          creaimg.setAttribute('width','400');
 			        crearDiv.setAttribute('width','100%');
 			        creaimg.setAttribute('style','padding:3px;');
@@ -230,7 +252,8 @@
 			      }  else if(valor<=4){
 			        let creaimg = document.createElement('img');
 			        let crearDiv = document.createElement('div');
-			        creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+			        //creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+		          creaimg.setAttribute('src', "file:///"+rin+images[i]+".jpg");
 		          creaimg.setAttribute('width','265');
 			        creaimg.setAttribute('style','padding:3px;');
 			        principal.setAttribute('style',' display:flex; flex-wrap: wrap; ')
@@ -239,7 +262,8 @@
 
 			      } else if(valor<=6){
 			        let creaimg = document.createElement('img');
-			        creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+			        //creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+		          creaimg.setAttribute('src', "file:///"+rin+images[i]+".jpg");
 		          creaimg.setAttribute('width','270');
 			        creaimg.setAttribute('style','padding:3px');
 			        creaimg.setAttribute('style','padding:3px;');
@@ -247,7 +271,8 @@
 
 			      }else if(valor<=8){
 			        let creaimg = document.createElement('img');
-			        creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+			        //creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+		          creaimg.setAttribute('src', "file:///"+rin+images[i]+".jpg");
 		          creaimg.setAttribute('width','200');
 			        creaimg.setAttribute('style','padding:3px');
 			        principal.setAttribute('style', 'display:flex; flex-wrap: wrap; justify-content: center;')
@@ -255,7 +280,8 @@
 
 			      }else if(valor=>9){
 			        let creaimg = document.createElement('img');
-			        creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+			        //creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+		          creaimg.setAttribute('src', "file:///"+rin+images[i]+".jpg");
 		          creaimg.setAttribute('width','170');
 			        creaimg.setAttribute('style','padding:3px');
 			        principal.setAttribute('style', 'display:flex; flex-wrap: wrap; justify-content: center;')
@@ -268,6 +294,7 @@
 		 // Entierros
 		function imagenesEntierro(){
       let str = document.getElementById("entierro").value;
+      let re = document.getElementById("ruta_entierro").value;
       let content_registro = document.getElementById('content-entierro');
 	    if(str == null || str == ""){
 	    	console.log('ocultar content-entierro')
@@ -322,6 +349,7 @@
 	  // registro de bienes inmuebles
 	  function imagenesRegistrosDeterioros(){
 	  	let str = document.getElementById("deterioros-registro").value;
+	  	let rd = document.getElementById("ruta_deterioros").value;
 
         let content_registro = document.getElementById('content-registro');
       	
@@ -336,7 +364,8 @@
 	            if(valor==2 || valor==1){
 	              let creaimg = document.createElement('img');
 	              let crearDiv = document.createElement('div');
-	              creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	              //creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	              creaimg.setAttribute('src', "file:///"+rd+images[i]+".jpg");
 	            	creaimg.setAttribute('width','260');
 	              crearDiv.setAttribute('width','100%');
 	              creaimg.setAttribute('style','padding:3px;');
@@ -347,7 +376,8 @@
 	            }  else if(valor<=4){
 	              let creaimg = document.createElement('img');
 	              let crearDiv = document.createElement('div');
-	              creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	              //creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	              creaimg.setAttribute('src', "file:///"+rd+images[i]+".jpg");
 	            	creaimg.setAttribute('width','188');
 	              creaimg.setAttribute('style','padding:3px;');
 	              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
@@ -356,14 +386,16 @@
 
 	            } else if(valor<=6){
 	              let creaimg = document.createElement('img');
-	              creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	              //creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	              creaimg.setAttribute('src', "file:///"+rd+images[i]+".jpg");
 	            	creaimg.setAttribute('width','190');
 	              creaimg.setAttribute('style','padding:3px');
 	              creaimg.setAttribute('style','padding:3px;');
 	              principal.appendChild(creaimg);
 
 	            }else if(valor=>7){
-	              creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	              //creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	              creaimg.setAttribute('src', "file:///"+rd+images[i]+".jpg");
 	            	creaimg.setAttribute('width','260');
 	              creaimg.setAttribute('style','padding:3px');
 	              principal.appendChild(creaimg);
@@ -374,6 +406,7 @@
 
 	  function imagenesRegistroGeneral(){
 	  	let str = document.getElementById("general").value;
+	  	let rr = document.getElementById("ruta_registro").value;
 	  	let content_registro = document.getElementById('content-registro');
 	  	if(str == null || str == ""){
 				console.log('ocultar content-registro')
@@ -388,7 +421,8 @@
 	            if(valor==2 || valor==1){
 	              let creaimg = document.createElement('img');
 	              let crearDiv = document.createElement('div');
-	              creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	              //creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	              creaimg.setAttribute('src', "file:///"+rr+images[i]+".jpg");
 	            	creaimg.setAttribute('width','260');
 	              crearDiv.setAttribute('width','100%');
 	              creaimg.setAttribute('style','padding:3px;');
@@ -399,7 +433,8 @@
 	            }  else if(valor<=4){
 	              let creaimg = document.createElement('img');
 	              let crearDiv = document.createElement('div');
-	              creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	              //creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	              creaimg.setAttribute('src', "file:///"+rr+images[i]+".jpg");
 	            	creaimg.setAttribute('width','188');
 	              creaimg.setAttribute('style','padding:3px;');
 	              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
@@ -408,14 +443,16 @@
 
 	            } else if(valor<=6){
 	              let creaimg = document.createElement('img');
-	              creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	              //creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	              creaimg.setAttribute('src', "file:///"+rr+images[i]+".jpg");
 	            	creaimg.setAttribute('width','190');
 	              creaimg.setAttribute('style','padding:3px');
 	              creaimg.setAttribute('style','padding:3px;');
 	              principal.appendChild(creaimg);
 
 	            }else if(valor=>7){
-	              creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	              //creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+	              creaimg.setAttribute('src', "file:///"+rr+images[i]+".jpg");
 	            	creaimg.setAttribute('width','260');
 	              creaimg.setAttribute('style','padding:3px');
 	              principal.appendChild(creaimg);
