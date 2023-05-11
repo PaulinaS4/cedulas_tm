@@ -61,7 +61,7 @@
     //console.log(cadena);
     function Carga(){
       imagenesDeterioros();
-      imagenesGeneral()
+      imagenesGeneral();
     }
     function imagenesDeterioros(){
           /// creacion de imagenes
@@ -74,27 +74,27 @@
             if(valor==2 || valor==1){
               let creaimg = document.createElement('img');
               let crearDiv = document.createElement('div');
-              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/07. Registro bienes inmuebles/01_Registro de deterioros/"+images[i]+".jpg");
+              creaimg.setAttribute('src', "file:///D:/restauracion/fotos/07_Registro bienes inmuebles/01_Registro de deterioros/"+images[i]+".jpg");
               creaimg.setAttribute('width','360');
               crearDiv.setAttribute('width','100%');
               creaimg.setAttribute('style','padding:3px;');
-              principal.setAttribute('style', 'display:flex; flex-wrap: wrap;')
+              principal.setAttribute('style', 'display:flex; flex-wrap: wrap;');
               principal.appendChild(crearDiv);
               crearDiv.appendChild(creaimg);
 
             } else if(valor<=4){
               let creaimg = document.createElement('img');
               let crearDiv = document.createElement('div');
-              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/07. Registro bienes inmuebles/01_Registro de deterioros/"+images[i]+".jpg");
+              creaimg.setAttribute('src', "file:///D:/restauracion/fotos/07_Registro bienes inmuebles/01_Registro de deterioros/"+images[i]+".jpg");
               creaimg.setAttribute('width','260');
               creaimg.setAttribute('style','padding:3px;');
-              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
+              principal.setAttribute('style',' display:flex; flex-wrap: wrap;');
               principal.appendChild(crearDiv);
               crearDiv.appendChild(creaimg);
 
             } else if(valor<=6){
               let creaimg = document.createElement('img');
-              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/07. Registro bienes inmuebles/01_Registro de deterioros/"+images[i]+".jpg");
+              creaimg.setAttribute('src', "file:///D:/restauracion/fotos/07_Registro bienes inmuebles/01_Registro de deterioros/"+images[i]+".jpg");
               creaimg.setAttribute('width','255');
               creaimg.setAttribute('style','padding:3px');
               creaimg.setAttribute('style','padding:3px;');
@@ -102,7 +102,7 @@
 
             }else if(valor=>7){
               let creaimg = document.createElement('img');
-              creaimg.setAttribute('src', "file:///D:/restauracion/fotos/07. Registro bienes inmuebles/01_Registro de deterioros/"+images[i]+".jpg");
+              creaimg.setAttribute('src', "file:///D:/restauracion/fotos/07_Registro bienes inmuebles/01_Registro de deterioros/"+images[i]+".jpg");
               creaimg.setAttribute('width','200');
               creaimg.setAttribute('style','padding:3px');
               principal.appendChild(creaimg);
@@ -121,7 +121,7 @@
         if(valor==2 || valor==1){
           let creaimg = document.createElement('img');
           let crearDiv = document.createElement('div');
-          creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/07. Registro bienes inmuebles/02_Registro general/"+images[i]+".jpg");
+          creaimg.setAttribute('src', "file:///D:/restauracion/fotos/07_Registro bienes inmuebles/02_Registro general/"+images[i]+".jpg");
           creaimg.setAttribute('width','360');
           crearDiv.setAttribute('width','100%');
          /// creaimg.setAttribute('height','215');
@@ -134,30 +134,30 @@
         } else if(valor<=4){
           let creaimg = document.createElement('img');
           let crearDiv = document.createElement('div');
-          creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/07. Registro bienes inmuebles/02_Registro general/"+images[i]+".jpg");
+          creaimg.setAttribute('src', "file:///D:/restauracion/fotos/07_Registro bienes inmuebles/02_Registro general/"+images[i]+".jpg");
           creaimg.setAttribute('width','260');
          /// creaimg.setAttribute('height','215');
           //crearDiv.setAttribute('class','fotografia');
           crearDiv.setAttribute('width','100%');
           creaimg.setAttribute('style','padding:3px;');
-          principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
+          principal.setAttribute('style',' display:flex; flex-wrap: wrap;');
           principal.appendChild(crearDiv);
           principal.appendChild(crearDiv);
           crearDiv.appendChild(creaimg);
 
         } else if(valor<=6){
           let creaimg = document.createElement('img');
-          creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/07. Registro bienes inmuebles/02_Registro general/"+images[i]+".jpg");
+          creaimg.setAttribute('src', "file:///D:/restauracion/fotos/07_Registro bienes inmuebles/02_Registro general/"+images[i]+".jpg");
           creaimg.setAttribute('width','255');
           creaimg.setAttribute('style','padding:3px');
           creaimg.setAttribute('style','padding:6px');
-          principal.setAttribute('style',' display:flex')
+          principal.setAttribute('style',' display:flex');
           principal.appendChild(creaimg);
 
         }else if(valor>7){
 
           let creaimg = document.createElement('img');
-          creaimg.setAttribute('src', "file:///D:/restauracion/fotos/07. Registro bienes inmuebles/02_Registro general/"+images[i]+".jpg");
+          creaimg.setAttribute('src', "file:///D:/restauracion/fotos/07_Registro bienes inmuebles/02_Registro general/"+images[i]+".jpg");
           creaimg.setAttribute('width','200');
           creaimg.setAttribute('style','padding:3px');
           principal.appendChild(creaimg);
