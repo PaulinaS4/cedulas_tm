@@ -166,7 +166,7 @@
 		                    else 'style="background:none"'
 		                  end%]></p>
 		                  <p class="h4">: [%"Otro PR"%]</p>
-			        </div>
+			        </div> 
 				</div>
 			</div>
 		</div>
@@ -213,16 +213,16 @@
 		          }
 		      }
 		  }
-	    		function imagenesFin(){
-	          let str = document.getElementById("fin").value;
+	    		function imagenesIntervencion(){
+	          let str = document.getElementById("intervencion").value;
 	          let images = str.split(',');
-	          let principal = document.getElementById('cont-princ-2');
+	          let principal = document.getElementById('cont-princ-3');
 	          let valor = images.length;
 	          for(i=0;i<images.length;i++){
 	            if(valor==2 || valor==1){
 	              let creaimg = document.createElement('img');
 	              let crearDiv = document.createElement('div');
-	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/05_Metales/03_Fin/"+images[i]+".jpg");
+	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/05_Metales/04_Intervención/"+images[i]+".jpg");
 	              creaimg.setAttribute('width','260');
 	              crearDiv.setAttribute('width','100%');
 	              creaimg.setAttribute('style','padding:3px;');
@@ -233,7 +233,7 @@
 	            }  else if(valor<=4){
 	              let creaimg = document.createElement('img');
 	              let crearDiv = document.createElement('div');
-	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/05_Metales/03_Fin/"+images[i]+".jpg");
+	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/05_Metales/04_Intervención/"+images[i]+".jpg");
 	              creaimg.setAttribute('width','188');
 	              creaimg.setAttribute('style','padding:3px;');
 	              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
@@ -242,7 +242,7 @@
 
 	            } else if(valor<=6){
 	              let creaimg = document.createElement('img');
-	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/05_Metales/03_Fin/"+images[i]+".jpg");
+	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/05_Metales/04_Intervención/"+images[i]+".jpg");
 	              creaimg.setAttribute('width','190');
 	              creaimg.setAttribute('style','padding:3px');
 	              creaimg.setAttribute('style','padding:3px;');
@@ -250,33 +250,43 @@
 
 	            }else if(valor=>7){
 	              let creaimg = document.createElement('img');
-	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/05_Metales/03_Fin/"+images[i]+".jpg");
+	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/05_Metales/04_Intervención/"+images[i]+".jpg");
 	              creaimg.setAttribute('width','125');
 	              creaimg.setAttribute('style','padding:3px');
 	              principal.appendChild(creaimg);
 	            }
 	          }
 	      }
-			 	function imagenesIntervencion(){
-			 		let str = document.getElementById("intervencion").value;
+			 	function imagenesFin(){
+			 		let str = document.getElementById("fin").value;
 			          let images = str.split(',');
-			          let principal = document.getElementById('cont-princ-3');
+			          let principal = document.getElementById('cont-princ-2');
 			          let valor = images.length;
 			          for(i=0;i<images.length;i++){
 			            if(valor==2 || valor==1){
 			              let creaimg = document.createElement('img');
 			              let crearDiv = document.createElement('div');
-			              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/05_Metales/04_Intervención/"+images[i]+".jpg");
+			              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/05_Metales/03_Fin/"+images[i]+".jpg");
 			              creaimg.setAttribute('width','260');
 			              crearDiv.setAttribute('width','100%');
 			              creaimg.setAttribute('style','padding:3px;');
 			              principal.setAttribute('style', 'display:flex; flex-wrap: wrap;  justify-content: center;')
 			              principal.appendChild(crearDiv);
 			              crearDiv.appendChild(creaimg);
-
 			        }
-			     }
-			 	}
+					else if(valor<=4){
+	              let creaimg = document.createElement('img');
+	              let crearDiv = document.createElement('div');
+	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/05_Metales/03_Fin/"+images[i]+".jpg");
+	              creaimg.setAttribute('width','188');
+	              creaimg.setAttribute('style','padding:3px;');
+	              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
+	              principal.appendChild(crearDiv);
+	              crearDiv.appendChild(creaimg);
+		          }
+
+			   }
+			}
   </script>
 </body>
 </html>
