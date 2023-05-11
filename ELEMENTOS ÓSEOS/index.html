@@ -48,11 +48,12 @@
 					<td class="col1">Estado de conservación</td>
 					<td class="col2">[%"Estado de conservación"%]</td>
 					<td class="col1">Dimensiones</td>
-					<td class="col2">
-						<strong>Alto: </strong>[%%]<br>
-				        <strong>Ancho: </strong>[%%]<br>
-				        <strong>Profundo: </strong>[%%]
-			    	</td>
+					<td class="col2">[%CASE WHEN "Dimensiones" IS NULL THEN ''  END%]
+						<strong>[%CASE WHEN "Dimensiones" IS NULL THEN '' ELSE 'Alto:' END%] </strong>[%array_first(string_to_array("Dimensiones",'x'))%]<br>
+				        <strong>[%CASE WHEN "Dimensiones" IS NULL THEN '' ELSE 'Ancho:' END%]  </strong>[%array_get(string_to_array("Dimensiones",'x'),1)%]<br>
+				        <strong>[%CASE WHEN "Dimensiones" IS NULL THEN '' ELSE 'Profundo:' END%] </strong>[%CASE WHEN array_length(string_to_array("Dimensiones",'x')) = 3 THEN array_last(string_to_array("Dimensiones",'x')) END%]
+			    </td>
+
 				</tr>
 				<tr>
 	        		<td class="col1">Nombre de quien realiza el registro: </td>
@@ -559,7 +560,7 @@
           let images = str.split(',');
           let principal = document.getElementById('cont-princ-1');
           let valor = images.length;
-          var liga_fotos = "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/NUEVOS FORMATOS DE CEDULAS/CÉDULAS DE REGISTRO/CÉDULAS DE REGISTRO/BIENES INMUEBLES/REGISTRO/Procesos/";
+          var liga_fotos = "file:///D:/restauracion/fotos/03_Elementos óseos/01_Estado de conservación/";
           for(i=0;i<images.length;i++){
             if(valor==2 || valor==1){
               let creaimg = document.createElement('img');

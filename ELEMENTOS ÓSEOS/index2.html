@@ -60,7 +60,7 @@
 					  	<p class="text-col2">Limpieza superficial</p>
 		              	<p class="col-50 rectangulo"
 		                  [%case
-		                    when is_empty_or_null("Limpieza superficial")
+		                    when "Limpieza superficial") IS NULL
 		                    then 'style="background:none"'
 		                    else 'style="background:#BC955C"'
 		                  end%]></p>
@@ -70,7 +70,7 @@
 					  	<p class="text-col2">Micro excavación</p>
 		              	<p class="col-50 rectangulo"
 		                  [%case
-		                    when is_empty_or_null("Microexcavación")
+		                    when "Microexcavación" IS NULL
 		                    then 'style="background:none"'
 		                    else 'style="background:#BC955C"'
 		                  end%]></p>
@@ -80,7 +80,7 @@
 					  	<p class="text-col2">Limpieza físico química</p>
 		              	<p class="col-50 rectangulo"
 		                  [%case
-		                    when is_empty_or_null("Limpieza físico química")
+		                    when "Limpieza físico química" IS NULL
 		                    then 'style="background:none"'
 		                    else 'style="background:#BC955C"'
 		                  end%]></p>
@@ -90,7 +90,7 @@
 					  	<p class="text-col2">Desalinización</p>
 		              	<p class="col-50 rectangulo"
 		                  [%case
-		                    when is_empty_or_null("Desalinización")
+		                    when "Desalinización" IS NULL
 		                    then 'style="background:none"'
 		                    else 'style="background:#BC955C"'
 		                  end%]></p>
@@ -100,7 +100,7 @@
 					  	<p class="text-col2">Consolidación</p>
 		              	<p class="col-50 rectangulo"
 		                  [%case
-		                    when is_empty_or_null("Consolidación")
+		                    when "Consolidación" IS NULL
 		                    then 'style="background:none"'
 		                    else 'style="background:#BC955C"'
 		                  end%]></p>
@@ -110,7 +110,7 @@
 					  	<p class="text-col2">Eliminación mecánica de sales</p>
 		              	<p class="col-50 rectangulo"
 		                  [%case
-		                    when is_empty_or_null("Eliminación mecánica de sales")
+		                    when "Eliminación mecánica de sales" IS NULL
 		                    then 'style="background:none"'
 		                    else 'style="background:#BC955C"'
 		                  end%]></p>
@@ -120,7 +120,7 @@
 					  	<p class="text-col2">Unión de fragmentos</p>
 		              	<p class="col-50 rectangulo"
 		                  [%case
-		                    when is_empty_or_null("Unión de fragmentos")
+		                    when "Unión de fragmentos" IS NULL
 		                    then 'style="background:none"'
 		                    else 'style="background:#BC955C"'
 		                  end%]></p>
@@ -130,7 +130,7 @@
 					  	<p class="text-col2">Eliminación de intervenciones anteriores</p>
 		              	<p class="col-50 rectangulo"
 		                  [%case
-		                    when is_empty_or_null("Eliminación de intervenciones anteriores")
+		                    when "Eliminación de intervenciones anteriores" IS NULL
 		                    then 'style="background:none"'
 		                    else 'style="background:#BC955C"'
 		                  end%]></p>
@@ -140,7 +140,7 @@
 					  	<p class="text-col2">Reposición de faltantes</p>
 		              	<p class="col-50 rectangulo"
 		                  [%case
-		                    when is_empty_or_null("Reposición de faltantes")
+		                    when "Reposición de faltantes" IS NULL
 		                    then 'style="background:none"'
 		                    else 'style="background:#BC955C"'
 		                  end%]></p>
@@ -150,7 +150,7 @@
 						  	<p class="text-col2">Resane</p>
 			              	<p class="col-50 rectangulo"
 			                  [%case
-		                    when is_empty_or_null("Resane")
+		                    when "Resane" IS NULL
 		                    then 'style="background:none"'
 		                    else 'style="background:#BC955C"'
 		                  end%]></p>
@@ -160,7 +160,7 @@
 					  				<p class="text-col2">Reintegración cromática</p>
 		              	<p class="col-50 rectangulo"
 		                  [%case
-		                    when is_empty_or_null("Reintegración cromática")
+		                    when "Reintegración cromática" IS NULL
 		                    then 'style="background:none"'
 		                    else 'style="background:#BC955C"'
 		                  end%]></p>
@@ -184,25 +184,34 @@
     }
     function imagenesInicio(){
           let str = document.getElementById("inicio").value;
-          let images = str.split(',');
-          let principal = document.getElementById('cont-princ-1');
-          let valor = images.length;
-          var liga_fotos = "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/NUEVOS FORMATOS DE CEDULAS/CÉDULAS DE REGISTRO/CÉDULAS DE REGISTRO/BIENES INMUEBLES/REGISTRO/Procesos/";
-          for(i=0;i<images.length;i++){
-            if(valor==2 || valor==1){
-              let creaimg = document.createElement('img');
-              let crearDiv = document.createElement('div');
-              creaimg.setAttribute('src',  liga_fotos +images[i]+".jpg");
-              creaimg.setAttribute('width','260');
-              crearDiv.setAttribute('width','100%');
-              creaimg.setAttribute('style','padding:3px;');
-              principal.setAttribute('style', 'display:flex; flex-wrap: wrap; justify-content: center;')
-              principal.appendChild(crearDiv);
-              crearDiv.appendChild(creaimg);
+	          let images = str.split(',');
+	          let principal = document.getElementById('cont-princ-1');
+	          let valor = images.length;
+	          for(i=0;i<images.length;i++){
+	            if(valor==2 || valor==1){
+	              let creaimg = document.createElement('img');
+	              let crearDiv = document.createElement('div');
+	              creaimg.setAttribute('src', "file:///D:/restauracion/fotos/03_Elementos óseos/02_Inicio/" +images[i]+".jpg");
+	              creaimg.setAttribute('width','260');
+	              crearDiv.setAttribute('width','100%');
+	              creaimg.setAttribute('style','padding:3px;');
+	              principal.setAttribute('style', 'display:flex; flex-wrap: wrap;  justify-content: center;')
+	              principal.appendChild(crearDiv);
+	              crearDiv.appendChild(creaimg);
 
-            } 
-          }
-      }
+	            }
+	            else if(valor<=4){
+	              let creaimg = document.createElement('img');
+	              let crearDiv = document.createElement('div');
+	              creaimg.setAttribute('src', "file:///D:/restauracion/fotos/03_Elementos óseos/02_Inicio/" +images[i]+".jpg");
+	              creaimg.setAttribute('width','188');
+	              creaimg.setAttribute('style','padding:3px;');
+	              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
+	              principal.appendChild(crearDiv);
+	              crearDiv.appendChild(creaimg);
+	          }
+	        }
+	      }
 	  function imagenesFin(){
 	          let str = document.getElementById("fin").value;
 	          let images = str.split(',');
@@ -212,7 +221,7 @@
 	            if(valor==2 || valor==1){
 	              let creaimg = document.createElement('img');
 	              let crearDiv = document.createElement('div');
-	              creaimg.setAttribute('src', liga_fotos +images[i]+".jpg");
+	              creaimg.setAttribute('src', "file:///D:/restauracion/fotos/03_Elementos óseos/03_Fin/" +images[i]+".jpg");
 	              creaimg.setAttribute('width','260');
 	              crearDiv.setAttribute('width','100%');
 	              creaimg.setAttribute('style','padding:3px;');
@@ -221,7 +230,17 @@
 	              crearDiv.appendChild(creaimg);
 
 	            }
+	            else if(valor<=4){
+	              let creaimg = document.createElement('img');
+	              let crearDiv = document.createElement('div');
+	              creaimg.setAttribute('src', "file:///D:/restauracion/fotos/03_Elementos óseos/03_Fin/" +images[i]+".jpg");
+	              creaimg.setAttribute('width','188');
+	              creaimg.setAttribute('style','padding:3px;');
+	              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
+	              principal.appendChild(crearDiv);
+	              crearDiv.appendChild(creaimg);
 	          }
+	        }
 	      }
 	 	function imagenesIntervencion(){
 	 		let str = document.getElementById("intervencion").value;
@@ -233,7 +252,7 @@
 	            if(valor==2 || valor==1){
 	              let creaimg = document.createElement('img');
 	              let crearDiv = document.createElement('div');
-	              creaimg.setAttribute('src',  liga_fotos +images[i]+".jpg");
+	              creaimg.setAttribute('src', "file:///D:/restauracion/fotos/03_Elementos óseos/04_Intervención/" +images[i]+".jpg");
 	              creaimg.setAttribute('width','260');
 	              crearDiv.setAttribute('width','100%');
 	              creaimg.setAttribute('style','padding:3px;');
@@ -244,7 +263,7 @@
 	            }  else if(valor<=4){
 	              let creaimg = document.createElement('img');
 	              let crearDiv = document.createElement('div');
-	              creaimg.setAttribute('src',  liga_fotos+images[i]+".jpg");
+	             creaimg.setAttribute('src', "file:///D:/restauracion/fotos/03_Elementos óseos/04_Intervención/" +images[i]+".jpg");
 	              creaimg.setAttribute('width','188');
 	              creaimg.setAttribute('style','padding:3px;');
 	              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
@@ -253,7 +272,7 @@
 
 	            } else if(valor<=6){
 	              let creaimg = document.createElement('img');
-	              creaimg.setAttribute('src', liga_fotos +images[i]+".jpg");
+	              creaimg.setAttribute('src', "file:///D:/restauracion/fotos/03_Elementos óseos/04_Intervención/" +images[i]+".jpg");
 	              creaimg.setAttribute('width','190');
 	              creaimg.setAttribute('style','padding:3px');
 	              creaimg.setAttribute('style','padding:3px;');
@@ -261,7 +280,7 @@
 
 	            }else if(valor=>7){
 	              let creaimg = document.createElement('img');
-	              creaimg.setAttribute('src', liga_fotos+images[i]+".jpg");
+	              creaimg.setAttribute('src', "file:///D:/restauracion/fotos/03_Elementos óseos/04_Intervención/" +images[i]+".jpg");
 	              creaimg.setAttribute('width','125');
 	              creaimg.setAttribute('style','padding:3px');
 	              principal.appendChild(creaimg);

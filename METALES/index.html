@@ -601,7 +601,7 @@
 							   <p class="text-col2 text-align-left">Polvo</p>
 	                		   <p class="col-50 rectangulo"
 	                    		   [%case
-		          				   when "Moldeado" = 'TRUE'
+		          				   when "Polvo" IS NOT NULL
 		          				   then 'style="background:#BC955C"'
 		          				   else 'style="background:none"'
 	        					    end%]></p>
@@ -620,7 +620,7 @@
 							<p class="text-col2 text-align-left">Suciedad</p>
 	                		   <p class="col-50 rectangulo"
 	                    		   [%case
-		          				   when "Moldeado" = 'TRUE'
+		          				   when "Suciedad" IS NOT NULL
 		          				   then 'style="background:#BC955C"'
 		          				   else 'style="background:none"'
 	        					    end%]></p>
@@ -639,7 +639,7 @@
 							   <p class="text-col2 text-align-left">Manchas</p>
 	                		   <p class="col-50 rectangulo"
 	                    		   [%case
-		          				   when "Moldeado" = 'TRUE'
+		          				   when "Mancha" IS NOT NULL
 		          				   then 'style="background:#BC955C"'
 		          				   else 'style="background:none"'
 	        					    end%]></p>
@@ -658,7 +658,7 @@
 							   <p class="text-col2 text-align-left">Concreción</p>
 	                		   <p class="col-50 rectangulo"
 	                    		   [%case
-		          				   when "Moldeado" = 'TRUE'
+		          				   when "Concreción" IS NOT NULL
 		          				   then 'style="background:#BC955C"'
 		          				   else 'style="background:none"'
 	        					    end%]></p>
@@ -677,7 +677,7 @@
 							   <p class="text-col2 text-align-left">Melladura</p>
 	                		   <p class="col-50 rectangulo"
 	                    		   [%case
-		          				   when "Moldeado" = 'TRUE'
+		          				   when "Melladura" IS NOT NULL
 		          				   then 'style="background:#BC955C"'
 		          				   else 'style="background:none"'
 	        					    end%]></p>
@@ -696,7 +696,7 @@
 							   <p class="text-col2 text-align-left">Perforaciones</p>
 	                		   <p class="col-50 rectangulo"
 	                    		   [%case
-		          				   when "Moldeado" = 'TRUE'
+		          				   when "Perforaciones" IS NOT NULL
 		          				   then 'style="background:#BC955C"'
 		          				   else 'style="background:none"'
 	        					    end%]></p>
@@ -715,7 +715,7 @@
 							   <p class="text-col2 text-align-left">Pérdida de resistencia</p>
 	                		   <p class="col-50 rectangulo"
 	                    		   [%case
-		          				   when "Moldeado" = 'TRUE'
+		          				   when "Pérdida de resistencia" IS NOT NULL
 		          				   then 'style="background:#BC955C"'
 		          				   else 'style="background:none"'
 	        					    end%]></p>
@@ -734,7 +734,7 @@
 							   <p class="text-col2 text-align-left">Físuras</p>
 	                		   <p class="col-50 rectangulo"
 	                    		   [%case
-		          				   when "Moldeado" = 'TRUE'
+		          				   when "Fisuras" IS NOT NULL
 		          				   then 'style="background:#BC955C"'
 		          				   else 'style="background:none"'
 	        					    end%]></p>
@@ -753,7 +753,7 @@
 							   <p class="text-col2 text-align-left">Separación de elementos</p>
 	                		   <p class="col-50 rectangulo"
 	                    		   [%case
-		          				   when "Moldeado" = 'TRUE'
+		          				   when "Separación de elementos" IS NOT NULL
 		          				   then 'style="background:#BC955C"'
 		          				   else 'style="background:none"'
 	        					    end%]></p>
@@ -772,7 +772,7 @@
 							   <p class="text-col2 text-align-left">Faltantes</p>
 	                		   <p class="col-50 rectangulo"
 	                    		   [%case
-		          				   when "Moldeado" = 'TRUE'
+		          				   when "Faltantes" IS NOT NULL
 		          				   then 'style="background:#BC955C"'
 		          				   else 'style="background:none"'
 	        					    end%]></p>
@@ -791,7 +791,7 @@
 							   <p class="text-col2 text-align-left">Factura</p>
 	                		   <p class="col-50 rectangulo"
 	                    		   [%case
-		          				   when "Moldeado" = 'TRUE'
+		          				   when "Factura" IS NOT NULL
 		          				   then 'style="background:#BC955C"'
 		          				   else 'style="background:none"'
 	        					    end%]></p>
@@ -810,7 +810,7 @@
 							   <p class="text-col2 text-align-left">Fragmentación</p>
 	                		   <p class="col-50 rectangulo"
 	                    		   [%case
-		          				   when "Moldeado" = 'TRUE'
+		          				   when "Fragmentación" IS NOT NULL
 		          				   then 'style="background:#BC955C"'
 		          				   else 'style="background:none"'
 	        					    end%]></p>

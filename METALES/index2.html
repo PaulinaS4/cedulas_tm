@@ -61,7 +61,7 @@
 					  	<p class="text-col2">Limpieza superficial</p>
 		              	<p class="col-50 rectangulo"
 		                  [%case
-		                    when "" = 'TRUE'
+		                    when "Limpieza superficial" IS NOT NULL
 		                    then 'style="background:#BC955C"'
 		                    else 'style="background:none"'
 		                  end%]></p>
@@ -71,7 +71,7 @@
 					  	<p class="text-col2">Limpieza físico química</p>
 		              	<p class="col-50 rectangulo"
 		                  [%case
-		                    when "" = 'TRUE'
+		                    when "Limpieza físico química" IS NOT NULL
 		                    then 'style="background:#BC955C"'
 		                    else 'style="background:none"'
 		                  end%]></p>
@@ -81,7 +81,7 @@
 					  	<p class="text-col2">Limpieza mecánica</p>
 		              	<p class="col-50 rectangulo"
 		                  [%case
-		                    when "" = 'TRUE'
+		                    when "Limpieza físico química" IS NOT NULL
 		                    then 'style="background:#BC955C"'
 		                    else 'style="background:none"'
 		                  end%]></p>
@@ -91,7 +91,7 @@
 					  	<p class="text-col2">Limpieza electroquímica</p>
 		              	<p class="col-50 rectangulo"
 		                  [%case
-		                    when "" = 'TRUE'
+		                    when "Limpieza electroquímica" IS NOT NULL
 		                    then 'style="background:#BC955C"'
 		                    else 'style="background:none"'
 		                  end%]></p>
@@ -101,7 +101,7 @@
 					  	<p class="text-col2">Eliminación de repintes</p>
 		              	<p class="col-50 rectangulo"
 		                  [%case
-		                    when "" = 'TRUE'
+		                    when "Eliminación de repintes" IS NOT NULL
 		                    then 'style="background:#BC955C"'
 		                    else 'style="background:none"'
 		                  end%]></p>
@@ -111,7 +111,7 @@
 					  	<p class="text-col2">Eliminación de int. anteriores</p>
 		              	<p class="col-50 rectangulo"
 		                  [%case
-		                    when "" = 'TRUE'
+		                    when "Eliminación de int. anteriores" IS NOT NULL
 		                    then 'style="background:#BC955C"'
 		                    else 'style="background:none"'
 		                  end%]></p>
@@ -121,7 +121,7 @@
 					  	<p class="text-col2">Eliminación de elementos sujeción</p>
 		              	<p class="col-50 rectangulo"
 		                  [%case
-		                    when "" = 'TRUE'
+		                    when "Eliminación de elementos sujeción" IS NOT NULL
 		                    then 'style="background:#BC955C"'
 		                    else 'style="background:none"'
 		                  end%]></p>
@@ -131,7 +131,7 @@
 					  	<p class="text-col2">Inhibición</p>
 		              	<p class="col-50 rectangulo"
 		                  [%case
-		                    when "" = 'TRUE'
+		                    when "Inhibición" IS NOT NULL
 		                    then 'style="background:#BC955C"'
 		                    else 'style="background:none"'
 		                  end%]></p>
@@ -141,7 +141,7 @@
 					  	<p class="text-col2">Pasivado</p>
 		              	<p class="col-50 rectangulo"
 		                  [%case
-		                    when "" = 'TRUE'
+		                    when "Pasivado" IS NOT NULL
 		                    then 'style="background:#BC955C"'
 		                    else 'style="background:none"'
 		                  end%]></p>
@@ -151,7 +151,7 @@
 					  	<p class="text-col2">Capa de protección</p>
 		              	<p class="col-50 rectangulo"
 		                  [%case
-		                    when "" = 'TRUE'
+		                    when "Capa de protección" IS NOT NULL
 		                    then 'style="background:#BC955C"'
 		                    else 'style="background:none"'
 		                  end%]></p>
@@ -161,7 +161,7 @@
 					  	<p class="text-col2">Otro</p>
 		              	<p class="col-50 rectangulo"
 		                  [%case
-		                    when "" = 'TRUE'
+		                    when "Otro PR" IS NOT NULL
 		                    then 'style="background:#BC955C"'
 		                    else 'style="background:none"'
 		                  end%]></p>
@@ -192,7 +192,7 @@
 		            if(valor==2 || valor==1){
 		              let creaimg = document.createElement('img');
 		              let crearDiv = document.createElement('div');
-		              creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/NUEVOS FORMATOS DE CEDULAS/CÉDULAS DE REGISTRO/CÉDULAS DE REGISTRO/BIENES INMUEBLES/REGISTRO/Procesos/"+images[i]+".jpg");
+		              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/05_Metales/02_Inicio/"+images[i]+".jpg");
 		              creaimg.setAttribute('width','260');
 		              crearDiv.setAttribute('width','100%');
 		              creaimg.setAttribute('style','padding:3px;');
@@ -201,8 +201,18 @@
 		              crearDiv.appendChild(creaimg);
 
 		            } 
+		            else if(valor<=4){
+	              let creaimg = document.createElement('img');
+	              let crearDiv = document.createElement('div');
+	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/05_Metales/02_Inicio/"+images[i]+".jpg");
+	              creaimg.setAttribute('width','188');
+	              creaimg.setAttribute('style','padding:3px;');
+	              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
+	              principal.appendChild(crearDiv);
+	              crearDiv.appendChild(creaimg);
 		          }
 		      }
+		  }
 	    		function imagenesFin(){
 	          let str = document.getElementById("fin").value;
 	          let images = str.split(',');
@@ -212,7 +222,7 @@
 	            if(valor==2 || valor==1){
 	              let creaimg = document.createElement('img');
 	              let crearDiv = document.createElement('div');
-	              creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/NUEVOS FORMATOS DE CEDULAS/CÉDULAS DE REGISTRO/CÉDULAS DE REGISTRO/BIENES INMUEBLES/REGISTRO/Procesos/"+images[i]+".jpg");
+	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/05_Metales/03_Fin/"+images[i]+".jpg");
 	              creaimg.setAttribute('width','260');
 	              crearDiv.setAttribute('width','100%');
 	              creaimg.setAttribute('style','padding:3px;');
@@ -223,7 +233,7 @@
 	            }  else if(valor<=4){
 	              let creaimg = document.createElement('img');
 	              let crearDiv = document.createElement('div');
-	              creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/NUEVOS FORMATOS DE CEDULAS/CÉDULAS DE REGISTRO/CÉDULAS DE REGISTRO/BIENES INMUEBLES/REGISTRO/Procesos/"+images[i]+".jpg");
+	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/05_Metales/03_Fin/"+images[i]+".jpg");
 	              creaimg.setAttribute('width','188');
 	              creaimg.setAttribute('style','padding:3px;');
 	              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
@@ -232,7 +242,7 @@
 
 	            } else if(valor<=6){
 	              let creaimg = document.createElement('img');
-	              creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/NUEVOS FORMATOS DE CEDULAS/CÉDULAS DE REGISTRO/CÉDULAS DE REGISTRO/BIENES INMUEBLES/REGISTRO/Procesos/"+images[i]+".jpg");
+	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/05_Metales/03_Fin/"+images[i]+".jpg");
 	              creaimg.setAttribute('width','190');
 	              creaimg.setAttribute('style','padding:3px');
 	              creaimg.setAttribute('style','padding:3px;');
@@ -240,7 +250,7 @@
 
 	            }else if(valor=>7){
 	              let creaimg = document.createElement('img');
-	              creaimg.setAttribute('src', "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/NUEVOS FORMATOS DE CEDULAS/CÉDULAS DE REGISTRO/CÉDULAS DE REGISTRO/BIENES INMUEBLES/REGISTRO/Procesos/"+images[i]+".jpg");
+	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/05_Metales/03_Fin/"+images[i]+".jpg");
 	              creaimg.setAttribute('width','125');
 	              creaimg.setAttribute('style','padding:3px');
 	              principal.appendChild(creaimg);
@@ -256,7 +266,7 @@
 			            if(valor==2 || valor==1){
 			              let creaimg = document.createElement('img');
 			              let crearDiv = document.createElement('div');
-			              creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/@JONATAN LARA/Cédulas/NUEVOS FORMATOS DE CEDULAS/CÉDULAS DE REGISTRO/CÉDULAS DE REGISTRO/BIENES INMUEBLES/REGISTRO/Procesos/"+images[i]+".jpg");
+			              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/05_Metales/04_Intervención/"+images[i]+".jpg");
 			              creaimg.setAttribute('width','260');
 			              crearDiv.setAttribute('width','100%');
 			              creaimg.setAttribute('style','padding:3px;');
