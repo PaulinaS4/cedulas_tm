@@ -51,6 +51,7 @@
 			<div class="col-50 diseño-tabla">
 				<h1 class="h2 bold color-rojo text-align-left">REGISTRO FOTOGRÁFICO DE FIN</h1>
 				<div class="" id="cont-princ-3">
+			      
 			      <input type="hidden" id="fin" value=[%"Fotos fin"%]>
 			    </div>
 			</div>
@@ -203,8 +204,8 @@
 		            } 
 		          }
 		      }
-	    		function imagenesFin(){
-	          let str = document.getElementById("fin").value;
+	    		function imagenesIntervencion(){
+	          let str = document.getElementById("intervencion").value;
 	          let images = str.split(',');
 	          let principal = document.getElementById('cont-princ-2');
 	          let valor = images.length;
@@ -212,7 +213,7 @@
 	            if(valor==2 || valor==1){
 	              let creaimg = document.createElement('img');
 	              let crearDiv = document.createElement('div');
-	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/04_Elementos pétreos/03_Fin/"+images[i]+".jpg");
+	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/04_Elementos pétreos/04_Intervención/"+images[i]+".jpg");
 	              creaimg.setAttribute('width','260');
 	              crearDiv.setAttribute('width','100%');
 	              creaimg.setAttribute('style','padding:3px;');
@@ -223,7 +224,7 @@
 	            }  else if(valor<=4){
 	              let creaimg = document.createElement('img');
 	              let crearDiv = document.createElement('div');
-	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/04_Elementos pétreos/03_Fin/"+images[i]+".jpg");
+	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/04_Elementos pétreos/04_Intervención/"+images[i]+".jpg");
 	              creaimg.setAttribute('width','188');
 	              creaimg.setAttribute('style','padding:3px;');
 	              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
@@ -232,7 +233,7 @@
 
 	            } else if(valor<=6){
 	              let creaimg = document.createElement('img');
-	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/04_Elementos pétreos/03_Fin/"+images[i]+".jpg");
+	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/04_Elementos pétreos/04_Intervención/"+images[i]+".jpg");
 	              creaimg.setAttribute('width','190');
 	              creaimg.setAttribute('style','padding:3px');
 	              creaimg.setAttribute('style','padding:3px;');
@@ -240,15 +241,15 @@
 
 	            }else if(valor=>7){
 	              let creaimg = document.createElement('img');
-	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/04_Elementos pétreos/03_Fin/"+images[i]+".jpg");
+	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/04_Elementos pétreos/04_Intervención/"+images[i]+".jpg");
 	              creaimg.setAttribute('width','125');
 	              creaimg.setAttribute('style','padding:3px');
 	              principal.appendChild(creaimg);
 	            }
 	          }
 	      }
-			 	function imagenesIntervencion(){
-			 		let str = document.getElementById("intervencion").value;
+			 	function imagenesFin(){
+			 		let str = document.getElementById("fin").value;
 			          let images = str.split(',');
 			          let principal = document.getElementById('cont-princ-3');
 			          let valor = images.length;
@@ -256,7 +257,7 @@
 			            if(valor==2 || valor==1){
 			              let creaimg = document.createElement('img');
 			              let crearDiv = document.createElement('div');
-			              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/04_Elementos pétreos/04_Intervención/"+images[i]+".jpg");
+			              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/04_Elementos pétreos/03_Fin/"+images[i]+".jpg");
 			              creaimg.setAttribute('width','260');
 			              crearDiv.setAttribute('width','100%');
 			              creaimg.setAttribute('style','padding:3px;');
