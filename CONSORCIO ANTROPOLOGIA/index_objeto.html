@@ -35,68 +35,67 @@
 	<h1 class="h2 bold color-rojo text-align-left">DATOS GENERALES DEL MONUMENTO</h1>
 	<div style="display:flex">
 	<div style="width:100%">
-	<div class="tabla diseño-tabla" style="display:flex; width:60%">
+	<div class="tabla diseño-tabla" style="display:flex; width:94%">
 		<table class="generales" style=" width: 100%;">
 			<tr>
-				<td class="col1 col-25 h-54">Tramo</td>
-				<td class="col2 col-25 h-54">[%"Tramo" %]</td>
+				<td class="col1 col-25" style="height: 38px">Tramo</td>
+				<td class="col2 col-25" style="height: 38px">[%"Tramo" %]</td>
 			</tr>
 			<tr>
-				<td class="col1 col-25 h-54">ID Monumento</td>
-       			<td class="col2">[% "id_monumento" %]</td>
+				<td class="col1 col-25" style="height: 38px">ID Monumento</td>
+       			<td class="col2">[% "idmonumento" %]</td>
        		</tr>
        		<tr>
-        		<td class="col1 col-25 h-54">Tipo</td>
-				<td class="col2">[%"Tipo"%]</td>
+        		<td class="col1 col-25" style="height: 38px">Tipo</td>
+				<td class="col2">[%"tipo_p"%]</td>
 			</tr>
 			<tr>
-				<td class="col1 col-25 h-54">Subtipo</td>
-				<td class="col2">[%"Subtipo"%]</td>
+				<td class="col1 col-25" style="height: 38px">Subtipo</td>
+				<td class="col2">[%"subtipo_p"%]</td>
 			</tr>
 			<tr>
-				<td class="col1 col-25 h-54">Cadenamiento</td>
+				<td class="col1 col-25" style="height: 38px">Cadenamiento</td>
 				<td class="col2">[%"km"%]</td>
 			</tr>
 			<tr>
-				<td class="col1 col-25 h-54">ID Arqueólogo</td>
-				<td class="col2">[%upper("Arqueólogo")%]</td>
+				<td class="col1 col-25" style="height: 38px">ID Arqueólogo</td>
+				<td class="col2">[%upper("arqueologo_p")%]</td>
 			</tr>
 		</table>
 	</div>	
 	<h1 class="h2 bold color-rojo text-align-left">DATOS DE ANÁLISIS DE ANTROPOLOGÍA FÍSICA</h1>
 	
-		<div class="tabla diseño-tabla" style="display:flex; width: 60%;">
+		<div class="tabla diseño-tabla" style="display:flex; width: 94%;">
 			<table class="generales" style=" width: 100%;">
 
 				<tr>
-					<td class="col1 col-25 h-54">Persona que analizó</td>
-					<td class="col2 col-25 h-54">[%CASE WHEN "Tramo" = 'T2' THEN 'Nancy G' WHEN "Tramo" = 'T1' THEN 'Gloria Islas Win' END%]</td>
+					<td class="col1 col-25" style="height: 38px">Persona que analizó</td>
+					<td class="col2 col-25 h-45">[%CASE WHEN "Tramo" = 'T2' THEN 'Nancy G' WHEN "Tramo" = 'T1' THEN 'Gloria Islas Win' END%]</td>
 				</tr>
 				<tr>
-					<td class="col1 col-25 h-54">Trabajadores de apoyo</td>
+					<td class="col1 col-25" style="height: 38px">Trabajadores de apoyo</td>
 					<td class="col2">[%"c_trabajadores"%]</td>
 				</tr>
 				<tr>
-					<td class="col1 col-25 h-54">Estado de conservación</td>
+					<td class="col1 col-25" style="height: 38px">Estado de conservación</td>
 					<td class="col2">[%"estado_conservacion"%]</td>
 				</tr>
 				<tr>
-					<td class="col1 col-25 h-54">Fecha de análisis</td>
+					<td class="col1 col-25" style="height: 38px">Fecha de análisis</td>
 					<td class="col2">[%"fecha_analisis"%]</td>
 				</tr>
 				<tr>
-					<td class="col1 col-25 h-54">Sexo</td>
+					<td class="col1 col-25" style="height: 38px">Sexo</td>
 					<td class="col2">[%"sexo"%]</td>
 				</tr>
 				<tr>
-					<td class="col1 col-25 h-54">Edad</td>
+					<td class="col1 col-25" style="height: 38px">Edad</td>
 					<td class="col2">[%"edad"%]</td>
 				</tr>
 			</table>
 		</div>
-		
-		<div class="tabla diseño-tabla" style="display:flex; width: 30%">
-		</div>	
+		</div>
+		<div class="tabla diseño-tabla" style="width: 50%">
 		</div>
 	</div>
 </body>
