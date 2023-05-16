@@ -53,11 +53,11 @@
 				<td class="col1">Fecha de fin intervención</td>
 				<td class="col2">[%"Fecha fin de intervención"%]</td>
 				<td class="col1">Persona que intervino</td>
-				<td class="col2">[%"Nombre quien registra"%] Se contó con el apoyo de [%CASE WHEN "Tramo" = 'T1' THEN '4 personas'
-																					 WHEN "Tramo" = 'T2' THEN '4 personas'
-																					 WHEN "Tramo" = 'T3' THEN '1 persona'
-																					 WHEN "Tramo" = 'T4' THEN '3 personas'
-																					 WHEN "Tramo" = 'T5' THEN 'ninguna persona'
+				<td class="col2">[%replace("Nombre quien registra",'.','')%]. Se contó con el apoyo de [%CASE WHEN "Tramo" = 'T1' THEN '4 personas.'
+																					 WHEN "Tramo" = 'T2' THEN '4 personas.'
+																					 WHEN "Tramo" = 'T3' THEN '1 persona.'
+																					 WHEN "Tramo" = 'T4' THEN '3 personas.'
+																					 WHEN "Tramo" = 'T5' THEN 'ninguna persona.'
 																					 END%] <br>
 				</td>
 			</tr>
@@ -148,10 +148,11 @@
 	      imagenesFin();
 	      imagenesIntervencion();
 
-      }else if(str == "Pétreos"){
-				imagenesInicio();
+     	}else if(str == "Pétreos"){
+      	imagenesInicio();
 	      imagenesFin();
 	      imagenesIntervencion();
+
       }else if(str == "Entierros"){
 				imagenesEntierro();
       }else if(str == "Metales"){
