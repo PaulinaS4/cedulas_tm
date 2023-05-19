@@ -48,8 +48,8 @@
 				<td class="col2">[%"Subtipo"%]</td>
 			</tr>
 			<tr>
-				<td class="col1 col-25 h-54">Cadenamiento</td>
-				<td class="col2">[%"km"%]</td>
+				<td class="col1 col-25 h-54">Ubicación</td>
+				<td class="col2">[%CASE WHEN "km" IS NULL THEN 'Obra complementaria' ELSE 'Derecho de vía' END%]</td>
 				<td class="col1 col-25 h-54">ID Arqueólogo</td>
 				<td class="col2">[%"arqlgo"%]</td>
 			</tr>
