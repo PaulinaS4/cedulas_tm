@@ -200,6 +200,15 @@
               principal.setAttribute('style', 'display:flex; flex-wrap: wrap; justify-content: center;')
               principal.appendChild(crearDiv);
               crearDiv.appendChild(creaimg);
+              }  else if(valor<=4){
+              let creaimg = document.createElement('img');
+              let crearDiv = document.createElement('div');
+              creaimg.setAttribute('src',  liga_fotos +images[i]+".jpg");
+              creaimg.setAttribute('width','188');
+              creaimg.setAttribute('style','padding:3px;');
+              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
+              principal.appendChild(crearDiv);
+              crearDiv.appendChild(creaimg);
 
             } 
           }
@@ -218,6 +227,15 @@
               crearDiv.setAttribute('width','100%');
               creaimg.setAttribute('style','padding:3px;');
               principal.setAttribute('style', 'display:flex; flex-wrap: wrap;  justify-content: center;')
+              principal.appendChild(crearDiv);
+              crearDiv.appendChild(creaimg);
+              }  else if(valor<=4){
+              let creaimg = document.createElement('img');
+              let crearDiv = document.createElement('div');
+              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/02_Concha/03_Fin/" +images[i]+".jpg");
+              creaimg.setAttribute('width','188');
+              creaimg.setAttribute('style','padding:3px;');
+              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
               principal.appendChild(crearDiv);
               crearDiv.appendChild(creaimg);
 

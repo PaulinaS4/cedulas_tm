@@ -26,7 +26,7 @@
 	          <p class="">
 	            Análisis Regional del Sureste Mesoamericano Proyecto Marco de Salvamento <br>Arqueológico del Tren Maya.
               </p>
-              <h5 class="">Responsable académico:Dr. Manuel E. Pérez Rivas. Diseño de contenido: Félix Albano Camacho Zamora</h5>
+              <h5 class="">Responsable académico:Dr. Manuel E. Pérez Rivas. Coordinador de área de conservación: Félix Albano Camacho Zamora</h5>
 	        </div>
 	      </div>
 			</section>
@@ -88,78 +88,72 @@
 						<div class="flex space-between">
 								<p class="text-col2">Modelado</p>
 								<p class="col-50 rectangulo"
-                    [%case
-          						when "Modelado" = 'TRUE'
-          						then 'style="background:#BC955C"'
-          						else 'style="background:none"'
-        					  end%]>
+                   						[%CASE WHEN 
+										array_count(string_to_array("Técnica de construcción", ','),'Modelado') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%]
+						>
                 </p>
 						</div>
 						<div class="flex space-between">
 								<p class="text-col2">Moldeado</p>
                 <p class="col-50 rectangulo"
-                    [%case
-          						when "Moldeado" = 'TRUE'
-          						then 'style="background:#BC955C"'
-          						else 'style="background:none"'
-        					  end%]>
+                					[%CASE WHEN 
+										array_count(string_to_array("Técnica de construcción", ','),'Moldeado') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%]
+                 >
 						</div>
 						<div class="flex space-between">
 								<p class="text-col2">Placas</p>
                 <p class="col-50 rectangulo"
-                    [%case
-          						when "Placas" = 'TRUE'
-          						then 'style="background:#BC955C"'
-          						else 'style="background:none"'
-        					  end%]>
+                    [%CASE WHEN 
+										array_count(string_to_array("Técnica de construcción", ','),'Placas') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%]>
 						</div>
 						<div class="flex space-between">
 								<p class="text-col2">Enrollado</p>
                 <p class="col-50 rectangulo"
-                    [%case
-          						when "Enrollado" = 'TRUE'
-          						then 'style="background:#BC955C"'
-          						else 'style="background:none"'
-        					  end%]>
+                    [%CASE WHEN 
+										array_count(string_to_array("Técnica de construcción", ','),'Enrollado') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%]>
 						</div>
 						<div class="flex space-between">
 								<p class="text-col2">Pastillaje</p>
                 <p class="col-50 rectangulo"
-                    [%case
-          						when "Pastillaje" = 'TRUE'
-          						then 'style="background:#BC955C"'
-          						else 'style="background:none"'
-        					  end%]>
+                    [%CASE WHEN 
+										array_count(string_to_array("Técnica de construcción", ','),'Pastillaje') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%]>
 						</div>
 						<div class="flex space-between">
 								<p class="text-col2">Paleteado</p>
                 <p class="col-50 rectangulo"
-                    [%case
-          						when "Paleteado" = 'TRUE'
-          						then 'style="background:#BC955C"'
-          						else 'style="background:none"'
-        					  end%]>
+                    [%CASE WHEN 
+										array_count(string_to_array("Técnica de construcción", ','),'Paleteado') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%]>
 						</div>
-						<div class="flex space-between">
-								<p class="text-col2">Placas</p>
-                <p class="col-50 rectangulo"
-                    [%case
-          						when "Placas_1" = 'TRUE'
-          						then 'style="background:#BC955C"'
-          						else 'style="background:none"'
-        					  end%]>
-						</div>
+						
 						<div class="flex space-between">
 								<p class="text-col2">Torneado</p>
                 <p class="col-50 rectangulo"
-                    [%case
-          						when "Torneado" = 'TRUE'
-          						then 'style="background:#BC955C"'
-          						else 'style="background:none"'
-        					  end%]>
+                    [%CASE WHEN 
+										array_count(string_to_array("Técnica de construcción", ','),'Torneado') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%]>
 						</div>
             <div class="flex space-between">
-								<p class="text-col2">Otro: </p>
+								<p class="text-col2">Otro:</p>
 						</div>
 					</div>
 			</div>
@@ -173,7 +167,7 @@
     <!-- IMAGENES-->
 		<div class="diseño-tabla" style="width:836px" >
 				<div class="flex flex-reverse" id="cont-princ">
-         <input type="hidden" id="conservacion" value=[% array_to_string( array_filter( array("Foto_deterioro_1" , "Foto_deterioro_2" ), @element is not null)) %]>
+         <input type="hidden" id="conservacion" value=[% "Fotos deterioros"%]>
             <div class="flex" style="flex-direction: column; width: 264px;" >
               <div class="diseño-tabla">
                 <h5 style="">Estado de conservación: </h5>
@@ -246,26 +240,26 @@
 				</tr>
 				<tr>
 					<td class="col1">Elementos para asir</td>
-					<td class="col2">[%CASE
-                            WHEN "Elementos para asir" is not null
-                            THEN "Elementos para asir"
-                            WHEN "Elementos para asir" is null
-                            THEN 'No presenta'
-                            end %]</td>
+					<td class="col2">
+						[%CASE WHEN 
+										array_count(string_to_array("Elementos presentados", ','),'Elementos para asir') = 1
+										THEN 'Si presenta'
+										else 'No presenta'
+										END%]
+
+										</td>
 	        <td class="col1">Elemento para verter</td>
-	        <td class="col2">[%CASE
-                            WHEN "Elementos para verter" is not null
-                            THEN "Elementos para verter"
-                            WHEN "Elementos para verter" is null
-                            THEN 'No presenta'
-                            end %]</td>
+	        <td class="col2">[%CASE WHEN 
+										array_count(string_to_array("Elementos presentados", ','),'Elementos para verter') = 1
+										THEN 'Si presenta'
+										else 'No presenta'
+										END%]</td>
 	        <td class="col1">Elemento para obturar</td>
-	        <td class="col2">[%CASE
-                            WHEN "Elementos para obturar" is not null
-                            THEN "Elementos para obturar"
-                            WHEN "Elementos para obturar" is null
-                            THEN 'No presenta'
-                            end %]</td>
+	        <td class="col2">[%CASE WHEN 
+										array_count(string_to_array("Elementos presentados", ','),'Elementos para obturar') = 1
+										THEN 'Si presenta'
+										else 'No presenta'
+										END%]</td>
 				</tr>
 				<tr>
 					<td class="col1">Forma de soportes: </td>
@@ -345,83 +339,83 @@
 						<div class="flex space-between">
 								<p class="text-col2">Incisa</p>
                 <p class="col-50 rectangulo"
-                    [%case
-          						when "Incisa" = 'TRUE'
-          						then 'style="background:#BC955C"'
-          						else 'style="background:none"'
-        					  end%]>
+                    [%CASE WHEN 
+								array_count(string_to_array("Decoración", ','),'Incisa') = 1
+								THEN 'style="background:#BC955C"'
+								else 'style="background:none"'
+								END%]>
 						</div>
 						<div class="flex space-between">
 								<p class="text-col2">Impronta</p>
                 <p class="col-50 rectangulo"
-                    [%case
-          						when "Impronta" = 'TRUE'
-          						then 'style="background:#BC955C"'
-          						else 'style="background:none"'
-        					  end%]>
+                    [%CASE WHEN 
+								array_count(string_to_array("Decoración", ','),'Impronta') = 1
+								THEN 'style="background:#BC955C"'
+								else 'style="background:none"'
+								END%]>
 						</div>
 						<div class="flex space-between">
 								<p class="text-col2">Alisada</p>
                 <p class="col-50 rectangulo"
-                    [%case
-          						when "Alisada" = 'TRUE'
-          						then 'style="background:#BC955C"'
-          						else 'style="background:none"'
-        					  end%]>
+                    [%CASE WHEN 
+								array_count(string_to_array("Decoración", ','),'Alisada') = 1
+								THEN 'style="background:#BC955C"'
+								else 'style="background:none"'
+								END%]>
 						</div>
 						<div class="flex space-between">
 								<p class="text-col2">Digital</p>
                 <p class="col-50 rectangulo"
-                    [%case
-          						when "Digital"= 'TRUE'
-          						then 'style="background:#BC955C"'
-          						else 'style="background:none"'
-        					  end%]>
+                    [%CASE WHEN 
+								array_count(string_to_array("Decoración", ','),'Digital') = 1
+								THEN 'style="background:#BC955C"'
+								else 'style="background:none"'
+								END%]>
 						</div>
 						<div class="flex space-between">
 								<p class="text-col2">Acanalado</p>
                 <p class="col-50 rectangulo"
-                    [%case
-          						when "Acanalado" = 'TRUE'
-          						then 'style="background:#BC955C"'
-          						else 'style="background:none"'
-        					  end%]>
+                    [%CASE WHEN 
+								array_count(string_to_array("Decoración", ','),'Acanalado') = 1
+								THEN 'style="background:#BC955C"'
+								else 'style="background:none"'
+								END%]>
 						</div>
 						<div class="flex space-between">
 								<p class="text-col2">Modelado</p>
                 <p class="col-50 rectangulo"
-                    [%case
-          						when "Modelado_1" = 'TRUE'
-          						then 'style="background:#BC955C"'
-          						else 'style="background:none"'
-        					  end%]>
+                    [%CASE WHEN 
+								array_count(string_to_array("Decoración", ','),'Modelado') = 1
+								THEN 'style="background:#BC955C"'
+								else 'style="background:none"'
+								END%]>
 						</div>
 						<div class="flex space-between">
 								<p class="text-col2">Punzonado</p>
                 <p class="col-50 rectangulo"
-                    [%case
-          						when "Punzonado" = 'TRUE'
-          						then 'style="background:#BC955C"'
-          						else 'style="background:none"'
-        					  end%]>
+                    [%CASE WHEN 
+								array_count(string_to_array("Decoración", ','),'Punzonado') = 1
+								THEN 'style="background:#BC955C"'
+								else 'style="background:none"'
+								END%]>
 						</div>
 						<div class="flex space-between">
 								<p class="text-col2">Incrustación</p>
                 <p class="col-50 rectangulo"
-                    [%case
-          						when "Incrustación" = 'TRUE'
-          						then 'style="background:#BC955C"'
-          						else 'style="background:none"'
-        					  end%]>
+                    [%CASE WHEN 
+								array_count(string_to_array("Decoración", ','),'Incrustación') = 1
+								THEN 'style="background:#BC955C"'
+								else 'style="background:none"'
+								END%]>
 						</div>
             <div class="flex space-between">
 								<p class="text-col2">Pastillaje</p>
                 <p class="col-50 rectangulo"
-                    [%case
-          						when "Pastillaje_1" = 'TRUE'
-          						then 'style="background:#BC955C"'
-          						else 'style="background:none"'
-        					  end%]>
+                   [%CASE WHEN 
+								array_count(string_to_array("Decoración", ','),'Pastillaje') = 1
+								THEN 'style="background:#BC955C"'
+								else 'style="background:none"'
+								END%]>
 						</div>
 					</div>
 
@@ -430,56 +424,56 @@
 						<div class="flex space-between">
 								<p class="text-col2">Esgrafiado</p>
                 <p class="col-50 rectangulo"
-                    [%case
-          						when "Esgrafiado" = 'TRUE'
-          						then 'style="background:#BC955C"'
-          						else 'style="background:none"'
-        					  end%]>
+                    [%CASE WHEN 
+								array_count(string_to_array("Decoración", ','),'Esgrafiado') = 1
+								THEN 'style="background:#BC955C"'
+								else 'style="background:none"'
+								END%]>
 						</div>
 						<div class="flex space-between">
 								<p class="text-col2">Cloissoné</p>
                 <p class="col-50 rectangulo"
-                    [%case
-          						when "Cloissoné" = 'TRUE'
-          						then 'style="background:#BC955C"'
-          						else 'style="background:none"'
-        					  end%]>
+                    [%CASE WHEN 
+								array_count(string_to_array("Decoración", ','),'Cloissoné') = 1
+								THEN 'style="background:#BC955C"'
+								else 'style="background:none"'
+								END%]>
 						</div>
 						<div class="flex space-between">
 								<p class="text-col2">Estucado</p>
                 <p class="col-50 rectangulo"
-                    [%case
-          						when "Estucado" = 'TRUE'
-          						then 'style="background:#BC955C"'
-          						else 'style="background:none"'
-        					  end%]>
+                    [%CASE WHEN 
+								array_count(string_to_array("Decoración", ','),'Estucado') = 1
+								THEN 'style="background:#BC955C"'
+								else 'style="background:none"'
+								END%]>
 						</div>
 						<div class="flex space-between">
 								<p class="text-col2">Engobe</p>
                 <p class="col-50 rectangulo"
-                    [%case
-          						when "Engobe" = 'TRUE'
-          						then 'style="background:#BC955C"'
-          						else 'style="background:none"'
-        					  end%]>
+                   [%CASE WHEN 
+								array_count(string_to_array("Decoración", ','),'Engobe') = 1
+								THEN 'style="background:#BC955C"'
+								else 'style="background:none"'
+								END%]>
 						</div>
             <div class="flex space-between">
-								<p class="text-col2">Color: [%"Color de engobe"%]</p>
+								<p class="text-col2">Color engobe: [%"Color engobe"%]</p>
 						</div>
 						<div class="flex space-between">
 								<p class="text-col2">Policromía</p>
                 <p class="col-50 rectangulo"
-                    [%case
-          						when "Policromía" = 'TRUE'
-          						then 'style="background:#BC955C"'
-          						else 'style="background:none"'
-        					  end%]>
+                    [%CASE WHEN 
+								array_count(string_to_array("Decoración", ','),'Policromía') = 1
+								THEN 'style="background:#BC955C"'
+								else 'style="background:none"'
+								END%]>
 						</div>
 						<div class="flex space-between">
-								<p class="text-col2">Color: [%"Color de policromía"%]</p>
+								<p class="text-col2">Color: [%"Color"%]</p>
 						</div>
 						<div class="flex space-between">
-								<p class="text-col2">Otro:  [%"Otro_1"%]</p>
+								<p class="text-col2">Otro:  [%"Otro D"%]</p>
 						</div>
 					</div>
 			</div>
@@ -835,7 +829,7 @@
             </div>
             <div class="flex space-between">
                   <p class="text-col2">Otros:  </p>
-                  <p class="text-col2">[%"Otros"%]</p>
+                  <p class="text-col2">[%"Otro FD"%]</p>
             </div>
 
         </div>
@@ -852,21 +846,22 @@
         let str = document.getElementById("conservacion").value;
         let images = str.split(',');
         let principal = document.getElementById('cont-princ')
-        let valor = 3; // let valor = images.length;
+        //let valor = 3
+        let valor = images.length;
         for(i=0;i<images.length;i++){
           if(valor>=2 & valor<=4){
             let creaimg = document.createElement('img');
             let crearDiv = document.createElement('div');
-            creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/IMAGENES/Deterioros/"+images[i]+".jpg");
-            creaimg.setAttribute('width','264');
-            creaimg.setAttribute('height','190');
+            creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/01_Cerámica/01_Estado de conservación/"+images[i]+".jpg");
+            creaimg.setAttribute('width', '183');//'264');
+            creaimg.setAttribute('height','139');//'190');
             crearDiv.setAttribute('class','fotografia');
             principal.appendChild(crearDiv);
             crearDiv.appendChild(creaimg);
 
           } else if(valor>=4 & valor<=6){
             let creaimg = document.createElement('img');
-            creaimg.setAttribute('src', "file:///C:/Users/ADMIN/Documents/IMAGENES/Deterioros/"+images[i]+".jpg");
+            creaimg.setAttribute('src', "file:///D:/restauracion/fotos/01_Cerámica/01_Estado de conservación/"+images[i]+".jpg");
             creaimg.setAttribute('width','183');
             creaimg.setAttribute('height','139');
             principal.appendChild(creaimg);
@@ -874,7 +869,7 @@
           }else if(valor=>8){
 
             let creaimg = document.createElement('img');
-            creaimg.setAttribute('src', "file:///C:/Users/ADMIN/Documents/IMAGENES/Deterioros/"+images[i]+".jpg");
+            creaimg.setAttribute('src', "file:///D:/restauracion/fotos/01_Cerámica/01_Estado de conservación/"+images[i]+".jpg");
             creaimg.setAttribute('width','100');
             creaimg.setAttribute('height','60');
             principal.appendChild(creaimg);

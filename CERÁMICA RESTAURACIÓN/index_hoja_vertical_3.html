@@ -21,7 +21,7 @@
     <div class="main flex" style="width:850px">
       <div class="diseño-tabla"style="width:850px">
         <p>Registro fotográfico de inicio</p>
-        <input type="hidden" id="inicioFoto" value=[% array_to_string( array_filter( array("Foto_inicio_1" , "Foto_inicio_2"  , "Foto_inicio_3" , "Foto_inicio_4"), @element is not null)) %]>
+        <input type="hidden" id="inicioFoto" value=[%"Fotos inicio" %]>
         <div class="flex wrap center" id="cont-princ-2"></div>
       </div>
     </div>
@@ -29,7 +29,7 @@
     <div class="main flex" style="width:850px">
       <div class="diseño-tabla " style="width:850px">
         <p>Registro fotográfico de fin</p>
-        <input type="hidden" id="inicioFin" value=[% array_to_string( array_filter( array("Foto_fin_1" , "Foto_fin_2"  , "Foto_fin_3" , "Foto_fin_4"), @element is not null)) %]>
+        <input type="hidden" id="inicioFin" value=[% "Fotos fin" %]>
         <div class="flex wrap center " id="cont-princ-4"></div>
       </div>
     </div>
@@ -60,10 +60,10 @@
       let principal = document.getElementById('cont-princ-2');
        let valor = images.length;
       for(i=0;i<images.length;i++){
-        if(valor>=2 & valor<3){
+        if(valor>=1 & valor<3){
           let creaimg = document.createElement('img');
           let crearDiv = document.createElement('div');
-          creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/IMAGENES/Inicio/"+images[i]+".jpg");
+          creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/01_Cerámica/02_Inicio/"+images[i]+".jpg");
           creaimg.setAttribute('width','386');
           creaimg.setAttribute('height','260');
           crearDiv.setAttribute('class','fotografia');
@@ -72,7 +72,7 @@
 
         } else if(valor>=3 & valor<4){
           let creaimg = document.createElement('img');
-          creaimg.setAttribute('src', "file:///C:/Users/ADMIN/Documents/IMAGENES/Inicio/"+images[i]+".jpg");
+          creaimg.setAttribute('src', "file:///D:/restauracion/fotos/01_Cerámica/02_Inicio/"+images[i]+".jpg");
           creaimg.setAttribute('width','266');
           creaimg.setAttribute('height','216');
           creaimg.setAttribute('style','padding:3px');
@@ -81,7 +81,7 @@
         }else if(valor==4){
 
           let creaimg = document.createElement('img');
-          creaimg.setAttribute('src', "file:///C:/Users/ADMIN/Documents/IMAGENES/Inicio/"+images[i]+".jpg");
+          creaimg.setAttribute('src', "file:///D:/restauracion/fotos/01_Cerámica/02_Inicio/"+images[i]+".jpg");
           creaimg.setAttribute('width','328');
           creaimg.setAttribute('height','195');
           creaimg.setAttribute('style','padding:6px');
@@ -97,10 +97,10 @@
       let principal = document.getElementById('cont-princ-4');
       let valor = images.length;
       for(i=0;i<images.length;i++){
-        if(valor>=2 & valor<3){
+        if(valor>=1 & valor<3){
           let creaimg = document.createElement('img');
           let crearDiv = document.createElement('div');
-          creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/IMAGENES/Fin/"+images[i]+".jpg");
+          creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/01_Cerámica/03_Fin/"+images[i]+".jpg");
           creaimg.setAttribute('width','386');
           creaimg.setAttribute('height','260');
           crearDiv.setAttribute('class','fotografia');
@@ -109,7 +109,7 @@
 
         } else if(valor>=3 & valor<4){
           let creaimg = document.createElement('img');
-          creaimg.setAttribute('src', "file:///C:/Users/ADMIN/Documents/IMAGENES/Fin/"+images[i]+".jpg");
+          creaimg.setAttribute('src', "file:///D:/restauracion/fotos/01_Cerámica/03_Fin/"+images[i]+".jpg");
           creaimg.setAttribute('width','266');
           creaimg.setAttribute('height','216');
           creaimg.setAttribute('style','padding:3px');
@@ -118,7 +118,7 @@
         }else if(valor==4){
 
           let creaimg = document.createElement('img');
-          creaimg.setAttribute('src', "file:///C:/Users/ADMIN/Documents/IMAGENES/Fin/"+images[i]+".jpg");
+          creaimg.setAttribute('src', "file:///D:/restauracion/fotos/01_Cerámica/03_Fin/"+images[i]+".jpg");
           creaimg.setAttribute('width','328');
           creaimg.setAttribute('height','195');
           creaimg.setAttribute('style','padding:6px');

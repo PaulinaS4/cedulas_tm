@@ -24,7 +24,7 @@
 
     <div class="diseño-tabla ">
       <p>Registro fotográfico de Intervención</p>
-      <input type="hidden" id="inicioIntervencion" value=[% array_to_string( array_filter( array("Foto_intervencion_1" , "Foto_intervencion_2"  , "Foto_intervencion_3" , "Foto_intervencion_4", "Foto_intervencion_5", "Foto_intervencion_6", "Foto_intervencion_7", "Foto_intervencion_8", "Foto_intervencion_9"), @element is not null)) %]>
+      <input type="hidden" id="inicioIntervencion" value=[% "Fotos intervención" %]>
       <div class="flex wrap center" id="cont-princ-3"></div>
     </div>
   </div>
@@ -271,28 +271,28 @@
         if(valor>=2 & valor<4){
           let creaimg = document.createElement('img');
           let crearDiv = document.createElement('div');
-          creaimg.setAttribute('src',  "file:///C:/Users/ADMIN/Documents/IMAGENES/Procesos/"+images[i]+".jpg");
-          creaimg.setAttribute('width','386');
-          creaimg.setAttribute('height','260');
+          creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/01_Cerámica/04_Intervención/"+images[i]+".jpg");
+          creaimg.setAttribute('width','386'); //386
+          creaimg.setAttribute('height','260'); //260
           crearDiv.setAttribute('class','fotografia');
           principal.appendChild(crearDiv);
           crearDiv.appendChild(creaimg);
 
         } else if(valor>=4 & valor<=6){
           let creaimg = document.createElement('img');
-          creaimg.setAttribute('src', "file:///C:/Users/ADMIN/Documents/IMAGENES/Procesos/"+images[i]+".jpg");
-          //creaimg.setAttribute('width','270');
-          //creaimg.setAttribute('style','padding:3px');
-          //creaimg.setAttribute('height','220');
-          creaimg.setAttribute('width','386');
-          creaimg.setAttribute('height','260');
-          creaimg.setAttribute('style','padding:6px');
+          creaimg.setAttribute('src', "file:///D:/restauracion/fotos/01_Cerámica/04_Intervención/"+images[i]+".jpg");
+          creaimg.setAttribute('width','300');
+          creaimg.setAttribute('style','padding:3px');
+          creaimg.setAttribute('height','250');
+          //creaimg.setAttribute('width','386');
+          //creaimg.setAttribute('height','260');
+          //creaimg.setAttribute('style','padding:6px');
           principal.appendChild(creaimg);
 
         }else if(valor=>8){
 
           let creaimg = document.createElement('img');
-          creaimg.setAttribute('src', "file:///C:/Users/ADMIN/Documents/IMAGENES/Procesos/"+images[i]+".jpg");
+          creaimg.setAttribute('src', "file:///D:/restauracion/fotos/01_Cerámica/04_Intervención/"+images[i]+".jpg");
         //  creaimg.setAttribute('width','130');
           creaimg.setAttribute('style','padding:3px');
           //creaimg.setAttribute('height','95');
