@@ -75,7 +75,8 @@
           <td class="col1">Nombre de quien realiza la intervención</td>
           <td class="col2">[%"Nombre de quien interviene"%]</td>
           <td class="col1">Fin de intervención</td>
-          <td class="col2">[%"Fecha fin de intervención"%]</td>
+          <td class="col2">[%CASE WHEN "Fecha fin de intervención" LIKE '%Cargando%' OR "Fecha fin de intervención" IS NULL THEN NULL
+          ELSE "Fecha fin de intervención" END%]</td>
           <td class="col1">Estado</td>
           <td class="col2">[%"Estado"%]</td>
 

@@ -35,12 +35,12 @@
 	<div class="tabla diseño-tabla flex ">
 		<table class="generales col-100">
 			<tr>
-				<td class="col1">Tramo</td>
-				<td class="col2">[%"Tramo"%]</td>
-				<td class="col1">Estructura</td>
-				<td class="col2">[%"ID Monumento"%]</td>
-        		<td class="col1">Número ID</td>
-				<td class="col2">[%"Clave de excavación"%]</td>
+				<td class="col1" style="width: 16%">Tramo</td>
+				<td class="col2" style="width: 16%">[%"Tramo"%]</td>
+				<td class="col1" style="width: 16%">Estructura</td>
+				<td class="col2" style="width: 16%">[%"ID Monumento"%]</td>
+        		<td class="col1" style="width: 16%">Número ID</td>
+				<td class="col2" style="width: 16%">[%"Clave de excavación"%]</td>
 			</tr>
 			<tr>
 				<td class="col1">Descripción de la píeza</td>
@@ -68,7 +68,7 @@
 		      	<td class="col1">Fecha inicio de intervención</td>
 		      	<td class="col2">[%"Fecha inicio de intervención"%]</td>
 		      	<td class="col1">Fecha fin de intervención</td>
-		      	<td class="col2">[%"Fecha fin de intervención"%]</td>
+		      	<td class="col2">[%CASE WHEN length("Fecha fin de intervención") <9 then NULL else "Fecha fin de intervención" end%]</td>
 			</tr>
 		</table>
 	</div>
@@ -543,7 +543,7 @@
 	</div>
 	<div class="flex">
 		<div class="col-100" >
-			<div class="diseño-tabla" style="height:380px">
+			<div class="diseño-tabla" style="height:370px">
 				<h1 class="h2">ESTADO DE CONSERVACIÓN</h1>
 				<p class="text-col2">Localización de efectos en esquema</p>
 				<div class="" id="cont-princ-1">
@@ -584,13 +584,15 @@
               principal.appendChild(crearDiv);
               crearDiv.appendChild(creaimg);
 
-            } else if(valor<=6){
+               } else if(valor<=6){
               let creaimg = document.createElement('img');
+              let crearDiv = document.createElement('div');
               creaimg.setAttribute('src',  liga_fotos +images[i]+".jpg");
-              creaimg.setAttribute('width','255');
-              creaimg.setAttribute('style','padding:3px');
+              creaimg.setAttribute('width','230');
               creaimg.setAttribute('style','padding:3px;');
-              principal.appendChild(creaimg);
+              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
+              principal.appendChild(crearDiv);
+              crearDiv.appendChild(creaimg);
 
             }else if(valor=>7){
               let creaimg = document.createElement('img');
