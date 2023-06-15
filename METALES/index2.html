@@ -34,6 +34,14 @@
 	<div class="">
 	<div class="">
 		<div class="flex">
+			<div class="col-100 diseño-tabla">
+				<h1 class="h2 bold color-rojo text-align-left">REGISTRO FOTOGRÁFICO DE DETERIORO</h1>
+				<div class="" id="cont-princ-0">
+			    	<input type="hidden" id="deterioro" value=[%"Fotos deterioro"%]>
+			   </div>
+			</div>
+		</div>
+		<div class="flex">
 			<div class="col-50 diseño-tabla">
 				<h1 class="h2 bold color-rojo text-align-left">REGISTRO FOTOGRÁFICO DE INICIO</h1>
 				<div class="" id="cont-princ-1">
@@ -181,10 +189,29 @@
 	</div>
 	<script type="text/javascript">
 		   function Carga(){
+		   	  imagenesDeterioros();
 		      imagenesInicio();
 		      imagenesFin();
 		      imagenesIntervencion();
 		    }
+		    function imagenesDeterioros(){
+		          let str = document.getElementById("deterioro").value;
+		          let images = str.split(',');
+		          let principal = document.getElementById('cont-princ-0');
+		          let valor = images.length;
+		          for(i=0;i<3;i++){
+		            let creaimg = document.createElement('img');
+		              let crearDiv = document.createElement('div');
+		              //creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/METALES/fotos/"+images[i]+".jpg");
+		              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/05_Metales/02_Inicio/"+images[i]+".jpg");
+		              creaimg.setAttribute('width','260');
+		              crearDiv.setAttribute('width','100%');
+		              creaimg.setAttribute('style','padding:3px;');
+		              principal.setAttribute('style', 'display:flex; flex-wrap: wrap; justify-content: center;')
+		              principal.appendChild(crearDiv);
+		              crearDiv.appendChild(creaimg);
+		      }
+		  }
 		    function imagenesInicio(){
 		          let str = document.getElementById("inicio").value;
 		          let images = str.split(',');
@@ -194,6 +221,7 @@
 		            if(valor==2 || valor==1){
 		              let creaimg = document.createElement('img');
 		              let crearDiv = document.createElement('div');
+		              //creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/METALES/fotos/"+images[i]+".jpg");
 		              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/05_Metales/02_Inicio/"+images[i]+".jpg");
 		              creaimg.setAttribute('width','260');
 		              crearDiv.setAttribute('width','100%');
@@ -206,6 +234,7 @@
 		            else if(valor<=4){
 	              let creaimg = document.createElement('img');
 	              let crearDiv = document.createElement('div');
+	              //creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/METALES/fotos/"+images[i]+".jpg");
 	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/05_Metales/02_Inicio/"+images[i]+".jpg");
 	              creaimg.setAttribute('width','188');
 	              creaimg.setAttribute('style','padding:3px;');
@@ -215,7 +244,7 @@
 		          }
 		      }
 		  }
-	    		function imagenesIntervencion(){
+	    function imagenesIntervencion(){
 	          let str = document.getElementById("intervencion").value;
 	          let images = str.split(',');
 	          let principal = document.getElementById('cont-princ-2');
@@ -225,6 +254,8 @@
 	              let creaimg = document.createElement('img');
 	              let crearDiv = document.createElement('div');
 	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/05_Metales/04_Intervención/"+images[i]+".jpg");
+	              //creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/METALES/fotos/"+images[i]+".jpg");
+	              
 	              creaimg.setAttribute('width','260');
 	              crearDiv.setAttribute('width','100%');
 	              creaimg.setAttribute('style','padding:3px;');
@@ -235,8 +266,9 @@
 	            }  else if(valor<=4){
 	              let creaimg = document.createElement('img');
 	              let crearDiv = document.createElement('div');
+	              creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/METALES/fotos/"+images[i]+".jpg");
 	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/05_Metales/04_Intervención/"+images[i]+".jpg");
-	              creaimg.setAttribute('width','188');
+	             // creaimg.setAttribute('width','188');
 	              creaimg.setAttribute('style','padding:3px;');
 	              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
 	              principal.appendChild(crearDiv);
@@ -244,6 +276,7 @@
 
 	            } else if(valor<=6){
 	              let creaimg = document.createElement('img');
+	             // creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/METALES/fotos/"+images[i]+".jpg");
 	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/05_Metales/04_Intervención/"+images[i]+".jpg");
 	              creaimg.setAttribute('width','190');
 	              creaimg.setAttribute('style','padding:3px');
@@ -252,7 +285,8 @@
 
 	            }else if(valor=>7){
 	              let creaimg = document.createElement('img');
-	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/05_Metales/04_Intervención/"+images[i]+".jpg");
+	              creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/METALES/fotos/"+images[i]+".jpg");
+	            //  creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/05_Metales/04_Intervención/"+images[i]+".jpg");
 	              creaimg.setAttribute('width','125');
 	              creaimg.setAttribute('style','padding:3px');
 	              principal.appendChild(creaimg);
@@ -269,6 +303,7 @@
 			              let creaimg = document.createElement('img');
 			              let crearDiv = document.createElement('div');
 			              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/05_Metales/03_Fin/"+images[i]+".jpg");
+			              //creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/METALES/fotos/"+images[i]+".jpg");
 			              creaimg.setAttribute('width','260');
 			              crearDiv.setAttribute('width','100%');
 			              creaimg.setAttribute('style','padding:3px;');
@@ -280,6 +315,7 @@
 	              let creaimg = document.createElement('img');
 	              let crearDiv = document.createElement('div');
 	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/05_Metales/03_Fin/"+images[i]+".jpg");
+	              //creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/METALES/fotos/"+images[i]+".jpg");
 	              creaimg.setAttribute('width','188');
 	              creaimg.setAttribute('style','padding:3px;');
 	              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')

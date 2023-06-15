@@ -308,7 +308,7 @@
 										END%] > </p>
 						    </div>
 						    <div class="flex justify-content-between">
-							   <p class="text-col2 text-align-left">Grabado c/Agua fuerte</p>
+							   <p class="text-col2 text-align-left">Grabado <br>c/Agua fuerte</p>
 	                		   <p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
 										array_count(string_to_array("Acabados de superficie y decoración", ','),'Grabado c/agua fuerte') = 1
@@ -317,7 +317,7 @@
 										END%] > </p>
 						    </div>
 						    <div class="flex justify-content-between">
-							   <p class="text-col2 text-align-left">Grabado c/Cincelado</p>
+							   <p class="text-col2 text-align-left">Grabado <br>c/Cincelado</p>
 	                		   <p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
 										array_count(string_to_array("Acabados de superficie y decoración", ','),'Grabado c/cincelado') = 1
@@ -364,7 +364,7 @@
 										END%] > </p>
 						    </div>
 						    <div class="flex justify-content-between">
-							   <p class="text-col2 text-align-left">Coloración(pátina)</p>
+							   <p class="text-col2 text-align-left">Coloración<br>(pátina)</p>
 	                		   <p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
 										array_count(string_to_array("Acabados de superficie y decoración", ','),'Coloración (pátina)') = 1
@@ -393,7 +393,7 @@
 										END%] > </p>
 						    </div>
 						    <div class="flex justify-content-between">
-							   <p class="text-col2 text-align-left">Coloración p/calor</p>
+							   <p class="text-col2 text-align-left">Coloración <br>p/calor</p>
 	                		   <p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
 										array_count(string_to_array("Acabados de superficie y decoración", ','),'Coloración p/calor') = 1
@@ -473,7 +473,7 @@
 					<div class="flex">
 						<div class="col-50">
 							<div class="flex justify-content-between">
-							   <p class="text-col2 text-align-left">Unión por soldadura</p>
+							   <p class="text-col2 text-align-left">Unión por <br>soldadura</p>
 	                		   <p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
 										array_count(string_to_array("Intervenciones anteriores", ','),'Unión por soldadura') = 1
@@ -482,7 +482,7 @@
 										END%] > </p>
 						    </div>
 						    <div class="flex justify-content-between">
-							   <p class="text-col2 text-align-left">Aplicación de pastas</p>
+							   <p class="text-col2 text-align-left">Aplicación de <br>pastas</p>
 	                		   <p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
 										array_count(string_to_array("Intervenciones anteriores", ','),'Aplicación de pastas') = 1
@@ -491,7 +491,7 @@
 										END%] > </p>
 						    </div>
 						    <div class="flex justify-content-between">
-							   <p class="text-col2 text-align-left">Restos de adhesivo</p>
+							   <p class="text-col2 text-align-left">Restos de <br>adhesivo</p>
 	                		   <p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
 										array_count(string_to_array("Intervenciones anteriores", ','),'Restos de adhesivo') = 1
@@ -543,7 +543,7 @@
 	                		   <p></p>
 						    </div>
 						    <div class="flex justify-content-between">
-							   <p class="text-col2 text-align-left">Toma de muestra</p>
+							   <p class="text-col2 text-align-left">Toma de <br>muestra</p>
 	                		   <p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
 										array_count(string_to_array("Intervenciones anteriores", ','),'Toma muestra') = 1
@@ -561,7 +561,7 @@
 										END%] > </p>
 						    </div>
 								<div class="flex justify-content-between">
-							   <p class="text-col2 text-align-left">Capa de protección</p>
+							   <p class="text-col2 text-align-left">Capa de <br>protección</p>
 	                		   <p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
 										array_count(string_to_array("Intervenciones anteriores", ','),'Capa de protección') = 1
@@ -581,7 +581,7 @@
 	</div>
 	<div class="flex">
 		<div class="col-40">
-			<div class="diseño-tabla">
+			<div class="diseño-tabla" style="height:350px">
 				<h1 class="h2 bold color-rojo text-align-left">ESTADO DE CONSERVACIÓN</h1>
 				<div class="flex">
 					<div class="col-40">
@@ -597,7 +597,7 @@
 				<div class="flex">
 					<div class="col-40">
 						<div class="flex justify-content-between">
-							   <p class="text-col2 text-align-left">Polvo</p>
+							   <p class="text-col2 text-align-left" style="width:76%;">Polvo</p>
 	                		   <p class="col-50 rectangulo"
 	                    		   [%case
 		          				   when "Polvo" IS NOT NULL
@@ -616,7 +616,7 @@
 				<div class="flex">
 					<div class="col-40">
 						<div class="flex justify-content-between">
-							<p class="text-col2 text-align-left">Suciedad</p>
+							<p class="text-col2 text-align-left" style="width:76%;">Suciedad</p>
 	                		   <p class="col-50 rectangulo"
 	                    		   [%case
 		          				   when "Suciedad" IS NOT NULL
@@ -635,7 +635,7 @@
 				<div class="flex">
 					<div class="col-40">
 						<div class="flex justify-content-between">
-							   <p class="text-col2 text-align-left">Manchas</p>
+							   <p class="text-col2 text-align-left" style="width:76%;">Manchas</p>
 	                		   <p class="col-50 rectangulo"
 	                    		   [%case
 		          				   when "Mancha" IS NOT NULL
@@ -654,7 +654,7 @@
 				<div class="flex">
 					<div class="col-40">
 						<div class="flex justify-content-between">
-							   <p class="text-col2 text-align-left">Concreción</p>
+							   <p class="text-col2 text-align-left" style="width:76%;">Concreción</p>
 	                		   <p class="col-50 rectangulo"
 	                    		   [%case
 		          				   when "Concreción" IS NOT NULL
@@ -673,7 +673,7 @@
 				<div class="flex">
 					<div class="col-40">
 						<div class="flex justify-content-between">
-							   <p class="text-col2 text-align-left">Melladura</p>
+							   <p class="text-col2 text-align-left" style="width:76%;">Melladura</p>
 	                		   <p class="col-50 rectangulo"
 	                    		   [%case
 		          				   when "Melladura" IS NOT NULL
@@ -692,7 +692,7 @@
 				<div class="flex">
 					<div class="col-40">
 						<div class="flex justify-content-between">
-							   <p class="text-col2 text-align-left">Perforaciones</p>
+							   <p class="text-col2 text-align-left" style="width:76%;">Perforaciones</p>
 	                		   <p class="col-50 rectangulo"
 	                    		   [%case
 		          				   when "Perforaciones" IS NOT NULL
@@ -711,7 +711,7 @@
 				<div class="flex">
 					<div class="col-40">
 						<div class="flex justify-content-between">
-							   <p class="text-col2 text-align-left">Pérdida de resistencia</p>
+							   <p class="text-col2 text-align-left" style="width:76%;">Pérdida de resistencia</p>
 	                		   <p class="col-50 rectangulo"
 	                    		   [%case
 		          				   when "Pérdida de resistencia" IS NOT NULL
@@ -730,7 +730,7 @@
 				<div class="flex">
 					<div class="col-40">
 						<div class="flex justify-content-between">
-							   <p class="text-col2 text-align-left">Físuras</p>
+							   <p class="text-col2 text-align-left" style="width:76%;">Físuras</p>
 	                		   <p class="col-50 rectangulo"
 	                    		   [%case
 		          				   when "Fisuras" IS NOT NULL
@@ -749,7 +749,7 @@
 				<div class="flex">
 					<div class="col-40">
 						<div class="flex justify-content-between">
-							   <p class="text-col2 text-align-left">Separación de elementos</p>
+							   <p class="text-col2 text-align-left" style="width:76%;">Separación de elementos</p>
 	                		   <p class="col-50 rectangulo"
 	                    		   [%case
 		          				   when "Separación de elementos" IS NOT NULL
@@ -768,7 +768,7 @@
 				<div class="flex">
 					<div class="col-40">
 						<div class="flex justify-content-between">
-							   <p class="text-col2 text-align-left">Faltantes</p>
+							   <p class="text-col2 text-align-left" style="width:76%;">Faltantes</p>
 	                		   <p class="col-50 rectangulo"
 	                    		   [%case
 		          				   when "Faltantes" IS NOT NULL
@@ -787,7 +787,7 @@
 				<div class="flex">
 					<div class="col-40">
 						<div class="flex justify-content-between">
-							   <p class="text-col2 text-align-left">Factura</p>
+							   <p class="text-col2 text-align-left" style="width:76%;">Factura</p>
 	                		   <p class="col-50 rectangulo"
 	                    		   [%case
 		          				   when "Factura" IS NOT NULL
@@ -806,7 +806,7 @@
 				<div class="flex">
 					<div class="col-40">
 						<div class="flex justify-content-between">
-							   <p class="text-col2 text-align-left">Fragmentación</p>
+							   <p class="text-col2 text-align-left" style="width:76%;">Fragmentación</p>
 	                		   <p class="col-50 rectangulo"
 	                    		   [%case
 		          				   when "Fragmentación" IS NOT NULL
@@ -825,7 +825,7 @@
 				<div class="flex">
 					<div class="col-40">
 						<div class="flex justify-content-between">
-							 <p class="text-col2 text-align-left">Otro</p>
+							 <p class="text-col2 text-align-left" style="width:76%;">Otro</p>
 						</div>
 					</div>
 					<div class="col-50">
@@ -838,7 +838,7 @@
 			</div>
 		</div>
 		<div class="col-60">
-				<div class="diseño-tabla" style="">
+				<div class="diseño-tabla" style="height:200px">
 					<h1 class="h2 bold color-rojo text-align-left">ESTADO DE CONSERVACIÓN</h1>
 					<div class="flex">
 						<div class="col-30">
@@ -1004,7 +1004,7 @@
 				</div>
 
 				<div class="">
-					<div class="diseño-tabla">
+					<div class="diseño-tabla" style="height:137px">
 						<h1 class="h2 bold color-rojo text-align-left">OBSERVACIONES</h1>
 						<p class="h4">[%"Observaciones"%]</p>
 					</div>
