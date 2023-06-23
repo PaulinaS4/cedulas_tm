@@ -268,7 +268,17 @@
       let principal = document.getElementById('cont-princ-3');
       let valor = images.length;
       for(i=0;i<images.length;i++){
-        if(valor>=2 & valor<4){
+        if(valor=1){
+          let creaimg = document.createElement('img');
+          let crearDiv = document.createElement('div');
+          creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/01_Cerámica/04_Intervención/"+images[i]+".jpg");
+          creaimg.setAttribute('width','386'); //386
+          creaimg.setAttribute('height','260'); //260
+          crearDiv.setAttribute('class','fotografia');
+          principal.appendChild(crearDiv);
+          crearDiv.appendChild(creaimg);
+
+        } else if(valor>=2 & valor<4){
           let creaimg = document.createElement('img');
           let crearDiv = document.createElement('div');
           creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/01_Cerámica/04_Intervención/"+images[i]+".jpg");

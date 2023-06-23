@@ -51,7 +51,7 @@
 		       		</tr>
 		       		<tr>
 						<td class="tabla2" >U LU'MIL MAAYA WÍNIKO'OB: Un análisis regional de suroeste mesoamericano Proyecto marco de Salvamento Arqueológico "Tren Maya", Estados de Chiapas, Tabasco, Yucatán, Quintana Roo.</td>
-						<td class="tabla2" >[%"Informe"%]</td>
+						<td class="tabla2" >Manuel Eduardo Pérez Rivas, [%CASE WHEN substr("No de proyecto",4,2) IN ('T1','T2','T3,'T4','T5') THEN '2021' ELSE '2022' END%]</td>
 						<td class="tabla2" >[%"Entidad Federativa"%]</td>
 		       		</tr>
 		       		<tr >
@@ -163,9 +163,11 @@
 			       			<tr>
 								<td width="30%"></td>
 								<td width="3%"></td>
-								<td class= "tabla" width="30%" style="height: 5px">[%"Alto"%]</td>
+								<td class= "tabla" width="30%" style="height: 5px">
+								[%array_get(string_to_array(replace("Dimensiones",'cm',''),x),0)%]</td>
 								<td width="3%" class="dimensiones">cm.</td>
-								<td class= "tabla" width="30%">[%"Ancho"%]</td>
+								<td class= "tabla" width="30%">[%array_get(string_to_array(replace("Dimensiones",'cm',''),x),1)%]
+								</td>
 								<td width="3%" class="dimensiones">cm.</td>
 			       			</tr>
 			       			<tr>
@@ -177,11 +179,13 @@
 								<td width="3%"></td>
 			       			</tr>
 			       			<tr>
-								<td class= "tabla" style="width:30%; height:5px">[%"Largo"%]</td>
+								<td class= "tabla" style="width:30%; height:5px">[%array_get(string_to_array(replace("Dimensiones",'cm',''),x),2)%]
+								</td>
 								<td width="3%" class="dimensiones">cm.</td>
 								<td class= "tabla" width="30%">[%"Espesor"%]</td>
 								<td width="3%" class="dimensiones">cm.</td>
-								<td class= "tabla" width="30%">[%"Diámetro"%]</td>
+								<td class= "tabla" width="30%">[%array_get(string_to_array(replace("Dimensiones",'cm',''),x),1)%]
+								</td>
 								<td width="3%" class="dimensiones">cm.</td>
 			       			</tr>
 			       		</table>
@@ -218,13 +222,13 @@
 								<td>Catalogó:</td>
 				       		</tr>
 				       		<tr>
-				       			<td class="tabla2">[%"Catalogó"%]</td>
+				       			<td class="tabla2">[%"Ceramista"||', '||"Restaurador"%]</td>
 				       		</tr>
 				       		<tr>
 								<td>Fecha:</td>
 				       		</tr>
 				       		<tr>
-				       			<td class="tabla2">[%"Fecha"%]</td>
+				       			<td class="tabla2">now()</td>
 				       		</tr>
 						</table>
 					</div>
