@@ -267,51 +267,45 @@
       let images = str.split(',');
       let principal = document.getElementById('cont-princ-3');
       let valor = images.length;
-      for(i=0;i<images.length;i++){
-        if(valor=1){
-          let creaimg = document.createElement('img');
-          let crearDiv = document.createElement('div');
-          creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/01_Cerámica/04_Intervención/"+images[i]+".jpg");
-          creaimg.setAttribute('width','386'); //386
-          creaimg.setAttribute('height','260'); //260
-          crearDiv.setAttribute('class','fotografia');
-          principal.appendChild(crearDiv);
-          crearDiv.appendChild(creaimg);
+      for(i=0;i<images.length;i++)
+        if(valor==2 || valor==1){
+              let creaimg = document.createElement('img');
+              let crearDiv = document.createElement('div');
+              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/01_Cerámica/04_Intervención/" +images[i]+".jpg");
+              creaimg.setAttribute('width','400');
+              crearDiv.setAttribute('width','100%');
+              creaimg.setAttribute('style','padding:3px;');
+              principal.setAttribute('style', 'display:flex; flex-wrap: wrap;  justify-content: center;')
+              principal.appendChild(crearDiv);
+              crearDiv.appendChild(creaimg);
 
-        } else if(valor>=2 & valor<4){
-          let creaimg = document.createElement('img');
-          let crearDiv = document.createElement('div');
-          creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/01_Cerámica/04_Intervención/"+images[i]+".jpg");
-          creaimg.setAttribute('width','386'); //386
-          creaimg.setAttribute('height','260'); //260
-          crearDiv.setAttribute('class','fotografia');
-          principal.appendChild(crearDiv);
-          crearDiv.appendChild(creaimg);
+            }  else if(valor<=4){
+              let creaimg = document.createElement('img');
+              let crearDiv = document.createElement('div');
+              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/01_Cerámica/04_Intervención/" +images[i]+".jpg");
+              creaimg.setAttribute('width','386');
+              creaimg.setAttribute('style','padding:3px;');
+              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
+              principal.appendChild(crearDiv);
+              crearDiv.appendChild(creaimg);
 
-        } else if(valor>=4 & valor<=6){
-          let creaimg = document.createElement('img');
-          creaimg.setAttribute('src', "file:///D:/restauracion/fotos/01_Cerámica/04_Intervención/"+images[i]+".jpg");
-          creaimg.setAttribute('width','300');
-          creaimg.setAttribute('style','padding:3px');
-          creaimg.setAttribute('height','250');
-          //creaimg.setAttribute('width','386');
-          //creaimg.setAttribute('height','260');
-          //creaimg.setAttribute('style','padding:6px');
-          principal.appendChild(creaimg);
+            } else if(valor<=6){
+              let creaimg = document.createElement('img');
+              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/01_Cerámica/04_Intervención/" +images[i]+".jpg");
+              creaimg.setAttribute('width','360');
+              creaimg.setAttribute('style','padding:3px');
+              creaimg.setAttribute('style','padding:3px;');
+              principal.appendChild(creaimg);
 
-        }else if(valor=>8){
-
-          let creaimg = document.createElement('img');
-          creaimg.setAttribute('src', "file:///D:/restauracion/fotos/01_Cerámica/04_Intervención/"+images[i]+".jpg");
-        //  creaimg.setAttribute('width','130');
-          creaimg.setAttribute('style','padding:3px');
-          //creaimg.setAttribute('height','95');
-          creaimg.setAttribute('width','270');
-          creaimg.setAttribute('height','190');
-          principal.appendChild(creaimg);
-        }
-      }
-    }
+            }else if(valor>=7){
+              let creaimg = document.createElement('img');
+              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/01_Cerámica/04_Intervención/" +images[i]+".jpg");
+              creaimg.setAttribute('width','270');
+              creaimg.setAttribute('style','padding:3px');
+              principal.appendChild(creaimg);
+            }
+          }
+    
   </script>
 </body>
 </html>
