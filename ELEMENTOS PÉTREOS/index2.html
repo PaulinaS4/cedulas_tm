@@ -202,6 +202,17 @@
 		              crearDiv.appendChild(creaimg);
 
 		            } 
+		            else if(valor<=4){
+	              let creaimg = document.createElement('img');
+	              let crearDiv = document.createElement('div');
+	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/04_Elementos_pétreos/02_Inicio/"+images[i]+".jpg");
+	              creaimg.setAttribute('width','188');
+	              creaimg.setAttribute('style','padding:3px;');
+	              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
+	              principal.appendChild(crearDiv);
+	              crearDiv.appendChild(creaimg);
+			     }
+
 		          }
 		      }
 	    		function imagenesIntervencion(){

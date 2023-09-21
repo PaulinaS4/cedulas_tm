@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="style.css">
   <title></title>
 </head>
-  	<body style="padding-left: 10px;">
+  	<body style="padding-left: 10px;padding-bottom:15%;">
   		<header>
   			<section>		
   					<div style="padding-top:6.66mm;padding-bottom: 0px; padding-left:27.6mm;">	
@@ -35,10 +35,10 @@
 			       			<td >No de proyecto</td>
 			       		</tr>
 			       		<tr>
-							<td class="tabla" >[%"No de catálogo"%]</td>
-							<td class="tabla" >[%"No de inventario"%]</td>
-							<td class="tabla" >[%"No de registro y/o Folio Real"%]</td>
-			       			<td class="tabla" >[%"No de proyecto"%]</td>
+							<td class="tabla" >CATSA [%"No de catálogo"%]</td>
+							<td class="tabla" ></td>
+							<td class="tabla" ></td>
+			       			<td class="tabla" >[%'UTM_'||"No de proyecto"%]</td>
 			       		</tr>
 			       	</table>
 				</div>
@@ -50,8 +50,8 @@
 						<td >Entidad Federativa:</td>
 		       		</tr>
 		       		<tr>
-						<td class="tabla2" >U LU'MIL MAAYA WÍNIKO'OB: Un análisis regional de suroeste mesoamericano Proyecto marco de Salvamento Arqueológico "Tren Maya", Estados de Chiapas, Tabasco, Yucatán, Quintana Roo.</td>
-						<td class="tabla2" >Manuel Eduardo Pérez Rivas, [%CASE WHEN substr("No de proyecto",4,2) IN ('T1','T2','T3,'T4','T5') THEN '2021' ELSE '2022' END%]</td>
+						<td class="tabla2" >U LU'MIL MAAYA WÍNIKO'OB: Un análisis regional de suroeste mesoamericano Proyecto marco de Salvamento Arqueológico "Tren Maya", Estados de Chiapas, Tabasco, Campeche, Yucatán, Quintana Roo.</td>
+						<td class="tabla2" >Manuel Eduardo Pérez Rivas, [%CASE WHEN substr("No de proyecto",5,2) IN ('T1','T2','T3','T4','T5') THEN '2021' ELSE '2022' END%]</td>
 						<td class="tabla2" >[%"Entidad Federativa"%]</td>
 		       		</tr>
 		       		<tr >
@@ -142,7 +142,7 @@
 							<td>Motivo decorativo:</td>
 			       		</tr>
 			       		<tr>
-							<td class="tabla" >[%"Acabado de superficie y técnica decorativa"%]</td>
+							<td class="tabla" >[%"Acabado de superficie" ||'; '||replace("Técnica decorativa",',',', ')%]</td>
 							<td class="tabla" >[%"Motivo decorativo"%]</td>
 						</tr>
 						<tr >
@@ -150,43 +150,43 @@
 			       		</tr>
 						</table>
 			       	</div>
-			       	<div style="display:flex;width: 50%;" class="cuadro">
-			       		<table style=" width: 100%; border-collapse: collapse; margin-left: 5px;">
+			       	<div style="display:flex;width: 50%; margin-right:-1px" class="cuadro">
+			       		<table style=" width: 98%; border-collapse: collapse; margin-left: 5px; margin-right: 5px;">
 			       			<tr>
-								<td width="30%" class="dimensiones">Dimensiones:</td>
-								<td width="3%" ></td>
-								<td width="30%" style="height: 5px">Alto:</td>
-								<td width="3%"></td>
-								<td width="30%">Ancho:</td>
-								<td width="3%"></td>
+								<td width="28%" class="dimensiones">Dimensiones:</td>
+								<td width="2%" ></td>
+								<td width="28%" style="height: 5px">Alto:</td>
+								<td width="2%"></td>
+								<td width="28%">Ancho:</td>
+								<td width="2%"></td>
 			       			</tr>
 			       			<tr>
-								<td width="30%"></td>
-								<td width="3%"></td>
-								<td class= "tabla" width="30%" style="height: 5px">
-								[%array_get(string_to_array(replace("Dimensiones",'cm',''),x),0)%]</td>
-								<td width="3%" class="dimensiones">cm.</td>
-								<td class= "tabla" width="30%">[%array_get(string_to_array(replace("Dimensiones",'cm',''),x),1)%]
+								<td width="28%"></td>
+								<td width="2%"></td>
+								<td class= "tabla" width="28%" style="height: 5px">
+								[%array_get(string_to_array(replace("Dimensiones",'cm',''),'x'),0)%]</td>
+								<td width="2%" class="dimensiones">cm.</td>
+								<td class= "tabla" width="28%">[%array_get(string_to_array(replace("Dimensiones",'cm',''),'x'),1)%]
 								</td>
-								<td width="3%" class="dimensiones">cm.</td>
+								<td width="2%" class="dimensiones">cm.</td>
 			       			</tr>
 			       			<tr>
-								<td width="30%" style="height: 5px">Largo:</td>
-								<td width="3%"></td>
-								<td width="30%">Espesor:</td>
-								<td width="3%"></td>
-								<td width="30%">Diámetro:</td>
-								<td width="3%"></td>
+								<td width="28%" style="height: 5px">Largo:</td>
+								<td width="2%"></td>
+								<td width="28%">Espesor:</td>
+								<td width="2%"></td>
+								<td width="28%">Diámetro:</td>
+								<td width="2%"></td>
 			       			</tr>
 			       			<tr>
-								<td class= "tabla" style="width:30%; height:5px">[%array_get(string_to_array(replace("Dimensiones",'cm',''),x),2)%]
+								<td class= "tabla" style="width:28%; height:5px">[%array_get(string_to_array(replace("Dimensiones",'cm',''),'x'),2)%]
 								</td>
-								<td width="3%" class="dimensiones">cm.</td>
-								<td class= "tabla" width="30%">[%"Espesor"%]</td>
-								<td width="3%" class="dimensiones">cm.</td>
-								<td class= "tabla" width="30%">[%array_get(string_to_array(replace("Dimensiones",'cm',''),x),1)%]
+								<td width="2%" class="dimensiones">cm.</td>
+								<td class= "tabla" width="28%">[%"Espesor"%]</td>
+								<td width="2%" class="dimensiones">cm.</td>
+								<td class= "tabla" width="28%">[%array_get(string_to_array(replace("Dimensiones",'cm',''),'x'),1)%]
 								</td>
-								<td width="3%" class="dimensiones">cm.</td>
+								<td width="2%" class="dimensiones">cm.</td>
 			       			</tr>
 			       		</table>
 			       	</div>
@@ -201,9 +201,10 @@
 			       		</tr>
 			       		<tr>
 							<td class="tabla" style="padding: 10px;">[%"Adquisición"%]</td>
-							<td class="tabla" >[%"Avalúo"%]</td>
-							<td class="tabla" >[%"Tratamiento"%]</td>
-			       			<td class="tabla" >[%"Colocación"%]</td>
+							<td class="tabla" ></td>
+							<td class="tabla" >[%trim(array_to_string(
+array_filter(string_to_array("Tratamiento",','), length(@element) >3)))%]</td>
+			       			<td class="tabla" ></td>
 			       		</tr>
 			       	</table>
 				</div>
@@ -216,7 +217,7 @@
 								<td>Movimientos:</td>
 				       		</tr>
 				       		<tr>
-				       			<td class="tabla2">[%"Movimientos"%]</td>
+				       			<td class="tabla2" style="height:15px"></td>
 				       		</tr>
 			       			<tr>
 								<td>Catalogó:</td>
@@ -228,23 +229,23 @@
 								<td>Fecha:</td>
 				       		</tr>
 				       		<tr>
-				       			<td class="tabla2">now()</td>
+				       			<td class="tabla2">[%format_date(now(),'yyyy-MM-dd')%]</td>
 				       		</tr>
 						</table>
 					</div>
 					<div style=" width:50%">
 							<h1>Observaciones:</h1>
-						<div style="border: 1.15px solid #909092; height:84%; margin-left:1px; margin-right:5px">
+						<div style="border: 1.15px solid #909092; height:74px; margin-left:5px; margin-right:5px">
 							<p>
 								[%"Observaciones"%]
 							</p>
 						</div>
 					</div>
 
-					<div style="width:20%" >
+					<div style="width:20% " >
 						<h1>Fotografía:</h1>
-						<div style="border: 1.15px solid #909092; height:84%; margin-left:3px; margin-right:5px">
-							
+						<div style="border: 1.15px solid #909092; height: 74px; margin-left:3px; margin-right:5px;" >
+							<img style="width:83%; margin:auto; display: block; " src='file:///D:/restauracion/fotos/01_Cerámica/03_Fin/[%"No de proyecto"%]_1.jpg'  onerror="this.src='file:///D:/TM_Excavacion/images.png'" >
 						</div>
 					</div>
 				</div>

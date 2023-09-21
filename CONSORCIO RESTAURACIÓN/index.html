@@ -51,13 +51,14 @@
 				<td class="col1">Fecha de inicio intervención</td>
 				<td class="col2">[%"Fecha inicio de intervención"%]</td>
 				<td class="col1">Fecha de fin intervención</td>
-				<td class="col2">[%"Fecha fin de intervención"%]</td>
+				<!--<td class="col2">[%"Fecha fin de intervención"%]</td>-->
+				<td class="col2">En proceso</td>
 				<td class="col1">Persona que intervino</td>
-				<td class="col2">[%replace("Nombre de quien interviene",'.','')%]. Se contó con el apoyo de [%CASE WHEN "Tramo" = 'T1' THEN '4 personas.'
-																					 WHEN "Tramo" = 'T2' THEN '4 personas.'
-																					 WHEN "Tramo" = 'T3' THEN '1 persona.'
-																					 WHEN "Tramo" = 'T4' THEN '3 personas.'
-																					 WHEN "Tramo" = 'T5' THEN 'ninguna persona.'
+				<td class="col2">[%replace("Nombre de quien interviene",'.','')%]. [%CASE WHEN "Tramo" = 'T1' THEN 'Se contó con el apoyo 																														de 4 personas.'
+																					 WHEN "Tramo" = 'T2' THEN 'Se contó con el apoyo de 4 personas.'
+																					 WHEN "Tramo" = 'T3' THEN 'Se contó con el apoyo de 1 persona.'
+																					 WHEN "Tramo" = 'T4' THEN 'Se contó con el apoyo de 3 personas.'
+																					 WHEN "Tramo" = 'T5' THEN 'No se contó con apoyo de personal.'
 																					 END%] <br>
 				</td>
 			</tr>
@@ -86,7 +87,7 @@
 	</div>
 
 	<div class="flex" id="content-intervencion" style="display:none">
-		<div class="col-100 diseño-tabla" style="height:409px;">
+		<div class="col-100 diseño-tabla" style="height:390px;">
 				<h1 class="h2 bold color-rojo text-align-left">REGISTRO FOTOGRÁFICO DE INTERVENCIÓN</h1>
 					<div class="" id="cont-princ-3">
 		         <!-- <input type="hidden" id="intervencion" value=[%"Fotos intervención"%]>  -->
@@ -251,12 +252,23 @@
 			        principal.appendChild(crearDiv);
 			        crearDiv.appendChild(creaimg);
 
+			      }  else if(valor<=3){
+			        let creaimg = document.createElement('img');
+			        let crearDiv = document.createElement('div');
+			        //creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+		          creaimg.setAttribute('src', "file:///"+rin+images[i]+".jpg");
+		          creaimg.setAttribute('width','260');
+			        creaimg.setAttribute('style','padding:3px;');
+			        principal.setAttribute('style',' display:flex; flex-wrap: wrap; ')
+			        principal.appendChild(crearDiv);
+			        crearDiv.appendChild(creaimg);
+
 			      }  else if(valor<=4){
 			        let creaimg = document.createElement('img');
 			        let crearDiv = document.createElement('div');
 			        //creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
 		          creaimg.setAttribute('src', "file:///"+rin+images[i]+".jpg");
-		          creaimg.setAttribute('width','265');
+		          creaimg.setAttribute('width','260');
 			        creaimg.setAttribute('style','padding:3px;');
 			        principal.setAttribute('style',' display:flex; flex-wrap: wrap; ')
 			        principal.appendChild(crearDiv);
@@ -266,7 +278,7 @@
 			        let creaimg = document.createElement('img');
 			        //creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
 		          creaimg.setAttribute('src', "file:///"+rin+images[i]+".jpg");
-		          creaimg.setAttribute('width','270');
+		          creaimg.setAttribute('width','260');
 			        creaimg.setAttribute('style','padding:3px');
 			        creaimg.setAttribute('style','padding:3px;');
 			        principal.appendChild(creaimg);
@@ -284,7 +296,7 @@
 			        let creaimg = document.createElement('img');
 			        //creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
 		          creaimg.setAttribute('src', "file:///"+rin+images[i]+".jpg");
-		          creaimg.setAttribute('width','170');
+		          creaimg.setAttribute('width','163');
 			        creaimg.setAttribute('style','padding:3px');
 			        principal.setAttribute('style', 'display:flex; flex-wrap: wrap; justify-content: center;')
 			        principal.appendChild(creaimg);
