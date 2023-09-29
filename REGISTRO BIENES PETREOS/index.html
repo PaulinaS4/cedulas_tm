@@ -2,108 +2,82 @@
 <html lang="es">
 <head>
 	 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-	<meta name="title" content="Cédula de intervención de elementos pétreos"/>
+	<meta name="title" content="Cédula de intervención de material cerámico"/>
 	<meta name="description" content="Análisis regional del sureste Mesoamericano. Proyecto marco de salvamento arqueológico. Tren Maya"/>
-	<meta name="author" content="Jonatan Lara Ortiz, Ing; Diana Paulina Serrano Roldan, Urb" />
-	<meta name="generator" content= "Atom" />
+	<meta name="author" content="Jonatan Lara Ortiz, Ing; Diana Paulina Serrano Roldan, Urb." />
+	<meta name="generator" content= "Sublime" />
 	<meta name="copyright" content="Dirección de Salvamento Arqueológico" />
-	<meta name="created" content="2023-01-24"/>
-  <link rel="stylesheet" href="sass/style.css">
+	<meta name="created" content="2023-01-25"/>
+  <link rel="stylesheet" href="css/style.css">
   <title></title>
 </head>
-<body onload="Carga();">
+<body onload="onReady()">
 	<header>
 		<table class="head">
 				<td class="col0"><img src="banner.png" width=840px height=60 hspace=0 vspace=0></td>
 		</table>
 		<section class="row-alt">
-		    <div class="flex">
-			      <div class="col-30">
-			        <img class="logo" src="tren.png">
-			      </div>
-			      <div class="col-70">
-			        <h1 class="titulos text-center">U LU'UMIL MAAYA WÍINIKO'OB</h1>
-			        <p class="h2 color-rojo bold text-center">
-			          Análisis Regional del Sureste Mesoamericano Proyecto Marco de Salvamento <br>Arqueológico del Tren Maya.</p>
-		            <h5 class="h3 color-rojo bold text-center" >Responsable académico:Dr. Manuel E. Pérez Rivas. <br>Coordinador de área de conservación: Félix Albano Camacho Zamora</h5>
-			      </div>
-		    </div>
+		    	<div class="container ">
+		      	<div class="col-30">
+		        	<img class="logo" src="tren.png">
+		      	</div>
+		      	<div class="col-70">
+		        	<h1 class="titulos">U LU'UMIL MAAYA WÍINIKO'OB</h1>
+		        	<p class="" style="font-size: 12px;color: #691C32;font-weight: bold;text-align: center;">
+		          	Análisis Regional del Sureste Mesoamericano Proyecto Marco de Salvamento <br>Arqueológico del Tren Maya.
+	            	</p>
+	            	<h5 class="" style="font-size: 10px;color: #691C32;font-weight: bold;text-align: center;">Responsable académico: Dr. Manuel E. Pérez Rivas.<br>Coordinador de área de conservación: Félix Albano Camacho Zamora</h5>
+		      	</div>
+		    	</div>
 		</section>
 	</header>
-	<h1 class="center">CÉDULA DE REGISTRO IN SITU DE ELEMENTOS PÉTREOS</h1>
-	<h1 class="h2 bold color-rojo text-align-left ">DATOS GENERALES</h1>
-	<div class="tabla diseño-tabla" style="display:flex">
-		<table class="generales" style=" width: 100%;">
-			<tr>
-				<td class="col1">Tramo</td>
-				<td class="col2">[%"Tramo"%]</td>
-				<td class="col1">Estructura</td>
-				<td class="col2">[%"ID Monumento"%]</td>
-        		<td class="col1">Número ID</td>
-				<td class="col2">[%"Clave de excavación"%]</td>
-			</tr>
-			<tr>
-				<td class="col1">Descripción de la pieza</td>
-				<td class="col2">[%"Descripción de pieza"%]</td>
-				<td class="col1">Estado de conservación</td>
-				<td class="col2">[%"Estado de conservación"%]</td>
-				<td class="col1">Dimensiones</td>
-				<td class="col2">[%CASE WHEN "Dimensiones" IS NULL THEN ''  END%]
-					<strong>[%CASE WHEN "Dimensiones" IS NULL THEN '' ELSE 'Alto:' END%] </strong>[%array_first(string_to_array("Dimensiones",'x'))%]<br>
-			        <strong>[%CASE WHEN "Dimensiones" IS NULL THEN '' ELSE 'Ancho:' END%]  </strong>[%array_get(string_to_array("Dimensiones",'x'),1)%]<br>
-			        <strong>[%CASE WHEN "Dimensiones" IS NULL THEN '' ELSE 'Profundo:' END%] </strong>[%CASE WHEN array_length(string_to_array("Dimensiones",'x')) = 3 THEN array_last(string_to_array("Dimensiones",'x')) END%]
-			    </td>
-
-			</tr>
-			<tr>
-        		<td class="col1">Nombre de quien realiza el registro: </td>
-				<td class="col2">[%"Nombre quien registra"%]</td>
-				<td class="col1">Estado:</td>
-				<td class="col2">[%"Estado"%]</td>
-				<td class="col1">Capa</td>
-	      		<td class="col2">[%"Capa"%]</td>
-	      		
-			</tr>
-			<tr>
-		      	<td class="col1">Fecha inicio de intervención</td>
-		      	<td class="col2">[%"Fecha inicio de intervención"%]</td>
-		      	<td class="col1">Fecha fin de intervención</td>
-		      	<td class="col2">[%"Fecha fin de intervención"%]</td>
-			</tr>
-		</table>
+	<h1 class="center">CÉDULA DE DICTAMEN DE ELEMENTOS PÉTREOS</h1>
+	<div class="diseño-tabla">
+		<h1 class="text-sub">DATOS GENERALES</h1>
+		<div style="display: flex;">
+			<div style="width: 50%;">
+				<p class="text-col2 text-align-left">Número ID: <strong>[%"Número ID"%]</strong></p>
+				<p class="text-col2 text-align-left">Estructura asociada: <strong>[%"Estructura asociada"%]</strong></p>
+				<p class="text-col2 text-align-left">Sitio asociado: <strong>[%"Sitio asociado"%]</strong></p>
+				<p class="text-col2 text-align-left">Estado: <strong>[%"Estado"%]</strong></p>
+				<p class="text-col2 text-align-left">Descripción de elemnto: <strong>[%"Descripción de elemnto"%]</strong></p>		
+			</div>
+			<div >
+				<p class="text-col2 text-align-left">Condición gral. edo. de cons.: <strong>[%"Condición gral. edo. de cons."%]</strong></p>	
+				<p class="text-col2 text-align-left">Medidas: <strong>[%"Medidas"%]</strong></p>
+				<p class="text-col2 text-align-left">Material asociado: <strong>[%"Material asociado"%]</strong></p>
+				<p class="text-col2 text-align-left">Registró: <strong>[%"Registró"%]</strong></p>
+				<p class="text-col2 text-align-left">Fecha dictamen: <strong>[%"Fecha dictamen"%]</strong></p>
+			</div>
+		</div>
 	</div>
+	<!-- La información de elementos pétreos  -->
 	<div class="flex">
-		<div class="col-33">
+		<div style="width:38%">
 			<div class="diseño-tabla" style="min-height: 118px;">
-				<h1 class="h2 bold color-rojo text-align-left">CARACTERÍSICAS FORMALES</h1>
+				<h1 class="text-sub">CARACTERÍSTICAS FORMALES</h1>
 				<div class="text-align-left text-col2">
-					<p class="text-align-left text-col2">Identificación de roca: [%"Identificación de roca"%]</p>
-					<p class="text-align-left text-col2">Tipo de roca: [%"Tipo de roca"%]</p>
-					<p class="text-align-left text-col2">Cementante: [%"Cementante"%]</p>
-					<p class="text-align-left text-col2">No. Elementos: [%"Núm. elementos"%]</p>
+					<p class="text-col2 text-align-left">Identificación de roca: <strong>[%"Identificación de roca"%]</strong></p>
+					<p class="text-align-left text-col2">Tipo de roca: <strong>[%"Tipo de roca"</strong>%]</p>
+					<p class="text-align-left text-col2">Cementante: <strong>[%"Cementante"%]</strong></p>
+					<p class="text-align-left text-col2">No. Elementos: <strong>[%"Núm. elementos"%]</strong></p>
 				</div>
 			</div>
 		</div>
-		<div class="col-33">
+		<div style="width:38%">
 			<div class="diseño-tabla" style="min-height: 118px;">
-				<h1 class="h2 bold color-rojo text-align-left">CONTEXTO DE PROCEDENCIA</h1>
+				<h1 class="text-sub">CONTEXTO DE PROCEDENCIA</h1>
 				<div>
-					<div class="flex">
-						<div class="col-50">
-							<div class="flex justify-content-between">
+					<div class="flex2">
 									<p class="text-col2">Elemento de conjunto</p>
 	                				<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
 										array_count(string_to_array("Contexto de procedencia", ','),'Elemento de conjunto') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
-										END%] > </p>
-							</div>
-						</div>
+										END%] > </p>	
 					</div>
-					<div class="flex">
-						<div class="col-50">
-							<div class="flex justify-content-between">
+					<div class="flex2">
 									<p class="text-col2">Elemento único</p>
 	                				<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -111,32 +85,26 @@
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
-							</div>
-						</div>
 					</div>
-					<div class="flex">
-						<div class="col-50">
-							<div class="flex justify-content-between">
+					<div class="flex2">						
 									<p class="text-col2">En bloque</p>
 	                				<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
 										array_count(string_to_array("Contexto de procedencia", ','),'En bloque') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
-										END%] > </p>
-							</div>
-						</div>
+										END%] > </p>							
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="col-33">
+		<div style="width:38%">
 			<div class="diseño-tabla" style="min-height: 118px;">
-				<h1 class="h2 bold color-rojo text-align-left">DECORACIÓN</h1>
+				<h1 class="text-sub">DECORACIÓN</h1>
 				<div>
 					<div class="flex">
 						<div class="col-50">
-							<div class="flex justify-content-between">
+							<div class="flex2">
 									<p class="text-col2">Incisa</p>
 	                				<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -147,7 +115,7 @@
 							</div>
 						</div>
 						<div class="col-50">
-							<div class="flex justify-content-between">
+							<div class="flex2">
 									<p class="text-col2">Esgrafiado</p>
 	                				<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -160,7 +128,7 @@
 					</div>
 					<div class="flex">
 						<div class="col-50">
-							<div class="flex justify-content-between">
+							<div class="flex2">
 									<p class="text-col2">Policromía</p>
 	                				<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -171,14 +139,14 @@
 							</div>
 						</div>
 						<div class="col-50">
-							<div class="">
-								<p class="text-col2">Color [%"Color"%]</p>
+							<div class="flex2">
+								<p class="text-col2">Color <strong>[%"Color"%]</strong></p>
 							</div>
 						</div>
 					</div>
-					<divy class="flex">
+					<div class="flex">
 						<div class="col-50">
-							<div class="flex justify-content-between">
+							<div class="flex2">
 									<p class="text-col2">
 									Tallado</p>
 	                				<p class="col-50 rectangulo" 
@@ -190,7 +158,7 @@
 							</div>
 						</div>
 						<div class="col-50">
-							<div class="flex justify-content-between">
+							<div class="flex2">
 									<p class="text-col2">Incrustación</p>
 	                				<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -204,7 +172,7 @@
 					</div>
 					<div class="flex">
 						<div class="col-50">
-							<div class="flex justify-content-between">
+							<div class="flex2">
 									<p class="text-col2">Teselas</p>
 	                				<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -215,7 +183,7 @@
 							</div>
 						</div>
 						<div class="col-50">
-							<div class="flex justify-content-between">
+							<div class="flex2">
 									<p class="text-col2">Acanalado</p>
 	                				<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -228,20 +196,19 @@
 					</div>
 					<div class="flex">
 						<div class="col-50">
-							<p class="text-align-left text-col2">Otro: [%"Otro D"%]</p>
+							<p class="text-align-left text-col2">Otro: <strong>[%"Otro D"%]</strong></p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="flex">
-		<div class="col-100">
-			<div class="diseño-tabla">
-				<h1 class="h2 bold color-rojo text-align-left">FACTORES DE DEGRADACIÓN</h1>
+	<div class="diseño-tabla">
+			<div>
+				<h1  class="text-sub">FACTORES DE DEGRADACIÓN</h1>
 				<div class="flex">
 					<div class="col-25">
-						<div class="flex justify-content-between">
+						<div class="flex2">
 							<p class="text-col2">Termoalteraciones</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -250,7 +217,7 @@
 										else 'style="background:none"'
 										END%] > </p>
 						</div>
-						<div class="flex justify-content-between">
+						<div class="flex2">
 							<p class="text-col2">Abrasión</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -259,7 +226,7 @@
 										else 'style="background:none"'
 										END%] > </p>
 						</div>
-						<div class="flex justify-content-between">
+						<div class="flex2">
 							<p class="text-col2">Concreción de sales</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -268,7 +235,7 @@
 										else 'style="background:none"'
 										END%] > </p>
 						</div>
-						<div class="flex justify-content-between">
+						<div class="flex2">
 							<p class="text-col2">Subflorescencia</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -277,7 +244,7 @@
 										else 'style="background:none"'
 										END%] > </p>
 						</div>
-						<div class="flex justify-content-between">
+						<div class="flex2">
 							<p class="text-col2">Velo blanquecino</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -286,7 +253,7 @@
 										else 'style="background:none"'
 										END%] > </p>
 						</div>
-						<div class="flex justify-content-between">
+						<div class="flex2">
 							<p class="text-col2">Eflorescencia</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -295,16 +262,8 @@
 										else 'style="background:none"'
 										END%] > </p>
 						</div>
-						<div class="flex justify-content-between">
-							<p class="text-col2">Exfoliación</p>
-		                	<p class="col-50 rectangulo" 
-						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación", ','),'Exfoliación') = 1
-										THEN 'style="background:#BC955C"'
-										else 'style="background:none"'
-										END%] > </p>
-						</div>
-						<div class="flex justify-content-between">
+						
+						<div class="flex2">
 							<p class="text-col2">Fragmentado</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -313,10 +272,22 @@
 										else 'style="background:none"'
 										END%] > </p>
 						</div>
-					</div>
-
+						<div class="flex2">
+							<p class="text-align-left text-col2">No. de fragmentados: </p>
+							<p class="text-align-left text-col2"><strong>[%"No. de fragmentados"%]</strong></p>
+						</div>
+					</div>					
 					<div class="col-25">
-						<div class="flex justify-content-between">
+						<div class="flex2">
+							<p class="text-col2">Exfoliación</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradación", ','),'Exfoliación') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex2">
 							<p class="text-col2">Fisuras</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -325,7 +296,7 @@
 										else 'style="background:none"'
 										END%] > </p>
 						</div>
-						<div class="flex justify-content-between">
+						<div class="flex2">
 							<p class="text-col2">Pulverulencia</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -334,7 +305,7 @@
 										else 'style="background:none"'
 										END%] > </p>
 						</div>
-						<div class="flex justify-content-between">
+						<div class="flex2">
 							<p class="text-col2">Friabilidad</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -343,7 +314,7 @@
 										else 'style="background:none"'
 										END%] > </p>
 						</div>
-						<div class="flex justify-content-between">
+						<div class="flex2">
 							<p class="text-col2">Marcas de corte</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -352,7 +323,7 @@
 										else 'style="background:none"'
 										END%] > </p>
 						</div>
-						<div class="flex justify-content-between">
+						<div class="flex2">
 							<p class="text-col2">Marcas dentales</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -361,7 +332,7 @@
 										else 'style="background:none"'
 										END%] > </p>
 						</div>
-						<div class="flex justify-content-between">
+						<div class="flex2">
 							<p class="text-col2">Concreciones (tierra)</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -370,7 +341,7 @@
 										else 'style="background:none"'
 										END%] > </p>
 						</div>
-						<div class="flex justify-content-between">
+						<div class="flex2">
 							<p class="text-col2">Suciedad superficial</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -379,7 +350,7 @@
 										else 'style="background:none"'
 										END%] > </p>
 						</div>				
-						<div class="flex justify-content-between">
+						<div class="flex2">
 							<p class="text-col2">Manchas</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -392,7 +363,7 @@
 					
 
 					<div class="col-25">
-						<div class="flex justify-content-between">
+						<div class="flex2">
 							<p class="text-col2">Decoloración</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -400,17 +371,12 @@
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
+						</div>					
+						<div class="flex2">
+							<p class="text-align-left text-col2">Escala munsell: </p>
+							<p class="text-align-left text-col2"><strong>[%"Decoloración (Escala Munsell)"%]</strong></p>
 						</div>
-						<div class="flex justify-content-between">
-							<p class="text-col2">Escala munsell [%"Decoloración (Escala Munsell)"%]</p>
-		                	<p class="col-50 rectangulo" 
-						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación", ','),'Termoalteraciones') = 1
-										THEN 'style="background:#BC955C"'
-										else 'style="background:none"'
-										END%] > </p>
-						</div>
-						<div class="flex justify-content-between">
+						<div class="flex2">
 							<p class="text-col2">Microorganismos</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -419,7 +385,7 @@
 										else 'style="background:none"'
 										END%] > </p>
 						</div>
-						<div class="flex justify-content-between">
+						<div class="flex2">
 							<p class="text-col2">Deyecciones</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -428,7 +394,7 @@
 										else 'style="background:none"'
 										END%] > </p>
 						</div>
-						<div class="flex justify-content-between">
+						<div class="flex2">
 							<p class="text-col2">Raicillas</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -437,7 +403,7 @@
 										else 'style="background:none"'
 										END%] > </p>
 						</div>
-						<div class="flex justify-content-between">
+						<div class="flex2">
 							<p class="text-col2">Mineralización</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -446,7 +412,7 @@
 										else 'style="background:none"'
 										END%] > </p>
 						</div>
-						<div class="flex justify-content-between">
+						<div class="flex2">
 							<p class="text-col2">Orificios</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -455,7 +421,7 @@
 										else 'style="background:none"'
 										END%] > </p>
 						</div>
-						<div class="flex justify-content-between">
+						<div class="flex2">
 							<p class="text-col2">Grietas</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -467,7 +433,7 @@
 					</div>
 
 					<div class="col-25">
-						<div class="flex justify-content-between">
+						<div class="flex2">
 							<p class="text-col2">Faltantes</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -476,7 +442,7 @@
 										else 'style="background:none"'
 										END%] > </p>
 						</div>
-						<div class="flex justify-content-between">
+						<div class="flex2">
 							<p class="text-col2">Restos pigmento</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -485,7 +451,7 @@
 										else 'style="background:none"'
 										END%] > </p>
 						</div>
-						<div class="flex justify-content-between">
+						<div class="flex2">
 							<p class="text-col2">Restos de adhesivo</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -494,7 +460,7 @@
 										else 'style="background:none"'
 										END%] > </p>
 						</div>
-						<div class="flex justify-content-between">
+						<div class="flex2">
 							<p class="text-col2">Deformación</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -503,7 +469,7 @@
 										else 'style="background:none"'
 										END%] > </p>
 						</div>
-						<div class="flex justify-content-between">
+						<div class="flex2">
 							<p class="text-col2">Craqueladuras</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -512,7 +478,7 @@
 										else 'style="background:none"'
 										END%] > </p>
 						</div>
-						<div class="flex justify-content-between">
+						<div class="flex2">
 							<p class="text-col2">Desprendimiento</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
@@ -521,70 +487,105 @@
 										else 'style="background:none"'
 										END%] > </p>
 						</div>
+						<div class="flex2">
+							<p class="text-align-left text-col2">Otro: </p>
+							<p class="text-align-left text-col2"><strong>[%"Otro_FD"%]</strong></p>
+						</div>
 					</div>
 				</div>
 			</div>
-			</div>
 	</div>
-	<div class="flex">
-		<div style="width: 100%;">
-			<div class="diseño-tabla">
-				<h1 class="h2 bold color-rojo text-align-left">ESTADO DE CONSERVACIÓN</h1>
-				<p class="text-col2">REGISTRO FOTOGRÁFICO DE DETERIOROS</p>
-				<div class="" id="cont-princ-1">
-		         	<input type="hidden" id="conservacion" value=[%"Fotos conservación"%]>
-		        </div>
+	<!-- Continuidad con cédula de rgistro -->
+	
+	<div class="tabla diseño-tabla">
+		<h1  class="text-sub">CONCLUSIÓN DEL ESTADO DE CONSERVACIÓN</h1>
+		<div class="flex">
+			<div class="col-50">
+				<div class="">
+					<div class="flex space-between">
+					  	<p class="text-col2">Estable con menor número de deterioros</p>
+		              	<p class="col-50 rectangulo"
+		                  [%CASE WHEN 
+								array_count(string_to_array("Conclusión del estado de conservación", ','),'Estable con menor número de deterioros') = 1
+								THEN 'style="background:#BC955C"'
+								else 'style="background:none"'
+								END%]></p>
+			        </div>
+				</div>
+				<div class="">
+					<div class="flex space-between">
+					  	<p class="text-col2">Estable con regular número de deterioros</p>
+		              	<p class="col-50 rectangulo"
+		                  [%CASE WHEN 
+								array_count(string_to_array("Conclusión del estado de conservación", ','),'Estable con regular número de deterioros') = 1
+								THEN 'style="background:#BC955C"'
+								else 'style="background:none"'
+								END%]></p>
+			        </div>
+				</div>
+			</div>
+			<div class="col-50">
+				<div class="">
+					<div class="flex space-between">
+					  	<p class="text-col2">Inestable con altro grado de deterioro</p>
+		              	<p class="col-50 rectangulo"
+		                  [%CASE WHEN 
+								array_count(string_to_array("Conclusión del estado de conservación", ','),'Inestable con altro grado de deterioro') = 1
+								THEN 'style="background:#BC955C"'
+								else 'style="background:none"'
+								END%]></p>
+			        </div>
+				</div>
+				<div class=""><div class="flex space-between">
+					  	<p class="text-col2">Porcentaje de conservación: <strong>[%CASE WHEN length("Porcentaje de conservación")=3 THEN "Porcentaje de conservación" ELSE "Porcentaje de conservación" || '%' END%]</strong></p>
+			        </div>
+			    </div>
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript">
-    	function Carga(){
-	      imagenesEstadoDeConservacion();
-	    }
-    	function imagenesEstadoDeConservacion(){
-          let str = document.getElementById("conservacion").value;
-          let images = str.split(',');
-          let principal = document.getElementById('cont-princ-1');
-          let valor = images.length;
-          for(i=0;i<images.length;i++){
-            if(valor==2 || valor==1){
-              let creaimg = document.createElement('img');
-              let crearDiv = document.createElement('div');
-              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/04_Elementos_pétreos/01_Estado de conservación/"+images[i]+".jpg");
-              creaimg.setAttribute('width','395');
-              crearDiv.setAttribute('width','100%');
-              creaimg.setAttribute('style','padding:3px;');
-              principal.setAttribute('style', 'display:flex; flex-wrap: wrap;')
-              principal.appendChild(crearDiv);
-              crearDiv.appendChild(creaimg);
-
-            } else if(valor<=4){
-              let creaimg = document.createElement('img');
-              let crearDiv = document.createElement('div');
-              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/04_Elementos_pétreos/01_Estado de conservación/"+images[i]+".jpg");
-              creaimg.setAttribute('width','260');
-              creaimg.setAttribute('style','padding:3px;');
-              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
-              principal.appendChild(crearDiv);
-              crearDiv.appendChild(creaimg);
-
-            } else if(valor<=6){
-              let creaimg = document.createElement('img');
-              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/04_Elementos_pétreos/01_Estado de conservación/"+images[i]+".jpg");
-              creaimg.setAttribute('width','255');
-              creaimg.setAttribute('style','padding:3px');
-              creaimg.setAttribute('style','padding:3px;');
-              principal.appendChild(creaimg);
-
-            }else if(valor=>7){
-              let creaimg = document.createElement('img');
-              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/04_Elementos_pétreos/01_Estado de conservación/"+images[i]+".jpg");
-              creaimg.setAttribute('width','200');
-              creaimg.setAttribute('style','padding:3px');
-              principal.appendChild(creaimg);
-            }
-          }
-      }
-  	</script>
+	<div class="tabla diseño-tabla flex">
+		<div class="col-50">
+			<h1  class="text-sub">DIANGÓSTICO GENERAL DEL ESTADO DE CONSERVACIÓN</h1>
+			<p class="text-col2" style ="text-align: justify;" ><strong>[%"Diagnóstico general del estado de conservación"%]</strong></p>
+		</div>
+		<div class="col-50" style="min-height: 270px;">
+			<div>
+				<h1 class="text-sub">REQUERIMIENTO DE INTERVENCIÓN</h1>
+				<div class="">
+					<div class="flex space-between">
+					  	<p class="text-col2">Tratamiento de conservación emergente</p>
+		              	<p class="col-50 rectangulo"
+		                  [%CASE WHEN 
+								array_count(string_to_array("Requerimiento de intervención", ','),'Tratamiento de conservación emergente') = 1
+								THEN 'style="background:#BC955C"'
+								else 'style="background:none"'
+								END%]></p>
+			        </div>
+			        <div class="flex space-between">
+					  	<p class="text-col2">Tratamiento de conservación y restauración</p>
+		              	<p class="col-50 rectangulo"
+		                  [%CASE WHEN 
+								array_count(string_to_array("Requerimiento de intervención", ','),'Tratamiento de conservación y restauración') = 1
+								THEN 'style="background:#BC955C"'
+								else 'style="background:none"'
+								END%]></p>
+			        </div>
+			        <div class="flex space-between">
+					  	<p class="text-col2">Tratamiento de conservación preventiva</p>
+		              	<p class="col-50 rectangulo"
+		                  [%CASE WHEN 
+								array_count(string_to_array("Requerimiento de intervención", ','),'Tratamiento de conservación preventiva') = 1
+								THEN 'style="background:#BC955C"'
+								else 'style="background:none"'
+								END%]></p>
+			        </div>
+				</div>
+			</div>
+			<div>
+				<h1 class="text-sub">RECOMENDACIONES DE CONSERVACIÓN</h1>
+				<p class="text-col2" style ="text-align: justify;"><strong>[%"Recomendaciones de conservación"%]</strong></p>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

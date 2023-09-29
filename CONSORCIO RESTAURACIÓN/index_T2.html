@@ -39,23 +39,21 @@
 	<div class="tabla diseño-tabla" style="display:flex">
 		<table class="generales" style=" width: 100%;">
 			<tr>
-				<td class="col1" style="width: 20%;">Tramo</td>
-				<td class="col2" style="width: 30%;" >[%"Tramo"%]</td>
+				<td class="col1" >Tramo</td>
+				<td class="col2" >T2_Libramiento Ferroviario Campeche</td>
 				<td class="col1">ID Monumento</td>
-        <td class="col2">[%"ID Monumento"%]</td>
-				<td class="col1">Ubicación</td>
+        <td class="col2">[%right("ID Monumento",5)%]</td>
+        <td class="col1" >Ubicación</td>
 				<!--<td class="col2">[% CASE WHEN "km" IS NULL THEN 'Obra complementaria' ELSE 'Derecho de vía' END %]</td>-->
-				<td class="col2">[%'Obra complementaria'%]</td>
-
+				<td class="col2">[%'Derecho de vía'%]</td>
 			</tr>
 			<tr>
-				<td class="col1" style="width: 20%;" >Fecha de inicio intervención</td>
-				<td class="col2" style="width: 30%;">[%"Fecha inicio de intervención"%]</td>
-				<td class="col1">Fecha de fin intervención</td>
-				<td class="col2">[%"Fecha fin de intervención"%]</td>
 				<!--<td class="col2">En proceso</td>-->
+				
+				<td class="col1">Periodo</td>
+				<td class="col2">1 al 30 de junio de 2023</td>
 				<td class="col1">Persona que intervino</td>
-				<td class="col2">[%replace("Nombre de quien interviene",'.','')%]. [%CASE WHEN "Tramo" = 'T1' THEN 'Se contó con el apoyo 																														de 4 personas.'
+				<td class="col2" colspan="3">[%replace("Nombre de quien interviene",'.','')%]. [%CASE WHEN "Tramo" = 'T1' THEN 'Se contó con el apoyo 																														de 4 personas.'
 																					 WHEN "Tramo" = 'T2' THEN 'Se contó con el apoyo de 4 personas.'
 																					 WHEN "Tramo" = 'T3' THEN 'Se contó con el apoyo de 1 persona.'
 																					 WHEN "Tramo" = 'T4' THEN 'Se contó con el apoyo de 3 personas.'
@@ -63,6 +61,7 @@
 																					 END%] <br>
 				</td>
 			</tr>
+	
 		</table>
 	</div>
 
