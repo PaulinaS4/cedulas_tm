@@ -42,7 +42,7 @@
 				<td class="col1" >Tramo</td>
 				<td class="col2" >T2_Libramiento Ferroviario Campeche</td>
 				<td class="col1">ID Monumento</td>
-        <td class="col2">[%right("ID Monumento",5)%]</td>
+        <td class="col2">[%array_get(string_to_array("ID Monumento",'_'),1)%]</td>
         <td class="col1" >Ubicación</td>
 				<!--<td class="col2">[% CASE WHEN "km" IS NULL THEN 'Obra complementaria' ELSE 'Derecho de vía' END %]</td>-->
 				<td class="col2">[%'Derecho de vía'%]</td>
