@@ -21,7 +21,7 @@ table.head{
 h1 {
 	color: #691C32;
 	font: Montserrat;
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: bold;
 	margin-top: 5px;
 	margin-bottom: 0px;
@@ -47,7 +47,7 @@ div {
 	font-weight:normal;
 }
 .small{
-	font-family:"Montserrat"; font-size:small;
+	font-family:"Montserrat"; font-size:11px;
 }
 .color{
 	color:#691C32;
@@ -145,14 +145,14 @@ div {
 .text-col2{
 	padding: 1px;
 	font: 'Montserrat';
-	font-size: 9px;
+	font-size: 12px;
 	text-align:center;
 	color:#691C32;
 }
 .text-sub{
 	padding: 1px;
 	font:' Montserrat';
-	font-size: 12px;
+	font-size: 15px;
 	text-align:center;
 	color:#691C32;
 }
@@ -221,7 +221,7 @@ td.col2 {
 	background: #FFFFFF;
 	padding: 3px;
 	font: Montserrat;
-	font-size: 9px;
+	font-size: 10px;
 	text-align:center;
 	color:#691C32;
 	width:50px;

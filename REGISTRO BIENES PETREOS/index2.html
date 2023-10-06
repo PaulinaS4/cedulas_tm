@@ -75,7 +75,7 @@
               let creaimg = document.createElement('img');
               let crearDiv = document.createElement('div');
               creaimg.setAttribute('src', "file:///D:/restauracion/fotos/09_Registro_bienes_pétreos/01_Registro de deterioros/"+images[i]+".jpg");
-              creaimg.setAttribute('width','360');
+              creaimg.setAttribute('width','360'); //Antes 360
               crearDiv.setAttribute('width','100%');
               creaimg.setAttribute('style','padding:3px;');
               principal.setAttribute('style', 'display:flex; flex-wrap: wrap;');
@@ -122,12 +122,13 @@
           let creaimg = document.createElement('img');
           let crearDiv = document.createElement('div');
           creaimg.setAttribute('src', "file:///D:/restauracion/fotos/09_Registro_bienes_pétreos/02_Registro general/"+images[i]+".jpg");
-          creaimg.setAttribute('width','360');
+          creaimg.setAttribute('width','250');
+          //creaimg.setAttribute('width','280');
           crearDiv.setAttribute('width','100%');
          /// creaimg.setAttribute('height','215');
           //crearDiv.setAttribute('class','fotografia');
           creaimg.setAttribute('style','padding:3px;');
-          //principal.setAttribute('style', 'display:flex')
+          principal.setAttribute('style', 'display:flex')
           principal.appendChild(crearDiv);
           crearDiv.appendChild(creaimg);
 

@@ -137,13 +137,14 @@
 					<div class="flex">
 						<div class="col-50">
 							<div class="flex justify-content-between">
-									<p class="text-col2">En bloque</p>
-	                				<p class="col-50 rectangulo"
-	                    				[%case
-		          						when "Moldeado" = 'TRUE'
-		          						then 'style="background:#BC955C"'
-		          						else 'style="background:none"'
-	        					  	end%]>
+									<p class="text-col2">
+									En bloque</p>
+	                				<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Contexto de procedencia", ','),'En bloque') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
 							</div>
 						</div>
 						<div class="col-50">
@@ -258,7 +259,7 @@
 							<p class="text-col2">Termoalteraciones</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Termoalteraciones') = 1
+										array_count(string_to_array("Factores de degradaciónconcha", ','),'Termoalteraciones') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
@@ -267,7 +268,7 @@
 							<p class="text-col2">Abrasión</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Abrasión') = 1
+										array_count(string_to_array("Factores de degradaciónconcha", ','),'Abrasión') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
@@ -276,7 +277,7 @@
 							<p class="text-col2">Concreción de sales</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Concreción de sales') = 1
+										array_count(string_to_array("Factores de degradaciónconcha", ','),'Concreción de sales') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
@@ -285,7 +286,7 @@
 							<p class="text-col2">Subflorescencia</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Subflorescencia') = 1
+										array_count(string_to_array("Factores de degradaciónconcha", ','),'Subflorescencia') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
@@ -294,7 +295,7 @@
 							<p class="text-col2">Velo blanquecino</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Velo blanquecino') = 1
+										array_count(string_to_array("Factores de degradaciónconcha", ','),'Velo blanquecino') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
@@ -303,37 +304,41 @@
 							<p class="text-col2">Eflorescencia</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Eflorescencia') = 1
+										array_count(string_to_array("Factores de degradaciónconcha", ','),'Eflorescencia') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
 						</div>
-						<div class="flex justify-content-between">
-							<p class="text-col2">Exfoliación</p>
-		                	<p class="col-50 rectangulo" 
-						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Exfoliación') = 1
-										THEN 'style="background:#BC955C"'
-										else 'style="background:none"'
-										END%] > </p>
-						</div>
+						
 						<div class="flex justify-content-between">
 							<p class="text-col2">Fragmentado</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Fragmentado') = 1
+										array_count(string_to_array("Factores de degradaciónconcha", ','),'Fragmentado') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
 						</div>
-					</div>
-
+						<div class="flex justify-content-between">
+							<p class="text-align-left text-col2">No. de fragmentados: </p>
+							<p class="text-align-left text-col2"><strong>[%"No. de fragmentados"%]</strong></p>
+						</div>
+					</div>					
 					<div class="col-25">
+						<div class="flex justify-content-between">
+							<p class="text-col2">Exfoliación</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradaciónconcha", ','),'Exfoliación') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
 						<div class="flex justify-content-between">
 							<p class="text-col2">Fisuras</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha, ','),'Fisuras') = 1
+										array_count(string_to_array("Factores de degradación, ','),'Fisuras') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
@@ -342,7 +347,7 @@
 							<p class="text-col2">Pulverulencia</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Pulverulencia') = 1
+										array_count(string_to_array("Factores de degradaciónconcha", ','),'Pulverulencia') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
@@ -351,7 +356,7 @@
 							<p class="text-col2">Friabilidad</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Friabilidad') = 1
+										array_count(string_to_array("Factores de degradaciónconcha", ','),'Friabilidad') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
@@ -360,7 +365,7 @@
 							<p class="text-col2">Marcas de corte</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Marcas de corte') = 1
+										array_count(string_to_array("Factores de degradaciónconcha", ','),'Marcas de corte') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
@@ -369,7 +374,7 @@
 							<p class="text-col2">Marcas dentales</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Marcas dentales') = 1
+										array_count(string_to_array("Factores de degradaciónconcha", ','),'Marcas dentales') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
@@ -378,7 +383,7 @@
 							<p class="text-col2">Concreciones (tierra)</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Concreciones (tierra)') = 1
+										array_count(string_to_array("Factores de degradaciónconcha", ','),'Concreciones (tierra)') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
@@ -387,20 +392,11 @@
 							<p class="text-col2">Suciedad superficial</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Suciedad superficial') = 1
+										array_count(string_to_array("Factores de degradaciónconcha", ','),'Suciedad superficial') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
 						</div>				
-						<div class="flex justify-content-between">
-							<p class="text-col2">Manchas</p>
-		                	<p class="col-50 rectangulo" 
-						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Manchas') = 1
-										THEN 'style="background:#BC955C"'
-										else 'style="background:none"'
-										END%] > </p>
-						</div>
 					</div>
 					
 
@@ -409,25 +405,20 @@
 							<p class="text-col2">Decoloración</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Decoloración') = 1
+										array_count(string_to_array("Factores de degradaciónconcha", ','),'Decoloración') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
-						</div>
+						</div>					
 						<div class="flex justify-content-between">
-							<p class="text-col2">Escala munsell [%"Decoloración (Escala Munsell)"%]</p>
-		                	<p class="col-50 rectangulo" 
-						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Termoalteraciones') = 1
-										THEN 'style="background:#BC955C"'
-										else 'style="background:none"'
-										END%] > </p>
+							<p class="text-align-left text-col2">Escala munsell: </p>
+							<p class="text-align-left text-col2"><strong>[%"Decoloración (Escala Munsell)"%]</strong></p>
 						</div>
 						<div class="flex justify-content-between">
 							<p class="text-col2">Microorganismos</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Microorganismos') = 1
+										array_count(string_to_array("Factores de degradaciónconcha", ','),'Microorganismos') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
@@ -436,7 +427,7 @@
 							<p class="text-col2">Deyecciones</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Deyecciones') = 1
+										array_count(string_to_array("Factores de degradaciónconcha", ','),'Deyecciones') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
@@ -445,7 +436,7 @@
 							<p class="text-col2">Raicillas</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Raicillas') = 1
+										array_count(string_to_array("Factores de degradaciónconcha", ','),'Raicillas') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
@@ -454,7 +445,7 @@
 							<p class="text-col2">Mineralización</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Mineralización') = 1
+										array_count(string_to_array("Factores de degradaciónconcha", ','),'Mineralización') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
@@ -463,7 +454,7 @@
 							<p class="text-col2">Orificios</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Orificios') = 1
+										array_count(string_to_array("Factores de degradaciónconcha", ','),'Orificios') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
@@ -472,7 +463,7 @@
 							<p class="text-col2">Grietas</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Grietas') = 1
+										array_count(string_to_array("Factores de degradaciónconcha", ','),'Grietas') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
@@ -481,10 +472,19 @@
 
 					<div class="col-25">
 						<div class="flex justify-content-between">
+							<p class="text-col2">Manchas</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("Factores de degradaciónconcha", ','),'Manchas') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
 							<p class="text-col2">Faltantes</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Faltantes') = 1
+										array_count(string_to_array("Factores de degradaciónconcha", ','),'Faltantes') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
@@ -493,7 +493,7 @@
 							<p class="text-col2">Restos pigmento</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Restos pigmento') = 1
+										array_count(string_to_array("Factores de degradaciónconcha", ','),'Restos pigmento') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
@@ -502,7 +502,7 @@
 							<p class="text-col2">Restos de adhesivo</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Restos de adhesivo') = 1
+										array_count(string_to_array("Factores de degradaciónconcha", ','),'Restos de adhesivo') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
@@ -511,7 +511,7 @@
 							<p class="text-col2">Deformación</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Deformación') = 1
+										array_count(string_to_array("Factores de degradaciónconcha", ','),'Deformación') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
@@ -520,7 +520,7 @@
 							<p class="text-col2">Craqueladuras</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Craqueladuras') = 1
+										array_count(string_to_array("Factores de degradaciónconcha", ','),'Craqueladuras') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
@@ -529,10 +529,14 @@
 							<p class="text-col2">Desprendimiento</p>
 		                	<p class="col-50 rectangulo" 
 						              	[%CASE WHEN 
-										array_count(string_to_array("Factores de degradación concha", ','),'Desprendimiento') = 1
+										array_count(string_to_array("Factores de degradaciónconcha", ','),'Desprendimiento') = 1
 										THEN 'style="background:#BC955C"'
 										else 'style="background:none"'
 										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-align-left text-col2">Otro: </p>
+							<p class="text-align-left text-col2">[%"Otro FD"%]</p>
 						</div>
 					</div>
 				</div>
@@ -544,7 +548,6 @@
 		<div class="col-100">
 			<div class="diseño-tabla">
 				<h1>ESTADO DE CONSERVACIÓN</h1>
-				<p class="text-col2">Localización de efectos en esquema</p>
 				<div class="" id="cont-princ-1">
 		         	<input type="hidden" id="conservacion" value=[%"Fotos conservación"%]>
 		        </div>
