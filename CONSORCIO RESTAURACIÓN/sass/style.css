@@ -43,6 +43,8 @@ body, div, table, thead, tbody, tfoot, tr, th, td, p, h5 {
 /*flexbox*/
 .flex {
   display: flex; }
+.flex-direction-column{
+  flex-direction: column;}
 
 .justify-content-start {
   justify-content: flex-start; }
