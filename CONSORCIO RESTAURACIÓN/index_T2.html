@@ -111,18 +111,18 @@
 			</div>
 	</div>
 
-	<div class="" id="content-registro" style="display:none" >
-		<div class="">
+	<div class="" id="content-registro" style="display:none;" >
+		<div class="col-50">
 			<div class="diseño-tabla">
 				<h1 class="h2 bold color-rojo text-align-left">REGISTRO DE DETERIOROS</h1>
 				<div class="" id="cont-princ-1-registro">
          	<!--<input type="hidden" id="deterioros-registro" value="T2_07141_1,T2_07141_2,T2_07141_3">-->
-         <input type="hidden" id="deterioros-registro" value='[%"Fotos deterioros"%]'>
-         	<input type="hidden" id="ruta_deterioros" value='[%"ruta_deterioro"%]'>
-        </div>
+         			<input type="hidden" id="deterioros-registro" value='[%"Fotos deterioros"%]'>
+         			<input type="hidden" id="ruta_deterioros" value='[%"ruta_deterioro"%]'>
+       			</div>
 			</div>
 		</div>
-		<div class="">
+		<div class="col-50">
 			<div class="diseño-tabla">
 				<h1 class="h2 bold color-rojo text-align-left">REGISTRO GENERAL</h1>
 					<div class="" id="cont-princ-2-registro">
@@ -140,12 +140,12 @@
       let str = document.getElementById("tipo_cedula").value;
       console.log(str)
       if(str == "Cerámica"){
-				imagenesInicio();
+		  imagenesInicio();
 	      imagenesFin();
 	      imagenesIntervencion();
 
       }else if(str == "Concha"){
-      	imagenesInicio();
+      	  imagenesInicio();
 	      imagenesFin();
 	      imagenesIntervencion();
 
@@ -155,16 +155,16 @@
 	      imagenesIntervencion();
 
       }else if(str == "Entierros"){
-				imagenesEntierro();
+		  imagenesEntierro();
       }else if(str == "Metales"){
       	imagenesInicio();
 	      imagenesFin();
 	      imagenesIntervencion();
       }else if(str == "Bienes inmuebles"){
-				imagenesRegistrosDeterioros();
+		  imagenesRegistrosDeterioros();
 	      imagenesRegistroGeneral();
       }else if(str == "Inmuebles-Proceso"){
-      	imagenesInicio();
+      	  imagenesInicio();
 	      imagenesFin();
 	      imagenesIntervencion();
       }
@@ -366,13 +366,13 @@
 	  	let str = document.getElementById("deterioros-registro").value;
 	  	let rd = document.getElementById("ruta_deterioros").value;
 	  	//let rd = "D:/restauracion/fotos/07_Registro_bienes_inmuebles/01_Registro de deterioros/"
-			let content_registro = document.getElementById('content-registro');
+		let content_registro = document.getElementById('content-registro');
       	
 	  	if(str == null || str == ""){
 				console.log('ocultar content-general')
 	  	}else{
- 						let images = str.split(',');
- 						content_registro.setAttribute("style","display:flex;")
+ 			  let images = str.split(',');
+ 			  content_registro.setAttribute("style","display:flex;") 
 	          let principal = document.getElementById('cont-princ-1-registro');
 	          let valor = images.length;
 	          for(i=0;i<images.length;i++){
