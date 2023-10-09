@@ -24,7 +24,7 @@
 			      <div class="col-70">
 			        <h1 class="titulos text-center">U LU'UMIL MAAYA WÍINIKO'OB</h1>
 			        <p class="h2 color-rojo bold text-center">
-			          Análisis Regional del Sureste Mesoamericano Proyecto Marco de Salvamento <br>Arqueológico del Tren Maya.</p>
+			          Análisis Regional del Sureste Mesoamericano Proyecto Marco de Salvamento <br>Arqueológico del Tren Maya. [%"ruta_deterioro"%]</p>
 		            <h5 class="h3 color-rojo bold text-center" >Responsable académico:Dr. Manuel E. Pérez Rivas. <br>Coordinador de área de conservación: Félix Albano Camacho Zamora</h5>
 			      </div>
 		    </div>
@@ -32,8 +32,9 @@
 	</header>
 
 	<h1 class="center" style="text-transform: uppercase;">CÉDULA DE REGISTRO [%"material_cedula"%]</h1>
-
-	<input type="hidden" value=[%"material_cedula"%] id="tipo_cedula">
+	<input type="hidden" value='Bienes inmuebles' id="tipo_cedula" style="background: #fff; color:red">
+	
+	<!--<input type="hidden" value='[%"material_cedula"%]' id="tipo_cedula" style="background: #fff; color:red">-->
 	
 	<h1 class="h2 bold color-rojo text-align-left">DATOS GENERALES</h1>
 	<div class="tabla diseño-tabla" style="display:flex">
@@ -42,7 +43,7 @@
 				<td class="col1" >Tramo</td>
 				<td class="col2" >T2_Libramiento Ferroviario Campeche</td>
 				<td class="col1">ID Monumento</td>
-        <td class="col2">[%array_get(string_to_array("ID Monumento",'_'),1)%]</td>
+        <td class="col2">[%lpad("ID Monumento",5,0)%]</td>
         <td class="col1" >Ubicación</td>
 				<!--<td class="col2">[% CASE WHEN "km" IS NULL THEN 'Obra complementaria' ELSE 'Derecho de vía' END %]</td>-->
 				<td class="col2">[%'Derecho de vía'%]</td>
@@ -51,7 +52,7 @@
 				<!--<td class="col2">En proceso</td>-->
 				
 				<td class="col1">Periodo</td>
-				<td class="col2">1 al 30 de junio de 2023</td>
+				<td class="col2">1 al 31 de julio de 2023</td>
 				<td class="col1">Persona que intervino</td>
 				<td class="col2" colspan="3">[%replace("Nombre de quien interviene",'.','')%]. [%CASE WHEN "Tramo" = 'T1' THEN 'Se contó con el apoyo 																														de 4 personas.'
 																					 WHEN "Tramo" = 'T2' THEN 'Se contó con el apoyo de 4 personas.'
@@ -110,15 +111,14 @@
 			</div>
 	</div>
 
-	<div class="" id="content-registro" style="display:none">
+	<div class="" id="content-registro" style="display:none" >
 		<div class="">
 			<div class="diseño-tabla">
 				<h1 class="h2 bold color-rojo text-align-left">REGISTRO DE DETERIOROS</h1>
 				<div class="" id="cont-princ-1-registro">
-         	<!-- <input type="hidden" id="deterioros-registro" value=[%"Fotos deterioros"%]> 
-         	<input type="hidden" id="deterioros-registro" value="T1_05197_100_0001768_1,T1_05197_100_0001768_2,T1_05197_100_0001768_3">-->
-         	<input type="hidden" id="deterioros-registro" value=[%"Fotos deterioros"%]>
-         	<input type="hidden" id="ruta_deterioros" value=[%"ruta_deterioros"%]>
+         	<!--<input type="hidden" id="deterioros-registro" value="T2_07141_1,T2_07141_2,T2_07141_3">-->
+         <input type="hidden" id="deterioros-registro" value='[%"Fotos deterioros"%]'>
+         	<input type="hidden" id="ruta_deterioros" value='[%"ruta_deterioro"%]'>
         </div>
 			</div>
 		</div>
@@ -129,7 +129,7 @@
 	         	<!-- <input type="hidden" id="general" value=[%"Fotos registro"%]> 
 	         	<input type="hidden" id="general"  value="T1_05197_100_0001768_1,T1_05197_100_0001768_2,T1_05197_100_0001768_3">-->
 						<input type="hidden" id="general" value=[%"Fotos registro"%]>
-	         	<input type="hidden" id="ruta_registro" value=[%"ruta_registro"%]>
+	         	<input type="hidden" id="ruta_registro" value='[%"ruta_registro"%]'>
 	        </div>
 			</div>
 		</div>
@@ -160,7 +160,7 @@
       	imagenesInicio();
 	      imagenesFin();
 	      imagenesIntervencion();
-      }else if(str == "Inmuebles-Registro"){
+      }else if(str == "Bienes inmuebles"){
 				imagenesRegistrosDeterioros();
 	      imagenesRegistroGeneral();
       }else if(str == "Inmuebles-Proceso"){
@@ -190,7 +190,8 @@
 		            let crearDiv = document.createElement('div');
 
 		            //creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
-		            creaimg.setAttribute('src', "file:///"+ri+images[i]+".jpg");
+		            //creaimg.setAttribute('src', "file:///"+ri+'T2_07244_256_0002011 1 de 2_1'+".jpg");
+		            creaimg.setAttribute('src', "file:///"+ri+"'"+images[i]+"'"+".jpg");
 		            creaimg.setAttribute('width','260');
 		            crearDiv.setAttribute('width','100%');
 		            creaimg.setAttribute('style','padding:3px;');
@@ -364,8 +365,8 @@
 	  function imagenesRegistrosDeterioros(){
 	  	let str = document.getElementById("deterioros-registro").value;
 	  	let rd = document.getElementById("ruta_deterioros").value;
-
-        let content_registro = document.getElementById('content-registro');
+	  	//let rd = "D:/restauracion/fotos/07_Registro_bienes_inmuebles/01_Registro de deterioros/"
+			let content_registro = document.getElementById('content-registro');
       	
 	  	if(str == null || str == ""){
 				console.log('ocultar content-general')
@@ -407,13 +408,22 @@
 	              creaimg.setAttribute('style','padding:3px;');
 	              principal.appendChild(creaimg);
 
-	            }else if(valor=>7){
+	            }else if(valor<=7){
 	              //creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
 	              creaimg.setAttribute('src', "file:///"+rd+images[i]+".jpg");
 	            	creaimg.setAttribute('width','260');
 	              creaimg.setAttribute('style','padding:3px');
 	              principal.appendChild(creaimg);
-	            }
+
+	            }else if(valor>=9){
+			        let creaimg = document.createElement('img');
+			        //creaimg.setAttribute('src',  "file:///C:/xampp/htdocs/cedulas_tm/CONSORCIO RESTAURACIÓN/fotos/"+images[i]+".jpg");
+		          creaimg.setAttribute('src', "file:///"+rd+images[i]+".jpg");
+		          creaimg.setAttribute('width','200');
+			        creaimg.setAttribute('style','padding:3px');
+			        principal.setAttribute('style', 'display:flex; flex-wrap: wrap; justify-content: center;')
+			        principal.appendChild(creaimg);
+			      }
 	          }
 	  	}
 	  }
