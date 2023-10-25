@@ -1,0 +1,20 @@
+/*flexbox*/
+.flex{display: flex;}
+.justify-content-start{justify-content: flex-start;}
+.justify-content-center{justify-content: center;}
+.justify-content-between{justify-content: space-between;}
+.justify-content-around{justify-content: space-around;}
+.justify-content-end{justify-content: flex-end;}
+.align-items-start{align-items: flex-start;}
+.align-items-center{align-items: center;}
+.align-items-end{align-items: flex-end;}
+.flex-wrap-nowrap{flex-wrap: nowrap;}
+.flex-wrap{flex-wrap: wrap;}
+.center{
+	display: flex;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	align-content: center;
+	text-align: center;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta name="title" content="Cédula de intervención de material cerámico"/>
+	<meta name="description" content="Análisis regional del sureste Mesoamericano. Proyecto marco de salvamento arqueológico. Tren Maya"/>
+	<meta name="author" content="Jonatan Lara Ortiz, Ing; Diana Paulina Serrano Roldan, " />
+	<meta name="generator" content= "Atom" />
+	<meta name="copyright" content="Dirección de Salvamento Arqueológico" />
+	<meta name="created" content="2023-01-24"/>
+  	<link rel="stylesheet" href="sass/style.css">
+  <title></title>
+</head>
+<body onload="Carga();">
+	<header>
+		<table class="head">
+				<td class="col0"><img src="banner.png" width=840px height=60 hspace=0 vspace=0></td>
+		</table>
+		<section class="row-alt">
+		    <div class="flex">
+			      <div class="col-30">
+			        <img class="logo" src="tren.png">
+			      </div>
+			      <div class="col-70">
+			        <h1 class="titulos text-center">U LU'UMIL MAAYA WÍINIKO'OB</h1>
+			        <p class="h2 color-rojo bold text-center">
+			          Análisis Regional del Sureste Mesoamericano Proyecto Marco de Salvamento <br>Arqueológico del Tren Maya.</p>
+		            <h5 class="h3 color-rojo bold text-center" >Responsable académico:Dr. Manuel E. Pérez Rivas. Diseño de contenido: Dr. Aurelio López Corra</h5>
+			      </div>
+		    </div>
+		</section>
+	</header>
+	<h1 class="center">CÉDULA DE ANÁLISIS XRF</h1>
+	
+	<h1 class="h2 bold color-rojo text-align-left">DATOS GENERALES DEL MONUMENTO</h1>
+	<div class="tabla diseño-tabla" style="display:flex">
+		<table class="generales" style=" width: 100%;">
+			<tr>
+				<td class="col1 col-25 h-54 col-25 h-54" style="width:25%">Tramo</td>
+				<td class="col2"style="width:25%">[%"Tramo" %]</td>
+				<td class="col1 col-25 h-54"style="width:25%">ID Monumento</td>
+       			<td class="col2"style="width:25%">[% "ID Monumento" %]</td>
+       		</tr>
+       		<tr>
+        		<td class="col1 col-25 h-54">Tipo</td>
+				<td class="col2">[%"Tipo"%]</td>
+				<td class="col1 col-25 h-54">Subtipo</td>
+				<td class="col2">[%"Subtipo"%]</td>
+			</tr>
+			<tr>
+				<td class="col1 col-25 h-54">Ubicación</td>
+				<td class="col2">[%CASE WHEN "km" IS NULL THEN 'Obra complementaria' ELSE 'Derecho de vía' END%]</td>
+				<td class="col1 col-25 h-54">ID Arqueólogo</td>
+				<td class="col2">[%"arqlgo"%]</td>
+			</tr>
+		</table>
+	</div>	
+	<h1 class="h2 bold color-rojo text-align-left">DATOS DE ANÁLISIS XRF</h1>
+	<div class="tabla diseño-tabla" style="display:flex">
+		<table class="generales" style=" width: 100%;" >
+			
+			<td></td>
+			<tr>
+				<td class="col1 col-25 h-54" style="width:25%">Tipo de muestra </td>
+				<td class="col2"style="width:25%">[%%]</td>
+				<td class="col1 col-25 h-54"style="width:25%">Procedencia</td>
+				<td class="col2"style="width:25%">[%%]</td>
+
+			</tr>
+			<tr>
+				<td class="col1 col-25 h-54">Código de muestra</td>
+				<td class="col2">[%%]</td>
+				<td class="col1 col-25 h-54">Yacimientos identificados</td>
+				<td class="col2">[%%]</td>
+
+			</tr>
+
+		</table>
+	</div>
+	<div style="display:flex;">
+		<div class="col-50">
+			<h1 class="h2 bold color-rojo text-align-left;">CANTIDAD DE PIEZAS ANALIZADAS POR PROCEDENCIA</h1>
+		</div>
+		<div class="col-50">
+			<h1 class="h2 bold color-rojo text-align-left;">CANTIDAD DE PIEZAS POR YACIMIENTO IDENTIFICADO</h1>
+		</div>
+		
+	</div>
+	<div style="display:flex;">
+		<div class="tabla diseño-tabla" style="width: 50%;">
+			<canvas id="chart"></canvas>
+		</div>
+		<div class="tabla diseño-tabla" style="width: 50%;">
+			</div>
+	</div>
+	<script src="js/cal.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+	<script>
+        function Carga(){
+			let yacimientos = Object.keys(result)
+			let valores = Object.values(result)
+			
+			for(let i = 0; i < yacimientos.length; i++){
+				console.log(yacimientos[i] + " : "+valores[i])
+			}
+
+			new Chart(document.getElementById("chart"), {
+				type: 'bar',
+				data: {
+					labels: yacimientos,
+					datasets: [
+						{
+							backgroundColor: ["#56182D", "#691C32","#7F2241","#99294F","#AA305F","#BA3568","#D83D71","#F23D79"],
+							data: valores
+						}
+					]
+				},
+				options: {
+					indexAxis: 'y',
+					legend: { display: false },
+					title: {
+						display: true,
+					}
+				}
+			});
+		}
+		
+    </script>
+</body>
+</html>
