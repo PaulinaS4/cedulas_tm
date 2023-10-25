@@ -38,27 +38,27 @@
 	<div class="tabla diseño-tabla" style="display:flex; width:94%">
 		<table class="generales" style=" width: 99.5%;">
 			<tr>
-				<td class="col1 col-25" style="height: 70px">Tramo</td>
-				<td class="col2 col-25" style="height: 70px">[%"Tramo" ||'_Libramiento Campeche'%]</td>
+				<td class="col1 col-25" style="height: 65px">Tramo</td>
+				<td class="col2 col-25" style="height: 65px">T2_Libramiento Ferroviario Campeche</td>
 			</tr>
 			<tr>
-				<td class="col1 col-25" style="height: 70px">ID Monumento</td>
+				<td class="col1 col-25" style="height: 65px">ID Monumento</td>
        			<td class="col2">[% right("idmonumento",5) %]</td>
        		</tr>
        		<tr>
-        		<td class="col1 col-25" style="height: 70px">Tipo</td>
+        		<td class="col1 col-25" style="height: 65px">Tipo</td>
 				<td class="col2">[%"tipo_p"%]</td>
 			</tr>
 			<tr>
-				<td class="col1 col-25" style="height: 70px">Subtipo</td>
+				<td class="col1 col-25" style="height: 65px">Subtipo</td>
 				<td class="col2">[%"subtipo_p"%]</td>
 			</tr>
 			<tr>
-				<td class="col1 col-25" style="height: 70px">Ubicación</td>
+				<td class="col1 col-25" style="height: 65px">Ubicación</td>
 				<td class="col2">[%'Derecho de vía'%]</td>
 			</tr>
 			<tr>
-				<td class="col1 col-25" style="height: 70px">ID Arqueólogo</td>
+				<td class="col1 col-25" style="height: 65px">ID Arqueólogo</td>
 				<td class="col2">[%upper("arqueologo_p")%]</td>
 			</tr>
 		</table>
@@ -69,23 +69,27 @@
 			<table class="generales" style=" width: 99.5%;">
 
 				<tr>
-					<td class="col1 col-25" style="height: 70px">Persona que analizó</td>
+					<td class="col1 col-25" style="height: 65px">Persona que analizó</td>
 					<td class="col2 col-25 h-45">[%CASE WHEN "Tramo" = 'T2' THEN 'Nancy Gelover Alfaro' WHEN "Tramo" = 'T1' THEN 'Gloria Islas Estrada' END%]</td>
 				</tr>
 				<tr>
-					<td class="col1 col-25" style="height: 70px">Trabajadores de apoyo</td>
+					<td class="col1 col-25" style="height: 65px">Fecha de análisis</td>
+					<td class="col2">Junio 2023</td>
+				</tr>
+				<tr>
+					<td class="col1 col-25" style="height: 65px">Trabajadores de apoyo</td>
 					<td class="col2">[%case when tramo = 'T1' then '0' when tramo = 'T2' then '3' end%]</td>
 				</tr>
 				<tr>
-					<td class="col1 col-25" style="height: 70px">Estado de conservación</td>
+					<td class="col1 col-25" style="height: 65px">Estado de conservación</td>
 					<td class="col2">[%"estado_conservacion"%]</td>
 				</tr>
 				<tr>
-					<td class="col1 col-25" style="height: 70px">Sexo</td>
+					<td class="col1 col-25" style="height: 65px">Sexo</td>
 					<td class="col2">[%"sexo"%]</td>
 				</tr>
 				<tr>
-					<td class="col1 col-25" style="height: 70px">Edad</td>
+					<td class="col1 col-25" style="height: 65px">Edad</td>
 					<td class="col2">[%"edad"%]</td>
 				</tr>
 			</table>

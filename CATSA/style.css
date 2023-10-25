@@ -1,5 +1,5 @@
 
-* { font-family:Arial; font-size:8px; color:#4d4d4f; font-weight:bold;}
+* { font-family:"Arial"; font-size:8px; color:#4d4d4f; font-weight:bold;}
 
 body{
 	border: 3px #818284 solid; 
@@ -11,7 +11,7 @@ header section div{
 	font-size: 12px;
 }
 #infgen{
-	font-family: Arial;
+	font-family: "Arial";
 	font-size: 10px;
 }
 .tabla{
