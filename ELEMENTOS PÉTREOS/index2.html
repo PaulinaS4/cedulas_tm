@@ -37,13 +37,13 @@
 			<div class="col-50 diseño-tabla">
 				<h1 class="h2 bold color-rojo text-align-left">REGISTRO FOTOGRÁFICO DE INICIO</h1>
 				<div class="" id="cont-princ-1">
-			      <input type="hidden" id="inicio" value=[%"Fotos inicio"%]>
+			      <input type="hidden" id="inicio" value='[%"Fotos inicio"%]'>
 			    </div>
 			</div>
 			<div class="col-50 diseño-tabla">
 				<h1 class="h2 bold color-rojo text-align-left">REGISTRO FOTOGRÁFICO DE INTERVENCIÓN</h1>
 				<div class="" id="cont-princ-2">
-			      <input type="hidden" id="intervencion" value=[%"Fotos intervención"%]>
+			      <input type="hidden" id="intervencion" value='[%"Fotos intervención"%]'>
 			    </div>
 			</div>
 		</div>
@@ -52,7 +52,7 @@
 				<h1 class="h2 bold color-rojo text-align-left">REGISTRO FOTOGRÁFICO DE FIN</h1>
 				<div class="" id="cont-princ-3">
 			      
-			      <input type="hidden" id="fin" value=[%"Fotos fin"%]>
+			      <input type="hidden" id="fin" value='[%"Fotos fin"%]'>
 			    </div>
 			</div>
 			<div class="col-50 diseño-tabla">
@@ -193,7 +193,8 @@
 		            if(valor==2 || valor==1){
 		              let creaimg = document.createElement('img');
 		              let crearDiv = document.createElement('div');
-		              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/04_Elementos_pétreos/02_Inicio/"+"'"+images[i]+"'"+".jpg");
+					  const namef = "file:///D:/restauracion/fotos/04_Elementos_pétreos/02_Inicio/"+images[i]+".jpg"
+		              creaimg.setAttribute('src',  namef.toString());
 		              creaimg.setAttribute('width','260');
 		              crearDiv.setAttribute('width','100%');
 		              creaimg.setAttribute('style','padding:3px;');
