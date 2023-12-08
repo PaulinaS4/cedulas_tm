@@ -3,8 +3,10 @@
 
 body{
 	border: 3px #818284 solid; 
-	height: 140mm; 
+	height: auto;
 	width: 200mm;
+	padding-left: 10px;
+	padding-bottom:15px;
 }
 
 header section div{
