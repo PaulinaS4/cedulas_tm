@@ -47,11 +47,25 @@
 				<td class="col2">[%"Descripción de pieza"%]</td>
 				<td class="col1">Estado de conservación</td>
 				<td class="col2">[%"Estado de conservación"%]</td>
-				<td class="col1">Dimensiones</td>
-				<td class="col2">[%CASE WHEN "Dimensiones" IS NULL THEN ''  END%]
-					<strong>[%CASE WHEN "Dimensiones" IS NULL THEN '' ELSE 'Alto:' END%] </strong>[%array_first(string_to_array("Dimensiones",'x'))%]<br>
-			        <strong>[%CASE WHEN "Dimensiones" IS NULL THEN '' ELSE 'Ancho:' END%]  </strong>[%array_get(string_to_array("Dimensiones",'x'),1)%]<br>
-			        <strong>[%CASE WHEN "Dimensiones" IS NULL THEN '' ELSE 'Profundo:' END%] </strong>[%CASE WHEN array_length(string_to_array("Dimensiones",'x')) = 3 THEN array_last(string_to_array("Dimensiones",'x')) END%]
+				<td class="col1" rowspan="2">Dimensiones</td>
+				<td class="col2" rowspan="2">[%CASE WHEN "Dimensiones" IS NULL THEN ''  END%]
+					<strong>Alto: </strong>[%case when "Alto" like '%cm%' then "Alto" else "Alto" || ' cm' end%]<br>
+					<strong>Largo: </strong>[%case when "Largo" like '%cm%' then "Largo" else "Largo" || ' cm' end%]<br>
+					<strong>Ancho: </strong>[%case when "Ancho" like '%cm%' then "Ancho" else "Ancho" || ' cm' end%]<br>
+					<strong>Diámetro: </strong>[%case when "Diámetro" like '%cm%' then "Diámetro" else "Diámetro" || ' cm' end%]<br>                           
+					<strong>Espesor: </strong>[%case when "Espesor" like '%cm%' then "Espesor" else "Espesor" || ' cm' end%]
+							
+					<!--<div style="display:flex; justify-content: space-between; text-align: center;" >
+						<div class="col2" style="width: 50%;">
+							<strong>Alto: </strong>[%case when "Alto" like '%cm%' then "Alto" else "Alto" || ' cm' end%]<br>
+							<strong>Largo: </strong>[%case when "Largo" like '%cm%' then "Largo" else "Largo" || ' cm' end%]<br>
+							<strong>Ancho: </strong>[%case when "Ancho" like '%cm%' then "Ancho" else "Ancho" || ' cm' end%]<br>
+						</div>
+						<div class="col2" style="width: 50%;"><strong>Diámetro: </strong>[%case when "Diámetro" like '%cm%' then "Diámetro" else "Diámetro" || ' cm' end%]<br>                           
+							<strong>Espesor: </strong>[%case when "Espesor" like '%cm%' then "Espesor" else "Espesor" || ' cm' end%]
+						</div>
+						</div>
+                    -->
 			    </td>
 
 			</tr>
@@ -60,8 +74,7 @@
 				<td class="col2">[%"Nombre quien registra"%]</td>
 				<td class="col1">Estado:</td>
 				<td class="col2">[%"Estado"%]</td>
-				<td class="col1">Capa</td>
-	      		<td class="col2">[%"Capa"%]</td>
+				
 	      		
 			</tr>
 			<tr>
@@ -69,6 +82,8 @@
 		      	<td class="col2">[%"Fecha inicio de intervención"%]</td>
 		      	<td class="col1">Fecha fin de intervención</td>
 		      	<td class="col2">[%"Fecha fin de intervención"%]</td>
+				  <td class="col1">Capa</td>
+	      		<td class="col2">[%"Capa"%]</td>
 			</tr>
 		</table>
 	</div>

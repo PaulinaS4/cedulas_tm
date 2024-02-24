@@ -52,7 +52,7 @@
 				<!--<td class="col2">En proceso</td>-->
 				
 				<td class="col1">Periodo</td>
-				<td class="col2">Agosto 2023</td>
+				<td class="col2">[%"periodo"%]</td>
 				<td class="col1">Persona que intervino</td>
 				<td class="col2" colspan="3">[%replace("Nombre de quien interviene",'.','')%]. [%CASE WHEN "Tramo" = 'T1' THEN 'Se contó con el apoyo 																														de 4 personas.'
 																					 WHEN "Tramo" = 'T2' THEN 'Se contó con el apoyo de 4 personas.'
@@ -71,7 +71,7 @@
 				<h1 class="h2 bold color-rojo text-align-left">REGISTRO FOTOGRÁFICO DE INICIO</h1>
 						<div class="" id="cont-princ-1">
 		         <input type="hidden" id="ruta_inicio" value=[%"ruta_inicio"%]> 
-		         <input type="hidden" id="inicio" value=[%"Fotos inicio"%]> 
+		         <input type="hidden" id="inicio" value='[%"Fotos inicio"%]'> 
 		         <!-- <input type="hidden" id="inicio" value=[%"Fotos inicio"%]> 
 		         	<input type="hidden" id="inicio" value="T1_05197_100_0001768_1,T1_05197_100_0001768_2,T1_05197_100_0001768_3">-->
 		        </div>
@@ -80,7 +80,7 @@
 				<h1 class="h2 bold color-rojo text-align-left">REGISTRO FOTOGRÁFICO DE FIN</h1>
 						<div class="" id="cont-princ-2">
 							<input type="hidden" id="ruta_fin" value=[%"ruta_fin"%]> 
-		         <input type="hidden" id="fin" value=[%"Fotos fin"%]>
+		         <input type="hidden" id="fin" value='[%"Fotos fin"%]'>
 		         	<!-- <input type="hidden" id="fin" value=[%"Fotos fin"%]>
 		         	<input type="hidden" id="fin" value="T1_05197_100_0001768_1,T1_05197_100_0001768_2,T1_05197_100_0001768_3"> -->
 		        </div>
@@ -93,7 +93,7 @@
 					<div class="" id="cont-princ-3">
 		         <!-- <input type="hidden" id="intervencion" value=[%"Fotos intervención"%]>  -->
 		         <!--<input type="hidden" id="intervencion" value="T1_05197_100_0001768_1,T1_05197_100_0001768_2,T1_05197_100_0001768_3">-->
-		         <input type="hidden" id="intervencion" value=[%"Fotos intervención"%]>
+		         <input type="hidden" id="intervencion" value='[%"Fotos intervención"%]'>
 		         <input type="hidden" id="ruta_intervencion" value=[%"ruta_intervencion"%]>
 		      </div>
 		</div>
@@ -105,7 +105,7 @@
 				<div class="" id="cont-princ-1-entierro">
 		        <!-- <input type="hidden" id="entierro" value=[%"Fotos"%]>
 		        <input type="hidden" id="entierro"  value="T1_05197_100_0001768_1,T1_05197_100_0001768_2,T1_05197_100_0001768_3"> -->
-		        <input type="hidden" id="entierro"  value=[%"Fotos"%]>
+		        <input type="hidden" id="entierro"  value='[%"Fotos"%]'>
 		        <input type="hidden" id="ruta_fotos"  value=[%"ruta_fotos"%]>
 		    </div>
 			</div>
@@ -128,7 +128,7 @@
 					<div class="" id="cont-princ-2-registro">
 	         	<!-- <input type="hidden" id="general" value=[%"Fotos registro"%]> 
 	         	<input type="hidden" id="general"  value="T1_05197_100_0001768_1,T1_05197_100_0001768_2,T1_05197_100_0001768_3">-->
-						<input type="hidden" id="general" value=[%"Fotos registro"%]>
+						<input type="hidden" id="general" value='[%"Fotos registro"%]'>
 	         	<input type="hidden" id="ruta_registro" value='[%"ruta_registro"%]'>
 	        </div>
 			</div>

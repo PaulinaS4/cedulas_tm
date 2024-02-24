@@ -48,11 +48,12 @@
 				<td class="col1">Estado de conservación</td>
 				<td class="col2">[%"Estado de conservación"%]</td>
 				<td class="col1">Dimensiones</td>
-				<td class="col2">
-					<strong>Alto: </strong>[%string_to_array("Dimensiones",'x')[0]%]<br>
-	                         <strong>Largo: </strong>[%string_to_array("Dimensiones",'x')[1]%]<br>
-	                         <strong>Ancho: </strong>[%string_to_array("Dimensiones",'x')[2]%]
-			    </td>
+				<td class="col2"><strong>Alto: </strong>[%case when "Alto" like '%cm%' then "Alto" else "Alto" || ' cm' end%]<br>
+					<strong>Largo: </strong>[%case when "Largo" like '%cm%' then "Largo" else "Largo" || ' cm' end%]<br>
+					<strong>Ancho: </strong>[%case when "Ancho" like '%cm%' then "Ancho" else "Ancho" || ' cm' end%]<br>
+					<strong>Diámetro: </strong>[%case when "Diámetro" like '%cm%' then "Diámetro" else "Diámetro" || ' cm' end%]<br>                           
+					<strong>Espesor: </strong>[%case when "Espesor" like '%cm%' then "Espesor" else "Espesor" || ' cm' end%]
+				</td>
 
 			</tr>
 			<tr>

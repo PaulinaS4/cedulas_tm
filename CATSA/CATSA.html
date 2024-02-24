@@ -69,14 +69,21 @@
 						<td style= "width: 33.33%">Región y subregión:</td>
 		       		</tr>
 		       		<tr>
-						<td class="tabla2" COLSPAN="2" >[%"Ubicación"%]</td>
+						<td class="tabla2" COLSPAN="2" style="height: 15px;" >[%case 
+							when  array_intersect( string_to_array("Ubicación",''), array(1,2,3,4,5,6,7,8,9)) = false 
+							then "Ubicación" ||' N: ' || round("Y",2) ||', E:' || round("X",2) 
+							else "Ubicación" end 
+							|| case when "En área de afectación" = 'Si' then '. En derecho de vía.'
+														when "En área de afectación" = 'No' and "nombre_obra" is null then '. Fuera de derecho de vía.'
+														when "En área de afectación" = 'No' and "nombre_obra" is not null then '. En obra complementaria '
+														|| "nombre_obra" end%]</td>
 						<td class="tabla2" >[%"Región y subregión"%]</td>
 		       		</tr>
 		       		<tr>
 						<td COLSPAN="3">Contexto:</td>
 		       		</tr>
 		       		<tr>
-		       			<td class="tabla2" colspan="3">[%"Contexto"%]</td>
+		       			<td class="tabla2" colspan="3" style="height: 15px;">[%"Contexto"%]</td>
 		       		</tr>
 		       	</table>
 		      	</div>
@@ -107,7 +114,7 @@
 			       			<td >Cuerpo</td>
 			       		</tr>
 			       		<tr>
-							<td class="tabla" >[%"Soporte"%]</td>
+							<td class="tabla"style="height: 15px;" >[%"Soporte"%]</td>
 							<td class="tabla" >[%"Base"%]</td>
 							<td class="tabla" >[%"Fondo"%]</td>
 			       			<td class="tabla" >[%"Cuerpo"%]</td>
@@ -119,7 +126,7 @@
 			       			<td >Labio/Borde</td>
 			       		</tr>
 			       		<tr>
-							<td class="tabla" >[%"Vertedera"%]</td>
+							<td class="tabla" style="height: 15px;">[%"Vertedera"%]</td>
 							<td class="tabla" >[%"Cuello"%]</td>
 							<td class="tabla" >[%"Boca"%]</td>
 			       			<td class="tabla" >[%"Labio/Borde"%]</td>
@@ -138,11 +145,11 @@
 							<td class="tabla" width="50%">[%"Color"%]</td>
 						</tr>
 						<tr >
-							<td>Acabado de superficie y técnica decorativa:</td>
+							<td >Acabado de superficie y técnica decorativa:</td>
 							<td>Motivo decorativo:</td>
 			       		</tr>
 			       		<tr>
-							<td class="tabla" >[%array_to_string(
+							<td class="tabla" style="height: 15px;">[%array_to_string(
 								array_filter(
 								array(
 								"Acabado de superficie",
@@ -168,9 +175,9 @@
 								<td width="28%"></td>
 								<td width="2%"></td>
 								<td class= "tabla" width="28%" style="height: 5px">
-								[%array_get(string_to_array(replace("Dimensiones",'cm',''),'x'),0)%]</td>
+								[%replace("Alto",'cm','')%]</td>
 								<td width="2%" class="dimensiones">cm.</td>
-								<td class= "tabla" width="28%">[%array_get(string_to_array(replace("Dimensiones",'cm',''),'x'),1)%]
+								<td class= "tabla" width="28%">[%replace("Ancho",'cm','')%]
 								</td>
 								<td width="2%" class="dimensiones">cm.</td>
 			       			</tr>
@@ -183,12 +190,12 @@
 								<td width="2%"></td>
 			       			</tr>
 			       			<tr>
-								<td class= "tabla" style="width:28%; height:5px">[%array_get(string_to_array(replace("Dimensiones",'cm',''),'x'),2)%]
+								<td class= "tabla" style="width:28%; height:5px">[%replace("Largo",'cm','')%]
 								</td>
 								<td width="2%" class="dimensiones">cm.</td>
 								<td class= "tabla" width="28%">[%replace("Espesor",'cm','')%]</td>
 								<td width="2%" class="dimensiones">cm.</td>
-								<td class= "tabla" width="28%">[%array_get(string_to_array(replace("Dimensiones",'cm',''),'x'),1)%]
+								<td class= "tabla" width="28%">[%replace("Diámetro",'cm','')%]
 								</td>
 								<td width="2%" class="dimensiones">cm.</td>
 			       			</tr>
@@ -207,7 +214,7 @@
 							<td class="tabla" style="padding: 10px;">[%"Adquisición"%]</td>
 							<td class="tabla" ></td>
 							<td class="tabla" >[%trim(array_to_string(
-array_filter(string_to_array("Tratamiento",','), length(@element) >3)))%]</td>
+								array_filter(string_to_array("Tratamiento",','), length(@element) >3)))%]</td>
 			       			<td class="tabla" ></td>
 			       		</tr>
 			       	</table>
@@ -227,7 +234,7 @@ array_filter(string_to_array("Tratamiento",','), length(@element) >3)))%]</td>
 								<td>Catalogó:</td>
 				       		</tr>
 				       		<tr>
-				       			<td class="tabla2">[%"Ceramista"||', '||"Restaurador"%]</td>
+				       			<td class="tabla2"  style="height: 30px;">[%"Ceramista"||', '||"Restaurador"%]</td>
 				       		</tr>
 				       		<tr>
 								<td>Fecha:</td>
@@ -239,7 +246,7 @@ array_filter(string_to_array("Tratamiento",','), length(@element) >3)))%]</td>
 					</div>
 					<div style=" width:50%">
 							<h1>Observaciones:</h1>
-						<div style="border: 1.15px solid #909092; height:74px; margin-left:5px; margin-right:5px">
+						<div style="border: 1.15px solid #909092; height:90px; margin-left:5px; margin-right:5px">
 							<p>
 								[%"Observaciones"%]
 							</p>
@@ -248,8 +255,8 @@ array_filter(string_to_array("Tratamiento",','), length(@element) >3)))%]</td>
 
 					<div style="width:20% " >
 						<h1>Fotografía:</h1>
-						<div style="border: 1.15px solid #909092; height: 74px; margin-left:3px; margin-right:5px;" >
-							<img style="width:83%; margin:auto; display: block; " src='file:///D:/restauracion/fotos/01_Cerámica/03_Fin/[%"No de proyecto"%]_1.jpg'  onerror="this.src='file:///D:/TM_Excavacion/images.png'" >
+						<div style="border: 1.15px solid #909092; height: 90px; margin-left:3px; margin-right:5px;" >
+							<img style="width:83%; margin:auto; display: block; " src='file:///D:/restauracion/fotos/04_elementos_pétreos/03_Fin/[%array_first(string_to_array("Fotos fin"))%].jpg'  onerror="this.src='file:///D:/TM_Excavacion/images.png'" >
 						</div>
 					</div>
 				</div>

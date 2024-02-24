@@ -69,7 +69,14 @@
 						<td style= "width: 33.33%">Región y subregión:</td>
 		       		</tr>
 		       		<tr>
-						<td class="tabla2" COLSPAN="2" >[%"Ubicación"%]</td>
+						<td class="tabla2" COLSPAN="2" >[%case 
+							when  array_intersect( string_to_array("Ubicación",''), array(1,2,3,4,5,6,7,8,9)) = false 
+							then "Ubicación" ||' N: ' || round("Y",2) ||', E:' || round("X",2) 
+							else "Ubicación" end 
+							|| case when "En área de afectación" = 'Si' then '. En derecho de vía.'
+														when "En área de afectación" = 'No' and "nombre_obra" is null then '. Fuera de derecho de vía.'
+														when "En área de afectación" = 'No' and "nombre_obra" is not null then '. En obra complementaria '
+														|| "nombre_obra" end%]</td>
 						<td class="tabla2" >[%"Región y subregión"%]</td>
 		       		</tr>
 		       		<tr>
@@ -156,7 +163,7 @@
 								<td width="28%"></td>
 								<td width="2%"></td>
 								<td class= "tabla" width="28%" style="height: 5px">
-								[%array_get(string_to_array(replace("Dimensiones",'cm',''),'x'),0)%]</td>
+								[%replace("Largo",'cm','')%]</td>
 								<td width="2%" class="dimensiones">cm.</td>
                             </tr>
                             <tr>
@@ -166,9 +173,9 @@
 								<td width="2%"></td>
                             </tr>
                             <tr>
-								<td class= "tabla" width="28%">[%array_get(string_to_array(replace("Dimensiones",'cm',''),'x'),1)%]</td>
+								<td class= "tabla" width="28%">[%replace("Alto",'cm','')%]</td>
 								<td width="2%" class="dimensiones">cm.</td>
-                                <td class= "tabla" width="28%">[%array_get(string_to_array(replace("Dimensiones",'cm',''),'x'),2)%]</td>
+                                <td class= "tabla" width="28%">[%replace("Ancho",'cm','')%]</td>
 								<td width="2%" class="dimensiones">cm.</td>
 			       			</tr>
 			       			<tr>
@@ -178,9 +185,9 @@
 								<td width="2%"></td>
 			       			</tr>
 			       			<tr>
-								<td class= "tabla" width="28%">[%"Espesor"%]</td>
+								<td class= "tabla" width="28%">[%replace("Espesor",'cm','')%]</td>
 								<td width="2%" class="dimensiones">cm.</td>
-								<td class= "tabla" width="28%">[%array_get(string_to_array(replace("Dimensiones",'cm',''),'x'),1)%]</td>
+								<td class= "tabla" width="28%">[%replace("Diámetro",'cm','')%]</td>
 								<td width="2%" class="dimensiones">cm.</td>
 			       			</tr>
 			       		</table>
@@ -218,7 +225,8 @@ array_filter(string_to_array("Tratamiento",','), length(@element) >3)))%]</td>
 								<td>Catalogó:</td>
 				       		</tr>
 				       		<tr>
-				       			<td class="tabla2" style="height: 30px;">[%array_to_string(
+				       			<td class="tabla2" style="height: 30px;">
+									[%array_to_string(
 									array_filter(
 									array_cat(
 									array( "Analista de material" ),
