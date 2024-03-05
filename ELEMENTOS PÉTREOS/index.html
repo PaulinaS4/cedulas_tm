@@ -32,59 +32,47 @@
 	</header>
 	<h1 class="center">CÉDULA DE REGISTRO IN SITU DE ELEMENTOS PÉTREOS</h1>
 	<h1 class="h2 bold color-rojo text-align-left ">DATOS GENERALES</h1>
-	<div class="tabla diseño-tabla" style="display:flex">
-		<table class="generales" style=" width: 100%;">
+	<div class="tabla diseño-tabla" style="display:flex; margin:6px;">
+		<table class="generales" style="width:816px">
 			<tr>
-				<td class="col1">Tramo</td>
-				<td class="col2">[%"Tramo"%]</td>
-				<td class="col1">Estructura</td>
-				<td class="col2">[%"ID Monumento"%]</td>
-        		<td class="col1">Número ID</td>
-				<td class="col2">[%"Clave de excavación"%]</td>
+				<td class="col1">ID Monumento</td>
+				<td class="col2">[%"Tramo"%]_[%"ID Monumento"%]</td>
+				<td class="col1">Arqueólogo</td>
+				<td class="col2">[% substr(  "Clave de excavación" ,10,3)%]</td>
+	  <td class="col1">ID Pieza</td>
+				<td class="col2">[%right("Clave de excavación",7)%]</td>
 			</tr>
 			<tr>
-				<td class="col1">Descripción de la pieza</td>
-				<td class="col2">[%"Descripción de pieza"%]</td>
-				<td class="col1">Estado de conservación</td>
+	  <td class="col1">Estado de conservación</td>
 				<td class="col2">[%"Estado de conservación"%]</td>
-				<td class="col1" rowspan="2">Dimensiones</td>
-				<td class="col2" rowspan="2">[%CASE WHEN "Dimensiones" IS NULL THEN ''  END%]
-					<strong>Alto: </strong>[%case when "Alto" like '%cm%' then "Alto" else "Alto" || ' cm' end%]<br>
+				<td class="col1">Descripción</td>
+				<td class="col2">[%"Descripción de pieza"%]</td>
+	  <td class="col1">Dimensiones</td>
+				<td class="col2"><strong>Alto: </strong>[%case when "Alto" like '%cm%' then "Alto" else "Alto" || ' cm' end%]<br>
 					<strong>Largo: </strong>[%case when "Largo" like '%cm%' then "Largo" else "Largo" || ' cm' end%]<br>
 					<strong>Ancho: </strong>[%case when "Ancho" like '%cm%' then "Ancho" else "Ancho" || ' cm' end%]<br>
 					<strong>Diámetro: </strong>[%case when "Diámetro" like '%cm%' then "Diámetro" else "Diámetro" || ' cm' end%]<br>                           
-					<strong>Espesor: </strong>[%case when "Espesor" like '%cm%' then "Espesor" else "Espesor" || ' cm' end%]
-							
-					<!--<div style="display:flex; justify-content: space-between; text-align: center;" >
-						<div class="col2" style="width: 50%;">
-							<strong>Alto: </strong>[%case when "Alto" like '%cm%' then "Alto" else "Alto" || ' cm' end%]<br>
-							<strong>Largo: </strong>[%case when "Largo" like '%cm%' then "Largo" else "Largo" || ' cm' end%]<br>
-							<strong>Ancho: </strong>[%case when "Ancho" like '%cm%' then "Ancho" else "Ancho" || ' cm' end%]<br>
-						</div>
-						<div class="col2" style="width: 50%;"><strong>Diámetro: </strong>[%case when "Diámetro" like '%cm%' then "Diámetro" else "Diámetro" || ' cm' end%]<br>                           
-							<strong>Espesor: </strong>[%case when "Espesor" like '%cm%' then "Espesor" else "Espesor" || ' cm' end%]
-						</div>
-						</div>
-                    -->
-			    </td>
-
+					<strong>Espesor: </strong>[%case when "Espesor" like '%cm%' then "Espesor" else "Espesor" || ' cm' end%]</td>
 			</tr>
 			<tr>
-        		<td class="col1">Nombre de quien realiza el registro: </td>
+	  			<td class="col1">Nombre de quien realiza el registro: </td>
 				<td class="col2">[%"Nombre quien registra"%]</td>
-				<td class="col1">Estado:</td>
-				<td class="col2">[%"Estado"%]</td>
-				
-	      		
+				<td class="col1">Inicio de intervención:</td>
+				<td class="col2">[%"Fecha inicio de intervención"%]</td>
+				<td class="col1">Capa y cuadro</td>
+				<td class="col2">[%"Capa"%] <strong>N: </strong>[%string_to_array("Cuadro",',')[0]%]<br>
+								  <strong>E: </strong>[%string_to_array("Cuadro",',')[1]%]</td>
 			</tr>
 			<tr>
-		      	<td class="col1">Fecha inicio de intervención</td>
-		      	<td class="col2">[%"Fecha inicio de intervención"%]</td>
-		      	<td class="col1">Fecha fin de intervención</td>
-		      	<td class="col2">[%"Fecha fin de intervención"%]</td>
-				  <td class="col1">Capa</td>
-	      		<td class="col2">[%"Capa"%]</td>
+				<td class="col1">Nombre de quien realiza la intervención</td>
+				<td class="col2">[%"Nombre de quien interviene"%]</td>
+				<td class="col1">Fin de intervención</td>
+				<td class="col2">[%CASE WHEN "Fecha fin de intervención" LIKE '%Cargando%' OR "Fecha fin de intervención" IS NULL THEN NULL
+				ELSE "Fecha fin de intervención" END%]</td>
+				<td class="col1">Estado</td>
+				<td class="col2">[%"Estado"%]</td>
 			</tr>
+
 		</table>
 	</div>
 	<div class="flex">
