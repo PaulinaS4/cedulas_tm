@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta name="title" content="Cédula de catalogación de vasijas"/>
+	<meta name="description" content="Análisis regional del sureste Mesoamericano. Proyecto marco de salvamento arqueológico. Tren Maya"/>
+	<meta name="author" content="Diana Paulina Serrano Roldan" />
+	<meta name="generator" content= "Sublime" />
+	<meta name="copyright" content="Dirección de Salvamento Arqueológico" />
+	<meta name="created" content="2023-06-13"/>
+	<link rel="stylesheet" href="style.css">
+  <title></title>
+</head>
+  	<body>
+  		<header>
+  			<section>	
+  				<div class="container">
+					<div style="width: 25%; display:flex; flex-wrap: wrap;">
+						<!-- foto cultura y tren maya -->
+						<div style="width: 100%; height: 50%; padding-top: 15px;">
+							<img style=" height: 25px;width: auto; display:block; " src="cultura.png" >
+						</div>
+						<div style="width: 100%; height: 50%;">
+							<img style="height: 40px; width: auto; display: block; " src="trenmaya.png">
+						</div>
+					</div>
+					<div style="width: 50%; text-align: center; display: block;">
+						<!-- nombre de proyecto -->
+						<p class="titulo">
+							U lu'umil Maaya Wíiniko'ob: Un análisis regional de sureste mesoamericano Proyecto marco de salvamento arqueológico "Tren Maya, Estados de Chiapas, Tabasco, Campeche, Yucatán, Quintana Roo"
+						</p>
+						<p class="subtitulo">
+							Monumento [%left("Clave de excavación",8)%]
+							<br>
+							<br>
+							ANEXOS FOTOGRÁFICOS
+						</p>
+						
+					</div>
+					<div style="width: 25%;">
+						<!-- Logo INAH -->
+						<img style="height: 120px;width: auto ;margin:auto; display: block;" src="inah.png" >
+					</div>
+				</div>	
+  			</section>
+	 	</header>		
+		  	<section>
+				<div style="display: flex; flex-wrap: wrap; height: 820px;padding-top: 30px;">
+					<!-- Fotografías -->
+					<div class="foto">
+						<p style="text-align: center;">[%case when "FOTO_1" ilike '%no aplica%' then '' else "FOTO_1" end%]</p>
+						<img src='file:///[%'D:/Tramo 2 - Sur/006_Fotografias/' || left("Clave de excavación",8) ||'/' || "FOTO_1" || '.jpg' %]'>
+					</div>
+					<div class="foto">
+						<p style="text-align: center;">[%case when "FOTO_2" ilike '%no aplica%' then '' else "FOTO_2" end%]</p>
+						<img src='file:///[%'D:/Tramo 2 - Sur/006_Fotografias/' || left("Clave de excavación",8) ||'/' || "FOTO_2" || '.jpg' %]'>
+					</div>
+					<div class="foto">
+						<p style="text-align: center;">[%case when "FOTO_3" ilike '%no aplica%' then '' else "FOTO_3" end%]</p>
+						<img src='file:///[%'D:/Tramo 2 - Sur/006_Fotografias/' || left("Clave de excavación",8) ||'/' || "FOTO_3" || '.jpg' %]'>
+					</div>
+					<div class="foto">
+						<p style="text-align: center;">[%case when "FOTO_4" ilike '%no aplica%' then '' else "FOTO_4" end%]</p>
+						<img src='file:///[%'D:/Tramo 2 - Sur/006_Fotografias/' || left("Clave de excavación",8) ||'/' || "FOTO_4" || '.jpg' %]'>
+					</div>
+				</div>	
+		    </section>   	
+  	 </body>
+</html>
