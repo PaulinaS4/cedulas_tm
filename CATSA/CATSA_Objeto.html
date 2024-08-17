@@ -51,7 +51,7 @@
 		       		</tr>
 		       		<tr>
 						<td class="tabla2" >U lu'umil Maaya Wíiniko'ob: Un análisis regional de sureste mesoamericano Proyecto marco de salvamento arqueológico "Tren Maya, Estados de Chiapas, Tabasco, Campeche, Yucatán, Quintana Roo"</td>
-						<td class="tabla2" >Manuel Eduardo Pérez Rivas, [%CASE WHEN left("No de proyecto",2) IN ('T1','T2','T3','T4','T5') THEN '2021' ELSE '2022-2023' END%]</td>
+						<td class="tabla2" >Manuel Eduardo Pérez Rivas, [%CASE WHEN left("No de proyecto",2) IN ('T1','T2','T3','T4','T5') THEN '2021' ELSE '2022-2024' END%]</td>
 						<td class="tabla2" >[%"Entidad Federativa"%]</td>
 		       		</tr>
 		       		<tr >
@@ -70,8 +70,8 @@
 		       		</tr>
 		       		<tr>
 						<td class="tabla2" COLSPAN="2" >[%case 
-							when  array_intersect( string_to_array("Ubicación",''), array(1,2,3,4,5,6,7,8,9)) = false 
-							then "Ubicación" ||' N: ' || round("Y",2) ||', E:' || round("X",2) 
+							when  array_intersect( string_to_array("Ubicación",''), array(1,2,3,4,5,6,7,8,9)) = false or "Ubicación" is null
+							then  concat( "Ubicación"  ,' N: ' , round("Y",2) ,', E:' , round("X",2) )
 							else "Ubicación" end 
 							|| case when "En área de afectación" = 'Si' then '. En derecho de vía.'
 														when "En área de afectación" = 'No' and "nombre_obra" is null then '. Fuera de derecho de vía.'

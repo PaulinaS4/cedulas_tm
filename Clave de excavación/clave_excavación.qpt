@@ -1,0 +1,241 @@
+<Layout units="mm" worldFileMap="" name="Clave de excavación" printResolution="300">
+ <Snapper tolerance="5" snapToItems="1" snapToGrid="0" snapToGuides="1"/>
+ <Grid offsetX="0" offsetY="0" resolution="10" offsetUnits="mm" resUnits="mm"/>
+ <PageCollection>
+  <symbol clip_to_extent="1" is_animated="0" alpha="1" force_rhr="0" type="fill" frame_rate="10" name="">
+   <data_defined_properties>
+    <Option type="Map">
+     <Option value="" type="QString" name="name"/>
+     <Option name="properties"/>
+     <Option value="collection" type="QString" name="type"/>
+    </Option>
+   </data_defined_properties>
+   <layer class="SimpleFill" pass="0" locked="0" enabled="1" id="{bd92a32d-1cb7-481b-ae0a-701e9ece8cf1}">
+    <Option type="Map">
+     <Option value="3x:0,0,0,0,0,0" type="QString" name="border_width_map_unit_scale"/>
+     <Option value="255,255,255,255" type="QString" name="color"/>
+     <Option value="miter" type="QString" name="joinstyle"/>
+     <Option value="0,0" type="QString" name="offset"/>
+     <Option value="3x:0,0,0,0,0,0" type="QString" name="offset_map_unit_scale"/>
+     <Option value="MM" type="QString" name="offset_unit"/>
+     <Option value="35,35,35,255" type="QString" name="outline_color"/>
+     <Option value="no" type="QString" name="outline_style"/>
+     <Option value="0.26" type="QString" name="outline_width"/>
+     <Option value="MM" type="QString" name="outline_width_unit"/>
+     <Option value="solid" type="QString" name="style"/>
+    </Option>
+    <data_defined_properties>
+     <Option type="Map">
+      <Option value="" type="QString" name="name"/>
+      <Option name="properties"/>
+      <Option value="collection" type="QString" name="type"/>
+     </Option>
+    </data_defined_properties>
+   </layer>
+  </symbol>
+  <LayoutItem templateUuid="{f2b0b16a-9bf4-45ce-a6da-bb9a36f1513b}" blendMode="0" background="true" zValue="0" itemRotation="0" type="65638" size="215.9,279.4,mm" frameJoinStyle="miter" outlineWidthM="0.3,mm" positionOnPage="0,0,mm" groupUuid="" uuid="{f2b0b16a-9bf4-45ce-a6da-bb9a36f1513b}" visibility="1" frame="false" positionLock="false" referencePoint="0" id="" opacity="1" excludeFromExports="0" position="0,0,mm">
+   <FrameColor blue="0" red="0" green="0" alpha="255"/>
+   <BackgroundColor blue="255" red="255" green="255" alpha="255"/>
+   <LayoutObject>
+    <dataDefinedProperties>
+     <Option type="Map">
+      <Option value="" type="QString" name="name"/>
+      <Option name="properties"/>
+      <Option value="collection" type="QString" name="type"/>
+     </Option>
+    </dataDefinedProperties>
+    <customproperties>
+     <Option/>
+    </customproperties>
+   </LayoutObject>
+   <symbol clip_to_extent="1" is_animated="0" alpha="1" force_rhr="0" type="fill" frame_rate="10" name="">
+    <data_defined_properties>
+     <Option type="Map">
+      <Option value="" type="QString" name="name"/>
+      <Option name="properties"/>
+      <Option value="collection" type="QString" name="type"/>
+     </Option>
+    </data_defined_properties>
+    <layer class="SimpleFill" pass="0" locked="0" enabled="1" id="{4de78f92-bf5a-4f1d-a6ab-f39840636c64}">
+     <Option type="Map">
+      <Option value="3x:0,0,0,0,0,0" type="QString" name="border_width_map_unit_scale"/>
+      <Option value="255,255,255,255" type="QString" name="color"/>
+      <Option value="miter" type="QString" name="joinstyle"/>
+      <Option value="0,0" type="QString" name="offset"/>
+      <Option value="3x:0,0,0,0,0,0" type="QString" name="offset_map_unit_scale"/>
+      <Option value="MM" type="QString" name="offset_unit"/>
+      <Option value="35,35,35,255" type="QString" name="outline_color"/>
+      <Option value="no" type="QString" name="outline_style"/>
+      <Option value="0.26" type="QString" name="outline_width"/>
+      <Option value="MM" type="QString" name="outline_width_unit"/>
+      <Option value="solid" type="QString" name="style"/>
+     </Option>
+     <data_defined_properties>
+      <Option type="Map">
+       <Option value="" type="QString" name="name"/>
+       <Option name="properties"/>
+       <Option value="collection" type="QString" name="type"/>
+      </Option>
+     </data_defined_properties>
+    </layer>
+   </symbol>
+  </LayoutItem>
+  <LayoutItem templateUuid="{d52dd6e4-49e3-4486-bad8-574275f2bae8}" blendMode="0" background="true" zValue="0" itemRotation="0" type="65638" size="215.9,279.4,mm" frameJoinStyle="miter" outlineWidthM="0.3,mm" positionOnPage="0,0,mm" groupUuid="" uuid="{d52dd6e4-49e3-4486-bad8-574275f2bae8}" visibility="1" frame="false" positionLock="false" referencePoint="0" id="" opacity="1" excludeFromExports="0" position="0,289.4,mm">
+   <FrameColor blue="0" red="0" green="0" alpha="255"/>
+   <BackgroundColor blue="255" red="255" green="255" alpha="255"/>
+   <LayoutObject>
+    <dataDefinedProperties>
+     <Option type="Map">
+      <Option value="" type="QString" name="name"/>
+      <Option name="properties"/>
+      <Option value="collection" type="QString" name="type"/>
+     </Option>
+    </dataDefinedProperties>
+    <customproperties>
+     <Option/>
+    </customproperties>
+   </LayoutObject>
+   <symbol clip_to_extent="1" is_animated="0" alpha="1" force_rhr="0" type="fill" frame_rate="10" name="">
+    <data_defined_properties>
+     <Option type="Map">
+      <Option value="" type="QString" name="name"/>
+      <Option name="properties"/>
+      <Option value="collection" type="QString" name="type"/>
+     </Option>
+    </data_defined_properties>
+    <layer class="SimpleFill" pass="0" locked="0" enabled="1" id="{5a7a17f7-f63e-4926-aac8-820c217103aa}">
+     <Option type="Map">
+      <Option value="3x:0,0,0,0,0,0" type="QString" name="border_width_map_unit_scale"/>
+      <Option value="255,255,255,255" type="QString" name="color"/>
+      <Option value="miter" type="QString" name="joinstyle"/>
+      <Option value="0,0" type="QString" name="offset"/>
+      <Option value="3x:0,0,0,0,0,0" type="QString" name="offset_map_unit_scale"/>
+      <Option value="MM" type="QString" name="offset_unit"/>
+      <Option value="35,35,35,255" type="QString" name="outline_color"/>
+      <Option value="no" type="QString" name="outline_style"/>
+      <Option value="0.26" type="QString" name="outline_width"/>
+      <Option value="MM" type="QString" name="outline_width_unit"/>
+      <Option value="solid" type="QString" name="style"/>
+     </Option>
+     <data_defined_properties>
+      <Option type="Map">
+       <Option value="" type="QString" name="name"/>
+       <Option name="properties"/>
+       <Option value="collection" type="QString" name="type"/>
+      </Option>
+     </data_defined_properties>
+    </layer>
+   </symbol>
+  </LayoutItem>
+  <GuideCollection visible="1">
+   <Guide units="mm" page="0" position="7.2250524475524474" orientation="1"/>
+   <Guide units="mm" page="0" position="7.2250524475524474" orientation="2"/>
+   <Guide units="mm" page="0" position="209.52652097902097" orientation="2"/>
+   <Guide units="mm" page="1" position="7.2250524475524474" orientation="1"/>
+   <Guide units="mm" page="1" position="7.2250524475524474" orientation="2"/>
+   <Guide units="mm" page="1" position="209.52652097902097" orientation="2"/>
+  </GuideCollection>
+ </PageCollection>
+ <LayoutItem templateUuid="{900bda8f-a085-4a28-b10d-4fd3a187d87d}" blendMode="0" background="false" zValue="2" multiFrameTemplateUuid="{2f7749fd-57c5-420f-b2eb-b03b2c0db600}" itemRotation="0" multiFrame="{2f7749fd-57c5-420f-b2eb-b03b2c0db600}" sectionWidth="208.675" type="65647" size="208.675,274.239,mm" frameJoinStyle="miter" outlineWidthM="0.3,mm" positionOnPage="5.15806,5.16075,mm" groupUuid="" uuid="{900bda8f-a085-4a28-b10d-4fd3a187d87d}" visibility="1" frame="false" positionLock="false" referencePoint="0" sectionHeight="274.239" hideBackgroundIfEmpty="0" id="1" opacity="1" excludeFromExports="0" hidePageIfEmpty="0" sectionX="0" sectionY="0" position="5.15806,5.16075,mm">
+  <FrameColor blue="0" red="0" green="0" alpha="255"/>
+  <BackgroundColor blue="255" red="255" green="255" alpha="255"/>
+  <LayoutObject>
+   <dataDefinedProperties>
+    <Option type="Map">
+     <Option value="" type="QString" name="name"/>
+     <Option name="properties"/>
+     <Option value="collection" type="QString" name="type"/>
+    </Option>
+   </dataDefinedProperties>
+   <customproperties>
+    <Option/>
+   </customproperties>
+  </LayoutObject>
+ </LayoutItem>
+ <LayoutItem templateUuid="{d29d8c90-84b3-45ae-9154-71084cf624c4}" blendMode="0" background="false" zValue="1" multiFrameTemplateUuid="{de80cf98-6077-4fcc-ad13-78a527a323a3}" itemRotation="0" multiFrame="{de80cf98-6077-4fcc-ad13-78a527a323a3}" sectionWidth="0" type="65647" size="0,0,mm" frameJoinStyle="miter" outlineWidthM="0.3,mm" positionOnPage="5.158,7.225,mm" groupUuid="" uuid="{d29d8c90-84b3-45ae-9154-71084cf624c4}" visibility="1" frame="false" positionLock="false" referencePoint="0" sectionHeight="0" hideBackgroundIfEmpty="0" id="2" opacity="1" excludeFromExports="0" hidePageIfEmpty="1" sectionX="0" sectionY="0" position="5.158,296.625,mm">
+  <FrameColor blue="0" red="0" green="0" alpha="255"/>
+  <BackgroundColor blue="255" red="255" green="255" alpha="255"/>
+  <LayoutObject>
+   <dataDefinedProperties>
+    <Option type="Map">
+     <Option value="" type="QString" name="name"/>
+     <Option type="Map" name="properties">
+      <Option type="Map" name="dataDefinedHeight">
+       <Option value="true" type="bool" name="active"/>
+       <Option value="case&#xd;&#xa;when&#xd;&#xa;FOTO_1 ilike '%no aplica%' = 1 and &#xd;&#xa;FOTO_2 ilike '%no aplica%' = 1 and &#xd;&#xa;FOTO_3 ilike '%no aplica%' = 1 and &#xd;&#xa;FOTO_4 ilike '%no aplica%' = 1&#xd;&#xa;&#xd;&#xa;then 0&#xd;&#xa;&#xd;&#xa;else 272.175&#xd;&#xa;end" type="QString" name="expression"/>
+       <Option value="3" type="int" name="type"/>
+      </Option>
+      <Option type="Map" name="dataDefinedPositionX">
+       <Option value="false" type="bool" name="active"/>
+       <Option value="1" type="int" name="type"/>
+       <Option value="" type="QString" name="val"/>
+      </Option>
+      <Option type="Map" name="dataDefinedWidth">
+       <Option value="true" type="bool" name="active"/>
+       <Option value="case&#xd;&#xa;when&#xd;&#xa;FOTO_1 ilike '%no aplica%' = 1 and &#xd;&#xa;FOTO_2 ilike '%no aplica%' = 1 and &#xd;&#xa;FOTO_3 ilike '%no aplica%' = 1 and &#xd;&#xa;FOTO_4 ilike '%no aplica%' = 1&#xd;&#xa;&#xd;&#xa;then 0&#xd;&#xa;&#xd;&#xa;else 208.675&#xd;&#xa;end" type="QString" name="expression"/>
+       <Option value="3" type="int" name="type"/>
+      </Option>
+     </Option>
+     <Option value="collection" type="QString" name="type"/>
+    </Option>
+   </dataDefinedProperties>
+   <customproperties>
+    <Option/>
+   </customproperties>
+  </LayoutObject>
+ </LayoutItem>
+ <LayoutMultiFrame stylesheetEnabled="false" useSmartBreaks="true" maxBreakDistance="10" resizeMode="0" evaluateExpressions="true" type="65648" url="file:///C:/GitHub/cedulas_tm/Clave de excavación/clave_excavacion_2.html" html="" uuid="{866a638a-3326-4f60-97cb-ac83a07b10ba}" templateUuid="{866a638a-3326-4f60-97cb-ac83a07b10ba}" contentMode="0" stylesheet="">
+  <childFrame uuid="{d29d8c90-84b3-45ae-9154-71084cf624c4}" templateUuid="{d29d8c90-84b3-45ae-9154-71084cf624c4}"/>
+  <LayoutObject>
+   <dataDefinedProperties>
+    <Option type="Map">
+     <Option value="" type="QString" name="name"/>
+     <Option type="Map" name="properties">
+      <Option type="Map" name="dataDefinedSourceUrl">
+       <Option value="true" type="bool" name="active"/>
+       <Option value="case&#xd;&#xa;when FOTO_1 = 'No Aplica' then 1&#xd;&#xa;else 'file:///C:/GitHub/cedulas_tm/Clave de excavación/clave_excavacion_2.html'&#xd;&#xa;end" type="QString" name="expression"/>
+       <Option value="3" type="int" name="type"/>
+      </Option>
+     </Option>
+     <Option value="collection" type="QString" name="type"/>
+    </Option>
+   </dataDefinedProperties>
+   <customproperties>
+    <Option/>
+   </customproperties>
+  </LayoutObject>
+ </LayoutMultiFrame>
+ <LayoutMultiFrame stylesheetEnabled="false" useSmartBreaks="true" maxBreakDistance="10" resizeMode="0" evaluateExpressions="true" type="65648" url="file:///C:/GitHub/cedulas_tm/Clave de excavación/clave_excavacion.html" html="" uuid="{dcd94846-5a25-4ad8-bad6-9548e90d5427}" templateUuid="{dcd94846-5a25-4ad8-bad6-9548e90d5427}" contentMode="0" stylesheet="">
+  <childFrame uuid="{900bda8f-a085-4a28-b10d-4fd3a187d87d}" templateUuid="{900bda8f-a085-4a28-b10d-4fd3a187d87d}"/>
+  <LayoutObject>
+   <dataDefinedProperties>
+    <Option type="Map">
+     <Option value="" type="QString" name="name"/>
+     <Option name="properties"/>
+     <Option value="collection" type="QString" name="type"/>
+    </Option>
+   </dataDefinedProperties>
+   <customproperties>
+    <Option/>
+   </customproperties>
+  </LayoutObject>
+ </LayoutMultiFrame>
+ <customproperties>
+  <Option type="Map">
+   <Option value="png" type="QString" name="atlasRasterFormat"/>
+   <Option value="0" type="int" name="forceVector"/>
+   <Option value="1" type="int" name="pdfAppendGeoreference"/>
+   <Option value="0" type="int" name="pdfCreateGeoPdf"/>
+   <Option value="0" type="int" name="pdfDisableRasterTiles"/>
+   <Option value="" type="QString" name="pdfExportThemes"/>
+   <Option value="1" type="int" name="pdfIncludeMetadata"/>
+   <Option value="T2_08045_e92cf0b7_78fb_48e4_810b_81852a8d0fc8" type="QString" name="pdfLayerOrder"/>
+   <Option value="0" type="int" name="pdfLosslessImages"/>
+   <Option value="0" type="int" name="pdfOgcBestPracticeFormat"/>
+   <Option value="1" type="int" name="pdfSimplify"/>
+   <Option value="0" type="int" name="pdfTextFormat"/>
+   <Option value="true" type="bool" name="singleFile"/>
+  </Option>
+ </customproperties>
+ <Atlas coverageLayerSource="D:/Tramo 2 - Sur/001_Registro de excavación/002_Geopackage/013_La Vía/T2_08045.gpkg|layername=T2_08045" filenamePattern="'output_'||@atlas_featurenumber" hideCoverage="0" coverageLayer="T2_08045_e92cf0b7_78fb_48e4_810b_81852a8d0fc8" featureFilter="fid between 1 and 20" enabled="1" coverageLayerName="T2_08045" sortFeatures="0" filterFeatures="1" coverageLayerProvider="ogr" pageNameExpression="&quot;Clave de excavación&quot;"/>
+</Layout>

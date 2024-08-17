@@ -58,9 +58,9 @@
 					<td class="col1">Descripción</td>
 					<td class="col2">[%"Descripción de pieza"%]</td>
           <td class="col1">Dimensiones</td>
-					<td class="col2"><strong>Alto: </strong>[%case when "Alto" like '%cm%' then "Alto" else "Alto" || ' cm' end%]<br>
-	                         <strong>Largo: </strong>[%case when "Largo" like '%cm%' then "Largo" else "Largo" || ' cm' end%]<br>
-                           <strong>Ancho: </strong>[%case when "Ancho" like '%cm%' then "Ancho" else "Ancho" || ' cm' end%]<br>
+					<td class="col2"><strong>Alto: </strong>[%case when "Alto" like '%cm%' then "Alto" when "Alto" ilike '%aplica%' then "Alto" else "Alto" || ' cm' end%]<br>
+	                         <strong>Largo: </strong>[%case when "Largo" like '%cm%' then "Largo" when "Largo" ilike '%aplica%' then "Largo" else "Largo" || ' cm' end%]<br>
+                           <strong>Ancho: </strong>[%case when "Ancho" like '%cm%' then "Ancho" when "Ancho" ilike '%aplica%' then "Ancho" else "Ancho" || ' cm' end%]<br>
                            <strong>Diámetro: </strong>[%case when "Diámetro" like '%cm%' then "Diámetro" else "Diámetro" || ' cm' end%]<br>                           
 	                         <strong>Espesor: </strong>[%case when "Espesor" like '%cm%' then "Espesor" else "Espesor" || ' cm' end%]</td>
 				</tr>
@@ -164,7 +164,7 @@
 
 		<section class="container">
 			<div class="container col-90">
-        <h5 class="flex">Estado de conservación  <p class="subtitulo" >Registro fotográfico principales deterioros</p></h5>
+        <h5 class="flex">Estado de conservación<p class="subtitulo" >Registro fotográfico principales deterioros</p></h5>
       </div>
 		</section>
     <!-- IMAGENES-->
@@ -852,7 +852,7 @@
         //let valor = 3
         let valor = images.length;
         for(i=0;i<images.length;i++){
-          if(valor>=2 & valor<=4){
+          if(valor>=1 & valor<=4){
             let creaimg = document.createElement('img');
             let crearDiv = document.createElement('div');
             creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/01_Cerámica/01_Estado de conservación/"+images[i]+".jpg");

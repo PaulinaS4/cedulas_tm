@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta name="title" content="Cédula de intervención de material cerámico"/>
+	<meta name="description" content="Análisis regional del sureste Mesoamericano. Proyecto marco de salvamento arqueológico. Tren Maya"/>
+	<meta name="author" content="Jonatan Lara Ortiz, Ing; Diana Paulina Serrano Roldan, Urb." />
+	<meta name="generator" content= "Visual Studio Code" />
+	<meta name="copyright" content="Dirección de Salvamento Arqueológico" />
+	<meta name="created" content="2024-04-26"/>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body onload="Carga();">
+  <header>
+    <table class="head">
+        <td class="col0"><img src="banner.png" width=840px height=60 hspace=0 vspace=0></td>
+    </table>
+  </header>
+  <!-- -->
+
+  <!-- IMÁGENES -->
+  <div class="flex" style="width:850px">
+
+    <div class="diseño-tabla" style="width: 850px;">
+      <p>Registro fotográfico de Intervención</p>
+      <input type="hidden" id="inicioIntervencion" value=[% "Fotos intervención" %]>
+      <div class="flex wrap center" id="cont-princ-3"></div>
+    </div>
+  </div>
+   <!-- TABLA -->
+   <div class="container " style="width: 850px;">
+    <h5 >Presencia de aplanados de estuco</h5>
+  </div>
+  <div class="tabla" style="display:flex; width: 850px;">
+    <table class="generales" style="width:850px">
+      <tr>
+        <td class="col1" style="width: 12.5%;">Presencia de aplanados de estuco</td>
+        <td class="col2" style="width: 12.5%;">[%"Presencia de aplanados de estuco"%]</td> 
+        <td class="col1" style="width: 12.5%;">Grosor de aplanado grueso (cm)</td>
+        <td class="col2"style="width: 12.5%;">[%"Grosor de aplanado grueso (cm)"%]</td>
+        <td class="col1" style="width: 12.5%;">Grosor de aplanado medio (cm)</td>
+        <td class="col2" style="width: 12.5%;">[%"Grosor de aplanado medio (cm)"%]</td>
+        <td class="col1" style="width: 12.5%;">Grosor de aplanado fino (cm)</td>
+        <td class="col2" style="width: 12.5%;">[%"Grosor de aplanado fino (cm)"%]</td> 
+      </tr>
+      <tr>
+        <td class="col1">Anclaje entre aplanados</td>
+        <td class="col2">[%"Anclaje entre aplanados"%]</td>
+        <td class="col1">Acabado de superficie</td>
+        <td class="col2">[%"Acabado de superficie"%]</td>
+        <td class="col1">Número de capas de remozamiento</td>
+        <td class="col2">[%"Número de capas de remozamiento"%]</td>
+        <td class="col1">Características de las capas de remozamiento</td>
+        <td class="col2">[%"Características de las capas de remozamiento"%]</td>
+      </tr>
+      <tr>
+        <td class="col1">Matado</td>
+        <td class="col2">[%"Matado"%]</td>
+        <td class="col1">Observaciones</td>
+        <td class="col2"colspan="5">[%"Observaciones_1"%]</td>
+      </tr>
+    </table>
+  </div>
+  <div class="container " style="width: 850px;">
+    <h5 >Presencia de pintura mural</h5>
+  </div>
+  <div class="tabla" style="display:flex; width: 850px;">
+    <table class="generales" style="width:850px">
+      <tr>
+        <td class="col1" style="width: 12.5%;">Presencia de Pintura Mural</td>
+        <td class="col2" style="width: 12.5%;">[%"Presencia de Pintura Mural"%]</td> 
+        <td class="col1" style="width: 12.5%;">Dibujo preparatorio</td>
+        <td class="col2"style="width: 12.5%;">[%"Dibujo preparatorio"%]</td>
+        <td class="col1" style="width: 12.5%;">Técnica pictórica</td>
+        <td class="col2" style="width: 12.5%;">[%"Técnica pictórica"%]</td>
+        <td class="col1" style="width: 12.5%;">Número de colores</td>
+        <td class="col2" style="width: 12.5%;">[%"Número de colores"%]</td>
+      </tr>
+      <tr>
+        <td class="col1">Paleta cromática (Colores Munsell)</td>
+        <td class="col2">[%"Paleta cromática (Colores Munsell)"%]</td>
+        <td class="col1">Remozamiento</td>
+        <td class="col2">[%"Remozamiento"%]</td>
+        <td class="col1">Observaciones</td>
+        <td class="col2" colspan="3">[%"Observaciones_2"%]</td>
+      </tr>
+    </table>
+  </div>
+  <div class="container " style="width: 850px;">
+    <h5 >Presencia de estuco modelado</h5>
+  </div>
+  <div class="tabla" style="display:flex; width: 850px;">
+    <table class="generales" style="width:850px">
+      <tr>
+        <td class="col1" style="width: 12.5%;">Presencia de estuco modelado</td>
+        <td class="col2" style="width: 12.5%;">[%"Presencia de estuco modelado"%]</td> 
+        <td class="col1" style="width: 12.5%;">Número de secciones</td>
+        <td class="col2"style="width: 12.5%;">[%"Número de secciones"%]</td>
+        <td class="col1" style="width: 12.5%;">Tipo de Relieve</td>
+        <td class="col2" style="width: 12.5%;">[%"Tipo de Relieve"%]</td>
+        <td class="col1" style="width: 12.5%;">Modelado</td>
+        <td class="col2" style="width: 12.5%;">[%"Modelado"%]</td>
+      </tr>
+      <tr>
+        <td class="col1">Granulometría del modelado</td>
+        <td class="col2">[%"Granulometría del modelado"%]</td>
+        <td class="col1">Recubrimientos</td>
+        <td class="col2">[%"Recubrimientos"%]</td>
+        <td class="col1">Observaciones</td>
+        <td class="col2" colspan="3">[%"Observaciones_3"%]</td>
+      </tr>
+    </table>
+  </div>
+  <div class="container " style="width: 850px;">
+    <h5 >Presencia de piso</h5>
+  </div>
+  <div class="tabla" style="display:flex; width: 850px;">
+    <table class="generales" style="width:850px">
+      <tr>
+        <td class="col1" style="width: 12.5%;">Presencia de piso</td>
+        <td class="col2" style="width: 12.5%;">[%"Presencia de piso"%]</td> 
+        <td class="col1" style="width: 12.5%;">Características de soporte</td>
+        <td class="col2"style="width: 12.5%;">[%"Características de soporte"%]</td>
+        <td class="col1" style="width: 12.5%;">Características de firme</td>
+        <td class="col2" style="width: 12.5%;">[%"Características de firme"%]</td>
+        <td class="col1" style="width: 12.5%;">Grosor de firme (cm)</td>
+        <td class="col2" style="width: 12.5%;">[%"Grosor de firme (cm)"%]</td>
+      </tr>
+      <tr>
+        <td class="col1" style="width: 12.5%;">Grosor Aplanado medio (cm)</td>
+        <td class="col2" style="width: 12.5%;">[%"Grosor Aplanado medio (cm)"%]</td> 
+        <td class="col1" style="width: 12.5%;">Grosor de aplanado fino (cm)</td>
+        <td class="col2"style="width: 12.5%;">[%"Grosor de aplanado fino (cm)_1"%]</td>
+        <td class="col1" style="width: 12.5%;">Anclaje entre aplanados</td>
+        <td class="col2" style="width: 12.5%;">[%"Anclaje entre aplanados_1"%]</td>
+        <td class="col1" style="width: 12.5%;">Acabado de superficie</td>
+        <td class="col2" style="width: 12.5%;">[%"Acabado de superficie_1"%]</td>
+      </tr>
+      <tr>
+        <td class="col1" style="width: 12.5%;">Número de capas de remozamiento</td>
+        <td class="col2" style="width: 12.5%;">[%"Número de capas de remozamiento_1"%]</td> 
+        <td class="col1" style="width: 12.5%;">Características de las capas de remozamiento</td>
+        <td class="col2"style="width: 12.5%;">[%"Características de las capas de remozamiento_1"%]</td>
+        <td class="col1" style="width: 12.5%;">Matado</td>
+        <td class="col2" style="width: 12.5%;">[%"Matado_1"%]</td>
+        <td class="col1" style="width: 12.5%;">Observaciones</td>
+        <td class="col2" style="width: 12.5%;">[%"Observaciones_4"%]</td>
+      </tr>
+    </table>
+  </div>
+  <script type="text/javascript">
+    //var cadena = document.getElementById("valor").value;
+    //console.log(cadena);
+    function Carga(){
+      imagenesIntervencion();
+    }
+    function imagenesIntervencion(){
+      /// creacion de imagenes
+      let str = document.getElementById("inicioIntervencion").value;
+      let images = str.split(',');
+      let principal = document.getElementById('cont-princ-3');
+      let valor = images.length;
+      for(i=0;i<images.length;i++)
+        if(valor==2 || valor==1){
+              let creaimg = document.createElement('img');
+              let crearDiv = document.createElement('div');
+              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/10_Acabados_arquitectónicos/04_Intervención/" +images[i]+".jpg");
+              creaimg.setAttribute('width','400');
+              crearDiv.setAttribute('width','100%');
+              creaimg.setAttribute('style','padding:3px;');
+              principal.setAttribute('style', 'display:flex; flex-wrap: wrap;  justify-content: center;')
+              principal.appendChild(crearDiv);
+              crearDiv.appendChild(creaimg);
+
+            }  else if(valor<=4){
+              let creaimg = document.createElement('img');
+              let crearDiv = document.createElement('div');
+              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/10_Acabados_arquitectónicos/04_Intervención/" +images[i]+".jpg");
+              creaimg.setAttribute('width','386');
+              creaimg.setAttribute('style','padding:3px;');
+              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
+              principal.appendChild(crearDiv);
+              crearDiv.appendChild(creaimg);
+
+            } else if(valor<=6){
+              let creaimg = document.createElement('img');
+              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/10_Acabados_arquitectónicos/04_Intervención/" +images[i]+".jpg");
+              creaimg.setAttribute('width','360');
+              creaimg.setAttribute('style','padding:3px');
+              creaimg.setAttribute('style','padding:3px;');
+              principal.appendChild(creaimg);
+
+            }else if(valor>=7){
+              let creaimg = document.createElement('img');
+              creaimg.setAttribute('src',  
+              "file:///D:/restauracion/fotos/10_Acabados_arquitectónicos/04_Intervención/"
+              +images[i]+".jpg");
+              creaimg.setAttribute('width','190');
+              creaimg.setAttribute('style','padding:3px');
+              principal.appendChild(creaimg);
+            }
+          }
+    
+  </script>
+</body>
+</html>

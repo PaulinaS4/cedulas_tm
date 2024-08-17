@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta name="title" content="Cédula de intervención de material cerámico"/>
+	<meta name="description" content="Análisis regional del sureste Mesoamericano. Proyecto marco de salvamento arqueológico. Tren Maya"/>
+	<meta name="author" content="Jonatan Lara Ortiz, Ing; Diana Paulina Serrano Roldan, " />
+	<meta name="generator" content= "Atom" />
+	<meta name="copyright" content="Dirección de Salvamento Arqueológico" />
+	<meta name="created" content="2022-08-10"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="Carga();">
+  <header>
+    <table class="head">
+        <td class="col0"><img src="banner.png" width=840px height=60 hspace=0 vspace=0></td>
+    </table>
+  </header>
+  <div class="container " style="width: 850px;">
+    <h5 >PREGUNTAR ????</h5>
+  </div>
+  <div class="tabla" style="display:flex; width: 850px;">
+    <table class="generales" style="width:850px">
+      <tr>
+        <td class="col1" style="width: 12.5%;">Suciedad</td>
+        <td class="col2" style="width: 12.5%;">[%"Suciedad"%]</td> 
+        <td class="col1" style="width: 12.5%;">Ubicación suciedad</td>
+        <td class="col2"style="width: 12.5%;">[%"Ubicación suciedad"%]</td>
+        <td class="col1" style="width: 12.5%;">Presencia biológica</td>
+        <td class="col2" style="width: 12.5%;">[%"Presencia biológica"%]</td>
+        <td class="col1" style="width: 12.5%;">Ubicación presencia biológica</td>
+        <td class="col2" style="width: 12.5%;">[%"Ubicación presencia biológica"%]</td>
+      </tr>
+      <tr>
+        <td class="col1" style="width: 12.5%;">Presencia humedad</td>
+        <td class="col2" style="width: 12.5%;">[%"Presencia humedad"%]</td> 
+        <td class="col1" style="width: 12.5%;">Ubicación humedad</td>
+        <td class="col2"style="width: 12.5%;">[%"Ubicación humedad"%]</td>
+        <td class="col1" style="width: 12.5%;">Fracturas</td>
+        <td class="col2" style="width: 12.5%;">[%"Fracturas"%]</td>
+        <td class="col1" style="width: 12.5%;">Ubicación fracturas</td>
+        <td class="col2" style="width: 12.5%;">[%"Ubicación fracturas"%]</td>
+      </tr>
+      <tr>
+        <td class="col1" style="width: 12.5%;">Desprendimientos</td>
+        <td class="col2" style="width: 12.5%;">[%"Desprendimientos"%]</td> 
+        <td class="col1" style="width: 12.5%;">Ubicación desprendimientos</td>
+        <td class="col2"style="width: 12.5%;">[%"Ubicación desprendimientos"%]</td>
+        <td class="col1" style="width: 12.5%;">Pérdida de material</td>
+        <td class="col2" style="width: 12.5%;">[%"Pérdida de material"%]</td>
+        <td class="col1" style="width: 12.5%;">Ubicación pérdida de material</td>
+        <td class="col2" style="width: 12.5%;">[%"Ubicación pérdida de material"%]</td>
+      </tr>
+      <tr>
+        <td class="col1" style="width: 12.5%;">Presencia de sales</td>
+        <td class="col2" style="width: 12.5%;">[%"Presencia de sales"%]</td> 
+        <td class="col1" style="width: 12.5%;">Ubicación de sales</td>
+        <td class="col2"style="width: 12.5%;">[%"Ubicación de sales"%]</td>
+        <td class="col1" style="width: 12.5%;">Alteraciones cromáticas</td>
+        <td class="col2" style="width: 12.5%;">[%"Alteraciones cromáticas"%]</td>
+        <td class="col1" style="width: 12.5%;">Ubicación alteraciones cromáticas</td>
+        <td class="col2" style="width: 12.5%;">[%"Ubicación alteraciones cromáticas"%]</td>
+      </tr>
+      <tr>
+        <td class="col1" style="width: 12.5%;">Alteraciones antropogénicas</td>
+        <td class="col2" style="width: 12.5%;">[%"Ubicación alteraciones antropogénicas"%]</td> 
+        <td class="col1" style="width: 12.5%;">Intervenciones anteriores</td>
+        <td class="col2"style="width: 12.5%;">[%"Ubicación intervenciones anteriores"%]</td>
+        <td class="col1" style="width: 12.5%;">Ubicación intervenciones anteriores</td>
+        <td class="col2" style="width: 12.5%;">[%"Alteraciones cromáticas"%]</td>
+        <td class="col1" style="width: 12.5%;">Otros</td>
+        <td class="col2" style="width: 12.5%;">[%"Otros_1"%]</td>
+      </tr>
+      <tr>
+        <td class="col1" style="width: 12.5%;">Observaciones</td>
+        <td class="col2" style="width: 12.5%;" colspan="7">[%"Observaciones_5"%]</td>
+      </tr>
+    </table>
+  </div>
+
+  <div style="display: flex;">
+    <div class="main flex" style="width:50%">
+      <div class="diseño-tabla">
+        <p>Registro fotográfico de inicio</p>
+        <input type="hidden" id="inicioFoto" value=[%"Fotos inicio" %]>
+        <div class="flex wrap center" id="cont-princ-2"></div>
+      </div>
+    </div>
+
+    <div class="main flex" style="width:50%">
+      <div class="diseño-tabla " >
+        <p>Registro fotográfico de fin</p>
+        <input type="hidden" id="inicioFin" value=[% "Fotos fin" %]>
+        <div class="flex wrap center " id="cont-princ-4"></div>
+      </div>
+    </div> 
+  </div>
+  <div class="diseño-tabla" style="width:837px">
+    <p>Procesos realizados</p>
+    <div class="">
+      <div style="display: flex; align-items: center;" >
+          <div class="flex space-between" style="margin-left: 0px; margin-right: 0px;">
+                <p class="col-10 rectangulo"
+                [%case
+                  when "Calas de exploración" IS NOT NULL
+                  then 'style="background:#BC955C"'
+                  else 'style="background:none"'
+                end%]></p>
+                <p class="text-col2"style="margin-right: 0px;" >Calas de exploración</p>
+
+          </div>
+
+          <div class="flex flex-start">
+            <p class="subtitulo" style="margin-left: 0px; margin-right: 0px;" >[%CASE
+                                  WHEN "Calas de exploración" is not null
+                                  THEN concat(': ',"Calas de exploración" )
+                                  WHEN "Calas de exploración" is null
+                                  THEN ''
+                                  end  %]</p>
+          </div>
+      </div>
+      <div style="display: flex; align-items: center;">
+          <div class="flex space-between" style="margin-left: 0px; margin-right: 0px;">
+
+            <p class="col-50 rectangulo"
+                [%case
+                  when "Limpieza superficial" IS NOT NULL
+                  then 'style="background:#BC955C"'
+                  else 'style="background:none"'
+                end%]></p>
+                <p class="text-col2" style="margin-right: 0px;">Limpieza superficial</p>
+          </div>
+
+          <div class="flex flex-start">
+            <p class="subtitulo" style="margin-left: 0px; margin-right: 0px;"> [%CASE
+                                  WHEN "Limpieza superficial" is not null
+                                  THEN concat(': ',"Limpieza superficial" )
+                                  WHEN "Limpieza superficial" is null
+                                  THEN ''
+                                  end  %]</p>
+          </div>
+      </div>
+      <div style="display: flex; align-items: center;">
+          <div class="flex space-between" style="margin-left: 0px; margin-right: 0px;">
+
+            <p class="col-50 rectangulo"
+                [%case
+                  when "Limpieza físico química" IS NOT NULL
+                  then 'style="background:#BC955C"'
+                  else 'style="background:none"'
+                end%]></p>
+            <p class="text-col2" style="margin-right: 0px;">Limpieza físico química</p>
+          </div>
+          <div class="flex flex-start">
+            <p class="subtitulo" style="margin-left: 0px; margin-right: 0px;"> [%CASE
+                                  WHEN "Limpieza físico química" is not null
+                                  THEN concat(': ',"Limpieza físico química" )
+                                  WHEN "Limpieza físico química" is null
+                                  THEN ''
+                                  end  %]</p>
+          </div>
+      </div>
+      <div style="display: flex; align-items: center;">
+          <div class="flex space-between" style="margin-left: 0px; margin-right: 0px;">
+
+            <p class="col-50 rectangulo"
+                [%case
+                  when "Consolidación de oquedades" IS NOT NULL
+                  then 'style="background:#BC955C"'
+                  else 'style="background:none"'
+                end%]></p>
+                <p class="text-col2" style="margin-right: 0px;">Consolidación de oquedades</p>
+          </div>
+          <div class="flex flex-start">
+            <p class="subtitulo" style="margin-left: 0px; margin-right: 0px;">[%CASE
+                                  WHEN "Consolidación de oquedades" is not null
+                                  THEN concat(': ',"Consolidación de oquedades" )
+                                  WHEN "Consolidación de oquedades" is null
+                                  THEN ''
+                                  end  %]</p>
+          </div>
+      </div>
+      <div style="display: flex; align-items: center;">
+          <div class="flex space-between" style="margin-left: 0px; margin-right: 0px;">
+
+            <p class="col-50 rectangulo"
+                [%case
+                  when "Consolidación de mortero de rejunteo" IS NOT NULL
+                  then 'style="background:#BC955C"'
+                  else 'style="background:none"'
+                end%]></p>
+                <p class="text-col2" style="margin-right: 0px;">Consolidación de mortero de rejunteo</p>
+          </div>
+          <div class="flex flex-start">
+            <p class="subtitulo" style="margin-left: 0px; margin-right: 0px;">[%CASE
+                                  WHEN  "Consolidación de mortero de rejunteo"  is not null
+                                  THEN concat(': ', "Consolidación de mortero de rejunteo"  )
+                                  WHEN  "Consolidación de mortero de rejunteo"  is null
+                                  THEN ''
+                                  end  %]</p>
+          </div>
+      </div>
+      <div style="display: flex; align-items: center;">
+          <div class="flex space-between" style="margin-left: 0px; margin-right: 0px;">
+
+            <p class="col-50 rectangulo"
+                [%case
+                  when "Consolidación de aplanados pulverulentos" IS NOT NULL
+                  then 'style="background:#BC955C"'
+                  else 'style="background:none"'
+                end%]></p>
+                <p class="text-col2" style="margin-right: 0px;">Consolidación de aplanados pulverulentos</p>
+          </div>
+          <div class="flex flex-start">
+            <p class="subtitulo" style="margin-left: 0px; margin-right: 0px;">[%CASE
+                                  WHEN "Consolidación de aplanados pulverulentos" is not null
+                                  THEN concat(': ',"Consolidación de aplanados pulverulentos" )
+                                  WHEN "Consolidación de aplanados pulverulentos" is null
+                                  THEN ''
+                                  end  %]</p>
+          </div>
+      </div>
+      <div style="display: flex; align-items: center;">
+          <div class="flex space-between" style="margin-left: 0px; margin-right: 0px;">
+
+            <p class="col-50 rectangulo"
+                [%case
+                  when "Fijado de capa pictórica" IS NOT NULL
+                  then 'style="background:#BC955C"'
+                  else 'style="background:none"'
+                end%]></p>
+                <p class="text-col2" style="margin-right: 0px;">Fijado de capa pictórica</p>
+          </div>
+          <div class="flex flex-start">
+            <p class="subtitulo" style="margin-left: 0px; margin-right: 0px;">[%CASE
+                                  WHEN "Fijado de capa pictórica" is not null
+                                  THEN concat(': ',"Fijado de capa pictórica" )
+                                  WHEN "Fijado de capa pictórica" is null
+                                  THEN ''
+                                  end  %]</p>
+          </div>
+      </div>
+      <div style="display: flex; align-items: center;">
+          <div class="flex space-between" style="margin-left: 0px; margin-right: 0px;">
+
+            <p class="col-50 rectangulo"
+                [%case
+                  when "Fijado de aplanados desprendidos" IS NOT NULL
+                  then 'style="background:#BC955C"'
+                  else 'style="background:none"'
+                end%]></p>
+                <p class="text-col2" style="margin-right: 0px;">Fijado de aplanados desprendidos</p>
+          </div>
+          <div class="flex flex-start">
+            <p class="subtitulo" style="margin-left: 0px; margin-right: 0px;">[%CASE
+                                  WHEN "Fijado de aplanados desprendidos" is not null
+                                  THEN concat(': ',"Fijado de aplanados desprendidos" )
+                                  WHEN "Fijado de aplanados desprendidos" is null
+                                  THEN ''
+                                  end  %]</p>
+          </div>
+      </div>
+      <div style="display: flex; align-items: center;">
+          <div class="flex space-between" style="margin-left: 0px; margin-right: 0px;">
+
+            <p class="col-50 rectangulo"
+                [%case
+                  when "Inyección de grietas y fisuras" IS NOT NULL
+                  then 'style="background:#BC955C"'
+                  else 'style="background:none"'
+                end%]></p>
+                <p class="text-col2" style="margin-right: 0px;">Inyección de grietas y fisuras</p>
+          </div>
+          <div class="flex flex-start">
+            <p class="subtitulo" style="margin-left: 0px; margin-right: 0px;">[%CASE
+                                  WHEN "Inyección de grietas y fisuras" is not null
+                                  THEN concat(': ',"Inyección de grietas y fisuras" )
+                                  WHEN "Inyección de grietas y fisuras" is null
+                                  THEN ''
+                                  end  %]</p>
+          </div>
+      </div>
+      <div style="display: flex; align-items: center;">
+          <div class="flex space-between" style="margin-left: 0px; margin-right: 0px;">
+
+            <p class="col-50 rectangulo"
+                [%case
+                  when "Ribetes" IS NOT NULL
+                  then 'style="background:#BC955C"'
+                  else 'style="background:none"'
+                end%]></p>
+                <p class="text-col2" style="margin-right: 0px;">Ribetes</p>
+          </div>
+          <div class=" flex flex-start">
+            <p class="subtitulo" style="margin-left: 0px; margin-right: 0px;">[%CASE
+                                  WHEN "Ribetes" is not null
+                                  THEN concat(': ',"Ribetes" )
+                                  WHEN "Ribetes" is null
+                                  THEN ''
+                                  end  %]</p>
+          </div>
+      </div>
+      <div style="display: flex; align-items: center;">
+          <div class="flex space-between" style="margin-left: 0px; margin-right: 0px;">
+
+            <p class="col-50 rectangulo"
+                [%case
+                  when "Unión de fragmentos" IS NOT NULL
+                  then 'style="background:#BC955C"'
+                  else 'style="background:none"'
+                end%]></p>
+                <p class="text-col2" style="margin-right: 0px;">Unión de fragmentos</p>
+          </div>
+          <div class="flex flex-start">
+            <p class="subtitulo" style="margin-left: 0px; margin-right: 0px;">[%CASE
+                                  WHEN "Unión de fragmentos" is not null
+                                  THEN concat(': ',"Unión de fragmentos" )
+                                  WHEN "Unión de fragmentos" is null
+                                  THEN ''
+                                  end  %]</p>
+          </div>
+      </div>
+      <div style="display: flex; align-items: center;">
+        <div class="flex space-between" style="margin-left: 0px; margin-right: 0px;">
+
+          <p class="col-50 rectangulo"
+              [%case
+                when "Restitución de material del soporte" IS NOT NULL
+                then 'style="background:#BC955C"'
+                else 'style="background:none"'
+              end%]></p>
+              <p class="text-col2" style="margin-right: 0px;">Restitución de material del soporte</p>
+        </div>
+        <div class="flex flex-start">
+          <p class="subtitulo" style="margin-left: 0px; margin-right: 0px;">[%CASE
+                                WHEN "Restitución de material del soporte" is not null
+                                THEN concat(': ',"Restitución de material del soporte" )
+                                WHEN "Restitución de material del soporte" is null
+                                THEN ''
+                                end  %]</p>
+        </div>
+    </div>
+    <div style="display: flex; align-items: center;">
+      <div class="flex space-between" style="margin-left: 0px; margin-right: 0px;">
+
+        <p class="col-50 rectangulo"
+            [%case
+              when "Resanes" IS NOT NULL
+              then 'style="background:#BC955C"'
+              else 'style="background:none"'
+            end%]></p>
+            <p class="text-col2" style="margin-right: 0px;">Resanes</p>
+      </div>
+      <div class="flex flex-start">
+        <p class="subtitulo" style="margin-left: 0px; margin-right: 0px;">[%CASE
+                              WHEN "Resanes" is not null
+                              THEN concat(': ',"Resanes" )
+                              WHEN "Resanes" is null
+                              THEN ''
+                              end  %]</p>
+      </div>
+  </div>
+  <div style="display: flex; align-items: center;">
+    <div class="flex space-between" style="margin-left: 0px; margin-right: 0px;">
+
+      <p class="col-50 rectangulo"
+          [%case
+            when "Unión de fragmentos" IS NOT NULL
+            then 'style="background:#BC955C"'
+            else 'style="background:none"'
+          end%]></p>
+          <p class="text-col2" style="margin-right: 0px;">Unión de fragmentos</p>
+    </div>
+    <div class="flex flex-start">
+      <p class="subtitulo" style="margin-left: 0px; margin-right: 0px;">[%CASE
+                            WHEN "Unión de fragmentos" is not null
+                            THEN concat(': ',"Unión de fragmentos" )
+                            WHEN "Unión de fragmentos" is null
+                            THEN ''
+                            end  %]</p>
+    </div>
+  </div>
+  <div style="display: flex; align-items: center;">
+    <div class="flex space-between" style="margin-left: 0px; margin-right: 0px;">
+    <p class="col-50 rectangulo"
+        [%case
+          when "Morteros de sacrificio/capas de protección" IS NOT NULL
+          then 'style="background:#BC955C"'
+          else 'style="background:none"'
+        end%]></p>
+        <p class="text-col2" style="margin-right: 0px;">Morteros de sacrificio/capas de protección</p>
+   </div>
+    <div class="flex flex-start">
+    <p class="subtitulo" style="margin-left: 0px; margin-right: 0px;">[%CASE
+                          WHEN "Morteros de sacrificio/capas de protección" is not null
+                          THEN concat(': ',"Morteros de sacrificio/capas de protección" )
+                          WHEN "Morteros de sacrificio/capas de protección" is null
+                          THEN ''
+                          end  %]</p>
+    </div>
+  </div>
+  <div style="display: flex; align-items: center;">
+    <div class="flex space-between" style="margin-left: 0px; margin-right: 0px;">
+
+    <p class="col-50 rectangulo"
+        [%case
+          when "Otros" IS NOT NULL
+          then 'style="background:#BC955C"'
+          else 'style="background:none"'
+        end%]></p>
+        <p class="text-col2" style="margin-right: 0px;">Otros</p>
+    </div>
+    <div class="flex flex-start">
+    <p class="subtitulo" style="margin-left: 0px; margin-right: 0px;">[%CASE
+                          WHEN "Otros" is not null
+                          THEN concat(': ',"Otros" )
+                          WHEN "Otros" is null
+                          THEN ''
+                          end  %]</p>
+    </div>
+    </div>
+  </div>
+  </div>
+  <script type="text/javascript">
+    //var cadena = document.getElementById("valor").value;
+    //console.log(cadena);
+    function Carga(){
+      imagenesInicio();
+      imagenesFin();
+    }
+    function imagenesInicio(){
+      /// creacion de imagenes
+      let str = document.getElementById("inicioFoto").value;
+      let images = str.split(',');
+      let principal = document.getElementById('cont-princ-2');
+       let valor = images.length;
+      for(i=0;i<images.length;i++){
+        if(valor==1 ){
+          let creaimg = document.createElement('img');
+          let crearDiv = document.createElement('div');
+          creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/10_Acabados_arquitectónicos/02_Inicio/"+images[i]+".jpg");
+          creaimg.setAttribute('width','386');
+          creaimg.setAttribute('height','280');
+          crearDiv.setAttribute('class','fotografia');
+          principal.appendChild(crearDiv);
+          crearDiv.appendChild(creaimg);
+
+        } else if(valor==2){
+          let creaimg = document.createElement('img');
+          creaimg.setAttribute('src', "file:///D:/restauracion/fotos/10_Acabados_arquitectónicos/02_Inicio/"+images[i]+".jpg");
+          creaimg.setAttribute('width','250');
+          creaimg.setAttribute('style','padding:3px');
+          principal.appendChild(creaimg);
+
+        }else if(valor<=4){
+
+          let creaimg = document.createElement('img');
+          creaimg.setAttribute('src', "file:///D:/restauracion/fotos/10_Acabados_arquitectónicos/02_Inicio/"+images[i]+".jpg");
+          creaimg.setAttribute('width','190');
+          creaimg.setAttribute('style','padding:2px');
+          principal.appendChild(creaimg);
+        }
+      }
+    }
+
+    function imagenesFin(){
+      /// creacion de imagenes
+      let str = document.getElementById("inicioFin").value;
+      let images = str.split(',');
+      let principal = document.getElementById('cont-princ-4');
+      let valor = images.length;
+      for(i=0;i<images.length;i++)
+        if(valor==1){
+          let creaimg = document.createElement('img');
+          let crearDiv = document.createElement('div');
+          creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/10_Acabados_arquitectónicos/03_Fin/"+images[i]+".jpg");
+          creaimg.setAttribute('width','386');
+          crearDiv.setAttribute('class','fotografia');
+          principal.appendChild(crearDiv);
+          crearDiv.appendChild(creaimg);
+
+        } else if(valor==2){
+          let creaimg = document.createElement('img');
+          let crearDiv = document.createElement('div');
+          creaimg.setAttribute('src', "file:///D:/restauracion/fotos/10_Acabados_arquitectónicos/03_Fin/"+images[i]+".jpg");
+          creaimg.setAttribute('width','230');
+          creaimg.setAttribute('style','padding:3px');
+          principal.appendChild(crearDiv);
+          principal.appendChild(creaimg);
+
+        }else if(valor<=4){
+          
+          let creaimg = document.createElement('img');
+          let crearDiv = document.createElement('div');
+          creaimg.setAttribute('src', "file:///D:/restauracion/fotos/10_Acabados_arquitectónicos/03_Fin/"+images[i]+".jpg");
+          creaimg.setAttribute('width','190');
+          creaimg.setAttribute('style','padding:2px');
+          principal.appendChild(crearDiv);
+          principal.appendChild(creaimg);
+        }
+      }
+    
+  </script>
+</body>
+</html>

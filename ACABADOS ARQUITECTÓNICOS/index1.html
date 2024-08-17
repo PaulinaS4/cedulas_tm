@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta name="title" content="Cédula de intervención de material cerámico"/>
+	<meta name="description" content="Análisis regional del sureste Mesoamericano. Proyecto marco de salvamento arqueológico. Tren Maya"/>
+	<meta name="author" content="Jonatan Lara Ortiz, Ing; Diana Paulina Serrano Roldan, Urb." />
+	<meta name="generator" content= "Visual Studio Code" />
+	<meta name="copyright" content="Dirección de Salvamento Arqueológico" />
+	<meta name="created" content="2024-04-26"/>
+  <link rel="stylesheet" href="style.css">
+  <title></title>
+</head>
+<body onload="imagenes();">
+		<header>
+			<table class="head">
+					<td class="col0"><img src="banner.png" width=840px height=60 hspace=0 vspace=0></td>
+			</table>
+			<section class="row-alt">
+	      <div class="container ">
+	        <div class="col-30">
+	          <img class="logo" src="tren.png">
+	        </div>
+	        <div class="col-70">
+	          <h1 class="titulos">PROMEZA</h1>
+	          <p class="">
+	            Corredor eco-arqueológico Paamul II
+              </p>
+              <h5 class="">Responsable académico: Vania Carrillo Bosch <br>Coordinador de área de conservación: Félix Albano Camacho Zamora</h5>
+	        </div>
+	      </div>
+			</section>
+		</header>
+    <h5 class="center color-rojo">CÉDULA DE ACABADOS ARQUITECTÓNICOS</h5>
+		<section class="container">
+
+      <div class="container " style="width: 850px;">
+        <h5 >Datos Generales</h5>
+      </div>
+	  </section>
+
+		<div class="tabla" style="display:flex; width: 850px;">
+			<table class="generales" style="width:850px">
+				<tr>
+					<td class="col1" style="width: 14%;">Sitio Arqueológico</td>
+					<td class="col2"style="width: 18%;">[%"Sitio Arqueológico"%]</td>
+					<td class="col1">ID del Monumento</td>
+					<td class="col2">[%"ID del Monumento"%]</td>
+          <td class="col1" style="width: 16%;">Datos de georreferencia</td>
+					<td class="col2" style="width: 19%;">[%"Datos de georreferencia"%]</td>
+				</tr>
+				<tr>
+          <td class="col1" >Conjunto o Grupo</td>
+					<td class="col2">[%"Conjunto o Grupo"%]</td>
+          <td class="col1">Periodo</td>
+					<td class="col2">[%"Periodo"%]</td>
+					<td class="col1">Elemento Arquitectónico</td>
+					<td class="col2">[%"Elemento Arquitectónico"%]</td>
+				</tr>
+				<tr>
+          <td class="col1" >Ubicación</td>
+					<td class="col2" ><strong>Localidad: </strong>[%string_to_array(trim("Localidad, Municipio, Estado"))[0]%]<br>
+                          <strong>Municipio: </strong>[%string_to_array(trim("Localidad, Municipio, Estado"))[1]%]<br>
+                          <strong>Estado: </strong>[%string_to_array(trim("Localidad, Municipio, Estado"))[2]%]
+
+            </td>
+          <td class="col1">Dimensiones</td>
+					<td class="col2"><strong>Largo: </strong>[%case when "Dimensión Largo (m)" like '%m%' then "Dimensión Largo (m)" when "Dimensión Largo (m)" ilike '%aplica%' then "Dimensión Largo (m)" else "Dimensión Largo (m)" || ' m' end%]<br>
+	                         <strong>Alto: </strong>[%case when "Dimensión Alto (m)" like '%m%' then "Dimensión Alto (m)" when "Dimensión Alto (m)" ilike '%aplica%' then "Dimensión Alto (m)" else "Dimensión Alto (m)" || ' m' end%]<br>                       
+	                         <strong>Profundidad: </strong>[%case when "Dimensión Profundidad (m)" like '%m%' then "Dimensión Profundidad (m)" else "Dimensión Profundidad (m)" || ' m' end%]</td>
+					<td class="col1">Otros datos:</td>
+					<td class="col2">[%"Otros Datos"%]</td>
+				</tr>
+				<tr>
+          <td class="col1">Nombre de quien registra</td>
+          <td class="col2" style="font-size: [%case when length("Registró")>30 then '6px' else '9px' end %];">[%"Registró"%]</td>
+          <td class="col1">Descripción formal del inmueble o estructura</td>
+          <td class="col2" colspan="3">[%"Descripción formal del inmueble o estructura"%]</td>
+				</tr>
+
+			</table>
+		</div>
+
+		<section class="container">
+			<div class="container col-90">
+        <h5 class="flex">Estado de conservación  <p class="subtitulo" >Registro fotográfico principales deterioros</p></h5>
+      </div>
+		</section>
+    <!-- IMAGENES-->
+		<div class="diseño-tabla" style="width:836px; height: 400px; " >
+			<div class="flex wrap center" id="cont-princ">
+         		<input type="hidden" id="conservacion" value=[%"Fotos deterioros"%]>
+            </div>
+        </div>
+    </div>
+		<!-- -->
+		<section class="container">
+      <div class="container " style="width:850px;">
+        <h5>Características formales</h5><br>
+      </div>
+	  </section>
+		<div class="tabla" style="display:flex; width: 850px;">
+			<table class="generales " style="width:850px">
+				<tr>
+					<td class="col1" style="width: 15%;">Soporte</td>
+					<td class="col2">[%"Soporte"%]</td>
+					<td class="col1" style="width: 15%;">Unión del soporte</td>
+					<td class="col2">[%"Unión del soporte"%]</td>
+          <td class="col1" style="width: 15%;">Características de unión del soporte</td>
+					<td class="col2" >[%"Características de unión del soporte"%]</td>
+          
+				</tr>
+        <tr>
+          <td class="col1">Número de capas de recubrimiento</td>
+					<td class="col2">[%"Número de capas de recubrimiento"%]</td>
+					<td class="col1">Acabados Arquitectónicos</td>
+					<td class="col2">[%"Acabados Arquitectónicos"%]</td>
+					<td class="col1">Características de cimentación (tipo y materiales)</td>
+					<td class="col2">[%"Características de cimentación (tipo y materiales)"%]</td>
+         
+				</tr>
+				<tr>
+          <td class="col1">Características de la cubierta (tipo y materiales)</td>
+					<td class="col2">[%"Características de la cubierta (tipo y materiales)"%]</td>
+          <td class="col1">Observaciones</td>
+					<td class="col2" colspan="3">[%"Observaciones"%]</td>
+				</tr>
+			</table>
+
+		</div>
+
+    <script type="text/javascript">
+      //var cadena = document.getElementById("valor").value;
+      //console.log(cadena);
+
+
+      function imagenes(){
+        /// creacion de imagenes
+        let str = document.getElementById("conservacion").value;
+        let images = str.split(',');
+        let principal = document.getElementById('cont-princ')
+        //let valor = 3
+        let valor = images.length;
+        for(i=0;i<images.length;i++){
+          if(valor>=2 & valor<=4){
+            let creaimg = document.createElement('img');
+            let crearDiv = document.createElement('div');
+            creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/10_Acabados_arquitectónicos/01_Estado de conservación/"+images[i]+".jpg");
+            creaimg.setAttribute('width','300');
+            crearDiv.setAttribute('class','fotografia');
+            principal.appendChild(crearDiv);
+            crearDiv.appendChild(creaimg);
+
+          } else if(valor>=4 & valor<=6){
+            let creaimg = document.createElement('img');
+			let crearDiv = document.createElement('div');
+            creaimg.setAttribute('src', "file:///D:/restauracion/fotos/10_Acabados_arquitectónicos/01_Estado de conservación/"+images[i]+".jpg");
+            creaimg.setAttribute('width','260');
+			creaimg.setAttribute('style','padding:3px;');
+            principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
+            principal.appendChild(crearDiv);
+            crearDiv.appendChild(creaimg);
+
+          }else if(valor=>8){
+			let creaimg = document.createElement('img');
+			let crearDiv = document.createElement('div');
+            creaimg.setAttribute('src', "file:///D:/restauracion/fotos/10_Acabados_arquitectónicos/01_Estado de conservación/"+images[i]+".jpg");
+            creaimg.setAttribute('width','100');
+			creaimg.setAttribute('style','padding:3px;');
+            principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
+            principal.appendChild(crearDiv);
+            crearDiv.appendChild(creaimg);
+          }
+        }
+      }
+
+
+    </script>
+</body>
+</html>
