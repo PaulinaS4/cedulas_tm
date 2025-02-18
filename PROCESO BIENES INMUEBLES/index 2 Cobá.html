@@ -26,18 +26,11 @@
 		      	<div class="col-30">
 		        	<img class="logo" src="tren.png">
 		      	</div>
-           <div class="col-70">
+		      	<div class="col-70">
               <h1 class="titulos" style="font-size: 24px">PROMEZA COBÁ</h1>
               
                 <h5 class="" style="font-size: 14px;color: #691C32;font-weight: bold;text-align: center;">Responsable académico: Dr. Manuel E. Pérez Rivas.</h5>
             </div>
-		      	<!--<div class="col-70">
-		        	<h1 class="titulos">U LU'UMIL MAAYA WÍINIKO'OB</h1>
-		        	<p class="">
-		          	Análisis Regional del Sureste Mesoamericano Proyecto Marco de Salvamento <br>Arqueológico del Tren Maya.
-	            	</p>
-	            	<h5 class="">Responsable académico:Dr. Manuel E. Pérez Rivas. Diseño de contenido: Félix Albano Camacho Zamora</h5>
-		      	</div>-->
 		    	</div>
 		</section>
 	</header>
@@ -48,7 +41,6 @@
 				<h1 class="text-sub">REGISTRO DE DETERIOROS</h1>
 				<div class="" id="cont-princ-1">
          	<input type="hidden" id="deterioros" value=[%"Fotos deterioros"%]>
-          <input type="hidden" id="ruta_foto" value="[%@project_folder||'/01_Fotografías/'%]">
         </div>
 			</div>
 		</div>
@@ -57,7 +49,6 @@
 				<h1 class="text-sub">REGISTRO GENERAL</h1>
 					<div class="" id="cont-princ-2">
 	         	<input type="hidden" id="general" value=[%"Fotos registro"%]>
-             <input type="hidden" id="ruta_foto" value="[%@project_folder||'/01_Fotografías/'%]">
 	        </div>
 			</div>
 		</div>
@@ -77,13 +68,12 @@
           let images = str.split(',');
           let principal = document.getElementById('cont-princ-1');
           let valor = images.length;
-          let ruta_foto = document.getElementById("ruta_foto").value;
           for(i=0;i<images.length;i++){
             if(valor==2 || valor==1){
               let creaimg = document.createElement('img');
               let crearDiv = document.createElement('div');
-              creaimg.setAttribute('src', 'file:///' + ruta_foto+'04_Registro de bienes pétreos/01_Registro de deterioros/' + images[i] + ".jpg");
-              creaimg.setAttribute('width','360'); //Antes 360
+              creaimg.setAttribute('src', "file:///D:/restauracion/fotos/07_Registro_bienes_inmuebles/01_Registro de deterioros/"+images[i]+".jpg");
+              creaimg.setAttribute('width','360');
               crearDiv.setAttribute('width','100%');
               creaimg.setAttribute('style','padding:3px;');
               principal.setAttribute('style', 'display:flex; flex-wrap: wrap;');
@@ -93,7 +83,7 @@
             } else if(valor<=4){
               let creaimg = document.createElement('img');
               let crearDiv = document.createElement('div');
-              creaimg.setAttribute('src', 'file:///' + ruta_foto+'04_Registro de bienes pétreos/01_Registro de deterioros/' + images[i] + ".jpg");
+              creaimg.setAttribute('src', "file:///D:/restauracion/fotos/07_Registro_bienes_inmuebles/01_Registro de deterioros/"+images[i]+".jpg");
               creaimg.setAttribute('width','260');
               creaimg.setAttribute('style','padding:3px;');
               principal.setAttribute('style',' display:flex; flex-wrap: wrap;');
@@ -102,15 +92,15 @@
 
             } else if(valor<=6){
               let creaimg = document.createElement('img');
-              creaimg.setAttribute('src', 'file:///' + ruta_foto+'04_Registro de bienes pétreos/01_Registro de deterioros/' + images[i] + ".jpg");
+              creaimg.setAttribute('src', "file:///D:/restauracion/fotos/07_Registro_bienes_inmuebles/01_Registro de deterioros/"+images[i]+".jpg");
               creaimg.setAttribute('width','255');
               creaimg.setAttribute('style','padding:3px');
               creaimg.setAttribute('style','padding:3px;');
               principal.appendChild(creaimg);
 
-            }else if(valor=>7){
+            }else if(valor>=7){
               let creaimg = document.createElement('img');
-              creaimg.setAttribute('src', 'file:///' + ruta_foto+'04_Registro de bienes pétreos/01_Registro de deterioros/' + images[i] + ".jpg");
+              creaimg.setAttribute('src', "file:///D:/restauracion/fotos/07_Registro_bienes_inmuebles/01_Registro de deterioros/"+images[i]+".jpg");
               creaimg.setAttribute('width','200');
               creaimg.setAttribute('style','padding:3px');
               principal.appendChild(creaimg);
@@ -125,14 +115,12 @@
       let images = str.split(',');
       let principal = document.getElementById('cont-princ-2');
       let valor = images.length;
-      let ruta_foto = document.getElementById("ruta_foto").value;
       for(i=0;i<images.length;i++){
         if(valor==2 || valor==1){
           let creaimg = document.createElement('img');
           let crearDiv = document.createElement('div');
-          creaimg.setAttribute('src', 'file:///' + ruta_foto+'04_Registro de bienes pétreos/02_Registro general/' + images[i] + ".jpg");
-          creaimg.setAttribute('width','250');
-          //creaimg.setAttribute('width','280');
+          creaimg.setAttribute('src', "file:///D:/restauracion/fotos/07_Registro_bienes_inmuebles/02_Registro general/"+images[i]+".jpg");
+          creaimg.setAttribute('width','400');
           crearDiv.setAttribute('width','100%');
          /// creaimg.setAttribute('height','215');
           //crearDiv.setAttribute('class','fotografia');
@@ -144,7 +132,7 @@
         } else if(valor<=4){
           let creaimg = document.createElement('img');
           let crearDiv = document.createElement('div');
-          creaimg.setAttribute('src', 'file:///' + ruta_foto+'04_Registro de bienes pétreos/02_Registro general/' + images[i] + ".jpg");
+          creaimg.setAttribute('src', "file:///D:/restauracion/fotos/07_Registro_bienes_inmuebles/02_Registro general/"+images[i]+".jpg");
           creaimg.setAttribute('width','260');
          /// creaimg.setAttribute('height','215');
           //crearDiv.setAttribute('class','fotografia');
@@ -157,17 +145,17 @@
 
         } else if(valor<=6){
           let creaimg = document.createElement('img');
-          creaimg.setAttribute('src', 'file:///' + ruta_foto+'04_Registro de bienes pétreos/02_Registro general/' + images[i] + ".jpg");
-          creaimg.setAttribute('width','255');
+          creaimg.setAttribute('src', "file:///D:/restauracion/fotos/07_Registro_bienes_inmuebles/02_Registro general/"+images[i]+".jpg");
+          creaimg.setAttribute('width','225');
           creaimg.setAttribute('style','padding:3px');
           creaimg.setAttribute('style','padding:6px');
-          principal.setAttribute('style',' display:flex');
+          //principal.setAttribute('style',' display:flex');
           principal.appendChild(creaimg);
 
         }else if(valor>7){
 
           let creaimg = document.createElement('img');
-          creaimg.setAttribute('src', 'file:///' + ruta_foto+'04_Registro de bienes pétreos/02_Registro general/' + images[i] + ".jpg");
+          creaimg.setAttribute('src', "file:///D:/restauracion/fotos/07_Registro_bienes_inmuebles/02_Registro general/"+images[i]+".jpg");
           creaimg.setAttribute('width','200');
           creaimg.setAttribute('style','padding:3px');
           principal.appendChild(creaimg);

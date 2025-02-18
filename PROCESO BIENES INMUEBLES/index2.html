@@ -2,14 +2,15 @@
 <html lang="es">
 <head>
 	 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-	<meta name="title" content="Cédula de intervención de elemento óseo"/>
+	<meta name="title" content="Cédula de intervención de material cerámico"/>
 	<meta name="description" content="Análisis regional del sureste Mesoamericano. Proyecto marco de salvamento arqueológico. Tren Maya"/>
-	<meta name="author" content="Jonatan Lara Ortiz, Ing; Diana Paulina Serrano Roldan, Urb." />
+	<meta name="author" content="Jonatan Lara Ortiz, Ing; Diana Paulina Serrano Roldan, " />
 	<meta name="generator" content= "Atom" />
 	<meta name="copyright" content="Dirección de Salvamento Arqueológico" />
 	<meta name="created" content="2023-01-24"/>
   <link rel="stylesheet" href="sass/style.css">
   <title></title>
+  
 </head>
 <body onload="Carga();">
 	<header>
@@ -30,28 +31,29 @@
 		    </div>
 		</section>
 	</header>
-	<h1 class="center">CÉDULA DE REGISTRO IN SITU DE MATERIAL ÓSEO</h1>
+	<h1 class="center">CÉDULA DE PROCESO DE BIENES INMUEBLES</h1>
 	<div class="">
 		<div class="flex">
 			<div class="col-50 diseño-tabla">
 				<h1 class="h2 bold color-rojo text-align-left">REGISTRO FOTOGRÁFICO DE INICIO</h1>
 				<div class="" id="cont-princ-1">
-		      <input type="hidden" id="inicio" value=[%"Fotos inicio"%]>
-		    </div>
+			      <input type="hidden" id="inicio" value='[%"Fotos inicio"%]'>
+			    </div>
 			</div>
 			<div class="col-50 diseño-tabla">
 				<h1 class="h2 bold color-rojo text-align-left">REGISTRO FOTOGRÁFICO DE INTERVENCIÓN</h1>
 				<div class="" id="cont-princ-2">
-		      <input type="hidden" id="intervencion" value=[%"Fotos intervención"%]>
-		    </div>
+			      <input type="hidden" id="intervencion" value='[%"Fotos intervención"%]'>
+			    </div>
 			</div>
 		</div>
 		<div class="flex">
 			<div class="col-50 diseño-tabla">
 				<h1 class="h2 bold color-rojo text-align-left">REGISTRO FOTOGRÁFICO DE FIN</h1>
 				<div class="" id="cont-princ-3">
-		      <input type="hidden" id="fin" value=[%"Fotos fin"%]>
-		    </div>
+			      
+			      <input type="hidden" id="fin" value='[%"Fotos fin"%]'>
+			    </div>
 			</div>
 			<div class="col-50 diseño-tabla">
 				<h1 class="h2 bold color-rojo text-align-left">PROCESOS REALIZADOS</h1>
@@ -67,14 +69,14 @@
 		                  <p>: [%"Limpieza superficial"%]</p>
 			        </div>
 			        <div class="flex">
-					  	<p class="text-col2">Micro excavación</p>
+					  	<p class="text-col2">Microexcavación</p>
 		              	<p class="col-50 rectangulo"
 		                  [%case
 		                    when "Microexcavación" IS NULL
 		                    then 'style="background:none"'
 		                    else 'style="background:#BC955C"'
 		                  end%]></p>
-		                  <p>: [%"Microexcavación"%]</p>
+		                  <p>:[%"Microexcavación"%]</p>
 			        </div>
 			        <div class="flex">
 					  	<p class="text-col2">Limpieza físico química</p>
@@ -136,16 +138,16 @@
 		                  end%]></p>
 		                  <p>: [%"Eliminación de intervenciones anteriores"%]</p>
 			        </div>
-			        <div class="flex">
-					  	<p class="text-col2">Reposición de faltantes</p>
-		              	<p class="col-50 rectangulo"
-		                  [%case
-		                    when "Reposición de faltantes" IS NULL
-		                    then 'style="background:none"'
-		                    else 'style="background:#BC955C"'
-		                  end%]></p>
-		                  <p>: [%"Reposición de faltantes"%]</p>
-			        </div>
+					<div class="flex">
+						<p class="text-col2">Reposición de faltantes</p>
+						<p class="col-50 rectangulo"
+						[%case
+						  when "Reposición de faltantes" IS NULL
+						  then 'style="background:none"'
+						  else 'style="background:#BC955C"'
+						end%]></p>
+						<p>: [%"Reposición de faltantes"%]</p>
+				  </div>
 			        <div class="flex">
 						  	<p class="text-col2">Resane</p>
 			              	<p class="col-50 rectangulo"
@@ -157,7 +159,7 @@
 			                  <p>:[%"Resane"%]</p>
 			        </div>
 			        <div class="flex">
-					  				<p class="text-col2">Reintegración cromática</p>
+					  				<p class="text-col2">Reintegración</p>
 		              	<p class="col-50 rectangulo"
 		                  [%case
 		                    when "Reintegración cromática" IS NULL
@@ -169,90 +171,55 @@
 				</div>
 			</div>
 		</div>
-		<div class="">
-			<div class="diseño-tabla">
-				<h1 class="h2 bold color-rojo text-align-left">OBSERVACIONES</h1>
-				<p>[%"Observaciones"%]</p>
-			</div>
-		</div>
 	</div>
 	<script type="text/javascript">
-		function Carga(){
-      imagenesInicio();
-      imagenesFin();
-      imagenesIntervencion();
-    }
-    function imagenesInicio(){
-          let str = document.getElementById("inicio").value;
-	          let images = str.split(',');
-	          let principal = document.getElementById('cont-princ-1');
-	          let valor = images.length;
-	          for(i=0;i<images.length;i++){
-	            if(valor==2 || valor==1){
-	              let creaimg = document.createElement('img');
-	              let crearDiv = document.createElement('div');
-	              creaimg.setAttribute('src', "file:///D:/restauracion/fotos/03_Elementos_óseos/02_Inicio/" +images[i]+".jpg");
-	              creaimg.setAttribute('width','260');
-	              crearDiv.setAttribute('width','100%');
-	              creaimg.setAttribute('style','padding:3px;');
-	              principal.setAttribute('style', 'display:flex; flex-wrap: wrap;  justify-content: center;')
-	              principal.appendChild(crearDiv);
-	              crearDiv.appendChild(creaimg);
+		   function Carga(){
+		      imagenesInicio();
+		      imagenesFin();
+		      imagenesIntervencion();
+		    }
+		    function imagenesInicio(){
+		          let str = document.getElementById("inicio").value;
+		          let images = str.split(',');
+		          let principal = document.getElementById('cont-princ-1');
+		          let valor = images.length;
+		          for(i=0;i<images.length;i++){
+		            if(valor==2 || valor==1){
+		              let creaimg = document.createElement('img');
+		              let crearDiv = document.createElement('div');
+					  const namef = "file:///D:/restauracion/fotos/08_Proceso_bienes_inmuebles/01_Inicio/"+images[i]+".jpg"
+		              creaimg.setAttribute('src',  namef.toString());
+		              creaimg.setAttribute('width','260');
+		              crearDiv.setAttribute('width','100%');
+		              creaimg.setAttribute('style','padding:3px;');
+		              principal.setAttribute('style', 'display:flex; flex-wrap: wrap; justify-content: center;')
+		              principal.appendChild(crearDiv);
+		              crearDiv.appendChild(creaimg);
 
-	            }
-	            else if(valor<=4){
+		            } 
+		            else if(valor<=4){
 	              let creaimg = document.createElement('img');
 	              let crearDiv = document.createElement('div');
-	              creaimg.setAttribute('src', "file:///D:/restauracion/fotos/03_Elementos_óseos/02_Inicio/" +images[i]+".jpg");
+	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/08_Proceso_bienes_inmuebles/01_Inicio/"+images[i]+".jpg");
 	              creaimg.setAttribute('width','188');
 	              creaimg.setAttribute('style','padding:3px;');
 	              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
 	              principal.appendChild(crearDiv);
 	              crearDiv.appendChild(creaimg);
-	          }
-	        }
-	      }
-	  function imagenesFin(){
-	          let str = document.getElementById("fin").value;
-	          let images = str.split(',');
-	          let principal = document.getElementById('cont-princ-3');
-	          let valor = images.length;
-	          for(i=0;i<images.length;i++){
-	            if(valor==2 || valor==1){
-	              let creaimg = document.createElement('img');
-	              let crearDiv = document.createElement('div');
-	              creaimg.setAttribute('src', "file:///D:/restauracion/fotos/03_Elementos_óseos/03_Fin/" +images[i]+".jpg");
-	              creaimg.setAttribute('width','260');
-	              crearDiv.setAttribute('width','100%');
-	              creaimg.setAttribute('style','padding:3px;');
-	              principal.setAttribute('style', 'display:flex; flex-wrap: wrap;  justify-content: center;')
-	              principal.appendChild(crearDiv);
-	              crearDiv.appendChild(creaimg);
+			     }
 
-	            }
-	            else if(valor<=4){
-	              let creaimg = document.createElement('img');
-	              let crearDiv = document.createElement('div');
-	              creaimg.setAttribute('src', "file:///D:/restauracion/fotos/03_Elementos_óseos/03_Fin/" +images[i]+".jpg");
-	              creaimg.setAttribute('width','188');
-	              creaimg.setAttribute('style','padding:3px;');
-	              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
-	              principal.appendChild(crearDiv);
-	              crearDiv.appendChild(creaimg);
-	          }
-	        }
-	      }
-	 	function imagenesIntervencion(){
-	 		let str = document.getElementById("intervencion").value;
+		          }
+		      }
+	    		function imagenesIntervencion(){
+	          let str = document.getElementById("intervencion").value;
 	          let images = str.split(',');
 	          let principal = document.getElementById('cont-princ-2');
 	          let valor = images.length;
-	          
 	          for(i=0;i<images.length;i++){
 	            if(valor==2 || valor==1){
 	              let creaimg = document.createElement('img');
 	              let crearDiv = document.createElement('div');
-	              creaimg.setAttribute('src', "file:///D:/restauracion/fotos/03_Elementos_óseos/04_Intervención/" +images[i]+".jpg");
+	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/fotos/08_Proceso_bienes_inmuebles/03_Intervención/"+images[i]+".jpg");
 	              creaimg.setAttribute('width','260');
 	              crearDiv.setAttribute('width','100%');
 	              creaimg.setAttribute('style','padding:3px;');
@@ -263,7 +230,7 @@
 	            }  else if(valor<=4){
 	              let creaimg = document.createElement('img');
 	              let crearDiv = document.createElement('div');
-	             creaimg.setAttribute('src', "file:///D:/restauracion/fotos/03_Elementos_óseos/04_Intervención/" +images[i]+".jpg");
+	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/08_Proceso_bienes_inmuebles/03_Intervención/"+images[i]+".jpg");
 	              creaimg.setAttribute('width','188');
 	              creaimg.setAttribute('style','padding:3px;');
 	              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
@@ -272,7 +239,7 @@
 
 	            } else if(valor<=6){
 	              let creaimg = document.createElement('img');
-	              creaimg.setAttribute('src', "file:///D:/restauracion/fotos/03_Elementos_óseos/04_Intervención/" +images[i]+".jpg");
+	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/08_Proceso_bienes_inmuebles/03_Intervención/"+images[i]+".jpg");
 	              creaimg.setAttribute('width','190');
 	              creaimg.setAttribute('style','padding:3px');
 	              creaimg.setAttribute('style','padding:3px;');
@@ -280,13 +247,43 @@
 
 	            }else if(valor=>7){
 	              let creaimg = document.createElement('img');
-	              creaimg.setAttribute('src', "file:///D:/restauracion/fotos/03_Elementos_óseos/04_Intervención/" +images[i]+".jpg");
+	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/08_Proceso_bienes_inmuebles/03_Intervención/"+images[i]+".jpg");
 	              creaimg.setAttribute('width','125');
 	              creaimg.setAttribute('style','padding:3px');
 	              principal.appendChild(creaimg);
 	            }
 	          }
-	 	}
-  	</script>
+	      }
+			 	function imagenesFin(){
+			 		let str = document.getElementById("fin").value;
+			          let images = str.split(',');
+			          let principal = document.getElementById('cont-princ-3');
+			          let valor = images.length;
+			          for(i=0;i<images.length;i++){
+			            if(valor==2 || valor==1){
+			              let creaimg = document.createElement('img');
+			              let crearDiv = document.createElement('div');
+			              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/08_Proceso_bienes_inmuebles/02_Fin/"+images[i]+".jpg");
+			              creaimg.setAttribute('width','260');
+			              crearDiv.setAttribute('width','100%');
+			              creaimg.setAttribute('style','padding:3px;');
+			              principal.setAttribute('style', 'display:flex; flex-wrap: wrap;  justify-content: center;')
+			              principal.appendChild(crearDiv);
+			              crearDiv.appendChild(creaimg);
+
+			        }
+			        else if(valor<=4){
+	              let creaimg = document.createElement('img');
+	              let crearDiv = document.createElement('div');
+	              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/08_Proceso_bienes_inmuebles/02_Fin/"+images[i]+".jpg");
+	              creaimg.setAttribute('width','188');
+	              creaimg.setAttribute('style','padding:3px;');
+	              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
+	              principal.appendChild(crearDiv);
+	              crearDiv.appendChild(creaimg);
+			     }
+			 	}
+			 }
+  </script>
 </body>
 </html>

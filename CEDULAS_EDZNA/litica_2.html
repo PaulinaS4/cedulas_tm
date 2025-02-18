@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta name="title" content="Cédula de catalogación de vasijas"/>
+	<meta name="description" content="Análisis regional del sureste Mesoamericano. Proyecto marco de salvamento arqueológico. Tren Maya"/>
+	<meta name="author" content="Diana Paulina Serrano Roldan" />
+	<meta name="generator" content= "Sublime" />
+	<meta name="copyright" content="Dirección de Salvamento Arqueológico" />
+	<meta name="created" content="2023-06-13"/>
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap" rel="stylesheet">
+  <title></title>
+</head>
+	<body onload="Carga();">
+  		<header>
+			<section>	
+				<div class="container">
+				  <div style="width: 30%; display:flex; flex-wrap: wrap;">
+					  <!-- foto cultura y tren maya -->
+					  <div style="width: 100%;  padding-top: 50px;">
+						  <img style=" height: 35px;width: auto; display:block; " src="cultura.png" >
+					  </div>
+				  </div>
+				  <div style="width: 45%; text-align: center; display: block; padding-top: 15px;">
+					  <!-- nombre de proyecto -->
+					  <p class="titulo">
+						  PROYECTO “CATÁLOGO Y REGISTRO DE BIENES MUEBLES PROCEDENTES DE PROYECTOS ARQUEOLÓGICOS”
+					  </p>
+					  <p class="titulo">
+						  TEMPORADA 2024
+						  <br>
+						  <br>
+						  CENTRO INAH CAMPECHE
+					  </p>
+					  
+				  </div>
+				  <div style="width: 25%;padding-top: 30px;">
+					  <!-- Logo INAH -->
+					  <img style="height: 60px; width: auto; margin:auto; display: block; margin-top: 6px; " src="inah.png" >
+				  </div>
+			  </div>	
+			</section>
+	 	</header>		
+		  	<section>
+				<div class="diseño-tabla">
+					<p style="text-align: center;">Anexo de imágenes</p>
+					<input type="hidden" id="fotosCatalogo" value=[%"fotos"%]>
+					<div  id="cont-princ-3"></div>
+				</div>
+	
+				<div style="border: 1px; border-color: black; border-style: solid; margin-top: 15px; width:100%">
+					<table class="tabla" >
+						<tr>
+						<td class="ancho1">Observaciones</td>
+						<td class="campos">[%"Observaciones"%]</td>
+						</tr>
+					</table>
+				</div>
+				
+		    </section> 
+			<script type="text/javascript">	
+				function Carga(){
+				  imagenesCatalogo();
+				}
+				function imagenesCatalogo(){
+				  /// creacion de imagenes
+				  let str = document.getElementById("fotosCatalogo").value;
+				  let images = str.split(',');
+				  let principal = document.getElementById('cont-princ-3');
+				  let valor = images.length;
+				  for(i=0;i<images.length;i++)
+					if( valor==1){
+						  let creaimg = document.createElement('img');
+						  let crearDiv = document.createElement('div');
+						  creaimg.setAttribute('src',  "file:///D:/Materiales/Proyecto Catálogo/fotos/" +images[i]+".jpg");
+						  creaimg.setAttribute('width','380');
+						  crearDiv.setAttribute('width','100%');
+						  creaimg.setAttribute('style','padding:3px;');
+						  principal.setAttribute('style', 'display:flex; flex-wrap: wrap; position: absolute; top:50%; left:50%; transform: translate(-50%, -50%);')
+						  principal.appendChild(crearDiv);
+						  crearDiv.appendChild(creaimg);
+			
+						}   else if(valor==2){
+						  let creaimg = document.createElement('img');
+						  let crearDiv = document.createElement('div');
+						  creaimg.setAttribute('src',  "file:///D:/Materiales/Proyecto Catálogo/fotos/" +images[i]+".jpg");
+						  creaimg.setAttribute('width','360');
+						  creaimg.setAttribute('style','padding:3px;');
+						  principal.setAttribute('style',' display:flex; flex-wrap: wrap; padding-top:20px;')
+						  principal.appendChild(crearDiv);
+						  crearDiv.appendChild(creaimg);
+			
+						}else if(valor<=4){
+						  let creaimg = document.createElement('img');
+						  let crearDiv = document.createElement('div');
+						  creaimg.setAttribute('src',  "file:///D:/Materiales/Proyecto Catálogo/fotos/" +images[i]+".jpg");
+						  creaimg.setAttribute('width','310');
+						  creaimg.setAttribute('style','padding:3px;');
+						  principal.setAttribute('style',' display:flex; flex-wrap: wrap; padding-left:10px')
+						  principal.appendChild(crearDiv);
+						  crearDiv.appendChild(creaimg);
+			
+						} else if(valor==6){
+							let creaimg = document.createElement('img');
+							let crearDiv = document.createElement('div');
+							creaimg.setAttribute('src',  "file:///D:/Materiales/Proyecto Catálogo/fotos/" +images[i]+".jpg");
+							creaimg.setAttribute('width','250');
+							creaimg.setAttribute('style','padding:3px; padding-top:10px; padding-left:10px');
+							principal.appendChild(creaimg);
+           				 }
+							else if(valor==7){
+							let creaimg = document.createElement('img');
+							let crearDiv = document.createElement('div');
+							creaimg.setAttribute('src',  "file:///D:/Materiales/Proyecto Catálogo/fotos/" +images[i]+".jpg");
+							creaimg.setAttribute('width','240');
+							creaimg.setAttribute('style','padding:3px; padding-top:10px; padding-left:10px');
+							principal.appendChild(creaimg);
+           				 }
+					}
+			</script>	  	
+  	 </body>
+</html>

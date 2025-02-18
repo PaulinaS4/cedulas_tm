@@ -65,7 +65,7 @@
 			</tr>
 			<tr>
 				<td class="col1">Nombre de quien realiza la intervención</td>
-				<td class="col2">[%"Nombre de quien interviene"%]</td>
+				<td class="col2" style="font-size: [%case when length("Nombre de quien interviene")> 30 then '6px' else '9px' end%]; "> [%"Nombre de quien interviene"%]</td>
 				<td class="col1">Fin de intervención</td>
 				<td class="col2">[%CASE WHEN "Fecha fin de intervención" LIKE '%Cargando%' OR "Fecha fin de intervención" IS NULL THEN NULL
 				ELSE "Fecha fin de intervención" END%]</td>
@@ -175,7 +175,7 @@
 						</div>
 						<div class="col-50">
 							<div class="">
-								<p class="text-col2">Color [%"Color"%]</p>
+								<p class="text-col2" style="font-size: [%case when length("Color")> 15 then '6px' else '9px' end%]; ">Color [%"Color"%]</p>
 							</div>
 						</div>
 					</div>
@@ -553,7 +553,7 @@
             if(valor==2 || valor==1){
               let creaimg = document.createElement('img');
               let crearDiv = document.createElement('div');
-              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/04_Elementos_pétreos/01_Estado de conservación/"+images[i]+".jpg");
+              creaimg.setAttribute('src',  "file:///F:/Materiales/restauracion/fotos/04_Elementos_pétreos/01_Estado de conservación/"+images[i]+".jpg");
               creaimg.setAttribute('width','395');
               crearDiv.setAttribute('width','100%');
               creaimg.setAttribute('style','padding:3px;');
@@ -564,7 +564,7 @@
             } else if(valor<=4){
               let creaimg = document.createElement('img');
               let crearDiv = document.createElement('div');
-              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/04_Elementos_pétreos/01_Estado de conservación/"+images[i]+".jpg");
+              creaimg.setAttribute('src',  "file:///F:/Materiales/restauracion/fotos/04_Elementos_pétreos/01_Estado de conservación/"+images[i]+".jpg");
               creaimg.setAttribute('width','260');
               creaimg.setAttribute('style','padding:3px;');
               principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
@@ -573,7 +573,7 @@
 
             } else if(valor<=6){
               let creaimg = document.createElement('img');
-              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/04_Elementos_pétreos/01_Estado de conservación/"+images[i]+".jpg");
+              creaimg.setAttribute('src',  "file:///F:/Materiales/restauracion/fotos/04_Elementos_pétreos/01_Estado de conservación/"+images[i]+".jpg");
               creaimg.setAttribute('width','255');
               creaimg.setAttribute('style','padding:3px');
               creaimg.setAttribute('style','padding:3px;');
@@ -581,7 +581,7 @@
 
             }else if(valor=>7){
               let creaimg = document.createElement('img');
-              creaimg.setAttribute('src',  "file:///D:/restauracion/fotos/04_Elementos_pétreos/01_Estado de conservación/"+images[i]+".jpg");
+              creaimg.setAttribute('src',  "file:///F:/Materiales/restauracion/fotos/04_Elementos_pétreos/01_Estado de conservación/"+images[i]+".jpg");
               creaimg.setAttribute('width','200');
               creaimg.setAttribute('style','padding:3px');
               principal.appendChild(creaimg);

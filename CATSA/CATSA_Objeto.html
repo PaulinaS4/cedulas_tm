@@ -35,7 +35,7 @@
 			       			<td >No de proyecto</td>
 			       		</tr>
 			       		<tr>
-							<td class="tabla" >CATSA [%replace("No de catálogo",'.','')%]</td>
+							<td class="tabla" >CATSA [%replace("No de catálogo",'.0','')%]</td>
 							<td class="tabla" ></td>
 							<td class="tabla" ></td>
 			       			<td class="tabla" >[%'UTM_'||"No de proyecto"%]</td>
@@ -55,7 +55,7 @@
 						<td class="tabla2" >[%"Entidad Federativa"%]</td>
 		       		</tr>
 		       		<tr >
-						<td style= "width: 33.33%">Sitio:</td>
+						<td style= "width: 33.33%; height: 15px;">Sitio:</td>
 						<td style= "width: 33.33%">Cultura:</td>
 						<td >Periodo</td>
 		       		</tr>
@@ -108,13 +108,13 @@
 			       			<td class="tabla" >[%"Técnica de manufactura"%]</td>
 			       		</tr>
 			       		<tr >
-							<td style= "width: 25%">Forma:</td>
+							<td style= "width: 25%;">Forma:</td>
 							<td style= "width: 25%">Color:</td>
 							<td style= "width: 25%" >Acabado de superficie y ténica decorativa:</td>
 			       			<td >Motivo decorativo</td>
 			       		</tr>
 			       		<tr>
-							<td class="tabla" >[%"Forma"%]</td>
+							<td class="tabla" style="height: 15px;" >[%"Forma"%]</td>
 							<td class="tabla" >[%"Color"%]</td>
 							<td class="tabla" >[%"Acabado de superficie y técnica decorativa"%]</td>
 			       			<td class="tabla" >[%"Motivo decorativo"%]</td>
@@ -225,13 +225,17 @@ array_filter(string_to_array("Tratamiento",','), length(@element) >3)))%]</td>
 								<td>Catalogó:</td>
 				       		</tr>
 				       		<tr>
-				       			<td class="tabla2" style="height: 30px;">
-									[%array_to_string(
+				       			<td class="tabla2" style="height: 30px; font-size: [% case when length("Restaurador")>30 then '6px' else '9px' end %];" >
+									
+										[%array_to_string(
 									array_filter(
 									array_cat(
 									array( "Analista de material" ),
-									array( "Restaurador" ))
-									, @element is not null))%]</td>
+									array( "Restaurador" ),
+									array( "Arqueólogo de cadena de custodia" ))
+									, @element is not null))%]
+									
+									</td>
 				       		</tr>
 				       		<tr>
 								<td>Fecha:</td>
@@ -243,8 +247,9 @@ array_filter(string_to_array("Tratamiento",','), length(@element) >3)))%]</td>
 					</div>
 					<div style=" width:50%">
 							<h1>Observaciones:</h1>
-						<div style="border: 1.15px solid #909092; height:90px; margin-left:5px; margin-right:5px; padding-top:0%;">
-							<p style="font-size: [% case when length("Observaciones") >150 then '7px' else '9px' end %] ;  padding-top:0%;" >
+						<div style="border: 1.15px solid #909092; height:90px; margin-left:5px; margin-right:5px; ">
+							<p style="font-size: [% case when length("Observaciones") >1000 then '6.4px'
+								when length("Observaciones") >500 then '7px' else '9px' end %] ;  padding-top:0%;" >
 								[%"Observaciones"%]
 							</p>
 						</div>
@@ -253,7 +258,7 @@ array_filter(string_to_array("Tratamiento",','), length(@element) >3)))%]</td>
 					<div style="width:20% " >
 						<h1>Fotografía:</h1>
 						<div style="border: 1.15px solid #909092; height:90px; margin-left:3px; margin-right:5px;" >
-							<img style="height: 90px; margin:auto; display:block; " src='file:///[%"ruta_foto"||array_first(string_to_array("Fotos fin"))%].jpg'  onerror="this.src='file:///D:/TM_Excavacion/images.png'" >
+							<img style="height: 90px; margin:auto; display:block; " src='file:///[%"ruta_fotos"||array_first(string_to_array("Fotos fin"))%].jpg'  onerror="this.src='file:///D:/TM_Excavacion/images.png'" >
 						</div>
 					</div>
 				</div>

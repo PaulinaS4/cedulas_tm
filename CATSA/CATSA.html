@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="style.css">
   <title></title>
 </head>
-  	<body style="padding-left: 10px;padding-bottom:15%;">
+  	<body style="padding-left: 10px;padding-bottom:10%;">
   		<header>
   			<section>		
   					<div style="padding-top:6.66mm;padding-bottom: 0px; padding-left:27.6mm;">	
@@ -35,7 +35,7 @@
 			       			<td >No de proyecto</td>
 			       		</tr>
 			       		<tr>
-							<td class="tabla" >CATSA [%replace("No de catálogo",'.','')%]</td>
+							<td class="tabla" >CATSA [%replace("No de catálogo",'.0','')%]</td>
 							<td class="tabla" ></td>
 							<td class="tabla" ></td>
 			       			<td class="tabla" >[%'UTM_'||"No de proyecto"%]</td>
@@ -60,7 +60,7 @@
 						<td >Periodo</td>
 		       		</tr>
 		       		<tr>
-						<td class="tabla2" >[%"Sitio"%]</td>
+						<td class="tabla2" style="height: 15px;">[%"Sitio"%]</td>
 						<td class="tabla2" >[%"Cultura"%]</td>
 						<td class="tabla2" >[%"Periodo"%]</td>
 		       		</tr>
@@ -240,14 +240,17 @@
 								<td>Fecha:</td>
 				       		</tr>
 				       		<tr>
-				       			<td class="tabla2">[%format_date(now(),'yyyy-MM-dd')%]</td>
+				       			<td class="tabla2">
+									<!-- [%format_date(now(),'yyyy-MM-dd')%] -->
+									 [%"_Fecha"%]
+								</td>
 				       		</tr>
 						</table>
 					</div>
 					<div style=" width:50%">
 							<h1>Observaciones:</h1>
 						<div style="border: 1.15px solid #909092; height:90px; margin-left:5px; margin-right:5px">
-							<p>
+							<p style="font-size: [%case when length("Observaciones")> 300 then '4px' else '9px' end  %];">
 								[%"Observaciones"%]
 							</p>
 						</div>
@@ -256,7 +259,7 @@
 					<div style="width:20% " >
 						<h1>Fotografía:</h1>
 						<div style="border: 1.15px solid #909092; height: 90px; margin-left:3px; margin-right:5px;" >
-							<img style="width:83%; margin:auto; display: block; " src='file:///D:/restauracion/fotos/01_Cerámica/03_Fin/[%array_first(string_to_array("Fotos fin"))%].jpg'  onerror="this.src='file:///D:/TM_Excavacion/images.png'" >
+							<img style="width:85%; margin:auto; display: block; padding: 5%; " src='file:///F:/Materiales/restauracion/fotos/01_Cerámica/03_Fin/[%array_first(string_to_array("Fotos fin"))%].jpg'  onerror="this.src='file:///D:/TM_Excavacion/images.png'" >
 						</div>
 					</div>
 				</div>
