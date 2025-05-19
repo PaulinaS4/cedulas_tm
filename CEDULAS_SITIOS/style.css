@@ -1,0 +1,40 @@
+* { font-family:"Times New Roman"; font-size:8px; color:black;}
+
+body{
+	height: 279.4mm;
+	width: 215.9mm;
+	padding-left: 10mm; 
+    padding-right: 10mm;
+	padding-bottom:13mm;
+    padding-top: 10mm;
+    margin: 0px;
+} 
+section{
+    height: 21mm;
+	width: 196mm;
+    padding: 0%;
+}
+.img_inah{
+    width: 16mm;
+    height: 19mm;
+}
+.titulo{
+    font-family: Arial;
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+.titulo2{
+    font-family: Arial;
+    font-size: 10px;
+    text-align: center;
+    margin-top: 0px;
+}
+.recuadro{
+    height: 12mm;
+    width: 196mm;
+    border: 1pt;
+    border-style: solid;
+    border-color: #B55900;
+    margin-top: 15px;
+}

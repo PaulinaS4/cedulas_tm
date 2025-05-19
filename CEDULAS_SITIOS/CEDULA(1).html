@@ -1,0 +1,2820 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEDULA</title>
+
+    <style>
+        body {
+            font-family: "Times New Roman", sans-serif;
+            font-size: 12px;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-size: 12px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 840px;
+            /* gap: 1rem; */
+        }
+
+        .box {
+            border: 2px solid #b45800;
+            padding: 4px 8px;
+            margin: 0px;
+            margin-bottom: 1rem;
+        }
+
+        .encabezado {
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .encabezado-container {
+            width: 340px;
+            margin: 0 auto;
+        }
+
+        .encabezado-container > h1 {
+            font-size: 1.5em;
+
+            margin: 0;
+            padding: 0;
+        }
+
+        .encabezado-container > h2 {
+            font-size: 1.25em;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .titulo-seccion {
+            font-size: 1em;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+
+        .underscore {
+            border-bottom: 1px solid #000;
+            width: 100%;
+        }
+
+        small {
+            margin: 0px;
+            padding-left: 20px;
+        }
+        
+        .fondo-gris {
+            background-color: #eaeaea;
+            padding: 2px 10px;
+            text-align: center;
+        }
+
+        .alinear-row {
+            align-items: center;
+        }
+
+        .altura-fila {
+            margin: 7px 0px;
+        }
+
+        .logo {
+            position: absolute;
+            top: 0px;
+            left: 10px;
+            width: 16mm;
+            height: 19mm;
+        }
+
+        .checkbox-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 14px;
+            height: 14px;
+            border: 2px solid #999;
+            background-color: white;
+            display: inline-block;
+            position: relative;
+            vertical-align: middle;
+            cursor: pointer;
+            margin: 0;
+        }
+
+        .checkbox-label input[type="checkbox"]:checked::after {
+            content: "✕";
+            font-size: 12px;
+            color: black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            line-height: 1;
+        }
+
+        .page {
+            height: 1200px;
+            width: 840px;
+        }
+
+        .margin-b {
+            margin-bottom: 10px;
+        }
+
+        .pie-pagina {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .recuadro {
+            height: 500px;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        .bold {
+            font-weight: 600;
+        }
+
+        .black {
+            background-color: black;
+        }
+
+        .image-container {
+            width: 100%;    /* Ancho fijo */
+            height: 300px;   /* Alto fijo */
+            overflow: hidden;
+            border: 1px solid #000;
+        }
+
+        .image-container-wide {
+            width: 100%;    /* Ancho fijo */
+            height: 500px;   /* Alto fijo */
+            overflow: hidden;
+            border: 1px solid #000;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* O usa "cover" si quieres que llene el contenedor */
+        }
+    </style>
+</head>
+<body>
+    <!-- PAGINA 1 -->
+    <div class="page">
+        <div class="container">
+        <image
+           style="image-rendering:optimizeSpeed"
+           preserveAspectRatio="none"
+           transform="matrix(1,0,0,-1,0,1)"
+           src="data:image/png;base64,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"
+           class="logo" />
+
+        <section class="encabezado" style="margin-bottom: 1rem; margin-top: 1rem;">
+            <div class="encabezado-container">
+                <p style="font-family: Arial; font-style: normal; font-size: 16px;margin: 0px; text-align: left;">REGISTRO PÚBLICO DE MONUMENTOS <br> Y ZONAS ARQUEOLÓGICOS E HISTÓRICOS</p>
+            </div>
+
+            <p style="font-family: Arial, Helvetica, sans-serif;font-size: 12px; margin: 0px;">CÉDULA PARA CATALOGAR Ó ACTUALIZAR SITIOS ARQUEOLÓGICOS</p>
+        </section>
+
+        <section class="box informacion">
+            <h2 class="titulo-seccion">INFORMACIÓN EXCLUSIVA DE LA DRPMZAH</h2>
+
+            <div style="width: 100%;">
+                <table style="width: 100%;">
+                    <tr>
+                        <td style="width: 45%;">
+                            <div style="width: 100%;" class="row alinear-row">
+                                <div style="width: 60px">Folio real:</div>
+                                <div style="width: 180px;" class="fondo-gris">
+                                    
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width: 10%;">Sitio nuevo</td>
+                        <td style="width: 10%;">
+                            <label class="checkbox-label">
+                                <input type="checkbox">
+                            </label>
+                        </td>
+                        <td>
+                            <div class="row alinear-row">
+                                <div style="width: 75px;">Identificador:</div> 
+                                <div class="fondo-gris"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="row alinear-row">
+                                <div>Fecha de catalogación o actualización (dd/mm/aaaa):</div>
+                                <div style="width: 60px;" class="fondo-gris"></div>
+                            </div>
+                        </td>
+                        <td>Actualización</td>
+                        <td>
+                            <label class="checkbox-label">
+                                <input type="checkbox">
+                            </label>
+                        </td>
+                        <td>
+                            <div class="row alinear-row">
+                                <div style="width: 75px;">Clave de sitio:</div>
+                                <div class="fondo-gris"></div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section class="box identificacion" style="margin-bottom: 5px;">
+            <h2 style="margin-bottom: 10px;" class="titulo-seccion">1. IDENTIFICACIÓN:</h2>
+
+            <section>
+                <div style="margin-bottom: 10px;" class="row">
+                    <div style="width: 120px;">1.1 Nombre del sitio: </div>
+                    <div class="underscore"></div>
+                </div>
+                <div style="margin-bottom: 10px;" class="row">
+                    <div style="width: 120px;">1.2 Otros nombres:</div>
+                    <div class="underscore"></div>
+                </div>
+
+                <div class="row" style="gap: 20px;">
+                    <div style="width: 30%;">
+                        <div style="width: 180px;">
+                            1.3 Componentes generales del sitio ó del área de actividad: (Se puede marcar más de uno)
+                        </div>
+                    </div>
+
+                    <div style="width: 40%;">
+                        <table>
+                            <tr>
+                                <td style="width: 35%;">Estructuras</td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td style="width: 35%;">Conchero</td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Concentraciones de materiales y/o elementos muebles</td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>Manifestaciones gráfico-rupestres</td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                </div>
+            </section>
+        </section>
+    
+        <section class="box origen">
+            <div style="margin-bottom: 10px;" class="row alinear-row">
+                <h2 style="width: 550px;" class="titulo-seccion" >2. ORIGEN DE LA INFORMACIÓN:</h2>
+
+                <div style="gap: 2px;" class="row alinear-row">
+                    <div>*2.1 Fecha de registro en campo (dd/mm/aaaa): </div>
+                    <div class="fondo-gris"></div>
+                </div>
+            </div>
+
+            <div>
+                <div style="margin-bottom: 10px;" class="row">
+                    <div style="width: 460px;">2.2 Nombre del proyecto / denuncia o inspección (número):</div>
+                    <div class="underscore"></div>
+                </div>
+
+                <div style="margin-bottom: 10px;" class="row">
+                    <div style="width: 320px;">2.3 Nombre completo del director del proyecto: </div>
+                    <div class="underscore"></div>
+                </div>
+
+                <div style="margin-bottom: 10px;" class="row">
+                    <div style="width: 190px;">2.4 Institución o dependencia: </div>
+                    <div class="underscore"></div>
+                </div>
+
+                <div style="margin-bottom: 10px;" class="row">
+                    <div style="width: 550px;">2.5 Nombre completo de quien registró o actualizó la información: </div>
+                    <div class="underscore"></div>
+                </div>
+            </div>
+        </section>
+    
+        <section class="box localizacion">
+            <h2 style="margin-bottom: 10px;" class="titulo-seccion">3. LOCALIZACIÓN GEOGRÁFICA:</h2>
+
+            <div>
+                <div style="margin-bottom: 10px;" class="row">
+                    <div class="row">
+                        <div style="width: 80px;">*3.1 Estado: </div>
+                        <div class="underscore"></div>  
+                    </div>
+
+                    <div class="row">
+                        <div style="width: 95px;">*3.2 Municipio: </div>
+                        <div class="underscore"></div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 10px;" class="row">
+                    <div style="width: 85px;">*3.3 Localidad</div>
+                    <div class="underscore"></div>
+                </div>
+
+                <div style="margin-bottom: 7px; width: 100%;" class="row">
+                    <div style="width: 70%;" class="row">
+                        <div style="width: 170px;">*3.4 Coordenadas UTM: </div>
+
+                        <div style="width: 100%;" class="row">
+                            <div class="row">
+                                <div>Este</div>
+                                <div class="underscore"></div>
+                            </div>
+
+                            <div class="row">
+                                <div>Norte</div>
+                                <div class="underscore"></div>
+                            </div>
+
+                            <div class="row">
+                                <div>Zona</div>
+                                <div class="underscore"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="width: 30%;" class="row">
+                        <div style="width: 80px; margin-left: 10px;">3.5 Altitud: </div>
+                        <div class="row">
+                            <div class="underscore"></div>
+                            <div>m.s.n.m.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 7px;" class="row">
+                    <div class="row alinear-row">
+                        <div style="width: 180px;">3.6 Aguas marinas:</div>
+                        <div>
+                            <label class="checkbox-label">
+                                <input type="checkbox">
+                            </label>
+                        </div>
+                        <div style="margin-left: 2px;" class="row">
+                            <div>Especificar:</div>
+                            <div class="underscore"></div>
+                        </div>
+                    </div>
+
+                    <div class="row alinear-row">
+                        <div style="width: 180px;">3.7 Aguas interiores:</div>
+                        <div>
+                            <label class="checkbox-label">
+                                <input type="checkbox">
+                            </label>
+                        </div>
+                        <div style="margin-left: 2px;" class="row">
+                            <div>Especificar: </div>
+                            <div class="underscore"></div>
+                        </div>
+                    </div>
+
+                    <div class="row alinear-row">
+                        <div class="row">
+                            <div style="width: 130px;">3.8 Profundidad:</div>
+                            <div class="underscore"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 700px; margin-bottom: 10px;">
+                    <div class="row">
+                        <div style="width: 40%;" class="row">
+                            <div style="width: 80px;">*3.9 Datum:</div>
+                            <div class=""></div>
+                        </div>
+
+                        <div style="width: 55%;" class="row">
+                            <div style="width: 800px;">*3.10 Clave de la carta topográfica INEGI 1: 50 000: </div>
+                            <div class="underscore"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div style="width: 490px;">*3.11 Especifique el lugar donde se tomaron las coordenadas</div>
+                    <div class="underscore"></div>
+                </div>
+            </div>
+        </section>
+    
+        <section class="box caracteristicas" style="margin-bottom: 1px;">
+            <h2 style="margin-bottom: 5px;" class="titulo-seccion">4. CARACTERÍSTICAS GEOGRÁFICAS Y/O DEL ENTORNO NATURAL DEL SITIO ARQUEOLÓGICO:</h2>
+
+            <div>
+                <div style="margin-bottom: 5px;" class="row alinear-row">
+                    <div style="width: 250px;" class="row">Ubicación general de las evidencias:</div>
+
+                    <div class="row">
+                        <div style="gap: 3px;" class="row alinear-row">
+                            A cierto abierto
+                            <label class="checkbox-label">
+                                <input type="checkbox">
+                            </label>
+                        </div>
+                        <div style="gap: 3px;" class="row alinear-row">
+                            Cubierto
+                            <label class="checkbox-label">
+                                <input type="checkbox">
+                            </label>
+                        </div>
+                        <div style="gap: 3px;" class="row alinear-row">
+                            Subacuático
+                            <label class="checkbox-label">
+                                <input type="checkbox">
+                            </label>
+                        </div>
+                        <div style="gap: 3px;" class="row alinear-row">
+                            Intermareal
+                            <label class="checkbox-label">
+                                <input type="checkbox">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <table>
+                        <tr>
+                            <td style="width: 20%;"><div class="altura-fila">Abanico aluvial</div></td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 20%;">Desembocadura (barra, delta o estuario)</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 20%;">Presa</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 20%;">Otro (especificar):</td>
+                        </tr>
+                        <tr>
+                            <td><div class="altura-fila">Abrigo rocoso o covacha</div></td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Estero, pantano o manglar</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Planicie (fluvial, lacustre o marina)</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td><div class="underscore"></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="altura-fila">Acantilado, cantil o escarpe</div></td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Frente rocoso</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Playa y/o orillas lacustres</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><div class="altura-fila">Afloramiento rocoso</div></td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Gruta</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Rejollada</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><div class="altura-fila">Altiplanicie</div></td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Grieta</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Río</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><div class="altura-fila">Arroyo</div></td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Ladera alta</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Selva</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><div class="altura-fila">Barranca</div></td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Lago / laguna</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Sierra o montaña</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><div class="altura-fila">Bosque</div></td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Llanura o pradera</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Terrazas (fluvial o marina)</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><div class="altura-fila">Cañada</div></td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Lecho rocoso</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Tundra</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><div class="altura-fila">Cañón</div></td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Manantial</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Valle</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><div class="altura-fila">Cenote</div></td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Pantano</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Volcán</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><div class="altura-fila">Cuenca</div></td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Pie de monte</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Yacimiento paleontológico</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        </div>
+        <small>*Información obligatoria</small>
+    </div>
+    
+    <!-- PAGINA 2 -->
+    <div class="page">
+        <div class="container">
+            <section class="box">
+                <h2 style="margin-bottom: 10px;" class="titulo-seccion">5. DATOS GENERALES DEL SITIO ARQUEOLÓGICO:</h2>
+    
+                <div>
+                    <div style="max-width: 300px;" class="row margin-b">
+                        <div style="width: 80%;">*5.1 Área aproximada:</div>
+                        <div class="underscore"></div>
+                        <div>m2.</div>
+                    </div>
+    
+                    <div>
+                        <div>*5.2 Inferencias sobre el contexto</div>
+                        <table>
+                            <tr>
+                                <td style="width: 12%;">Abandono</td>
+                                <td>
+                                    <label class="checkbox-label" style="margin-right: 5px;">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td style="width: 12%;">Agrícola</td>
+                                <td>
+                                    <label class="checkbox-label" style="margin-right: 5px;">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td style="width: 12%;">Campos de batalla</td>
+                                <td>
+                                    <label class="checkbox-label" style="margin-right: 5px;">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td style="width: 12%;">Estacional</td>
+                                <td>
+                                    <label class="checkbox-label" style="margin-right: 5px;">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td style="width: 12%;">Habitacional</td>
+                                <td>
+                                    <label class="checkbox-label" >
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td style="width: 12%;">Producción/talleres/preparación de alimentos/manufactura</td>
+                                <td>
+                                    <label class="checkbox-label" style="margin-right: 5px;">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                            </tr>
+    
+                            <tr>
+                                <td>Administrativo</td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>Alojamiento</td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>Cívico</td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>Funerario (entierros/cremaciones)</td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>Naufragio o pecio</td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>Ritual/religioso (ofrendas y otros)</td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                            </tr>
+    
+                            <tr>
+                                <td colspan="3">
+                                    <div class="row">
+                                        <div>Otro:</div>
+                                        <div class="underscore"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+    
+                    <div>
+                        <table>
+                            <tr>
+                                <td>5.3. Patrón de distribución de las evidencias arqueológicas:</td>
+                                <td><div style="margin-left: 20px;">Disperso</div></tds>
+                                <td>
+                                    <label class="checkbox-label" style="margin: 0 30px 0 10px;">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>Nucleado</td>
+                                <td>
+                                    <label class="checkbox-label" style="margin: 0 30px 0 10px;">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>Mixto</td>
+                                <td>
+                                    <label class="checkbox-label" style="margin: 0 30px 0 10px;">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td style="width: 150px;">
+                                    <div class="row">
+                                        <div>Otro:</div>
+                                        <div class="underscore"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+    
+                    <div>
+                        <table style="width: 100%;">
+                            <tr>
+                                <td colspan="6">5.4. Cronología tentativa:</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 120px;"><div class="altura-fila">Anterior a 30000</div></td>
+                                <td>
+                                    <label class="checkbox-label" style="margin-right: 20px;">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>4500 - 1500 a. n. e.</td>
+                                <td>
+                                    <label class="checkbox-label" style="margin-right: 20px;">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>200 a.n.e. - 200 d. n. e.</td>
+                                <td>
+                                    <label class="checkbox-label" style="margin-right: 20px;">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>900 - 1200 d. n. e.</td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div class="altura-fila">30000 - 14000 a. n. e.</div></td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>1500 - 800 a. n. e.</td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>200 - 650 d. n. e.</td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>1200 - 1521 d. n. e</td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div class="altura-fila">14000 - 7000 a. n. e.</div></td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>800 - 200 a. n. e.</td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>650 - 900 d. n. e.</td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>Posterior - 1521 d. n. e.</td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div class="altura-fila">7000 - 4500 a. n. e.</div></td>
+                                <td colspan="4">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td colspan="3">
+                                    <div>
+                                        <table>
+                                            <tr>
+                                                <td style="width: 40%;">Indígenas histórico</td>
+                                                <td rowspan="2" style="border-bottom: 1px solid black; width: 60%;">
+                                                    
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Fecha estimada</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <strong>Prehispánico</strong>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td colspan="6" rowspan="2">
+                                    <div style="width: 550px;">
+                                        <small>
+                                            <strong>Nota importante:</strong> En caso de que no se pueda determinar la cronología con precisión elija la opción <strong>prehispánico</strong>. De acuerdo con el artículo 28 de la Ley Federal sobre Monumentos y Zonas Arqueológicos, Artísticos e Históricos y el artículo 18 de su reglamento respectivo, debe especificarse la cronología como parte fundamental de la naturaleza del monumento arqueológico.
+                                        </small>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Histórico</td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table>
+                            <tr>
+                                <td style="width: 80px;">Siglos</td>
+                                <td>XVI</td>
+                                <td>
+                                    <label class="checkbox-label" style="margin-inline: 8px 25px;">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>XVII</td>
+                                <td>
+                                    <label class="checkbox-label" style="margin-inline: 8px 25px;">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>XVIII</td>
+                                <td>
+                                    <label class="checkbox-label" style="margin-inline: 8px 25px;">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>XIX</td>
+                                <td>
+                                    <label class="checkbox-label" style="margin-inline: 8px 25px;">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>
+                                <td style="width: 400px;">
+                                    <div class="row">
+                                        <div style="width: 110px;">Filiación cultural:</div>
+                                        <div class="underscore"></div>
+                                    </div>
+                                </td>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="box">
+                <div class="row" style="gap: 2rem;">
+                    <h2 style="margin-bottom: 10px;" class="titulo-seccion">*6. COMPONENTES DEL SITIO Y/O ÁREA DE ACTRIVIDAD:</h2>
+                    <div>(Elija todas las opciones de elementos que componen el sitio)</div>
+                </div>
+    
+                <div class="margin-b">
+                    <div>* 6.1 Elementos Inmuebles</div>
+
+                    <table>
+                        <tr>
+                            <td style="width: 20%;">
+                                <div class="altura-fila">
+                                    Abrigo rocoso/covacha
+                                </div>
+                            </td>
+                            <td style="width: 5%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 15%;">Casa acantilado</td>
+                            <td style="width: 5%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 15%;">Escultura</td>
+                            <td style="width: 5%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 12%;">Muro</td>
+                            <td style="width: 5%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 15%;">Tinaja</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="altura-fila">Acueducto</div>
+                            </td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Casco de hacienda</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Estela</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Nicho</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Trampa para pesca o caza</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="altura-fila">Afloramiento rocoso con o sin fósiles</div>
+                            </td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Casa semi subterránea</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Estructura</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Nivelación</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Trinchera</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="altura-fila">Alineamiento</div>
+                            </td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Cimiento</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Estructura piramidal</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Patio o plaza</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Tronco cónica</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="altura-fila">Almacén</div>
+                            </td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Cista</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Faro</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Pila de roca</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Tumba</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="altura-fila">Altares-adoratorio</div>
+                            </td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Cisterna o chultún</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Fogón-hogar</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Piso</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Ramada</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="altura-fila">Andador, camino o calzada, sendero</div>
+                            </td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Corralito</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Frente rocoso</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Plataforma</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Recinto</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="altura-fila">Área limpiada o despejada</div>
+                            </td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Covacha</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Horno</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Pozo de agua</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Yacimiento y/o mina especificar</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="altura-fila">Astillero</div>
+                            </td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Cuarto</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Hoyo de poste</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Pozo de agua</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td colspan="2"><div class="underscore"></div></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="altura-fila">Atalaya</div>
+                            </td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Cueva o cavidad</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Maqueta</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Presa</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="altura-fila">Basurero</div>
+                            </td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Chinampa</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Marcador astronómico</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Roca picoteada</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="altura-fila">Campamento</div>
+                            </td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Edificio</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Montículo</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Sendero</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="altura-fila">Campos elevados o camellones</div>
+                            </td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Elemento de represa</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Mortero y/o metate fijo</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Tanque</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="altura-fila">Canal o asequia</div>
+                            </td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Embarcadero</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Muelle</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Temazcal</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="altura-fila">Canchas o juegos de pelota</div>
+                            </td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Escalón</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Muralla</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Terraza</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+    
+                <div>
+                    <div class="row">
+                        <div style="width: 40%; font-weight: 600;">6.2. Concentración de materiales y/o elementos muebles:</div>
+                        <div style="width: 30%;">
+                            <div class="row" >
+                                <div style="width: 50%;">Número aprox.</div>
+                                <div class="underscore"></div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <table>
+                        <tr>
+                            <td style="width: 11%;">
+                                <div class="altura-fila">Asta</div>
+                            </td>
+                            <td style="width: 5%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 7%;">Cerámica</td>
+                            <td style="width: 5%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 10.5%;">Fibras vegetales</td>
+                            <td style="width: 5%;">
+                                <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                            </td>
+                            <td style="width: 8.5%;">Invertebrado</td>
+                            <td style="width: 5%;">
+                                <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                            </td>
+                            <td style="width: 9%;">Metal</td>
+                            <td style="width: 5%;">
+                                <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                            </td>
+                            <td style="width: 15%;">Resina</td>
+                            <td style="width: 5%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 6%;">Vidrio</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>
+                                <div class="altura-fila">Cabellos, plumas</div>
+                            </td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Cestería</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Fósil</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Lítica pulida</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Mineral</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Rocas con evidencia de exposición de fuego</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Otro:</td>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                <div class="altura-fila">Carbón</div>
+                            </td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Concha</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Hueso animal</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Lítica tallada</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Momificación natural</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Textil</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td colspan="2"><div class="underscore"></div></td>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                <div class="altura-fila">Ceniza</div>
+                            </td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Cuero</td>
+                            <td>
+                                <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                            </td>
+                            <td>Hueso humano</td>
+                            <td>
+                                <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                            </td>
+                            <td>Madera</td>
+                            <td>
+                                <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                            </td>
+                            <td>Plantas</td>
+                            <td>
+                                <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                            </td>
+                            <td>Vertebrado</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <!-- PAGINA 3 -->
+    <div class="page">
+        <div class="container">
+            <section class="box">
+                <div class="margin-b">
+                    <div class="row">
+                        <div class="bold" style="width: 15%;">6.3 Concheros: </div>
+                        <div style="width: 30%;">
+                            <div class="row" >
+                                <div style="width: 50%;">Número aprox.</div>
+                                <div class="underscore"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <table>
+                        <tr>
+                            <td style="width: 12%;">Bivalvos</td>
+                            <td style="width: 6%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 12%;">Gasterópodos</td>
+                            <td style="width: 6%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 12%;">Univalvos</td>
+                            <td style="width: 6%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 12%;">Restos óseos de: Mamífero terrestre</td>
+                            <td style="width: 6%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 12%;">Mamífero marino</td>
+                            <td style="width: 6%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 6%;">Peces</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="3">Lentículas de carbón o ceniza</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td colspan="3">Rocas con exposición térmica</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="margin-b">
+                    <div class="bold">6.4 Manifestación gráfico rupestre:</div>
+                    <table>
+                        <tr>
+                            <td style="width: 150px;">Registrado a simple vista</td>
+                            <td style="width: 100px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 270px;">Registrado a través de herramientas tecnológicas</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="margin-b">
+                    <div class="bold">6.4.1 Pintura: Gama cromática</div>
+                    
+                    <table>
+                        <tr>
+                            <td class="bold">Morfología</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 80px;">Figurativos</td>
+                            <td>
+                                <label class="checkbox-label" style="width: 40px;">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>No figurativos</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 80px;">Monocromo</td>
+                            <td>
+                                <label class="checkbox-label" style="width: 50px;">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 60px;">Bicromo</td>
+                            <td>
+                                <label class="checkbox-label" style="width: 50px;">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 70px;">Policromo</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="margin-b">
+                    <div class="bold margin-b">6.4.1.2 Colores:</div>
+                    
+                    <div style="width: 300px;">
+                        <div class="row">
+                            <div>Especificar: </div>
+                            <div class="underscore"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="margin-b">
+                    <div class="bold margin-b">6.4.1.3 Técnica:</div>
+
+                    <table>
+                        <tr>
+                            <td style="width: 7%;">Delineado</td>
+                            <td style="width: 6%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 9%;">Tinta plana</td>
+                            <td style="width: 6%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 18%;">Contorno abierto/cerrado</td>
+                            <td style="width: 6%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 6%;">Relleno</td>
+                            <td style="width: 6%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 7%;">Positivo</td>
+                            <td style="width: 6%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 7%;">Negativo</td>
+                            <td style="width: 6%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 7%;">Estarcido</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="margin-b">
+                    <div class="bold margin-b">6.4.2 Petrograbado:</div>
+                    <div class="margin-b">Técnica</div>
+                    <table>
+                        <tr>
+                            <td style="width: 9%;">Percusión</td>
+                            <td style="width: 9%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 7%;">Picoteo</td>
+                            <td style="width: 10%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 7%;">Incisión</td>
+                            <td style="width: 10%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 8%;">Abrasión</td>
+                            <td style="width: 10%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 9%;">Positivo</td>
+                            <td style="width: 10%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 8%;">Negativo</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="margin-b">
+                    <div class="bold margin-b">6.4.3 Geoglífo:</div>
+                    <div class="margin-b">Técnica</div>
+                    <table>
+                        <tr>
+                            <td style="width: 20%;">Acumulación de rocas</td>
+                            <td style="width: 5%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 20%;">Limpieza de terreno</td>
+                            <td style="width: 5%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 20%;">Acumulación y limpieza de terreno</td>
+                            <td style="width: 5%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 10%;">Bajo relieve</td>
+                            <td style="width: 5%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="margin-b">
+                    <div class="bold margin-b">6.4.4 Emplazamientos específico de los motivos:</div>
+                    <div class="underscore"></div>
+                </div>
+
+                <div class="margin-b">
+                    <div class="bold margin-b">6.4.5 Observaciones:</div>
+                    <div class="underscore"></div>
+                </div>
+            </section>
+    
+            <section class="box">
+                <div class="margin-b">
+                    <h2 style="margin-bottom: 10px;" class="titulo-seccion">7. USO DE SUELO:</h2>
+
+                    <div>
+                        <table>
+                            <tr>
+                                <td style="width: 120px;">
+                                    <div class="altura-fila">Área natural protegida</div>
+                                </td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div>
+                        <table>
+                            <tr>
+                                <td style="width: 40px;">
+                                    <div class="altura-fila">Rural</div>
+                                </td>
+                                <td style="width: 40px;">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td style="width: 50px;">Urbano</td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div>
+                        <table>
+                            <tr>
+                                <td style="width: 150px;">
+                                    <div class="altura-fila">Agrícola</div>
+                                </td>
+                                <td style="width: 100px;">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td style="width: 90px;">Ganadero</td>
+                                <td style="width: 100px;">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td style="width: 200px;">
+                                    <div class="row" >
+                                        <div style="width: 20%;">Otro:</div>
+                                        <div class="underscore"></div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="altura-fila">Banco de material</div>
+                                </td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>Habitacional</td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="altura-fila">Comercial o de servicios</div>
+                                </td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>Industrial</td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="altura-fila">Forestal</div>
+                                </td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>Turístico</td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+    
+                <div>
+                    <h2 class="titulo-seccion">8. RÉGIMEN DE PROPIEDAD DONDE SE UBICA EL SITIO ARQUEOLÓGICO:</h2>
+
+                    <table>
+                        <tr>
+                            <td style="width: 100px;">
+                                <div class="altura-fila">Privada:</div>
+                            </td>
+                            <td style="width: 90px;">Persona Física</td>
+                            <td style="width: 70px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 90px;">Persona Moral</td>
+                            <td style="width: 70px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="altura-fila">Social:</div>
+                            </td>
+                            <td>Comunal</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Ejidal</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="altura-fila">Pública:</div>
+                            </td>
+                            <td>Estatal</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Federal</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 70px;">Municipal</td>
+                            <td style="width: 70px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 70px;">Nacional</td>
+                            <td style="width: 70px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+    
+            <section class="box">
+                <h2 class="titulo-seccion margin-b">9. ESTADO DE CONSERVACIÓN DEL SITIO:</h2>
+
+                <div class="margin-b">
+                    <table>
+                        <tr>
+                            <td style="width: 10%;">Arrasado</td>
+                            <td style="width: 12%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 10%;">Bueno</td>
+                            <td style="width: 12%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 12%;">Excepcional</td>
+                            <td style="width: 12%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 7%;">Malo</td>
+                            <td style="width: 12%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 11%;">Regular</td>
+                            <td style="width: 12%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="">
+                    <table>
+                        <tr>
+                            <td style="width: 150px;">9.1 Saqueo:</td>
+                            <td style="width: 60px;">Antiguo</td>
+                            <td style="width: 80px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 130px;">Reciente ocasional</td>
+                            <td style="width: 80px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 180px;">Reciente sistemático profesional</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div>
+                    <table>
+                        <tr>
+                            <td colspan="6">
+                                <div class="altura-fila">9.2 Grado de deterioro:</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 40px;">
+                                <div class="altura-fila">Bajo</div>
+                            </td>
+                            <td style="width: 80px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 40px;">Medio</td>
+                            <td style="width: 80px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 30px;">Alto</td>
+                            <td style="width: 80px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td style="width: 25px;">Total: </td>
+                            <td style="width: 100px;"><div class="underscore">50</div></td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <!-- PAGINA 4 -->
+    <div class="page">
+        <div class="container">
+            <section class="box">
+                <div>
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="altura-fila">Tipo:</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="altura-fila">Corrosión</div>
+                            </td>
+                            <td style="width: 40px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Deslaminación</td>
+                            <td style="width: 40px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Fisura/grieta</td>
+                            <td style="width: 40px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Manchas y/o escurrimientos</td>
+                            <td style="width: 40px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Plantas superiores</td>
+                            <td style="width: 40px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+        
+                        <tr>
+                            <td>
+                                <div class="altura-fila">Concreción</div>
+                            </td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Disgregación</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Fractura</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Microorganismos</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Sales</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+        
+                        <tr>
+                            <td>
+                                <div class="altura-fila">Depósitos</div>
+                            </td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Exfoliación</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Graffiti</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Pérdida de soportes/faltantes</td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+    
+                <div>
+                    <table>
+                        <tr>
+                            <td style="width: 300px;">
+                                <div class="altura-fila">9.3. Acciones de protección que se requieren:</div>
+                            </td>
+                            <td>Gestión social</td>
+                            <td style="width: 40px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Mantenimiento</td>
+                            <td style="width: 40px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Restauración/conservación</td>
+                            <td style="width: 40px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+    
+                <div>
+                    <table>
+                        <tr>
+                            <td style="width: 150px;">
+                                <div class="altura-fila">9.4. Valor del sitio:</div>
+                            </td>
+                            <td>Didáctico</td>
+                            <td style="width: 40px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Investigación</td>
+                            <td style="width: 40px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Representativo del área</td>
+                            <td style="width: 40px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Otro:</td>
+                            <td colspan="">Justificación</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="min-height: 40px;">
+                                <div class="underscore"></div>
+                            </td>
+                            <td></td>
+                            <td colspan="3">
+                                <div class="underscore"></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="margin-b">
+                    <table>
+                        <tr>
+                            <td colspan="4">
+                                <div class="altura-fila">9.5 Plazo de destrucción potencial del sitio:</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="altura-fila">Inmediato</div>
+                            </td>
+                            <td style="width: 40px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Corto plazo (1-3 años)</td>
+                            <td style="width: 40px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Mediano plazo (4-10 años)</td>
+                            <td style="width: 40px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Largo plazo (10 años o más)</td>
+                            <td style="width: 40px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Indefinido</td>
+                            <td style="width: 40px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div>
+                    <div class="margin-b"> 9.6 Factores de riesgo</div>
+                    <table>
+                        <tr>
+                            <td colspan="4">
+                                <div class="altura-fila">a) Antropogénicos:</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 120px;">
+                                <div class="altura-fila">Actividades agrícolas</div>
+                            </td>
+                            <td>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td style="width: 100px;">
+                                <div class="altura-fila">b) Biológicos:</div>
+                            </td>
+                            <td>Bacterias</td>
+                            <td style="width: 40px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Fauna</td>
+                            <td style="width: 40px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Flora</td>
+                            <td style="width: 40px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Hongos</td>
+                            <td style="width: 40px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td style="width: 100px;">
+                                <div class="altura-fila">
+                                    b) Geológicos:
+                                </div>
+                            </td>
+                            <td>Derrumbes</td>
+                            <td style="width: 40px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Sismicidad</td>
+                            <td style="width: 40px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                            <td>Vulcanismo</td>
+                            <td style="width: 40px;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div class="row">
+                        <table>
+                            <tr>
+                                <td style="width: 100px;">
+                                    <div class="altura-fila">d) Meteorológicos:</div>
+                                </td>
+                                <td>Ciclones o huracanes</td>
+                                <td style="width: 40px;">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>Erosión por viento</td>
+                                <td style="width: 40px;">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>Granizadas</td>
+                                <td style="width: 40px;">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>Inundación</td>
+                                <td style="width: 40px;">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>Nevadas o heladas</td>
+                                <td style="width: 40px;">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    <div class="altura-fila">Erosión por agua</div>
+                                </td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>Filtración</td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>Incendio</td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>Lluvia</td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                                <td>Temperatura</td>
+                                <td>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                    </label>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="box recuadro">
+                <h2 style="margin-bottom: 10px;" class="titulo-seccion">10. OBSERVACIONES GENERALES DEL SITIO:</h2>
+
+                <div></div>
+            </section>
+        </div>
+    </div>
+    
+    <!-- PAGINA 5 -->
+    <div class="page">
+        <div class="container">
+            <section class="box" style="height: 550px;">
+                <h2 style="margin-bottom: 10px;" class="titulo-seccion">11. BIBLIOGRAFÍA RELEVANTE DEL SITIO:</h2>
+
+                <div></div>
+            </section>
+    
+            <section class="recuadro" style="width: 100%; display: flex; gap: 2rem;">
+                <div class="box w-full">
+                    <div>FOTOGRAFÍA</div>
+                    <div class="image-container">
+                        <img src="tu-imagen.jpg" alt="Imagen">
+                    </div>
+                </div>
+                <div class="box w-full">
+                    <div>FOTOGRAFÍA</div>
+                    <div class="image-container">
+                        <img src="tu-imagen.jpg" alt="Imagen">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <!-- PAGINA 6 -->
+    <div class="page">
+        <div class="container">
+            <section class="recuadro" style="width: 100%; display: flex; gap: 2rem;">
+                <div class="box w-full">
+                    <div>FOTOGRAFÍA</div>
+                    <div class="image-container">
+                        <img src="tu-imagen.jpg" alt="Imagen">
+                    </div>
+                </div>
+                <div class="box w-full">
+                    <div>FOTOGRAFÍA</div>
+                    <div class="image-container">
+                        <img src="tu-imagen.jpg" alt="Imagen">
+                    </div>
+                </div>
+            </section>
+    
+            <section class="box" style="height: 550px;">
+                <div>CROQUIS O PLANO</div>
+
+                <div class="image-container-wide">
+                    <img src="tu-imagen.jpg" alt="Imagen">
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <!-- PAGINA 7 -->
+    <div class="page">
+        <h2 class="margin-b">PARA USO EXCLUSIVO DEL PERSONAL DE LA DRPMZAH</h2>
+
+        <div class="container margin-b">
+            <section class="recuadro" style="width: 100%; display: flex; gap: 2rem;">
+                <div class="box w-full">
+                    <div class="bold">FOTOGRAFÍA 1</div>
+                    <div class="image-container">
+                        <img src="tu-imagen.jpg" alt="Imagen">
+                    </div>
+                </div>
+                <div class="box w-full">
+                    <div class="bold">FOTOGRAFÍA 2</div>
+                    <div class="image-container">
+                        <img src="tu-imagen.jpg" alt="Imagen">
+                    </div>
+                </div>
+            </section>
+    
+            <section class="recuadro" style="width: 100%; display: flex; gap: 2rem;">
+                <div class="box w-full">
+                    <div class="bold">IMAGEN DE GOOGLE EARTH (Vista regional)</div>
+                    <div class="image-container">
+                        <img src="tu-imagen.jpg" alt="Imagen">
+                    </div>
+                </div>
+                <div class="box w-full">
+                    <div class="bold">IMAGEN DE GOOGLE EARTH (Vista local)</div>
+                    <div class="image-container">
+                        <img src="tu-imagen.jpg" alt="Imagen">
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="pie-pagina">
+            <small>
+                Subdirección de Registro de Monumentos Arqueológicos Inmuebles
+            </small>
+            <small>
+                Avenida Victoria 110, Col. Copilco El Bajo, Alcaldía. Coyoacán, C.P. 04340, México, D.F.
+            </small>
+            <small>
+                Teléfonos 40404624 / 40404300. Correo electrónico: subdireccion_inmuebles@inah.gob.mx
+            </small>
+        </section>
+    </div>
+</body>
+</html>
