@@ -54,8 +54,8 @@
 				<div style="border: 1px; border-color: black; border-style: solid; margin-top: 15px; width:100%">
 					<table class="tabla" >
 						<tr>
-						<td class="ancho1">Observaciones</td>
-						<td class="campos">[%"Observaciones"%]</td>
+						<td class="ancho1" style="width: 15%;">Observaciones</td>
+						<td class="campos" style="width: 85%;">[%"Observaciones"%]</td>
 						</tr>
 					</table>
 				</div>
@@ -75,7 +75,7 @@
 					if( valor==1){
 						  let creaimg = document.createElement('img');
 						  let crearDiv = document.createElement('div');
-						  creaimg.setAttribute('src',  "file:///D:/Materiales/Proyecto Catálogo/fotos/" +images[i]+".jpg");
+						  creaimg.setAttribute('src',  "file:///F:/cedulas_tm/CEDULAS_EDZNA/fotos/" +images[i]+".jpg");
 						  creaimg.setAttribute('width','380');
 						  crearDiv.setAttribute('width','100%');
 						  creaimg.setAttribute('style','padding:3px;');
@@ -86,7 +86,7 @@
 						}   else if(valor==2){
 						  let creaimg = document.createElement('img');
 						  let crearDiv = document.createElement('div');
-						  creaimg.setAttribute('src',  "file:///D:/Materiales/Proyecto Catálogo/fotos/" +images[i]+".jpg");
+						  creaimg.setAttribute('src',  "file:///F:/cedulas_tm/CEDULAS_EDZNA/fotos/" +images[i]+".jpg");
 						  creaimg.setAttribute('width','360');
 						  creaimg.setAttribute('style','padding:3px;');
 						  principal.setAttribute('style',' display:flex; flex-wrap: wrap; padding-top:20px;')
@@ -96,17 +96,17 @@
 						}else if(valor<=4){
 						  let creaimg = document.createElement('img');
 						  let crearDiv = document.createElement('div');
-						  creaimg.setAttribute('src',  "file:///D:/Materiales/Proyecto Catálogo/fotos/" +images[i]+".jpg");
+						  creaimg.setAttribute('src',  "file:///F:/cedulas_tm/CEDULAS_EDZNA/fotos/" +images[i]+".jpg");
 						  creaimg.setAttribute('width','310');
 						  creaimg.setAttribute('style','padding:3px;');
 						  principal.setAttribute('style',' display:flex; flex-wrap: wrap; padding-left:10px')
 						  principal.appendChild(crearDiv);
 						  crearDiv.appendChild(creaimg);
 			
-						} else if(valor==6){
+						} else if(valor<=6){
 							let creaimg = document.createElement('img');
 							let crearDiv = document.createElement('div');
-							creaimg.setAttribute('src',  "file:///D:/Materiales/Proyecto Catálogo/fotos/" +images[i]+".jpg");
+							creaimg.setAttribute('src',  "file:///F:/cedulas_tm/CEDULAS_EDZNA/fotos/" +images[i]+".jpg");
 							creaimg.setAttribute('width','250');
 							creaimg.setAttribute('style','padding:3px; padding-top:10px; padding-left:10px');
 							principal.appendChild(creaimg);
@@ -114,8 +114,8 @@
 							else if(valor==7){
 							let creaimg = document.createElement('img');
 							let crearDiv = document.createElement('div');
-							creaimg.setAttribute('src',  "file:///D:/Materiales/Proyecto Catálogo/fotos/" +images[i]+".jpg");
-							creaimg.setAttribute('width','240');
+							creaimg.setAttribute('src',  "file:///F:/cedulas_tm/CEDULAS_EDZNA/fotos/" +images[i]+".jpg");
+							creaimg.setAttribute('width','220');
 							creaimg.setAttribute('style','padding:3px; padding-top:10px; padding-left:10px');
 							principal.appendChild(creaimg);
            				 }

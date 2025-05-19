@@ -225,7 +225,7 @@ array_filter(string_to_array("Tratamiento",','), length(@element) >3)))%]</td>
 								<td>Catalogó:</td>
 				       		</tr>
 				       		<tr>
-				       			<td class="tabla2" style="height: 30px; font-size: [% case when length("Restaurador")>30 then '6px' else '9px' end %];" >
+				       			<td class="tabla2" style="height: 30px; font-size: [% case when length("Restaurador")>60 then '6px' when length("Restaurador")>40 then '8px'else '9px' end %];" >
 									
 										[%array_to_string(
 									array_filter(
@@ -258,7 +258,7 @@ array_filter(string_to_array("Tratamiento",','), length(@element) >3)))%]</td>
 					<div style="width:20% " >
 						<h1>Fotografía:</h1>
 						<div style="border: 1.15px solid #909092; height:90px; margin-left:3px; margin-right:5px;" >
-							<img style="height: 90px; margin:auto; display:block; " src='file:///[%"ruta_fotos"||array_first(string_to_array("Fotos fin"))%].jpg'  onerror="this.src='file:///D:/TM_Excavacion/images.png'" >
+							<img style="height: 90px; margin:auto; display:block; " src='file:///[%"ruta_fotos"||array_first(string_to_array("Fotos fin"))%].jpg'  onerror="this.src='file:///F:/TM_Excavacion/images.png'" >
 						</div>
 					</div>
 				</div>

@@ -37,6 +37,16 @@ header section div{
 	text-align: left;
 	padding-left: 3px;
 	margin-right: 3px;
+	width: 16.6%;
+}
+.campos2{
+	color: #676868;
+	font-style:normal;
+	height: 40px;
+	text-align: left;
+	padding-left: 3px;
+	margin-right: 3px;
+	width: 12.4%;
 }
 
 .tabla2{
