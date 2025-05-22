@@ -73,13 +73,15 @@
 
         small {
             margin: 0px;
-            padding-left: 20px;
+            /* padding-left: 20px; */
         }
         
         .fondo-gris {
-            background-color: #eaeaea;
-            padding: 2px 10px;
+            background-color: #DEE5FF;
+            padding: 1px 10px;
             text-align: center;
+            width: inherit;
+            height: auto;
         }
 
         .alinear-row {
@@ -87,7 +89,7 @@
         }
 
         .altura-fila {
-            margin: 7px 0px;
+            margin: 5px 0px;
         }
 
         .logo {
@@ -166,13 +168,15 @@
             height: 300px;   /* Alto fijo */
             overflow: hidden;
             border: 1px solid #000;
+            margin-top: 60px;
         }
 
         .image-container-wide {
-            width: 100%;    /* Ancho fijo */
-            height: 500px;   /* Alto fijo */
+            width: 100px;    /* Ancho fijo */
+            height: 100px;   /* Alto fijo */
             overflow: hidden;
             border: 1px solid #000;
+            margin-top: 30px;
         }
 
         .image-container img {
@@ -211,20 +215,20 @@
                             <div style="width: 100%;" class="row alinear-row">
                                 <div style="width: 60px">Folio real:</div>
                                 <div style="width: 180px;" class="fondo-gris">
-                                    
+                                    [%folio_real%]
                                 </div>
                             </div>
                         </td>
                         <td style="width: 10%;">Sitio nuevo</td>
                         <td style="width: 10%;">
                             <label class="checkbox-label">
-                                <input type="checkbox">
+                                <input type="checkbox" [%case when "sitio nuevo" = '{Sitio nuevo}' then 'checked' end%]>
                             </label>
                         </td>
                         <td>
                             <div class="row alinear-row">
-                                <div style="width: 75px;">Identificador:</div> 
-                                <div class="fondo-gris"></div>
+                                <div style="width: 75px; ">Identificador:</div> 
+                                <div class="fondo-gris" style="height: 14px; width: 160px;">[%identificador%]</div>
                             </div>
                         </td>
                     </tr>
@@ -232,19 +236,19 @@
                         <td>
                             <div class="row alinear-row">
                                 <div>Fecha de catalogación o actualización (dd/mm/aaaa):</div>
-                                <div style="width: 60px;" class="fondo-gris"></div>
+                                <div style="width: 60px; height: 14px;" class="fondo-gris">[%"fecha de Catalogacion o actualizacion"%]</div>
                             </div>
                         </td>
                         <td>Actualización</td>
                         <td>
                             <label class="checkbox-label">
-                                <input type="checkbox">
+                                <input type="checkbox" [%case when "sitio nuevo" = '{Actualización}' then 'checked' end%]>
                             </label>
                         </td>
                         <td>
                             <div class="row alinear-row">
                                 <div style="width: 75px;">Clave de sitio:</div>
-                                <div class="fondo-gris"></div>
+                                <div class="fondo-gris" style="width: 160px;">[%clave_sitio%]</div>
                             </div>
                         </td>
                     </tr>
@@ -252,17 +256,17 @@
             </div>
         </section>
 
-        <section class="box identificacion" style="margin-bottom: 5px;">
+        <section class="box identificacion" >
             <h2 style="margin-bottom: 10px;" class="titulo-seccion">1. IDENTIFICACIÓN:</h2>
 
             <section>
                 <div style="margin-bottom: 10px;" class="row">
                     <div style="width: 120px;">1.1 Nombre del sitio: </div>
-                    <div class="underscore"></div>
+                    <div class="underscore">[%nombre_sitio%]</div>
                 </div>
                 <div style="margin-bottom: 10px;" class="row">
                     <div style="width: 120px;">1.2 Otros nombres:</div>
-                    <div class="underscore"></div>
+                    <div class="underscore">[%"otros nombres"%]</div>
                 </div>
 
                 <div class="row" style="gap: 20px;">
@@ -278,27 +282,27 @@
                                 <td style="width: 35%;">Estructuras</td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox"  [%case when "componentes generales del sitio" like '%Estructuras%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td style="width: 35%;">Conchero</td>
                                 <td>
-                                    <label class="checkbox-label">
-                                        <input type="checkbox">
+                                     <label class="checkbox-label">
+                                        <input type="checkbox" [%case when "componentes generales del sitio" like '%Conchero%' then 'checked' end%]>
                                     </label>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Concentraciones de materiales y/o elementos muebles</td>
                                 <td>
-                                    <label class="checkbox-label">
-                                        <input type="checkbox">
+                                   <label class="checkbox-label">
+                                        <input type="checkbox" [%case when "componentes generales del sitio" like '%Concentraciones%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td>Manifestaciones gráfico-rupestres</td>
                                 <td>
-                                    <label class="checkbox-label">
-                                        <input type="checkbox">
+                                     <label class="checkbox-label">
+                                        <input type="checkbox" [%case when "componentes generales del sitio" like '%Rupestres%' then 'checked' end%]>
                                     </label>
                                 </td>
                             </tr>
@@ -315,29 +319,29 @@
 
                 <div style="gap: 2px;" class="row alinear-row">
                     <div>*2.1 Fecha de registro en campo (dd/mm/aaaa): </div>
-                    <div class="fondo-gris"></div>
+                    <div class="fondo-gris">[%"fecha de registro en campo"%]</div>
                 </div>
             </div>
 
             <div>
                 <div style="margin-bottom: 10px;" class="row">
                     <div style="width: 460px;">2.2 Nombre del proyecto / denuncia o inspección (número):</div>
-                    <div class="underscore"></div>
+                    <div class="fondo-gris" style="width: inherit;">[%"nombre proyecto"%]</div>
                 </div>
 
                 <div style="margin-bottom: 10px;" class="row">
-                    <div style="width: 320px;">2.3 Nombre completo del director del proyecto: </div>
-                    <div class="underscore"></div>
+                    <div style="width: 350px;">2.3 Nombre completo del director del proyecto: </div>
+                    <div class="fondo-gris" style="width: inherit;">[%"nombre completo del director"%]</div>
                 </div>
 
                 <div style="margin-bottom: 10px;" class="row">
                     <div style="width: 190px;">2.4 Institución o dependencia: </div>
-                    <div class="underscore"></div>
+                    <div class="fondo-gris" style="width: inherit;">[%"institucion o dependencia"%]</div>
                 </div>
 
                 <div style="margin-bottom: 10px;" class="row">
                     <div style="width: 550px;">2.5 Nombre completo de quien registró o actualizó la información: </div>
-                    <div class="underscore"></div>
+                    <div class="fondo-gris" style="width: inherit;">[%"nombre del registrante"%]</div>
                 </div>
             </div>
         </section>
@@ -349,18 +353,18 @@
                 <div style="margin-bottom: 10px;" class="row">
                     <div class="row">
                         <div style="width: 80px;">*3.1 Estado: </div>
-                        <div class="underscore"></div>  
+                        <div class="fondo-gris" style="width: 70%;">[%Entidad%]</div>  
                     </div>
 
                     <div class="row">
-                        <div style="width: 95px;">*3.2 Municipio: </div>
-                        <div class="underscore"></div>
+                        <div style="width: 120px;">*3.2 Municipio: </div>
+                        <div class="fondo-gris" style="width: inherit;">[%municipio%]</div>
                     </div>
                 </div>
 
                 <div style="margin-bottom: 10px;" class="row">
-                    <div style="width: 85px;">*3.3 Localidad</div>
-                    <div class="underscore"></div>
+                    <div style="width: 90px;">*3.3 Localidad:</div>
+                    <div class="fondo-gris" style="width: inherit;">[%localidad%]</div>
                 </div>
 
                 <div style="margin-bottom: 7px; width: 100%;" class="row">
@@ -370,17 +374,17 @@
                         <div style="width: 100%;" class="row">
                             <div class="row">
                                 <div>Este</div>
-                                <div class="underscore"></div>
+                                <div class="fondo-gris" style="width: 50%; margin: 0px 5px;">[%x%]</div>
                             </div>
 
                             <div class="row">
                                 <div>Norte</div>
-                                <div class="underscore"></div>
+                                <div class="fondo-gris" style="width: 50%; margin: 0px 5px;">[%y%]</div>
                             </div>
 
                             <div class="row">
                                 <div>Zona</div>
-                                <div class="underscore"></div>
+                                <div class="fondo-gris" style="width: 50%; margin: 0px 5px;">[%"zona utm"%]</div>
                             </div>
                         </div>
                     </div>
@@ -388,28 +392,28 @@
                     <div style="width: 30%;" class="row">
                         <div style="width: 80px; margin-left: 10px;">3.5 Altitud: </div>
                         <div class="row">
-                            <div class="underscore"></div>
+                            <div class="fondo-gris" style="width: 50%; margin: 0px 5px;">[%altitud%]</div>
                             <div>m.s.n.m.</div>
                         </div>
                     </div>
                 </div>
 
                 <div style="margin-bottom: 7px;" class="row">
-                    <div class="row alinear-row">
-                        <div style="width: 180px;">3.6 Aguas marinas:</div>
+                    <div class="row alinear-row" style="width: 310px;">
+                        <div style="width: 150px;">3.6 Aguas marinas:</div>
                         <div>
                             <label class="checkbox-label">
-                                <input type="checkbox">
+                                <input type="checkbox" [%case when "aguas marinas" = 'Si' then 'checked' end%]>
                             </label>
                         </div>
                         <div style="margin-left: 2px;" class="row">
                             <div>Especificar:</div>
-                            <div class="underscore"></div>
+                            <div class="fondo-gris" style="width: 120px;">[%"Especificar"%]</div>
                         </div>
                     </div>
 
-                    <div class="row alinear-row">
-                        <div style="width: 180px;">3.7 Aguas interiores:</div>
+                    <div class="row alinear-row" style="width: 315px;">
+                        <div style="width: 170px;">3.7 Aguas interiores:</div>
                         <div>
                             <label class="checkbox-label">
                                 <input type="checkbox">
@@ -417,14 +421,14 @@
                         </div>
                         <div style="margin-left: 2px;" class="row">
                             <div>Especificar: </div>
-                            <div class="underscore"></div>
+                            <div class="fondo-gris" style="width: 120px;">[%"Especificar"%]</div>
                         </div>
                     </div>
 
                     <div class="row alinear-row">
                         <div class="row">
-                            <div style="width: 130px;">3.8 Profundidad:</div>
-                            <div class="underscore"></div>
+                            <div style="width: 180px;">3.8 Profundidad:</div>
+                            <div class="fondo-gris" style="width: inherit;">[%profundidad%]</div>
                         </div>
                     </div>
                 </div>
@@ -433,19 +437,19 @@
                     <div class="row">
                         <div style="width: 40%;" class="row">
                             <div style="width: 80px;">*3.9 Datum:</div>
-                            <div class=""></div>
+                            <div class="">ITRF92-WGS84</div>
                         </div>
 
                         <div style="width: 55%;" class="row">
-                            <div style="width: 800px;">*3.10 Clave de la carta topográfica INEGI 1: 50 000: </div>
-                            <div class="underscore"></div>
+                            <div style="width: 550px;">*3.10 Clave de la carta topográfica INEGI 1: 50 000: </div>
+                            <div class="fondo-gris" style="width: inherit;">[%"carta inegi"%]</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
                     <div style="width: 490px;">*3.11 Especifique el lugar donde se tomaron las coordenadas</div>
-                    <div class="underscore"></div>
+                    <div class="fondo-gris" style="width: inherit;">[%"donde se tomaron coordenadas"%]</div>
                 </div>
             </div>
         </section>
@@ -461,25 +465,25 @@
                         <div style="gap: 3px;" class="row alinear-row">
                             A cierto abierto
                             <label class="checkbox-label">
-                                <input type="checkbox">
+                                <input type="checkbox" [%case when "ubicación general de las evidencias" like '%A cielo abierto%' then 'checked' end%]>
                             </label>
                         </div>
                         <div style="gap: 3px;" class="row alinear-row">
                             Cubierto
                             <label class="checkbox-label">
-                                <input type="checkbox">
+                                <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Cubierto%' then 'checked' end%]>
                             </label>
                         </div>
                         <div style="gap: 3px;" class="row alinear-row">
                             Subacuático
                             <label class="checkbox-label">
-                                <input type="checkbox">
+                                <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Subacuático%' then 'checked' end%]>
                             </label>
                         </div>
                         <div style="gap: 3px;" class="row alinear-row">
                             Intermareal
                             <label class="checkbox-label">
-                                <input type="checkbox">
+                                <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Intermareal%' then 'checked' end%]>
                             </label>
                         </div>
                     </div>
@@ -491,19 +495,19 @@
                             <td style="width: 20%;"><div class="altura-fila">Abanico aluvial</div></td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Abanico aluvial%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 20%;">Desembocadura (barra, delta o estuario)</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Desembocadura (barra, delta o estuario)%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 20%;">Presa</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Presa%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 20%;">Otro (especificar):</td>
@@ -512,40 +516,40 @@
                             <td><div class="altura-fila">Abrigo rocoso o covacha</div></td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Abrigo rocoso o covacha%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Estero, pantano o manglar</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Estero, pantano o manglar%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Planicie (fluvial, lacustre o marina)</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Planicie (fluvial, lacustre o marina)%' then 'checked' end%]>
                                 </label>
                             </td>
-                            <td><div class="underscore"></div></td>
+                            <td><div class="fondo-gris" style="width: inherit; height: 1rem;"></div></td>
                         </tr>
                         <tr>
                             <td><div class="altura-fila">Acantilado, cantil o escarpe</div></td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Acantilado, cantil o escarpe%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Frente rocoso</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Frente rocoso%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Playa y/o orillas lacustres</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Playa y/o orillas lacustres%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -553,19 +557,19 @@
                             <td><div class="altura-fila">Afloramiento rocoso</div></td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Afloramiento rocoso%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Gruta</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Gruta%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Rejollada</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Rejollada%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -573,19 +577,19 @@
                             <td><div class="altura-fila">Altiplanicie</div></td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Altiplanicie%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Grieta</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Grieta%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Río</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Río%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -593,19 +597,19 @@
                             <td><div class="altura-fila">Arroyo</div></td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Arroyo%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Ladera alta</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Ladera alta%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Selva</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Selva%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -613,19 +617,19 @@
                             <td><div class="altura-fila">Barranca</div></td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Barranca%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Lago / laguna</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Lago / laguna%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Sierra o montaña</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Sierra o montaña%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -633,19 +637,19 @@
                             <td><div class="altura-fila">Bosque</div></td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Bosque%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Llanura o pradera</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Llanura o pradera%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Terrazas (fluvial o marina)</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Terrazas (fluvial o marina)%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -653,19 +657,19 @@
                             <td><div class="altura-fila">Cañada</div></td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%BoCañadasque%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Lecho rocoso</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Lecho rocoso%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Tundra</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Tundra%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -673,19 +677,19 @@
                             <td><div class="altura-fila">Cañón</div></td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Cañón%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Manantial</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Manantial%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Valle</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Valle%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -693,19 +697,19 @@
                             <td><div class="altura-fila">Cenote</div></td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Cenote%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Pantano</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Pantano%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Volcán</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Volcán%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -713,19 +717,19 @@
                             <td><div class="altura-fila">Cuenca</div></td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Cuenca%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Pie de monte</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Pie de monte%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Yacimiento paleontológico</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "ubicación general de las evidencias" like '%Yacimiento paleontológico%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -739,7 +743,7 @@
     </div>
     
     <!-- PAGINA 2 -->
-    <div class="page">
+    <div class="page" style="margin-top: 12px;">
         <div class="container">
             <section class="box">
                 <h2 style="margin-bottom: 10px;" class="titulo-seccion">5. DATOS GENERALES DEL SITIO ARQUEOLÓGICO:</h2>
@@ -747,7 +751,7 @@
                 <div>
                     <div style="max-width: 300px;" class="row margin-b">
                         <div style="width: 80%;">*5.1 Área aproximada:</div>
-                        <div class="underscore"></div>
+                        <div class="fondo-gris" style="width: inherit;">[%"area"%]</div>
                         <div>m2.</div>
                     </div>
     
@@ -758,37 +762,37 @@
                                 <td style="width: 12%;">Abandono</td>
                                 <td>
                                     <label class="checkbox-label" style="margin-right: 5px;">
-                                        <input type="checkbox">
+                                         <input type="checkbox" [%case when "inferencias sobre el contexto" like '%Abandono%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td style="width: 12%;">Agrícola</td>
                                 <td>
                                     <label class="checkbox-label" style="margin-right: 5px;">
-                                        <input type="checkbox">
+                                         <input type="checkbox" [%case when "inferencias sobre el contexto" like '%Agrícola%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td style="width: 12%;">Campos de batalla</td>
                                 <td>
                                     <label class="checkbox-label" style="margin-right: 5px;">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "inferencias sobre el contexto" like '%Campos de batalla%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td style="width: 12%;">Estacional</td>
                                 <td>
                                     <label class="checkbox-label" style="margin-right: 5px;">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "inferencias sobre el contexto" like '%Estacional%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td style="width: 12%;">Habitacional</td>
                                 <td>
                                     <label class="checkbox-label" >
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "inferencias sobre el contexto" like '%Habitacional%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td style="width: 12%;">Producción/talleres/preparación de alimentos/manufactura</td>
                                 <td>
                                     <label class="checkbox-label" style="margin-right: 5px;">
-                                        <input type="checkbox">
+                                       <input type="checkbox" [%case when "inferencias sobre el contexto" like '%Producción/talleres/preparación de alimentos/manufactura%' then 'checked' end%]>
                                     </label>
                                 </td>
                             </tr>
@@ -797,37 +801,37 @@
                                 <td>Administrativo</td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "inferencias sobre el contexto" like '%Administrativo%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td>Alojamiento</td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "inferencias sobre el contexto" like '%Alojamiento%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td>Cívico</td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "inferencias sobre el contexto" like '%Cívico%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td>Funerario (entierros/cremaciones)</td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "inferencias sobre el contexto" like '%Funerario (entierros/cremaciones)%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td>Naufragio o pecio</td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "inferencias sobre el contexto" like '%Naufragio o pecio%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td>Ritual/religioso (ofrendas y otros)</td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "inferencias sobre el contexto" like '%Ritual/religioso (ofrendas y otros)%' then 'checked' end%]>
                                     </label>
                                 </td>
                             </tr>
@@ -836,7 +840,7 @@
                                 <td colspan="3">
                                     <div class="row">
                                         <div>Otro:</div>
-                                        <div class="underscore"></div>
+                                        <div class="fondo-gris" style="width: inherit;"></div>
                                     </div>
                                 </td>
                             </tr>
@@ -850,25 +854,25 @@
                                 <td><div style="margin-left: 20px;">Disperso</div></tds>
                                 <td>
                                     <label class="checkbox-label" style="margin: 0 30px 0 10px;">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "Patrón de distribución" like '%Disperso%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td>Nucleado</td>
                                 <td>
                                     <label class="checkbox-label" style="margin: 0 30px 0 10px;">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "Patrón de distribución" like '%Nucleado%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td>Mixto</td>
                                 <td>
                                     <label class="checkbox-label" style="margin: 0 30px 0 10px;">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "Patrón de distribución" like '%Mixto%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td style="width: 150px;">
                                     <div class="row">
                                         <div>Otro:</div>
-                                        <div class="underscore"></div>
+                                        <div class="fondo-gris" style="width: inherit;"></div>
                                     </div>
                                 </td>
                             </tr>
@@ -881,28 +885,28 @@
                                 <td colspan="6">5.4. Cronología tentativa:</td>
                             </tr>
                             <tr>
-                                <td style="width: 120px;"><div class="altura-fila">Anterior a 30000</div></td>
-                                <td>
-                                    <label class="checkbox-label" style="margin-right: 20px;">
-                                        <input type="checkbox">
-                                    </label>
-                                </td>
-                                <td>4500 - 1500 a. n. e.</td>
-                                <td>
-                                    <label class="checkbox-label" style="margin-right: 20px;">
-                                        <input type="checkbox">
-                                    </label>
-                                </td>
-                                <td>200 a.n.e. - 200 d. n. e.</td>
-                                <td>
-                                    <label class="checkbox-label" style="margin-right: 20px;">
-                                        <input type="checkbox">
-                                    </label>
-                                </td>
-                                <td>900 - 1200 d. n. e.</td>
-                                <td>
+                                <td style="width: 18%;"><div class="altura-fila">Anterior a 30000</div></td>
+                                <td style="width: 5%;">
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "Cronología tentativa" like '%Anterior a 30000%' then 'checked' end%]>
+                                    </label>
+                                </td>
+                                <td  style="width: 18%;">4500 - 1500 a. n. e.</td>
+                                <td style="width: 5%;">
+                                    <label class="checkbox-label" >
+                                       <input type="checkbox" [%case when "Cronología tentativa" like '%4500 - 1500 a. n. e.%' then 'checked' end%]>
+                                    </label>
+                                </td>
+                                <td  style="width: 18%;">200 a.n.e. - 200 d. n. e.</td>
+                                <td style="width: 5%;">
+                                    <label class="checkbox-label" >
+                                        <input type="checkbox" [%case when "Cronología tentativa" like '%200 a.n.e. - 200 d. n. e.%' then 'checked' end%]>
+                                    </label>
+                                </td>
+                                <td  style="width: 18%;">900 - 1200 d. n. e.</td>
+                                <td style="width: 5%;">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" [%case when "Cronología tentativa" like '%900 - 1200 d. n. e.%' then 'checked' end%]>
                                     </label>
                                 </td>
                             </tr>
@@ -910,25 +914,25 @@
                                 <td><div class="altura-fila">30000 - 14000 a. n. e.</div></td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "Cronología tentativa" like '%30000 - 14000 a. n. e.%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td>1500 - 800 a. n. e.</td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "Cronología tentativa" like '%1500 - 800 a. n. e.%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td>200 - 650 d. n. e.</td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "Cronología tentativa" like '%200 - 650 d. n. e.%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td>1200 - 1521 d. n. e</td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "Cronología tentativa" like '%1200 - 1521 d. n. e%' then 'checked' end%]>
                                     </label>
                                 </td>
                             </tr>
@@ -936,46 +940,45 @@
                                 <td><div class="altura-fila">14000 - 7000 a. n. e.</div></td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "Cronología tentativa" like '%14000 - 7000 a. n. e.%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td>800 - 200 a. n. e.</td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "Cronología tentativa" like '%800 - 200 a. n. e.%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td>650 - 900 d. n. e.</td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "Cronología tentativa" like '%650 - 900 d. n. e.%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td>Posterior - 1521 d. n. e.</td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "Cronología tentativa" like '%Posterior - 1521 d. n. e.%' then 'checked' end%]>
                                     </label>
                                 </td>
                             </tr>
                             <tr>
                                 <td><div class="altura-fila">7000 - 4500 a. n. e.</div></td>
-                                <td colspan="4">
+                                <td colspan="5">
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "Cronología tentativa" like '%7000 - 4500 a. n. e.%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td colspan="3">
                                     <div>
                                         <table>
                                             <tr>
-                                                <td style="width: 40%;">Indígenas histórico</td>
-                                                <td rowspan="2" style="border-bottom: 1px solid black; width: 60%;">
-                                                    
-                                                </td>
+                                                <td >Indígenas histórico</td>
+                                                <td></td>
                                             </tr>
                                             <tr>
                                                 <td>Fecha estimada</td>
+                                               <td  class="fondo-gris" style="width: inherit; width: 80px"></td> 
                                             </tr>
                                         </table>
                                     </div>
@@ -989,22 +992,22 @@
                                 </td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "prehispanico o historico" like '%Prehispánico%' then 'checked' end%]>
                                     </label>
                                 </td>
-                                <td colspan="6" rowspan="2">
-                                    <div style="width: 550px;">
+                                <td colspan="5" rowspan="2" >
+                                    <!-- <div style="width: 560px;"> -->
                                         <small>
                                             <strong>Nota importante:</strong> En caso de que no se pueda determinar la cronología con precisión elija la opción <strong>prehispánico</strong>. De acuerdo con el artículo 28 de la Ley Federal sobre Monumentos y Zonas Arqueológicos, Artísticos e Históricos y el artículo 18 de su reglamento respectivo, debe especificarse la cronología como parte fundamental de la naturaleza del monumento arqueológico.
                                         </small>
-                                    </div>
+                                    <!-- </div> -->
                                 </td>
                             </tr>
                             <tr>
                                 <td>Histórico</td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                       <input type="checkbox" [%case when "prehispanico o historico" like '%Histórico%' then 'checked' end%]>
                                     </label>
                                 </td>
                             </tr>
@@ -1014,34 +1017,34 @@
                             <tr>
                                 <td style="width: 80px;">Siglos</td>
                                 <td>XVI</td>
-                                <td>
+                                <td style="width: 25px;">
                                     <label class="checkbox-label" style="margin-inline: 8px 25px;">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "siglos" like '%XVI%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td>XVII</td>
-                                <td>
+                                <td style="width: 25px;">
                                     <label class="checkbox-label" style="margin-inline: 8px 25px;">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "siglos" like '%XVII%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td>XVIII</td>
-                                <td>
+                                <td style="width: 25px;">
                                     <label class="checkbox-label" style="margin-inline: 8px 25px;">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "siglos" like '%XVIII%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td>XIX</td>
-                                <td>
+                                <td style="width: 25px;">
                                     <label class="checkbox-label" style="margin-inline: 8px 25px;">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "siglos" like '%XIX%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td>
-                                <td style="width: 400px;">
+                                <td style="width: 400px; padding-left: 25px;">
                                     <div class="row">
-                                        <div style="width: 110px;">Filiación cultural:</div>
-                                        <div class="underscore"></div>
+                                        <div style="width: 150px;">Filiación cultural:</div>
+                                        <div class="fondo-gris"></div>
                                     </div>
                                 </td>
                                 </td>
@@ -1054,7 +1057,7 @@
             <section class="box">
                 <div class="row" style="gap: 2rem;">
                     <h2 style="margin-bottom: 10px;" class="titulo-seccion">*6. COMPONENTES DEL SITIO Y/O ÁREA DE ACTRIVIDAD:</h2>
-                    <div>(Elija todas las opciones de elementos que componen el sitio)</div>
+                    <div style="padding-left: 40px;">(Elija todas las opciones de elementos que componen el sitio)</div>
                 </div>
     
                 <div class="margin-b">
@@ -1069,31 +1072,31 @@
                             </td>
                             <td style="width: 5%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Abrigo rocoso/covacha%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 15%;">Casa acantilado</td>
                             <td style="width: 5%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Casa acantilado%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 15%;">Escultura</td>
                             <td style="width: 5%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Escultura%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 12%;">Muro</td>
                             <td style="width: 5%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Muro%' then 'checked' end%]>
                                 </label>
                             </td>
-                            <td style="width: 15%;">Tinaja</td>
+                            <td style="width: 15%;">Trampa para pesca o caza</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Trampa para pesca o caza%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -1104,66 +1107,66 @@
                             </td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Acueducto%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Casco de hacienda</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Casco de hacienda%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Estela</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Estela%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Nicho</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Nicho%' then 'checked' end%]>
                                 </label>
                             </td>
-                            <td>Trampa para pesca o caza</td>
+                            <td>Trinchera</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Trinchera%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
 
                         <tr>
                             <td>
-                                <div class="altura-fila">Afloramiento rocoso con o sin fósiles</div>
+                                <div class="altura-fila">Afloramiento rocoso con<br>o sin fósiles</div>
                             </td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Afloramiento rocoso con o sin fósiles%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Casa semi subterránea</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Casa semi subterránea%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Estructura</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Estructura%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Nivelación</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Nivelación%' then 'checked' end%]>
                                 </label>
                             </td>
-                            <td>Trinchera</td>
+                            <td>Tronco cónica</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Tronco cónica%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -1174,31 +1177,31 @@
                             </td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Alineamiento%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Cimiento</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Cimiento%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Estructura piramidal</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Estructura piramidal%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Patio o plaza</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Patio o plaza%' then 'checked' end%]>
                                 </label>
                             </td>
-                            <td>Tronco cónica</td>
+                            <td>Tumba</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Tumba%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -1209,31 +1212,31 @@
                             </td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Almacén%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Cista</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Cista%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Faro</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Faro%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Pila de roca</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Pila de roca%' then 'checked' end%]>
                                 </label>
                             </td>
-                            <td>Tumba</td>
+                            <td>Ramada</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Ramada%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -1244,66 +1247,66 @@
                             </td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Altares-adoratorio%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Cisterna o chultún</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Cisterna o chultún%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Fogón-hogar</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Fogón-hogar%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Piso</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Piso%' then 'checked' end%]>
                                 </label>
                             </td>
-                            <td>Ramada</td>
+                            <td>Recinto</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Recinto%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
 
                         <tr>
                             <td>
-                                <div class="altura-fila">Andador, camino o calzada, sendero</div>
+                                <div class="altura-fila">Andador, camino o<br>calzada, sendero</div>
                             </td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Andador, camino o calzada, sendero%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Corralito</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Corralito%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Frente rocoso</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Frente rocoso%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Plataforma</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Plataforma%' then 'checked' end%]>
                                 </label>
                             </td>
-                            <td>Recinto</td>
+                            <td>Yacimiento y/o mina especificar</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Yacimiento y/o mina especificar%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -1314,33 +1317,28 @@
                             </td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Área limpiada o despejada%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Covacha</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Covacha%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Horno</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Horno%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Pozo de agua</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Pozo de agua%' then 'checked' end%]>
                                 </label>
                             </td>
-                            <td>Yacimiento y/o mina especificar</td>
-                            <td>
-                                <label class="checkbox-label">
-                                    <input type="checkbox">
-                                </label>
-                            </td>
+                            <td colspan="2"><div class="underscore"></div></td>
                         </tr>
 
                         <tr>
@@ -1349,28 +1347,27 @@
                             </td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Astillero%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Cuarto</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Cuarto%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Hoyo de poste</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Hoyo de poste%' then 'checked' end%]>
                                 </label>
                             </td>
-                            <td>Pozo de agua</td>
+                            <td>Presa</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Presa%' then 'checked' end%]>
                                 </label>
                             </td>
-                            <td colspan="2"><div class="underscore"></div></td>
                         </tr>
 
                         <tr>
@@ -1379,25 +1376,25 @@
                             </td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Atalaya%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Cueva o cavidad</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Cueva o cavidad%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Maqueta</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Maqueta%' then 'checked' end%]>
                                 </label>
                             </td>
-                            <td>Presa</td>
+                            <td>Roca picoteada</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Roca picoteada%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -1408,25 +1405,25 @@
                             </td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Basurero%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Chinampa</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Chinampa%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Marcador astronómico</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Marcador astronómico%' then 'checked' end%]>
                                 </label>
                             </td>
-                            <td>Roca picoteada</td>
+                            <td>Sendero</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Sendero%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -1437,54 +1434,54 @@
                             </td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Campamento%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Edificio</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Edificio%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Montículo</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Montículo%' then 'checked' end%]>
                                 </label>
                             </td>
-                            <td>Sendero</td>
+                            <td>Tanque</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Tanque%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
 
                         <tr>
                             <td>
-                                <div class="altura-fila">Campos elevados o camellones</div>
+                                <div class="altura-fila">Campos elevados<br>o camellones</div>
                             </td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Campos elevados o camellones%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Elemento de represa</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Elemento de represa%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Mortero y/o metate fijo</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Mortero y/o metate fijo%' then 'checked' end%]>
                                 </label>
                             </td>
-                            <td>Tanque</td>
+                            <td>Temazcal</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Temazcal%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -1495,25 +1492,25 @@
                             </td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Canal o asequia%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Embarcadero</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Embarcadero%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Muelle</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Muelle%' then 'checked' end%]>
                                 </label>
                             </td>
-                            <td>Temazcal</td>
+                            <td>Terraza</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Terraza%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -1524,25 +1521,25 @@
                             </td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Canchas o juegos de pelota%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Escalón</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Escalón%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Muralla</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Muralla%' then 'checked' end%]>
                                 </label>
                             </td>
-                            <td>Terraza</td>
+                            <td>Tinaja</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "componentes de elementos inmuebles" like '%Tinaja%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -1555,7 +1552,7 @@
                         <div style="width: 30%;">
                             <div class="row" >
                                 <div style="width: 50%;">Número aprox.</div>
-                                <div class="underscore"></div>
+                                <div class="fondo-gris">[%num_materiales%]</div>
                             </div>
                         </div>
                     </div>
@@ -1567,43 +1564,43 @@
                             </td>
                             <td style="width: 5%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "concentracion de materiales" like '%Asta%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 7%;">Cerámica</td>
                             <td style="width: 5%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "concentracion de materiales" like '%Cerámica%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 10.5%;">Fibras vegetales</td>
                             <td style="width: 5%;">
                                 <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "concentracion de materiales" like '%Fibras vegetales%' then 'checked' end%]>
                                     </label>
                             </td>
                             <td style="width: 8.5%;">Invertebrado</td>
                             <td style="width: 5%;">
                                 <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "concentracion de materiales" like '%Invertebrado%' then 'checked' end%]>
                                     </label>
                             </td>
                             <td style="width: 9%;">Metal</td>
                             <td style="width: 5%;">
                                 <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "concentracion de materiales" like '%Metal%' then 'checked' end%]>
                                     </label>
                             </td>
                             <td style="width: 15%;">Resina</td>
                             <td style="width: 5%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "concentracion de materiales" like '%Resina%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 6%;">Vidrio</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "concentracion de materiales" like '%Vidrio%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -1614,37 +1611,37 @@
                             </td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "concentracion de materiales" like '%Cabellos, plumas%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Cestería</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "concentracion de materiales" like '%Cestería%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Fósil</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "concentracion de materiales" like '%Fósil%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Lítica pulida</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "concentracion de materiales" like '%Lítica pulida%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Mineral</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "concentracion de materiales" like '%Mineral%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Rocas con evidencia de exposición de fuego</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "concentracion de materiales" like '%Rocas con evidencia de exposición de fuego%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Otro:</td>
@@ -1656,40 +1653,40 @@
                             </td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "concentracion de materiales" like '%Carbón%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Concha</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "concentracion de materiales" like '%Concha%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Hueso animal</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "concentracion de materiales" like '%Hueso animal%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Lítica tallada</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "concentracion de materiales" like '%ítica tallada%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Momificación natural</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "concentracion de materiales" like '%Momificación natural%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Textil</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "concentracion de materiales" like '%Textil%' then 'checked' end%]>
                                 </label>
                             </td>
-                            <td colspan="2"><div class="underscore"></div></td>
+                            <td colspan="2"><div class="fondo-gris" style="height: 14px;"></div></td>
                         </tr>
     
                         <tr>
@@ -1698,37 +1695,37 @@
                             </td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "concentracion de materiales" like '%Ceniza%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Cuero</td>
                             <td>
                                 <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "concentracion de materiales" like '%Cuero%' then 'checked' end%]>
                                     </label>
                             </td>
                             <td>Hueso humano</td>
                             <td>
                                 <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "concentracion de materiales" like '%Hueso humano%' then 'checked' end%]>
                                     </label>
                             </td>
                             <td>Madera</td>
                             <td>
                                 <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "concentracion de materiales" like '%Madera%' then 'checked' end%]>
                                     </label>
                             </td>
                             <td>Plantas</td>
                             <td>
                                 <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "concentracion de materiales" like '%Plantas%' then 'checked' end%]>
                                     </label>
                             </td>
                             <td>Vertebrado</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "concentracion de materiales" like '%Vertebrado%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -1739,7 +1736,7 @@
     </div>
     
     <!-- PAGINA 3 -->
-    <div class="page">
+    <div class="page" style="margin-top: 10px;">
         <div class="container">
             <section class="box">
                 <div class="margin-b">
@@ -1748,7 +1745,7 @@
                         <div style="width: 30%;">
                             <div class="row" >
                                 <div style="width: 50%;">Número aprox.</div>
-                                <div class="underscore"></div>
+                                <div class="fondo-gris" style="height: 14px;">[%num_concheros%]</div>
                             </div>
                         </div>
                     </div>
@@ -1758,37 +1755,37 @@
                             <td style="width: 12%;">Bivalvos</td>
                             <td style="width: 6%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "concheros" like '%Bivalvos%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 12%;">Gasterópodos</td>
                             <td style="width: 6%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "concheros" like '%Gasterópodos%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 12%;">Univalvos</td>
                             <td style="width: 6%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "concheros" like '%Univalvos%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 12%;">Restos óseos de: Mamífero terrestre</td>
                             <td style="width: 6%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "concheros" like '%Restos óseos de: Mamífero terrestre%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 12%;">Mamífero marino</td>
                             <td style="width: 6%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "concheros" like '%Mamífero marino%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 6%;">Peces</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "concheros" like '%Peces%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -1797,13 +1794,13 @@
                             <td colspan="3">Lentículas de carbón o ceniza</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "concheros" like '%Lentículas de carbón o ceniza%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td colspan="3">Rocas con exposición térmica</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "concheros" like '%Rocas con exposición térmica%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -1817,13 +1814,13 @@
                             <td style="width: 150px;">Registrado a simple vista</td>
                             <td style="width: 100px;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "manifestacion grafico rupestre" like '%Registrado a simple vista%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 270px;">Registrado a través de herramientas tecnológicas</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "manifestacion grafico rupestre" like '%Registrado a través de herramientas tecnológicas%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -1841,7 +1838,7 @@
                             <td style="width: 80px;">Figurativos</td>
                             <td>
                                 <label class="checkbox-label" style="width: 40px;">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "pintura mofologia" like '%Figurativos%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -1849,7 +1846,7 @@
                             <td>No figurativos</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "pintura mofologia" like '%No figurativos%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -1857,19 +1854,19 @@
                             <td style="width: 80px;">Monocromo</td>
                             <td>
                                 <label class="checkbox-label" style="width: 50px;">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "pintura mofologia" like '%Monocromo%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 60px;">Bicromo</td>
                             <td>
                                 <label class="checkbox-label" style="width: 50px;">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "pintura mofologia" like '%Bicromo%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 70px;">Policromo</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "pintura mofologia" like '%Policromo%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -1882,7 +1879,7 @@
                     <div style="width: 300px;">
                         <div class="row">
                             <div>Especificar: </div>
-                            <div class="underscore"></div>
+                            <div class="fondo-gris" style="height: 14px;"></div>
                         </div>
                     </div>
                 </div>
@@ -1895,43 +1892,43 @@
                             <td style="width: 7%;">Delineado</td>
                             <td style="width: 6%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tecnica de pintura" like '%Delineado%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 9%;">Tinta plana</td>
                             <td style="width: 6%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tecnica de pintura" like '%Tinta plana%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 18%;">Contorno abierto/cerrado</td>
                             <td style="width: 6%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tecnica de pintura" like '%Contorno abierto/cerrado%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 6%;">Relleno</td>
                             <td style="width: 6%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tecnica de pintura" like '%Relleno%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 7%;">Positivo</td>
                             <td style="width: 6%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tecnica de pintura" like '%Positivo%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 7%;">Negativo</td>
                             <td style="width: 6%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tecnica de pintura" like '%Negativo%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 7%;">Estarcido</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tecnica de pintura" like '%Estarcido%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -1940,43 +1937,43 @@
 
                 <div class="margin-b">
                     <div class="bold margin-b">6.4.2 Petrograbado:</div>
-                    <div class="margin-b">Técnica</div>
+                    <div class="margin-b" style="margin-bottom: 1px;">Técnica</div>
                     <table>
                         <tr>
                             <td style="width: 9%;">Percusión</td>
                             <td style="width: 9%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tecnica de petrograbado" like '%Percusión%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 7%;">Picoteo</td>
                             <td style="width: 10%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tecnica de petrograbado" like '%Picoteo%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 7%;">Incisión</td>
                             <td style="width: 10%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tecnica de petrograbado" like '%Incisión%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 8%;">Abrasión</td>
                             <td style="width: 10%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tecnica de petrograbado" like '%Abrasión%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 9%;">Positivo</td>
                             <td style="width: 10%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tecnica de petrograbado" like '%Positivo%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 8%;">Negativo</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tecnica de petrograbado" like '%Negativo%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -1985,31 +1982,31 @@
 
                 <div class="margin-b">
                     <div class="bold margin-b">6.4.3 Geoglífo:</div>
-                    <div class="margin-b">Técnica</div>
+                    <div class="margin-b" style="margin-bottom: 1px;">Técnica</div>
                     <table>
                         <tr>
                             <td style="width: 20%;">Acumulación de rocas</td>
                             <td style="width: 5%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tecnica de geoglifo" like '%Acumulación de rocas%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 20%;">Limpieza de terreno</td>
                             <td style="width: 5%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tecnica de geoglifo" like '%Limpieza de terreno%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 20%;">Acumulación y limpieza de terreno</td>
                             <td style="width: 5%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tecnica de geoglifo" like '%Acumulación y limpieza de terreno%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 10%;">Bajo relieve</td>
                             <td style="width: 5%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tecnica de geoglifo" like '%Bajo relieve%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -2018,20 +2015,20 @@
 
                 <div class="margin-b">
                     <div class="bold margin-b">6.4.4 Emplazamientos específico de los motivos:</div>
-                    <div class="underscore"></div>
+                    <div class="underscore" style="height: 3rem;">[%"emplazamiento_especifico"%]</div>
                 </div>
 
-                <div class="margin-b">
+                <div class="margin-b" style="margin-bottom: 1px;">
                     <div class="bold margin-b">6.4.5 Observaciones:</div>
-                    <div class="underscore"></div>
+                    <div class="underscore"  style="height: 3rem;">[%"observaciones_rupestre"%]</div>
                 </div>
             </section>
     
             <section class="box">
                 <div class="margin-b">
-                    <h2 style="margin-bottom: 10px;" class="titulo-seccion">7. USO DE SUELO:</h2>
+                    <h2 style="margin-bottom: 3px;" class="titulo-seccion">7. USO DE SUELO:</h2>
 
-                    <div>
+                    <div style="height: 20px;">
                         <table>
                             <tr>
                                 <td style="width: 120px;">
@@ -2039,14 +2036,14 @@
                                 </td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "uso de suelo" like '%Área natural protegid%' then 'checked' end%]>
                                     </label>
                                 </td>
                             </tr>
                         </table>
                     </div>
 
-                    <div>
+                    <div style="margin-top: 1px;">
                         <table>
                             <tr>
                                 <td style="width: 40px;">
@@ -2054,13 +2051,13 @@
                                 </td>
                                 <td style="width: 40px;">
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "uso de suelo" like '%Rural%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td style="width: 50px;">Urbano</td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "uso de suelo" like '%Urbano%' then 'checked' end%]>
                                     </label>
                                 </td>
                             </tr>
@@ -2069,76 +2066,76 @@
 
                     <div>
                         <table>
-                            <tr>
-                                <td style="width: 150px;">
-                                    <div class="altura-fila">Agrícola</div>
+                            <tr style="height: 20px;">
+                                <td style="width: 150px; ">
+                                    <div >Agrícola</div>
                                 </td>
                                 <td style="width: 100px;">
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "uso de suelo" like '%Agrícola%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td style="width: 90px;">Ganadero</td>
                                 <td style="width: 100px;">
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "uso de suelo" like '%Ganadero%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td style="width: 200px;">
                                     <div class="row" >
                                         <div style="width: 20%;">Otro:</div>
-                                        <div class="underscore"></div>
+                                        <div class="fondo-gris" style="height: 14px;"></div>
                                     </div>
                                 </td>
                             </tr>
 
-                            <tr>
+                            <tr style="height: 20px;">
                                 <td>
-                                    <div class="altura-fila">Banco de material</div>
+                                    <div>Banco de material</div>
                                 </td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "uso de suelo" like '%Banco de material%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td>Habitacional</td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "uso de suelo" like '%Habitacional%' then 'checked' end%]>
                                     </label>
                                 </td>
                             </tr>
 
-                            <tr>
+                            <tr style="height: 20px;">
                                 <td>
-                                    <div class="altura-fila">Comercial o de servicios</div>
+                                    <div >Comercial o de servicios</div>
                                 </td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "uso de suelo" like '%Comercial o de servicios%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td>Industrial</td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "uso de suelo" like '%Industrial%' then 'checked' end%]>
                                     </label>
                                 </td>
                             </tr>
 
-                            <tr>
+                            <tr style="height: 20px;">
                                 <td>
-                                    <div class="altura-fila">Forestal</div>
+                                    <div>Forestal</div>
                                 </td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "uso de suelo" like '%Forestal%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td>Turístico</td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "uso de suelo" like '%Turístico%' then 'checked' end%]>
                                     </label>
                                 </td>
                             </tr>
@@ -2157,13 +2154,13 @@
                             <td style="width: 90px;">Persona Física</td>
                             <td style="width: 70px;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "regimen de propiedad" like '%Persona Física%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 90px;">Persona Moral</td>
                             <td style="width: 70px;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "regimen de propiedad" like '%Persona Moral%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -2175,13 +2172,13 @@
                             <td>Comunal</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                   <input type="checkbox" [%case when "regimen de propiedad" like '%Comunal%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Ejidal</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "regimen de propiedad" like '%Ejidal%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -2193,25 +2190,25 @@
                             <td>Estatal</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "regimen de propiedad" like '%Estatal%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Federal</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "regimen de propiedad" like '%Federal%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 70px;">Municipal</td>
                             <td style="width: 70px;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "regimen de propiedad" like '%Municipal%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 70px;">Nacional</td>
                             <td style="width: 70px;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "regimen de propiedad" like '%Nacional%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -2222,37 +2219,37 @@
             <section class="box">
                 <h2 class="titulo-seccion margin-b">9. ESTADO DE CONSERVACIÓN DEL SITIO:</h2>
 
-                <div class="margin-b">
+                <div class="margin-b" style="margin-bottom: 1px;">
                     <table>
                         <tr>
                             <td style="width: 10%;">Arrasado</td>
                             <td style="width: 12%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                     <input type="checkbox" [%case when "estado de conservacion" like '%Arrasado%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 10%;">Bueno</td>
                             <td style="width: 12%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "estado de conservacion" like '%Bueno%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 12%;">Excepcional</td>
                             <td style="width: 12%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "estado de conservacion" like '%Excepcional%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 7%;">Malo</td>
                             <td style="width: 12%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "estado de conservacion" like '%Malo%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 11%;">Regular</td>
                             <td style="width: 12%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "estado de conservacion" like '%Regular%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -2266,19 +2263,19 @@
                             <td style="width: 60px;">Antiguo</td>
                             <td style="width: 80px;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "saqueo" like '%Antiguo%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 130px;">Reciente ocasional</td>
                             <td style="width: 80px;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "saqueo" like '%>Reciente ocasional%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 180px;">Reciente sistemático profesional</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "saqueo" like '%Reciente sistemático profesional%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -2298,23 +2295,23 @@
                             </td>
                             <td style="width: 80px;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                     <input type="checkbox" [%case when "grado de deterioro" like '%Bajo%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 40px;">Medio</td>
                             <td style="width: 80px;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "grado de deterioro" like '%Medio%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 30px;">Alto</td>
                             <td style="width: 80px;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "grado de deterioro" like '%Alto%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td style="width: 25px;">Total: </td>
-                            <td style="width: 100px;"><div class="underscore">50</div></td>
+                            <td style="width: 100px;"><div class="fondo-gris">[%"total"%]</div></td>
                         </tr>
                     </table>
                 </div>
@@ -2334,36 +2331,36 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>
+                            <td style="width: 15%;">
                                 <div class="altura-fila">Corrosión</div>
                             </td>
-                            <td style="width: 40px;">
+                            <td style="width: 5%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tipo_deterioro" like '%Corrosión%' then 'checked' end%]>
                                 </label>
                             </td>
-                            <td>Deslaminación</td>
-                            <td style="width: 40px;">
+                            <td style="width: 15%;">Deslaminación</td>
+                            <td style="width: 5%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tipo_deterioro" like '%Deslaminación%' then 'checked' end%]>
                                 </label>
                             </td>
-                            <td>Fisura/grieta</td>
-                            <td style="width: 40px;">
+                            <td style="width: 15%;">Fisura/grieta</td>
+                            <td style="width: 5%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tipo_deterioro" like '%Fisura/grieta%' then 'checked' end%]>
                                 </label>
                             </td>
-                            <td>Manchas y/o escurrimientos</td>
-                            <td style="width: 40px;">
+                           <td style="width: 15%;">Manchas y/o escurrimientos</td>
+                            <td style="width: 5%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tipo_deterioro" like '%Manchas y/o escurrimientos%' then 'checked' end%]>
                                 </label>
                             </td>
-                            <td>Plantas superiores</td>
-                            <td style="width: 40px;">
+                            <td style="width: 15%;">Plantas superiores</td>
+                            <td style="width: 5%;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tipo_deterioro" like '%Plantas superiores%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -2374,31 +2371,31 @@
                             </td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tipo_deterioro" like '%Concreción%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Disgregación</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tipo_deterioro" like '%Disgregación%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Fractura</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tipo_deterioro" like '%Fractura%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Microorganismos</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tipo_deterioro" like '%Microorganismos%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Sales</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tipo_deterioro" like '%Sales%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -2409,25 +2406,25 @@
                             </td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tipo_deterioro" like '%Depósitos%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Exfoliación</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tipo_deterioro" like '%Exfoliación%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Graffiti</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tipo_deterioro" like '%Graffiti%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Pérdida de soportes/faltantes</td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "tipo_deterioro" like '%Pérdida de soportes/faltantes%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -2440,22 +2437,22 @@
                             <td style="width: 300px;">
                                 <div class="altura-fila">9.3. Acciones de protección que se requieren:</div>
                             </td>
-                            <td>Gestión social</td>
+                            <td style="width: 100px;">Gestión social</td>
                             <td style="width: 40px;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "acciones de proteccion que se requieren" like '%Gestión social%' then 'checked' end%]>
                                 </label>
                             </td>
-                            <td>Mantenimiento</td>
+                            <td style="width: 100px;">Mantenimiento</td>
                             <td style="width: 40px;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                   <input type="checkbox" [%case when "acciones de proteccion que se requieren" like '%Mantenimiento%' then 'checked' end%]>
                                 </label>
                             </td>
-                            <td>Restauración/conservación</td>
+                            <td style="width: 150px;">Restauración/conservación</td>
                             <td style="width: 40px;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "acciones de proteccion que se requieren" like '%Restauración/conservación%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -2471,33 +2468,32 @@
                             <td>Didáctico</td>
                             <td style="width: 40px;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "valor del sitio" like '%Didáctico%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Investigación</td>
                             <td style="width: 40px;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "valor del sitio" like '%Investigación%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Representativo del área</td>
                             <td style="width: 40px;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "valor del sitio" like '%Representativo del área%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
+                    </table>
+                    <table style="width: 830px;">
                         <tr>
-                            <td colspan="3">Otro:</td>
-                            <td colspan="">Justificación</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3" style="min-height: 40px;">
-                                <div class="underscore"></div>
+                            <td style="width: 5%;">Otro:</td>
+                            <td style="width: 35%;">
+                                <div class="fondo-gris" style="height: 3rem; width: 240px;"></div>
                             </td>
-                            <td></td>
-                            <td colspan="3">
-                                <div class="underscore"></div>
+                            <td style="width: 5%;">Justificación</td>
+                            <td style="width: inherit;">
+                                <div class="fondo-gris" style="height: 3rem; width: 350px;"></div>
                             </td>
                         </tr>
                     </table>
@@ -2516,31 +2512,31 @@
                             </td>
                             <td style="width: 40px;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "Plazo de destrucción potencial del sitio" like '%Inmediato%' then 'checked' end%]>
                                 </label>
                             </td>
-                            <td>Corto plazo (1-3 años)</td>
+                            <td>Corto plazo<br>(1-3 años)</td>
                             <td style="width: 40px;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "Plazo de destrucción potencial del sitio" like '%Corto plazo (1-3 años)%' then 'checked' end%]>
                                 </label>
                             </td>
-                            <td>Mediano plazo (4-10 años)</td>
+                            <td>Mediano plazo<br>(4-10 años)</td>
                             <td style="width: 40px;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "Plazo de destrucción potencial del sitio" like '%Mediano plazo (4-10 años)%' then 'checked' end%]>
                                 </label>
                             </td>
-                            <td>Largo plazo (10 años o más)</td>
+                            <td>Largo plazo<br>(10 años o más)</td>
                             <td style="width: 40px;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "Plazo de destrucción potencial del sitio" like '%Largo plazo (10 años o más)%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Indefinido</td>
                             <td style="width: 40px;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "Plazo de destrucción potencial del sitio" like '%Indefinido%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -2549,24 +2545,114 @@
 
                 <div>
                     <div class="margin-b"> 9.6 Factores de riesgo</div>
-                    <table>
+                    <table style="width: 800px">
                         <tr>
                             <td colspan="4">
                                 <div class="altura-fila">a) Antropogénicos:</div>
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 120px;">
+                            <td style="width: 15%;">
                                 <div class="altura-fila">Actividades agrícolas</div>
+                            </td>
+                            <td style="width: 10%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" [%case when "factores de riesgo antropo" like '%Actividades agrícolas%' then 'checked' end%]>
+                                </label>
+                            </td>
+                            <td style="width: 15%;">
+                                <div class="altura-fila">Delincuencia<br>(especificar)</div>
+                            </td>
+                            <td style="width: 10%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" [%case when "factores de riesgo antropo" like '%Delincuencia%' then 'checked' end%]>
+                                </label>
+                            </td>
+                            <td style="width: 15%;">
+                                <div class="altura-fila">Nivelación de terreno</div>
+                            </td>
+                            <td style="width: 10%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" [%case when "factores de riesgo antropo" like '%Nivelación de terreno%' then 'checked' end%]>
+                                </label>
+                            </td>
+                            <td style="width: 15%;">
+                                <div class="altura-fila">Vandalismo</div>
+                            </td>
+                            <td style="width: 10%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" [%case when "factores de riesgo antropo" like '%Vandalismo%' then 'checked' end%]>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td colspan="2" class="fondo-gris" style=" height: 1rem;"></td>
+                            <td>
+                                <div class="altura-fila">Pesca</div>
                             </td>
                             <td>
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "factores de riesgo antropo" like '%Pesca%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
                     </table>
-
+                    <table style="width: 800px">
+                        <tr>
+                            <td style="width: 23%;">
+                                <div class="altura-fila">Actividades socio organizativas<br>(rituales,turismo,mítines)</div>
+                            </td>
+                            <td style="width: 10%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" [%case when "factores de riesgo antropo" like '%Pesca%' then 'checked' end%]>
+                                </label>
+                            </td>
+                            <td style="width: 20%;">
+                                <div class="altura-fila">Extracción de piedra</div>
+                            </td>
+                            <td style="width: 10%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" [%case when "factores de riesgo antropo" like '%Extracción de piedra%' then 'checked' end%]>
+                                </label>
+                            </td>
+                            <td style="width: 35%;">
+                                <div class="altura-fila">Proyecto de construcción privado</div>
+                            </td>
+                            <td style="width: 13%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" [%case when "factores de riesgo antropo" like '%Proyecto de construcción privado%' then 'checked' end%]>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 23%;">
+                                <div class="altura-fila">Contaminación ambiental</div>
+                            </td>
+                            <td style="width: 13%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" [%case when "factores de riesgo antropo" like '%Contaminación ambiental%' then 'checked' end%]>
+                                </label>
+                            </td>
+                            <td style="width: 23%;">
+                                <div class="altura-fila">Incendio</div>
+                            </td>
+                            <td style="width: 13%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" [%case when "factores de riesgo antropo" like '%Incendio%' then 'checked' end%]>
+                                </label>
+                            </td>
+                            <td style="width: 23%;">
+                                <div class="altura-fila">Proyecto de infraestructura gubernamental</div>
+                            </td>
+                            <td style="width: 13%;">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" [%case when "factores de riesgo antropo" like '%Proyecto de infraestructura gubernamental%' then 'checked' end%]>
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
                     <table>
                         <tr>
                             <td style="width: 100px;">
@@ -2575,25 +2661,25 @@
                             <td>Bacterias</td>
                             <td style="width: 40px;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "factores biologicos" like '%Bacterias%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Fauna</td>
                             <td style="width: 40px;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "factores biologicos" like '%Fauna%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Flora</td>
                             <td style="width: 40px;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "factores biologicos" like '%Flora%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Hongos</td>
                             <td style="width: 40px;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "factores biologicos" like '%Hongos%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -2609,19 +2695,19 @@
                             <td>Derrumbes</td>
                             <td style="width: 40px;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "factores geologicos" like '%Derrumbes%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Sismicidad</td>
                             <td style="width: 40px;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "factores geologicos" like '%Sismicidad%' then 'checked' end%]>
                                 </label>
                             </td>
                             <td>Vulcanismo</td>
                             <td style="width: 40px;">
                                 <label class="checkbox-label">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [%case when "factores geologicos" like '%Vulcanismo%' then 'checked' end%]>
                                 </label>
                             </td>
                         </tr>
@@ -2636,31 +2722,31 @@
                                 <td>Ciclones o huracanes</td>
                                 <td style="width: 40px;">
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "factores meteorologicos" like '%Ciclones o huracanes%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td>Erosión por viento</td>
                                 <td style="width: 40px;">
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "factores meteorologicos" like '%Erosión por viento%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td>Granizadas</td>
                                 <td style="width: 40px;">
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "factores meteorologicos" like '%Granizadas%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td>Inundación</td>
                                 <td style="width: 40px;">
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "factores meteorologicos" like '%Inundación%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td>Nevadas o heladas</td>
                                 <td style="width: 40px;">
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "factores meteorologicos" like '%Nevadas o heladas%' then 'checked' end%]>
                                     </label>
                                 </td>
                             </tr>
@@ -2673,31 +2759,31 @@
                                 </td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "factores meteorologicos" like '%Erosión por agua%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td>Filtración</td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "factores meteorologicos" like '%Filtración%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td>Incendio</td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "factores meteorologicos" like '%Incendio%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td>Lluvia</td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "factores meteorologicos" like '%Lluvia%' then 'checked' end%]>
                                     </label>
                                 </td>
                                 <td>Temperatura</td>
                                 <td>
                                     <label class="checkbox-label">
-                                        <input type="checkbox">
+                                        <input type="checkbox" [%case when "factores meteorologicos" like '%Temperatura%' then 'checked' end%]>
                                     </label>
                                 </td>
                             </tr>
@@ -2706,34 +2792,34 @@
                 </div>
             </section>
     
-            <section class="box recuadro">
+            <section class="box recuadro" style="height: 400px;">
                 <h2 style="margin-bottom: 10px;" class="titulo-seccion">10. OBSERVACIONES GENERALES DEL SITIO:</h2>
 
-                <div></div>
+                <div>[%"observaciones generales del sitio"%]</div>
             </section>
         </div>
     </div>
     
     <!-- PAGINA 5 -->
-    <div class="page">
+    <div class="page" style="margin-top: 10px;">
         <div class="container">
             <section class="box" style="height: 550px;">
                 <h2 style="margin-bottom: 10px;" class="titulo-seccion">11. BIBLIOGRAFÍA RELEVANTE DEL SITIO:</h2>
 
-                <div></div>
+                <div>[%"bibliografía relevante del sitio"%]</div>
             </section>
     
             <section class="recuadro" style="width: 100%; display: flex; gap: 2rem;">
                 <div class="box w-full">
                     <div>FOTOGRAFÍA</div>
                     <div class="image-container">
-                        <img src="tu-imagen.jpg" alt="Imagen">
+                       <img src="file:///C:/Users/THINKPAD/Desktop/[%"foto_1"%]" alt="Imagen">
                     </div>
                 </div>
                 <div class="box w-full">
                     <div>FOTOGRAFÍA</div>
                     <div class="image-container">
-                        <img src="tu-imagen.jpg" alt="Imagen">
+                        <img src="file:///C:/Users/THINKPAD/Desktop/[%"foto_1"%]" alt="Imagen">
                     </div>
                 </div>
             </section>
@@ -2741,19 +2827,19 @@
     </div>
     
     <!-- PAGINA 6 -->
-    <div class="page">
+    <div class="page" style="margin-top: 10px;">
         <div class="container">
             <section class="recuadro" style="width: 100%; display: flex; gap: 2rem;">
                 <div class="box w-full">
                     <div>FOTOGRAFÍA</div>
                     <div class="image-container">
-                        <img src="tu-imagen.jpg" alt="Imagen">
+                        <img src="file:///C:/Users/THINKPAD/Desktop/[%"foto_1"%]" alt="Imagen">
                     </div>
                 </div>
                 <div class="box w-full">
                     <div>FOTOGRAFÍA</div>
                     <div class="image-container">
-                        <img src="tu-imagen.jpg" alt="Imagen">
+                        <img src="file:///C:/Users/THINKPAD/Desktop/[%"foto_1"%]" alt="Imagen">
                     </div>
                 </div>
             </section>
@@ -2761,8 +2847,8 @@
             <section class="box" style="height: 550px;">
                 <div>CROQUIS O PLANO</div>
 
-                <div class="image-container-wide">
-                    <img src="tu-imagen.jpg" alt="Imagen">
+                <div class="image-container img" style="height: 450px; margin-top: 30px;">
+                    <img src="file:///C:/Users/THINKPAD/Desktop/photo_2025-05-20_12-57-42.jpg" alt="Imagen">
                 </div>
             </section>
         </div>
@@ -2777,13 +2863,13 @@
                 <div class="box w-full">
                     <div class="bold">FOTOGRAFÍA 1</div>
                     <div class="image-container">
-                        <img src="tu-imagen.jpg" alt="Imagen">
+                        <img src="file:///C:/Users/THINKPAD/Desktop/[%"foto_1"%]" alt="Imagen">
                     </div>
                 </div>
                 <div class="box w-full">
                     <div class="bold">FOTOGRAFÍA 2</div>
                     <div class="image-container">
-                        <img src="tu-imagen.jpg" alt="Imagen">
+                        <img src="file:///C:/Users/THINKPAD/Desktop/[%"foto_1"%]" alt="Imagen">
                     </div>
                 </div>
             </section>
@@ -2792,13 +2878,13 @@
                 <div class="box w-full">
                     <div class="bold">IMAGEN DE GOOGLE EARTH (Vista regional)</div>
                     <div class="image-container">
-                        <img src="tu-imagen.jpg" alt="Imagen">
+                        <img src="file:///C:/Users/THINKPAD/Desktop/[%"foto_1"%]" alt="Imagen">
                     </div>
                 </div>
                 <div class="box w-full">
                     <div class="bold">IMAGEN DE GOOGLE EARTH (Vista local)</div>
                     <div class="image-container">
-                        <img src="tu-imagen.jpg" alt="Imagen">
+                        <img src="file:///C:/Users/THINKPAD/Desktop/[%"foto_1"%]" alt="Imagen">
                     </div>
                 </div>
             </section>

@@ -231,8 +231,7 @@ array_filter(string_to_array("Tratamiento",','), length(@element) >3)))%]</td>
 									array_filter(
 									array_cat(
 									array( "Analista de material" ),
-									array( "Restaurador" ),
-									array( "Arqueólogo de cadena de custodia" ))
+									array( "Restaurador" ))
 									, @element is not null))%]
 									
 									</td>
@@ -241,7 +240,10 @@ array_filter(string_to_array("Tratamiento",','), length(@element) >3)))%]</td>
 								<td>Fecha:</td>
 				       		</tr>
 				       		<tr>
-				       			<td class="tabla2">[%format_date(now(),'yyyy-MM-dd')%]</td>
+				       			<td class="tabla2">
+									<!-- [%format_date(now(),'yyyy-MM-dd')%] -->
+									 [%"_Fecha"%]
+								</td>
 				       		</tr>
 						</table>
 					</div>
