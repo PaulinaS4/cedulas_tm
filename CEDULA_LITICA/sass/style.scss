@@ -1,0 +1,136 @@
+
+@import "colors.scss";
+*{
+  padding: 0;
+  margin: 0;
+  // overflow: hidden;
+  font-family: "Montserrat";
+  color: $color-gris;
+ }
+
+ body,div,table,thead,tbody,tfoot,tr,th,td,p,h5{
+    margin: 2px
+ }
+ @import "flexbox.scss";
+ @import "columns.scss";
+ @import "text.scss";
+
+ body{
+  box-sizing: border-box;
+  max-width: 840px;
+
+  header{
+    .head{
+      border:3px $color-rojo solid;
+    	width:285px;
+    	border-radius: 8px;
+    	margin: 2px;
+    }
+  }
+
+  h1 {
+  	color: $color-rojo;
+  	// font: Montserrat;
+  	font-size: 16px;
+  	font-weight: bold;
+  	margin-top: 5px;
+  	margin-bottom: 0px;
+  }
+
+  div {
+    font-size:10px;
+  	font-weight: bold;
+  	margin-top: 0px;
+  	margin-bottom: 0px;
+    p{
+      color: $color-rojo;
+    }
+  	// text-align:center;
+  	/*padding-left: 20px;*/
+  }
+  .subtitulo{
+  	font: 'Montserrat';
+  	font-size: 8px;
+  	font-weight:normal;
+  }
+  .small{
+  	font-family:"Montserrat"; font-size:small;
+  }
+  /**/
+  .rectangulo{
+    border:3px $color-dorado solid;
+  	width: 20px;
+  	height: 8px;
+  }
+  .fotografia{
+  	padding: 5px;
+  }
+  .img-responsive{
+  	width: 100%;
+  	object-fit: contain;
+  }
+  .diseño-tabla{
+  	border:3px $color-dorado solid;
+  	// width:100%;
+  	border-radius: 8px;
+  	border-spacing: 3px 3px;
+  	margin: 2px;
+  	padding: 2px;
+  }
+  .row, .row-alt{
+  	border-radius: 8px;
+  	margin-top: 6px;
+  	width:850px;
+  }
+  .row {
+  	background: $color-blanco;
+  	padding: 50px 0 24px 0;
+  	display: flex;
+  }
+  .row-alt {
+  	background: linear-gradient(to right, $color-blanco, $color-dorado_secundario);
+  	padding: 7px 0;
+   }
+
+  .logo{
+  	float:left;
+  	width: 150px;
+  	height:75px;
+  	display:block;
+  	margin-left: 50px;
+  }
+
+  td.col0 {
+  	border: 1px $color-rojo solid;
+  	border-radius: 3px;
+  	background: $color-rojo;
+  	padding: 0px;
+  }
+
+  td.col1 {
+  	border: 1px $color-dorado solid;
+  	border-radius: 4px;
+  	background: $color-dorado_secundario;
+  	/*padding: 3px;*/
+  	// font: Montserrat;
+  	font-size: 10px;
+  	font-weight: bold;
+  	text-align:center;
+  	color:$color-rojo;
+  	width:10px;
+  	height: 30px !important;
+  }
+
+  td.col2 {
+  	border: 1px $color-dorado solid;
+  	border-radius: 4px;
+  	background: $color-blanco;
+  	padding: 3px;
+  	font-size: 9px;
+  	text-align:center;
+  	color:$color-rojo;
+  	width:50px;
+  	height: 30px !important;
+  }
+  /*container = flexbox */
+ }

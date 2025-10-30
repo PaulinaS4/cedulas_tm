@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta name="title" content="Cédula de intervención de elementos pétreos"/>
+	<meta name="description" content="Análisis regional del sureste Mesoamericano. Proyecto marco de salvamento arqueológico. Tren Maya"/>
+	<meta name="author" content="Jonatan Lara Ortiz, Ing; Diana Paulina Serrano Roldan, Urb" />
+	<meta name="generator" content= "Atom" />
+	<meta name="copyright" content="Dirección de Salvamento Arqueológico" />
+	<meta name="created" content="2023-01-24"/>
+  <link rel="stylesheet" href="sass/style.css">
+  <title></title>
+</head>
+<body onload="Carga();">
+	<header>
+		<table class="head">
+				<td class="col0"><img src="banner.png" width=840px height=60 hspace=0 vspace=0></td>
+		</table>
+		<section class="row-alt">
+		    <div class="flex">
+			      <div class="col-30">
+			        <img class="logo" src="tren.png">
+			      </div>
+			      <div class="col-70">
+			        <h1 class="titulos text-center">U LU'UMIL MAAYA WÍINIKO'OB</h1>
+			        <p class="h2 color-rojo bold text-center">
+			          Análisis Regional del Sureste Mesoamericano Proyecto Marco de Salvamento <br>Arqueológico del Tren Maya.</p>
+		            <h5 class="h3 color-rojo bold text-center" >Responsable académico:Dr. Manuel E. Pérez Rivas. <br>Coordinador de área de materiales misceláneos e históricos: Kenia Monserrat Chávez Cruz</h5>
+		    </div>
+		</section>
+	</header>
+	<h1 class="center">CÉDULA DE ANÁLISIS DE MATERIAL DE VIDRIO</h1>
+	<h1 class="h2 bold color-rojo text-align-left ">DATOS GENERALES</h1>
+	<div class="tabla diseño-tabla" style="display:flex; margin:6px;">
+		
+		<table class="generales" style="width:816px">
+			<tr>
+				<td class="col3">Tramo</td>
+				<td class="col4">[%left(clave,2)%]</td>
+				<td class="col3">ID Monumento</td>
+				<td class="col4">[%left(clave,8)%]</td>
+	  			<td class="col3">Clave de excavación</td>
+				<td class="col4">[%"clave"%]</td>
+				<td class="col3">Sitio</td>
+				<td class="col4">[%"sitio"%]</td>
+			</tr>
+			<tr>
+				<td class="col3">No. Bolsa</td>
+				<td class="col4">[%"bolsa"%]</td>
+	  			<td class="col3">Ubicación</td>
+				<td class="col4">[%'Cuadro: N ' || n || ', E '|| e || '\n' || 'Capa: ' || capa%]</td>
+				<td class="col3">Materia prima</td>
+				<td class="col4">[%"materia_prima"%]</td>
+				<td class="col3">Tipo</td>
+				<td class="col4">[%"objeto_framento"%]</td>
+			</tr>
+			<tr>
+	  			
+				<td class="col3">Clasificación</td>
+				<td class="col4">[%clasificacion%]</td>
+				<td class="col3">Capa y cuadro</td>
+				<td class="col4">[%clasificacion%]</td>
+				<td class="col3" rowspan="2">Observaciones</td>
+				<td class="col4" colspan="3" rowspan="2">[%"observaciones_lab"%]</td>
+			</tr>
+			<tr>
+				<td class="col3">Nombre de quien realiza la intervención</td>
+				<td class="col4"> [%persona_que_intervino%]</td>
+				<td class="col3">Nombre de quien analiza</td>
+				<td class="col4">[%analizo%]</td>
+			</tr>
+
+		</table>
+	</div>
+	</div>
+	<!-- Limpieza superficial (brocha de pelo suave), Limpieza mecánica (bisturí), Limpieza fisicoquímica (agua-alcohol 1:1), Limpieza fisicoquímica (agua destilada), Limpieza fisicoquímica (agua destilada y agua-alcohol 1:1), Limpieza química, Unión de fragmentos (adhesivo epóxico de dos componentes)-->
+	<div class="flex">
+		<div class="col-100">
+			<div class="diseño-tabla">
+				<h1 class="h2 bold color-rojo text-align-left">PROCESOS REALIZADOS</h1>
+				<div class="flex">
+					<div class="col-25">
+						<div class="flex justify-content-between">
+							<p class="text-col2">Limpieza superficial (brocha de pelo suave)</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("procesos_realizados", ', '),'Limpieza superficial (brocha de pelo suave)') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Limpieza mecánica (bisturí)</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("procesos_realizados", ', '),'Limpieza mecánica (bisturí)') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+					</div>
+
+					<div class="col-25">
+						<div class="flex justify-content-between">
+							<p class="text-col2">Limpieza fisicoquímica (agua-alcohol 1:1)</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("procesos_realizados", ', '),'Limpieza fisicoquímica (agua-alcohol 1:1)') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Limpieza fisicoquímica (agua destilada)</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("procesos_realizados", ', '),'Limpieza fisicoquímica (agua destilada)') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+					</div>
+					
+					<div class="col-25">
+						<div class="flex justify-content-between">
+							<p class="text-col2">Limpieza fisicoquímica (agua destilada y agua-alcohol 1:1)</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("procesos_realizados", ', '),'Limpieza fisicoquímica (agua destilada y agua-alcohol 1:1)') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Limpieza química</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("procesos_realizados", ', '),'Limpieza química') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+					</div>
+
+					<div class="col-25">
+						<div class="flex justify-content-between">
+							<p class="text-col2">Unión de fragmentos (adhesivo epóxico de dos componentes)</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("procesos_realizados", ', '),'Unión de fragmentos (adhesivo epóxico de dos componentes)') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+	</div>
+	<h1 class="h2 bold color-rojo text-align-left ">ANÁLISIS</h1>
+	<div class="tabla diseño-tabla" style="display:flex; margin:6px;">
+		
+		<table class="generales" style="width:816px">
+			<tr>
+				<td class="col3">Tramo</td>
+				<td class="col4">[%left(clave,2)%]</td>
+				<td class="col3">ID Monumento</td>
+				<td class="col4">[%left(clave,8)%]</td>
+	  			<td class="col3">Clave de excavación</td>
+				<td class="col4">[%"clave"%]</td>
+				<td class="col3">Sitio</td>
+				<td class="col4">[%"sitio"%]</td>
+			</tr>
+			<tr>
+				<td class="col3">No. Bolsa</td>
+				<td class="col4">[%"bolsa"%]</td>
+	  			<td class="col3">Ubicación</td>
+				<td class="col4">[%'Cuadro: N ' || n || ', E '|| e || '\n' || 'Capa: ' || capa%]</td>
+				<td class="col3">Materia prima</td>
+				<td class="col4">[%"materia_prima"%]</td>
+				<td class="col3">Tipo</td>
+				<td class="col4">[%"objeto_framento"%]</td>
+			</tr>
+			<tr>
+	  			
+				<td class="col3">Clasificación</td>
+				<td class="col4">[%clasificacion%]</td>
+				<td class="col3">Capa y cuadro</td>
+				<td class="col4">[%clasificacion%]</td>
+				<td class="col3" rowspan="2">Observaciones</td>
+				<td class="col4" colspan="3" rowspan="2">[%"observaciones_lab"%]</td>
+			</tr>
+			<tr>
+				<td class="col3">Nombre de quien realiza la intervención</td>
+				<td class="col4"> [%persona_que_intervino%]</td>
+				<td class="col3">Nombre de quien analiza</td>
+				<td class="col4">[%analizo%]</td>
+			</tr>
+
+		</table>
+	</div>
+	</div>
+	<div class="flex">
+		<div style="width: 100%;">
+			<div class="diseño-tabla">
+				<h1 class="h2 bold color-rojo text-align-left">ESTADO DE CONSERVACIÓN</h1>
+				<p class="text-col2">REGISTRO FOTOGRÁFICO DE DETERIOROS</p>
+				<div class="" id="cont-princ-1">
+		         	<input type="hidden" id="conservacion" value='[%"Fotos conservación"%]'>
+		        </div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+    	function Carga(){
+	      imagenesEstadoDeConservacion();
+	    }
+    	function imagenesEstadoDeConservacion(){
+          let str = document.getElementById("conservacion").value;
+          let images = str.split(',');
+          let principal = document.getElementById('cont-princ-1');
+          let valor = images.length;
+          for(i=0;i<images.length;i++){
+            if(valor==2 || valor==1){
+              let creaimg = document.createElement('img');
+              let crearDiv = document.createElement('div');
+              creaimg.setAttribute('src',  "file:///F:/Materiales/restauracion/fotos/04_Elementos_pétreos/01_Estado de conservación/"+images[i]+".jpg");
+              creaimg.setAttribute('width','395');
+              crearDiv.setAttribute('width','100%');
+              creaimg.setAttribute('style','padding:3px;');
+              principal.setAttribute('style', 'display:flex; flex-wrap: wrap;')
+              principal.appendChild(crearDiv);
+              crearDiv.appendChild(creaimg);
+
+            } else if(valor<=4){
+              let creaimg = document.createElement('img');
+              let crearDiv = document.createElement('div');
+              creaimg.setAttribute('src',  "file:///F:/Materiales/restauracion/fotos/04_Elementos_pétreos/01_Estado de conservación/"+images[i]+".jpg");
+              creaimg.setAttribute('width','260');
+              creaimg.setAttribute('style','padding:3px;');
+              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
+              principal.appendChild(crearDiv);
+              crearDiv.appendChild(creaimg);
+
+            } else if(valor<=6){
+              let creaimg = document.createElement('img');
+              creaimg.setAttribute('src',  "file:///F:/Materiales/restauracion/fotos/04_Elementos_pétreos/01_Estado de conservación/"+images[i]+".jpg");
+              creaimg.setAttribute('width','255');
+              creaimg.setAttribute('style','padding:3px');
+              creaimg.setAttribute('style','padding:3px;');
+              principal.appendChild(creaimg);
+
+            }else if(valor=>7){
+              let creaimg = document.createElement('img');
+              creaimg.setAttribute('src',  "file:///F:/Materiales/restauracion/fotos/04_Elementos_pétreos/01_Estado de conservación/"+images[i]+".jpg");
+              creaimg.setAttribute('width','200');
+              creaimg.setAttribute('style','padding:3px');
+              principal.appendChild(creaimg);
+            }
+          }
+      }
+  	</script>
+</body>
+</html>

@@ -832,7 +832,9 @@
             </div>
             <div class="flex space-between">
                   <p class="text-col2">Otros:  </p>
-                  <p class="text-col2">[%"Otro FD"%]</p>
+                  <p class="text-col2" style="font-size: 
+                  [%case when length("Otro FD")> 30 then '6px' else '9px' end%]  "
+                  >[%"Otro FD"%]</p>
             </div>
 
         </div>
