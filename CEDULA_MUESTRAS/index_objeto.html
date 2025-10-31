@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="style.css" />
     <title></title>
   </head>
-  <body onload="Carga();">
+  <body onload="onLoad();">
     <header>
       <table class="head">
         <td class="col0">
@@ -147,17 +147,31 @@
       </div>
 
       <h1 class="h2 bold color-rojo text-align-left">FOTOGRAFÍAS</h1>
-      <div class="fotografias diseño-tabla">
-        <img
-          class="foto-1"
-          src="/TrenMaya/13_materiales/muestras/FOTOS MUESTRAS/foto_1/[%foto_1_nombre%]"
-          alt="FOTO 1"
-        />
-        <img
-          src="/TrenMaya/13_materiales/muestras/FOTOS MUESTRAS/foto_2/[%foto_2_nombre%]"
-          alt="FOTO 2"
-        />
+      <div id="fotografias" class="fotografias diseño-tabla">
+        <input type="hidden" id="foto-1" value=[%"foto_1_nombre"%]></input>
+        <input type="hidden" id="foto-2" value=[%"foto_2_nombre"%]></input>
       </div>
     </div>
+
+    <script>
+      function onLoad() {
+        const FOTOS_BASE_PATH = "/TrenMaya/13_materiales/muestras/FOTOS MUESTRAS";
+        const contenedor = document.getElementById("fotografias");
+
+        const cargarFoto = (numero) => {
+            const fotoNombre = document.getElementById(`foto-${numero}`).value;
+            if (fotoNombre) {
+                const img = document.createElement('img');
+                img.setAttribute('src', `${FOTOS_BASE_PATH}/foto_${numero}/${fotoNombre}`);
+                img.setAttribute('class', 'foto-margin');
+                img.setAttribute('alt', `Foto ${numero}`);
+                img.onerror = () => console.error(`Error al cargar la foto ${numero}`);
+                contenedor.appendChild(img);
+            }
+        };
+
+        [1, 2].forEach(cargarFoto);
+      }
+    </script>
   </body>
 </html>
