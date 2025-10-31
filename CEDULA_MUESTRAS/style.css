@@ -306,11 +306,15 @@ body td.col2 {
 }
 
 .h-cell {
-  height: 24px;
+  height: 23px;
 }
 
 .h-cell-large {
-  height: 37px;
+  height: 42px;
+}
+
+.h-cell-m {
+  height: 32px;
 }
 
 .fotografias {
@@ -319,8 +323,8 @@ body td.col2 {
   align-items: center;
   justify-content: center;
   max-width: 100%;
-  max-height: 210px;
-  height: 210px;
+  max-height: 220px;
+  height: 220px;
   /* gap: 30px; */
 }
 
