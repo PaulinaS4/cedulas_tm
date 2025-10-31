@@ -321,12 +321,16 @@ body td.col2 {
   max-width: 100%;
   max-height: 210px;
   height: 210px;
-  gap: 30px;
+  /* gap: 30px; */
 }
 
 .fotografias img {
   max-width: auto;
   height: 100%;
+}
+
+.foto-1 {
+  margin-right: 30px;
 }
 
 /*# sourceMappingURL=style.css.map -*/
