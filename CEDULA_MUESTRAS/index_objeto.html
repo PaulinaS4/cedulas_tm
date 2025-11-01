@@ -162,7 +162,7 @@
         const invalidas = ["Falta subir foto", "NO APLICA", "Actualizar URL de foto"];
 
         const cargarFoto = (numero) => {
-          const fotoNombre = document.getElementById(`foto-${numero}`).value?.trim();
+          const fotoNombre = document.getElementById(`foto-${numero}`).value;
 
           if (fotoNombre && !invalidas.includes(fotoNombre)) {
             const img = document.createElement("img");
