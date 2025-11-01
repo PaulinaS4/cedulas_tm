@@ -162,12 +162,16 @@
 
         const cargarFoto = (numero) => {
             const fotoNombre = document.getElementById(`foto-${numero}`).value;
-            if (fotoNombre) {
+            if (
+              fotoNombre ||
+              fotoNombre !== "Falta subir foto" ||
+              fotoNombre !== "NO APLICA" ||
+              fotoNombre !== "Actualizar URL de foto"
+            ) {
                 const img = document.createElement('img');
                 img.setAttribute('src', `${FOTOS_BASE_PATH}/foto_${numero}/${fotoNombre}`);
                 img.setAttribute('class', 'foto-margin');
                 img.setAttribute('alt', `Foto ${numero}`);
-                img.onerror = () => console.error(`Error al cargar la foto ${numero}`);
                 contenedor.appendChild(img);
             }
         };
