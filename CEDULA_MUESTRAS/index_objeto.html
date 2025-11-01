@@ -159,21 +159,18 @@
       function onLoad() {
         const FOTOS_BASE_PATH = "file:///C:/TrenMaya/13_materiales/muestras/FOTOS MUESTRAS";
         const contenedor = document.getElementById("fotografias");
+        const invalidas = ["Falta subir foto", "NO APLICA", "Actualizar URL de foto"];
 
         const cargarFoto = (numero) => {
-            const fotoNombre = document.getElementById(`foto-${numero}`).value;
-            if (
-              fotoNombre &&
-              (fotoNombre !== "Falta subir foto" ||
-              fotoNombre !== "NO APLICA" ||
-              fotoNombre !== "Actualizar URL de foto")
-            ) {
-                const img = document.createElement('img');
-                img.setAttribute('src', `${FOTOS_BASE_PATH}/foto_${numero}/${fotoNombre}`);
-                img.setAttribute('class', 'foto-margin');
-                img.setAttribute('alt', `Foto ${numero}`);
-                contenedor.appendChild(img);
-            }
+          const fotoNombre = document.getElementById(`foto-${numero}`).value?.trim();
+
+          if (fotoNombre && !invalidas.includes(fotoNombre)) {
+            const img = document.createElement("img");
+            img.setAttribute("src", `${FOTOS_BASE_PATH}/foto_${numero}/${fotoNombre}`);
+            img.setAttribute("class", "foto-margin");
+            img.setAttribute("alt", `Foto ${numero}`);
+            contenedor.appendChild(img);
+          }
         };
 
         [1, 2, 3, 4].forEach(cargarFoto);
