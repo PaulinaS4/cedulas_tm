@@ -5,23 +5,25 @@
 	<meta name="title" content="Cédula de intervención de elementos pétreos"/>
 	<meta name="description" content="Análisis regional del sureste Mesoamericano. Proyecto marco de salvamento arqueológico. Tren Maya"/>
 	<meta name="author" content="Jonatan Lara Ortiz, Ing; Diana Paulina Serrano Roldan, Urb" />
-	<meta name="generator" content= "Atom" />
+	<meta name="generator" content= "Visual Studio Code" />
 	<meta name="copyright" content="Dirección de Salvamento Arqueológico" />
 	<meta name="created" content="2023-01-24"/>
   <link rel="stylesheet" href="sass/style.css">
   <title></title>
 </head>
+<!-- Página 1 -->
 <body onload="Carga();">
+	<tbody style="display: block;max-height: 2800px;">
 	<header>
-		<table class="head">
-				<td class="col0"><img src="banner.png" width=840px height=60 hspace=0 vspace=0></td>
+		<table class="head" style="width: 850px;">
+				<td class="col0"><img src="banner.png" width=830px height=60 hspace=0 vspace=0></td>
 		</table>
 		<section class="row-alt">
 		    <div class="flex">
-			      <div class="col-30">
+			      <div class="col-10">
 			        <img class="logo" src="tren.png">
 			      </div>
-			      <div class="col-70">
+			      <div class="col-90">
 			        <h1 class="titulos text-center">U LU'UMIL MAAYA WÍINIKO'OB</h1>
 			        <p class="h2 color-rojo bold text-center">
 			          Análisis Regional del Sureste Mesoamericano Proyecto Marco de Salvamento <br>Arqueológico del Tren Maya.</p>
@@ -159,106 +161,184 @@
 	</div>
 	<h1 class="h2 bold color-rojo text-align-left ">ANÁLISIS</h1>
 	<div class="tabla diseño-tabla" style="display:flex; margin:6px;">
-		
 		<table class="generales" style="width:816px">
 			<tr>
-				<td class="col3">Tramo</td>
-				<td class="col4">[%left(clave,2)%]</td>
-				<td class="col3">ID Monumento</td>
-				<td class="col4">[%left(clave,8)%]</td>
-	  			<td class="col3">Clave de excavación</td>
-				<td class="col4">[%"clave"%]</td>
-				<td class="col3">Sitio</td>
-				<td class="col4">[%"sitio"%]</td>
+				<td class="col3">Temporalidad</td>
+				<td class="col4">[%temporalidad%]</td>
+				<td class="col3">Cantidad de elementos completos</td>
+				<td class="col4">[%"c_elementos_completos"%]</td>
+				<td class="col3">Técnica de construcción</td>
+				<td class="col4">[%tecnica_construccion%]</td>
+				<td class="col3">Silueta</td>
+				<td class="col4">[%"silueta_simple_compuesta"%]</td>
 			</tr>
 			<tr>
-				<td class="col3">No. Bolsa</td>
-				<td class="col4">[%"bolsa"%]</td>
-	  			<td class="col3">Ubicación</td>
-				<td class="col4">[%'Cuadro: N ' || n || ', E '|| e || '\n' || 'Capa: ' || capa%]</td>
-				<td class="col3">Materia prima</td>
-				<td class="col4">[%"materia_prima"%]</td>
-				<td class="col3">Tipo</td>
-				<td class="col4">[%"objeto_framento"%]</td>
+				<td class="col3">Forma de la base</td>
+				<td class="col4">[%"forma_base"%]</td>
+				<td class="col3">Forma del fondo</td>
+				<td class="col4">[%forma_fondo%]</td>
+				<td class="col3">Forma del talón</td>
+				<td class="col4">[%forma_talon%]</td>
+				<td class="col3">Forma del cuerpo</td>
+				<td class="col4">[%forma_cuerpo%]</td>
 			</tr>
 			<tr>
-	  			
-				<td class="col3">Clasificación</td>
-				<td class="col4">[%clasificacion%]</td>
-				<td class="col3">Capa y cuadro</td>
-				<td class="col4">[%clasificacion%]</td>
-				<td class="col3" rowspan="2">Observaciones</td>
-				<td class="col4" colspan="3" rowspan="2">[%"observaciones_lab"%]</td>
+				<td class="col3">Forma de las paredes</td>
+				<td class="col4">[%forma_paredes%]</td>
+				<td class="col3">Forma de los hombros</td>
+				<td class="col4"> [%forma_hombros%]</td>
+				<td class="col3">Forma del cuello</td>
+				<td class="col4">[%forma_cuello%]</td>
+				<td class="col3">Forma de la boca</td>
+				<td class="col4">[%forma_boca_boquilla%]</td>
 			</tr>
 			<tr>
-				<td class="col3">Nombre de quien realiza la intervención</td>
-				<td class="col4"> [%persona_que_intervino%]</td>
-				<td class="col3">Nombre de quien analiza</td>
-				<td class="col4">[%analizo%]</td>
+				<td class="col3">Forma de elementos para asir</td>
+				<td class="col4"> [%forma_elementos_asir%]</td>
+				<td class="col3">Forma del soporte</td>
+				<td class="col4">[%forma_soportes%]</td>
+				<td class="col3">Otros elementos</td>
+				<td class="col4">[%otros_elementos%]</td>
+				<td class="col3">Gollete</td>
+				<td class="col4">[%gollete%]</td>
+				
 			</tr>
-
+			<tr>
+				<td class="col3">Costura</td>
+				<td class="col4">[%costura%]</td>
+				<td class="col3">Espesor</td>
+				<td class="col4"> [%espesor%]</td>
+				<td class="col3">Poros de aireación</td>
+				<td class="col4">[%poros_aireacion%]</td>
+				<td class="col3">Dureza del material</td>
+				<td class="col4">[%dureza_del_material%]</td>
+			</tr>
+			<tr>
+				<td class="col3">Acabado de superficie</td>
+				<td class="col4">[%acabado_superficie%]</td>
+				<td class="col3">Decoración interna</td>
+				<td class="col4">[%decoracion_interna_cual%]</td>
+				<td class="col3">Decoración externa</td>
+				<td class="col4">[%decoracion_externa_cual%]</td>
+				<td class="col3">Etiquetas</td>
+				<td class="col4">[%etiquetas%]</td>
+			</tr>
+			<tr>
+				<td class="col3">Recubrimientos</td>
+				<td class="col4">[%recubrimientos%]</td>
+				<td class="col3">Tipo de recubrimiento</td>
+				<td class="col4">[%tipo_recubrimiento%]</td>
+				<td class="col3">Color de recubrimiento</td>
+				<td class="col4">[%color_recubrimiento%]</td>
+				<td class="col3">Compactación de recubrimiento</td>
+				<td class="col4">[%compatacion_recubrimiento%]</td>
+			</tr>
+			<tr>
+				<td class="col3">Granulometría de recubrimiento</td>
+				<td class="col4">[%granulometria_recubrimiento%]</td>
+				<td class="col3">Pinturas</td>
+				<td class="col4">[%pinturas%]</td>
+				<td class="col3">Análisis realizado</td>
+				<td class="col4">[%analisis_realizado%]</td>
+				<td class="col3">Análisis sugerido de luces</td>
+				<td class="col4">[%analisis_sugerido_luces%]</td>
+			</tr>
+			<tr>
+				<td class="col3">Análisis sugerido instrumental</td>
+				<td class="col4">[%analisis_sugerido_instrumental%]</td>
+				<td class="col3">Dimensiones máximas</td>
+				<td class="col4">[%dimensiones_max%]</td>
+				<td class="col3">Peso (g)</td>
+				<td class="col4">[%peso_g%]</td>
+				<td class="col3">Observaciones de análisis</td>
+				<td class="col4">[%observacion_analisis%]</td>
+			</tr>
+		</table>
+	</div>
+	</tbody>
+</body>
+<!-- Página 2 -->
+ <body onload="Carga();" >
+	<header>
+		<table class="head" style="width: 850px;">
+				<td class="col0"><img src="banner.png" width=830px height=60 hspace=0 vspace=0></td>
+		</table>
+		<section class="row-alt">
+		    <div class="flex">
+			      <div class="col-10">
+			        <img class="logo" src="tren.png">
+			      </div>
+			      <div class="col-90">
+			        <h1 class="titulos text-center">U LU'UMIL MAAYA WÍINIKO'OB</h1>
+			        <p class="h2 color-rojo bold text-center">
+			          Análisis Regional del Sureste Mesoamericano Proyecto Marco de Salvamento <br>Arqueológico del Tren Maya.</p>
+		            <h5 class="h3 color-rojo bold text-center" >Responsable académico:Dr. Manuel E. Pérez Rivas. <br>Coordinador de área de materiales misceláneos e históricos: Kenia Monserrat Chávez Cruz</h5>
+		    </div>
+		</section>
+	</header>
+	<h1 class="h2 bold color-rojo text-align-left ">Características de fragmentos</h1>
+	<div class="tabla diseño-tabla" style="display:flex; margin:6px;">
+		<table class="generales" style="width:816px">
+			<tr>
+				<td class="col3">Cantidad de fragmentos</td>
+				<td class="col4">[%c_fragmentos%]</td>
+	  			<td class="col3">Medidas de fragmentos</td>
+				<td class="col4">[%"medidas_fragmentos"%]</td>
+				<td class="col3">Área a la que pertenecen los fragmentos</td>
+				<td class="col4">[%"area_fragmentos"%]</td>
+				<td class="col3">Fragmentos azul claro</td>
+				<td class="col4">[%c_azul_claro%]</td>
+			</tr>
+			<tr>
+				<td class="col3">Fragmentos azul oscuro</td>
+				<td class="col4">[%c_azul_oscuro%]</td>
+				<td class="col3">Fragmentos azul verdoso</td>
+				<td class="col4">[%c_azul_verdoso%]</td>
+				<td class="col3">Fragmentos verde claro</td>
+				<td class="col4">[%c_verde_claro%]</td>
+				<td class="col3">Fragmentos verde oscuro</td>
+				<td class="col4">[%c_verde_oscuro%]</td>
+			</tr>
+			<tr>
+				<td class="col3">Fragmentos verde olivo</td>
+				<td class="col4">[%c_verde_olivo%]</td>
+				<td class="col3">Fragmentos verde esmeralda</td>
+				<td class="col4">[%c_verde_esmeralda%]</td>
+				<td class="col3">Fragmentos ámbar claro</td>
+				<td class="col4">[%c_ambar_claro%]</td>
+				<td class="col3">Fragmentos ámbar oscuro</td>
+				<td class="col4">[%c_ambar_oscuro%]</td>
+			</tr>
+			<tr>
+				<td class="col3">Fragmentos incoloros</td>
+				<td class="col4">[%c_incoloros%]</td>
+				<td class="col3">Otro color</td>
+				<td class="col4">[%c_otro%]</td>
+				<td class="col3">Espesor otro</td>
+				<td class="col4">[%espesor_otro%]</td>
+				<td class="col3">Espesor azul</td>
+				<td class="col4">[%espesor_azul%]</td>
+			</tr>
+			<tr>
+				<td class="col3">Espesor verde</td>
+				<td class="col4">[%espesor_verde%]</td>
+				<td class="col3">Espesor ámbar</td>
+				<td class="col4">[%espesor_ambar%]</td>
+				<td class="col3">Espesor incoloro</td>
+				<td class="col4">[%espesor_incoloro%]</td>
+				<td class="col3">Características azules</td>
+				<td class="col4">[%caracteristicas_azules%]</td>
+			</tr>
+			<tr>
+				<td class="col3">Características verdes</td>
+				<td class="col4">[%caracteristicas_verdes%]</td>
+				<td class="col3">Características ámbar</td>
+				<td class="col4">[%caracteristicas_ambar%]</td>
+				<td class="col3">Características incoloro</td>
+				<td class="col4">[%caracteristicas_incoloro%]</td>
+			</tr>
 		</table>
 	</div>
 	</div>
-	<div class="flex">
-		<div style="width: 100%;">
-			<div class="diseño-tabla">
-				<h1 class="h2 bold color-rojo text-align-left">ESTADO DE CONSERVACIÓN</h1>
-				<p class="text-col2">REGISTRO FOTOGRÁFICO DE DETERIOROS</p>
-				<div class="" id="cont-princ-1">
-		         	<input type="hidden" id="conservacion" value='[%"Fotos conservación"%]'>
-		        </div>
-			</div>
-		</div>
-	</div>
-	<script type="text/javascript">
-    	function Carga(){
-	      imagenesEstadoDeConservacion();
-	    }
-    	function imagenesEstadoDeConservacion(){
-          let str = document.getElementById("conservacion").value;
-          let images = str.split(',');
-          let principal = document.getElementById('cont-princ-1');
-          let valor = images.length;
-          for(i=0;i<images.length;i++){
-            if(valor==2 || valor==1){
-              let creaimg = document.createElement('img');
-              let crearDiv = document.createElement('div');
-              creaimg.setAttribute('src',  "file:///F:/Materiales/restauracion/fotos/04_Elementos_pétreos/01_Estado de conservación/"+images[i]+".jpg");
-              creaimg.setAttribute('width','395');
-              crearDiv.setAttribute('width','100%');
-              creaimg.setAttribute('style','padding:3px;');
-              principal.setAttribute('style', 'display:flex; flex-wrap: wrap;')
-              principal.appendChild(crearDiv);
-              crearDiv.appendChild(creaimg);
-
-            } else if(valor<=4){
-              let creaimg = document.createElement('img');
-              let crearDiv = document.createElement('div');
-              creaimg.setAttribute('src',  "file:///F:/Materiales/restauracion/fotos/04_Elementos_pétreos/01_Estado de conservación/"+images[i]+".jpg");
-              creaimg.setAttribute('width','260');
-              creaimg.setAttribute('style','padding:3px;');
-              principal.setAttribute('style',' display:flex; flex-wrap: wrap;')
-              principal.appendChild(crearDiv);
-              crearDiv.appendChild(creaimg);
-
-            } else if(valor<=6){
-              let creaimg = document.createElement('img');
-              creaimg.setAttribute('src',  "file:///F:/Materiales/restauracion/fotos/04_Elementos_pétreos/01_Estado de conservación/"+images[i]+".jpg");
-              creaimg.setAttribute('width','255');
-              creaimg.setAttribute('style','padding:3px');
-              creaimg.setAttribute('style','padding:3px;');
-              principal.appendChild(creaimg);
-
-            }else if(valor=>7){
-              let creaimg = document.createElement('img');
-              creaimg.setAttribute('src',  "file:///F:/Materiales/restauracion/fotos/04_Elementos_pétreos/01_Estado de conservación/"+images[i]+".jpg");
-              creaimg.setAttribute('width','200');
-              creaimg.setAttribute('style','padding:3px');
-              principal.appendChild(creaimg);
-            }
-          }
-      }
-  	</script>
 </body>
 </html>

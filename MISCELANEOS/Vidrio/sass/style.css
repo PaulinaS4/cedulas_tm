@@ -40,6 +40,10 @@
 body, div, table, thead, tbody, tfoot, tr, th, td, p, h5 {
   margin: 2px; }
 
+  tbody{
+    display: inline-block;
+    width: 822px;
+  }
 /*flexbox*/
 .flex {
   display: flex; }
@@ -204,7 +208,8 @@ body {
     border-radius: 8px;
     border-spacing: 3px 3px;
     margin: 2px;
-    padding: 2px; }
+    padding: 2px; 
+    width: 832px;}
   body .row, body .row-alt {
     border-radius: 8px;
     margin-top: 6px;
