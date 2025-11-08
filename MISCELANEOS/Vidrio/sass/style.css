@@ -86,6 +86,10 @@ body, div, table, thead, tbody, tfoot, tr, th, td, p, h5 {
   align-content: center;
   text-align: center; }
 
+.page{
+  height: 1200px;
+}
+
 /*clases universales*/
 .col-10 {
   width: 10%; }
@@ -122,6 +126,10 @@ body, div, table, thead, tbody, tfoot, tr, th, td, p, h5 {
 
 .col-100 {
   width: 100%; }
+
+.tr-2{
+  height: 45.5px;
+  }
 
 /*textos*/
 .text-right {

@@ -13,7 +13,7 @@
 </head>
 <!-- Página 1 -->
 <body onload="Carga();">
-	<tbody style="display: block;max-height: 2800px;">
+	<div class="page">
 	<header>
 		<table class="head" style="width: 850px;">
 				<td class="col0"><img src="banner.png" width=830px height=60 hspace=0 vspace=0></td>
@@ -38,11 +38,11 @@
 		<table class="generales" style="width:816px">
 			<tr>
 				<td class="col3">Tramo</td>
-				<td class="col4">[%left(clave,2)%]</td>
+				<td class="col4">[%left(clave_excavacion,2)%]</td>
 				<td class="col3">ID Monumento</td>
-				<td class="col4">[%left(clave,8)%]</td>
+				<td class="col4">[%left(clave_excavacion,8)%]</td>
 	  			<td class="col3">Clave de excavación</td>
-				<td class="col4">[%"clave"%]</td>
+				<td class="col4">[%"clave_excavacion"%]</td>
 				<td class="col3">Sitio</td>
 				<td class="col4">[%"sitio"%]</td>
 			</tr>
@@ -54,7 +54,7 @@
 				<td class="col3">Materia prima</td>
 				<td class="col4">[%"materia_prima"%]</td>
 				<td class="col3">Tipo</td>
-				<td class="col4">[%"objeto_framento"%]</td>
+				<td class="col4">[%"objeto_fragmento"%]</td>
 			</tr>
 			<tr>
 	  			
@@ -62,20 +62,32 @@
 				<td class="col4">[%clasificacion%]</td>
 				<td class="col3">Capa y cuadro</td>
 				<td class="col4">[%clasificacion%]</td>
-				<td class="col3" rowspan="2">Observaciones</td>
-				<td class="col4" colspan="3" rowspan="2">[%"observaciones_lab"%]</td>
-			</tr>
-			<tr>
 				<td class="col3">Nombre de quien realiza la intervención</td>
 				<td class="col4"> [%persona_que_intervino%]</td>
 				<td class="col3">Nombre de quien analiza</td>
 				<td class="col4">[%analizo%]</td>
+				
 			</tr>
-
+			<tr style="height: 100px; max-height: 100px;">
+				<td class="col3" >Observaciones</td>
+				<td class="col4" colspan="7" >[%"observaciones_lab"%]</td>
+			</tr>
 		</table>
 	</div>
+	<!-- FOTOS GENERALES-->
+	<div class="main flex" style="width:850px">
+		<div class="diseño-tabla " style="width:835px">
+			<p>Registro fotográfico general</p>
+			<input type="hidden" id="general" value=[% array_to_string(
+														array_foreach(
+														generate_series(
+														string_to_array(f_generales)[0],
+														string_to_array(f_generales)[1]),
+														clave_excavacion||'_'||@element)) %]>
+			<div class="flex wrap center " id="cont-princ-1"></div>
+		</div>
 	</div>
-	<!-- Limpieza superficial (brocha de pelo suave), Limpieza mecánica (bisturí), Limpieza fisicoquímica (agua-alcohol 1:1), Limpieza fisicoquímica (agua destilada), Limpieza fisicoquímica (agua destilada y agua-alcohol 1:1), Limpieza química, Unión de fragmentos (adhesivo epóxico de dos componentes)-->
+	<!-- PROCESOS REALIZADOS-->
 	<div class="flex">
 		<div class="col-100">
 			<div class="diseño-tabla">
@@ -159,8 +171,9 @@
 			</div>
 			</div>
 	</div>
+	<!-- ANÁLISIS PARTE 1 -->
 	<h1 class="h2 bold color-rojo text-align-left ">ANÁLISIS</h1>
-	<div class="tabla diseño-tabla" style="display:flex; margin:6px;">
+	<div class="tabla diseño-tabla" style="display:flex; margin:6px; height: 290px;">
 		<table class="generales" style="width:816px">
 			<tr>
 				<td class="col3">Temporalidad</td>
@@ -201,7 +214,6 @@
 				<td class="col4">[%otros_elementos%]</td>
 				<td class="col3">Gollete</td>
 				<td class="col4">[%gollete%]</td>
-				
 			</tr>
 			<tr>
 				<td class="col3">Costura</td>
@@ -216,12 +228,12 @@
 			<tr>
 				<td class="col3">Acabado de superficie</td>
 				<td class="col4">[%acabado_superficie%]</td>
-				<td class="col3">Decoración interna</td>
-				<td class="col4">[%decoracion_interna_cual%]</td>
-				<td class="col3">Decoración externa</td>
-				<td class="col4">[%decoracion_externa_cual%]</td>
 				<td class="col3">Etiquetas</td>
 				<td class="col4">[%etiquetas%]</td>
+				<td class="col3">Análisis sugerido instrumental</td>
+				<td class="col4">[%analisis_sugerido_instrumental%]</td>
+				<td class="col3">Peso (g)</td>
+				<td class="col4">[%peso_g%]</td>
 			</tr>
 			<tr>
 				<td class="col3">Recubrimientos</td>
@@ -233,32 +245,12 @@
 				<td class="col3">Compactación de recubrimiento</td>
 				<td class="col4">[%compatacion_recubrimiento%]</td>
 			</tr>
-			<tr>
-				<td class="col3">Granulometría de recubrimiento</td>
-				<td class="col4">[%granulometria_recubrimiento%]</td>
-				<td class="col3">Pinturas</td>
-				<td class="col4">[%pinturas%]</td>
-				<td class="col3">Análisis realizado</td>
-				<td class="col4">[%analisis_realizado%]</td>
-				<td class="col3">Análisis sugerido de luces</td>
-				<td class="col4">[%analisis_sugerido_luces%]</td>
-			</tr>
-			<tr>
-				<td class="col3">Análisis sugerido instrumental</td>
-				<td class="col4">[%analisis_sugerido_instrumental%]</td>
-				<td class="col3">Dimensiones máximas</td>
-				<td class="col4">[%dimensiones_max%]</td>
-				<td class="col3">Peso (g)</td>
-				<td class="col4">[%peso_g%]</td>
-				<td class="col3">Observaciones de análisis</td>
-				<td class="col4">[%observacion_analisis%]</td>
-			</tr>
 		</table>
 	</div>
-	</tbody>
-</body>
+	</div>
+</div>
 <!-- Página 2 -->
- <body onload="Carga();" >
+ <div class="page">
 	<header>
 		<table class="head" style="width: 850px;">
 				<td class="col0"><img src="banner.png" width=830px height=60 hspace=0 vspace=0></td>
@@ -276,60 +268,89 @@
 		    </div>
 		</section>
 	</header>
+	<!-- ANÁLISIS PARTE 2 -->
+	<h1 class="h2 bold color-rojo text-align-left ">ANÁLISIS</h1>
+	<div class="tabla diseño-tabla" style="display:flex; margin:6px; height: 190px;">
+		<table class="generales" style="width:816px">
+			<tr class="tr-2">
+				<td class="col3">Granulometría de recubrimiento</td>
+				<td class="col4">[%granulometria_recubrimiento%]</td>
+				<td class="col3">Pinturas</td>
+				<td class="col4">[%pinturas%]</td>
+				<td class="col3">Análisis realizado</td>
+				<td class="col4">[%analisis_realizado%]</td>
+				<td class="col3">Análisis sugerido de luces</td>
+				<td class="col4">[%analisis_sugerido_luces%]</td>
+			</tr>
+			<tr class="tr-2">
+				<td class="col3">Decoración interna</td>
+				<td class="col4" colspan="3">[%decoracion_interna_cual%]</td>
+				<td class="col3">Decoración externa</td>
+				<td class="col4" colspan="3">[%decoracion_externa_cual%]</td>
+			</tr>
+			<tr class="tr-2">
+				<td class="col3">Dimensiones máximas</td>
+				<td class="col4" colspan="3">[%dimensiones_max%]</td>
+				<td class="col3">Observaciones de análisis</td>
+				<td class="col4" colspan="3">[%observacion_analisis%]</td>
+			</tr>
+		</table>
+	</div>
 	<h1 class="h2 bold color-rojo text-align-left ">Características de fragmentos</h1>
 	<div class="tabla diseño-tabla" style="display:flex; margin:6px;">
 		<table class="generales" style="width:816px">
 			<tr>
 				<td class="col3">Cantidad de fragmentos</td>
 				<td class="col4">[%c_fragmentos%]</td>
-	  			<td class="col3">Medidas de fragmentos</td>
-				<td class="col4">[%"medidas_fragmentos"%]</td>
 				<td class="col3">Área a la que pertenecen los fragmentos</td>
 				<td class="col4">[%"area_fragmentos"%]</td>
-				<td class="col3">Fragmentos azul claro</td>
-				<td class="col4">[%c_azul_claro%]</td>
+				<td class="col3">Medidas de fragmentos</td>
+				<td class="col4" colspan="3">[%"medidas_fragmentos"%]</td>
+				
 			</tr>
 			<tr>
+				<td class="col3">Fragmentos azul claro</td>
+				<td class="col4">[%c_azul_claro%]</td>
 				<td class="col3">Fragmentos azul oscuro</td>
 				<td class="col4">[%c_azul_oscuro%]</td>
 				<td class="col3">Fragmentos azul verdoso</td>
 				<td class="col4">[%c_azul_verdoso%]</td>
 				<td class="col3">Fragmentos verde claro</td>
 				<td class="col4">[%c_verde_claro%]</td>
-				<td class="col3">Fragmentos verde oscuro</td>
-				<td class="col4">[%c_verde_oscuro%]</td>
 			</tr>
 			<tr>
+				<td class="col3">Fragmentos verde oscuro</td>
+				<td class="col4">[%c_verde_oscuro%]</td>
 				<td class="col3">Fragmentos verde olivo</td>
 				<td class="col4">[%c_verde_olivo%]</td>
 				<td class="col3">Fragmentos verde esmeralda</td>
 				<td class="col4">[%c_verde_esmeralda%]</td>
 				<td class="col3">Fragmentos ámbar claro</td>
 				<td class="col4">[%c_ambar_claro%]</td>
-				<td class="col3">Fragmentos ámbar oscuro</td>
-				<td class="col4">[%c_ambar_oscuro%]</td>
 			</tr>
 			<tr>
+				<td class="col3">Fragmentos ámbar oscuro</td>
+				<td class="col4">[%c_ambar_oscuro%]</td>
 				<td class="col3">Fragmentos incoloros</td>
 				<td class="col4">[%c_incoloros%]</td>
 				<td class="col3">Otro color</td>
 				<td class="col4">[%c_otro%]</td>
 				<td class="col3">Espesor otro</td>
 				<td class="col4">[%espesor_otro%]</td>
-				<td class="col3">Espesor azul</td>
-				<td class="col4">[%espesor_azul%]</td>
 			</tr>
 			<tr>
+				<td class="col3">Espesor azul</td>
+				<td class="col4">[%espesor_azul%]</td>
 				<td class="col3">Espesor verde</td>
 				<td class="col4">[%espesor_verde%]</td>
 				<td class="col3">Espesor ámbar</td>
 				<td class="col4">[%espesor_ambar%]</td>
 				<td class="col3">Espesor incoloro</td>
 				<td class="col4">[%espesor_incoloro%]</td>
-				<td class="col3">Características azules</td>
-				<td class="col4">[%caracteristicas_azules%]</td>
 			</tr>
 			<tr>
+				<td class="col3">Características azules</td>
+				<td class="col4">[%caracteristicas_azules%]</td>
 				<td class="col3">Características verdes</td>
 				<td class="col4">[%caracteristicas_verdes%]</td>
 				<td class="col3">Características ámbar</td>
@@ -339,6 +360,396 @@
 			</tr>
 		</table>
 	</div>
+<!-- FOTOS DETALLES-->
+	<div class="main flex" style="width:850px">
+		<div class="diseño-tabla " style="width:835px">
+			<p>Registro fotográfico de detalles</p>
+			<input type="hidden" id="detalle" value=[% array_to_string(
+														array_foreach(
+														generate_series(
+														string_to_array(f_detalles)[0],
+														string_to_array(f_detalles)[1]),
+														clave_excavacion||'_'||@element)) %]>
+			<div class="flex wrap center " id="cont-princ-2"></div>
+		</div>
 	</div>
+	</div>
+<!-- Página 3-->
+ <div class="page">
+	 <header>
+		<table class="head" style="width: 850px;">
+				<td class="col0"><img src="banner.png" width=830px height=60 hspace=0 vspace=0></td>
+		</table>
+		<section class="row-alt">
+		    <div class="flex">
+			      <div class="col-10">
+			        <img class="logo" src="tren.png">
+			      </div>
+			      <div class="col-90">
+			        <h1 class="titulos text-center">U LU'UMIL MAAYA WÍINIKO'OB</h1>
+			        <p class="h2 color-rojo bold text-center">
+			          Análisis Regional del Sureste Mesoamericano Proyecto Marco de Salvamento <br>Arqueológico del Tren Maya.</p>
+		            <h5 class="h3 color-rojo bold text-center" >Responsable académico:Dr. Manuel E. Pérez Rivas. <br>Coordinador de área de materiales misceláneos e históricos: Kenia Monserrat Chávez Cruz</h5>
+		    </div>
+		</section>
+	</header>
+	<h1 class="center">CÉDULA DE ANÁLISIS DE MATERIAL DE VIDRIO</h1>
+		<h1 class="h2 bold color-rojo text-align-left ">ALTERACIONES Y DETERIOROS PRESENTES</h1>
+	<div class="flex">
+		<div class="col-100">
+			<div class="diseño-tabla">
+				<h1 class="h2 bold color-rojo text-align-left">Alteraciones y deterioros</h1>
+				<div class="flex">
+					<div class="col-25">
+						<div class="flex justify-content-between">
+							<p class="text-col2">Abrasión</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("alteracion_deterioro", ', '),'Abrasión') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Concreciones de tierra</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("alteracion_deterioro", ', '),'Concreciones de tierra') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Concreciones salinas</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("alteracion_deterioro", ', '),'Concreciones salinas') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Deformaciones</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("alteracion_deterioro", ', '),'Deformaciones') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+					</div>
+
+					<div class="col-25">
+						<div class="flex justify-content-between">
+							<p class="text-col2">Desportilladuras</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("alteracion_deterioro", ', '),'Desportilladuras') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Desprendimientos</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("alteracion_deterioro", ', '),'Desprendimientos') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Exfoliación</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("alteracion_deterioro", ', '),'Exfoliación') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Faltantes de material</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("alteracion_deterioro", ', '),'Faltantes de material') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+					</div>
+					<div class="col-25">
+						<div class="flex justify-content-between">
+							<p class="text-col2">Fisuras</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("alteracion_deterioro", ', '),'Fisuras') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Fracturas</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("alteracion_deterioro", ', '),'Fracturas') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Grietas</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("alteracion_deterioro", ', '),'Grietas') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Manchas</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("alteracion_deterioro", ', '),'Manchas') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+					</div>
+					<div class="col-25">
+						<div class="flex justify-content-between">
+							<p class="text-col2">Pérdida de elementos</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("alteracion_deterioro", ', '),'Pérdida de elementos') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Rayones</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("alteracion_deterioro", ', '),'Rayones') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Velos salinos</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("alteracion_deterioro", ', '),'Velos salinos') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Pérdida de policromía</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("alteracion_deterioro", ', '),'Pérdida de policromía') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+					</div>
+					
+				</div>
+			<h1 class="h2 bold color-rojo text-align-left">Alteraciones biológicas</h1>
+				<div class="flex">
+					<div class="col-25">
+						<div class="flex justify-content-between">
+							<p class="text-col2">Presencia de M.O.</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("alteracion_biologica", ', '),'Presencia de M.O.') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Deyecciones</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("alteracion_biologica", ', '),'Deyecciones') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+					</div>
+
+					<div class="col-25">
+						<div class="flex justify-content-between">
+							<p class="text-col2">Nidos</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("alteracion_biologica", ', '),'Nidos') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">Telarañas</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("alteracion_biologica", ', '),'Telarañas') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+					</div>
+					
+					<div class="col-25">
+						<div class="flex justify-content-between">
+							<p class="text-col2">Raicillas</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("alteracion_biologica", ', '),'Raicillas') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+						<div class="flex justify-content-between">
+							<p class="text-col2">No aplica</p>
+		                	<p class="col-50 rectangulo" 
+						              	[%CASE WHEN 
+										array_count(string_to_array("alteracion_biologica", ', '),'No aplica') = 1
+										THEN 'style="background:#BC955C"'
+										else 'style="background:none"'
+										END%] > </p>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+	</div>
+	<div class="tabla diseño-tabla" style="display:flex; margin:6px;">
+		<table class="generales" style="width:816px">
+			<tr>
+				<td class="col3">Estado de conservación</td>
+				<td class="col4">[%estado_conservacion%]</td>
+				<td class="col3">Craqueladuras</td>
+				<td class="col4">[%"craqueladuras"%]</td>
+				<td class="col3">Escamas</td>
+				<td class="col4">[%"escamas"%]</td>
+				<td class="col3">Ubicación de deterioros</td>
+				<td class="col4">[%"ubicacion_deterioros"%]</td>
+			</tr>
+			<tr>
+				<td class="col3">Observaciones</td>
+				<td class="col4" colspan="7">[%"observacion_alteracion_deterioro"%]</td>
+			</tr>
+		</table>
+	</div>
+	<h1 class="h2 bold color-rojo text-align-left ">INTERVENCIÓN Y TRATAMIENTOS EMERGENTES</h1>
+		<div class="tabla diseño-tabla" style="display:flex; margin:6px;">
+		<table class="generales" style="width:816px">
+			<tr class="tr-2">
+				<td class="col3">Limpieza</td>
+				<td class="col4">[%limpieza%]</td>
+				<td class="col3">Unión de fragmentos</td>
+				<td class="col4">[%"union_fragmentos"%]</td>
+				<td class="col3">Consolidación</td>
+				<td class="col4">[%consolidacion%]</td>
+				<td class="col3">Otros</td>
+				<td class="col4">[%"otros"%]</td>
+			</tr>
+			<tr class="tr-2">
+				<td class="col3">Persona que intervino</td>
+				<td class="col4">[%persona_que_intervino%]</td>
+				<td class="col3">Onvservaciones</td>
+				<td class="col4" colspan="5">[%"observaciones_intervencion"%]</td>
+			</tr>
+		</table>
+	</div>
+ </div>
+<!-- FOTOS GENERALES-->
+<script type="text/javascript">
+    function Carga(){
+      imagenesGeneral();
+	  imagenesDetalle();
+    }
+	function imagenesGeneral(){
+      /// creacion de imagenes
+      let str = document.getElementById("general").value;
+      let images = str.split(',');
+      let principal = document.getElementById('cont-princ-1');
+      let valor = images.length;
+	  let ruta_general =  "file:///C:/GitHub/cedulas_tm/MISCELANEOS/Vidrio/fotos/"
+      for(i=0;i<images.length;i++){
+        if(valor>=1 & valor<3){
+          let creaimg = document.createElement('img');
+          let crearDiv = document.createElement('div');
+          creaimg.setAttribute('src',  ruta_general+images[i]+".jpg");
+          creaimg.setAttribute('width','195');
+          //creaimg.setAttribute('height','260');
+          crearDiv.setAttribute('class','fotografia');
+          principal.appendChild(crearDiv);
+          crearDiv.appendChild(creaimg);
+
+        } else if(valor>=3 & valor<4){
+          let creaimg = document.createElement('img');
+          creaimg.setAttribute('src', ruta_general+images[i]+".jpg");
+          creaimg.setAttribute('width','195');
+          //creaimg.setAttribute('height','216');
+          creaimg.setAttribute('style','padding:3px');
+          principal.appendChild(creaimg);
+
+        }else if(valor==4){
+
+          let creaimg = document.createElement('img');
+          creaimg.setAttribute('src', ruta_general+images[i]+".jpg");
+          creaimg.setAttribute('width','195');
+          //creaimg.setAttribute('height','195');
+          creaimg.setAttribute('style','padding:6px');
+          principal.appendChild(creaimg);
+        }
+      }
+    }
+	function imagenesDetalle(){
+      /// creacion de imagenes
+      let str = document.getElementById("detalle").value;
+      let images = str.split(',');
+      let principal = document.getElementById('cont-princ-2');
+      let valor = images.length;
+	  let ruta_general =  "file:///C:/GitHub/cedulas_tm/MISCELANEOS/Vidrio/fotos/"
+      for(i=0;i<images.length;i++){
+        if(valor>=1 & valor<3){
+          let creaimg = document.createElement('img');
+          let crearDiv = document.createElement('div');
+          creaimg.setAttribute('src',  ruta_general+images[i]+".jpg");
+          creaimg.setAttribute('width','195');
+          //creaimg.setAttribute('height','260');
+          crearDiv.setAttribute('class','fotografia');
+          principal.appendChild(crearDiv);
+          crearDiv.appendChild(creaimg);
+
+        } else if(valor>=3 & valor<4){
+          let creaimg = document.createElement('img');
+          creaimg.setAttribute('src', ruta_general+images[i]+".jpg");
+          creaimg.setAttribute('width','195');
+          //creaimg.setAttribute('height','216');
+          creaimg.setAttribute('style','padding:3px');
+          principal.appendChild(creaimg);
+
+        }else if(valor==4){
+          let creaimg = document.createElement('img');
+          creaimg.setAttribute('src', ruta_general+images[i]+".jpg");
+          creaimg.setAttribute('width','195');
+          //creaimg.setAttribute('height','195');
+          creaimg.setAttribute('style','padding:6px');
+          principal.appendChild(creaimg);
+        }
+		else if(valor>4){
+          let creaimg = document.createElement('img');
+          creaimg.setAttribute('src', ruta_general+images[i]+".jpg");
+          creaimg.setAttribute('width','300');
+          //creaimg.setAttribute('height','195');
+          creaimg.setAttribute('style','padding:6px');
+          principal.appendChild(creaimg);
+        }
+      }
+    }
+  </script>
 </body>
 </html>
