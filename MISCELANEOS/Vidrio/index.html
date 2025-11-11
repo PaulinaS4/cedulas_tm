@@ -12,7 +12,7 @@
   <title></title>
 </head>
 <!-- Página 1 -->
-<body onload="Carga();">
+<body >
 	<div class="page">
 	<header>
 		<table class="head" style="width: 850px;">
@@ -78,13 +78,7 @@
 	<div class="main flex" style="width:850px">
 		<div class="diseño-tabla " style="width:835px">
 			<p>Registro fotográfico general</p>
-			<input type="hidden" id="general" value=[% array_to_string(
-														array_foreach(
-														generate_series(
-														string_to_array(f_generales)[0],
-														string_to_array(f_generales)[1]),
-														clave_excavacion||'_'||@element)) %]>
-			<div class="flex wrap center " id="cont-princ-1"></div>
+			<div class="flex" id="cont-princ-1"></div>
 		</div>
 	</div>
 	<!-- PROCESOS REALIZADOS-->
@@ -364,13 +358,7 @@
 	<div class="main flex" style="width:850px">
 		<div class="diseño-tabla " style="width:835px">
 			<p>Registro fotográfico de detalles</p>
-			<input type="hidden" id="detalle" value=[% array_to_string(
-														array_foreach(
-														generate_series(
-														string_to_array(f_detalles)[0],
-														string_to_array(f_detalles)[1]),
-														clave_excavacion||'_'||@element)) %]>
-			<div class="flex wrap center " id="cont-princ-2"></div>
+			<div class="flex" id="cont-princ-2"></div>
 		</div>
 	</div>
 	</div>
@@ -663,93 +651,24 @@
 		</table>
 	</div>
  </div>
-<!-- FOTOS GENERALES-->
-<script type="text/javascript">
-    function Carga(){
-      imagenesGeneral();
-	  imagenesDetalle();
-    }
-	function imagenesGeneral(){
-      /// creacion de imagenes
-      let str = document.getElementById("general").value;
-      let images = str.split(',');
-      let principal = document.getElementById('cont-princ-1');
-      let valor = images.length;
-	  let ruta_general =  "file:///C:/GitHub/cedulas_tm/MISCELANEOS/Vidrio/fotos/"
-      for(i=0;i<images.length;i++){
-        if(valor>=1 & valor<3){
-          let creaimg = document.createElement('img');
-          let crearDiv = document.createElement('div');
-          creaimg.setAttribute('src',  ruta_general+images[i]+".jpg");
-          creaimg.setAttribute('width','195');
-          //creaimg.setAttribute('height','260');
-          crearDiv.setAttribute('class','fotografia');
-          principal.appendChild(crearDiv);
-          crearDiv.appendChild(creaimg);
+ 
 
-        } else if(valor>=3 & valor<4){
-          let creaimg = document.createElement('img');
-          creaimg.setAttribute('src', ruta_general+images[i]+".jpg");
-          creaimg.setAttribute('width','195');
-          //creaimg.setAttribute('height','216');
-          creaimg.setAttribute('style','padding:3px');
-          principal.appendChild(creaimg);
+<script src="js/GaleriaImagenes.js"></script>
+<script>
+  
+  document.addEventListener("DOMContentLoaded", () => {
+	//produccion 
+	//const general = [% array_to_string(array_foreach(enerate_series(string_to_array(f_generales)[0],string_to_array(f_generales)[1]),clave_excavacion||'_'||@element)) %]
+	
+	//developer
+	const general = "T6_12146_613_0002445_1, T6_12146_613_0002445_2, T6_12146_613_0002445_3";
+    const detalle = "T6_12146_613_0002445_4, T6_12146_613_0002445_5";
 
-        }else if(valor==4){
+    const cargador = new GaleriaImagenes("fotos/");
 
-          let creaimg = document.createElement('img');
-          creaimg.setAttribute('src', ruta_general+images[i]+".jpg");
-          creaimg.setAttribute('width','195');
-          //creaimg.setAttribute('height','195');
-          creaimg.setAttribute('style','padding:6px');
-          principal.appendChild(creaimg);
-        }
-      }
-    }
-	function imagenesDetalle(){
-      /// creacion de imagenes
-      let str = document.getElementById("detalle").value;
-      let images = str.split(',');
-      let principal = document.getElementById('cont-princ-2');
-      let valor = images.length;
-	  let ruta_general =  "file:///C:/GitHub/cedulas_tm/MISCELANEOS/Vidrio/fotos/"
-      for(i=0;i<images.length;i++){
-        if(valor>=1 & valor<3){
-          let creaimg = document.createElement('img');
-          let crearDiv = document.createElement('div');
-          creaimg.setAttribute('src',  ruta_general+images[i]+".jpg");
-          creaimg.setAttribute('width','195');
-          //creaimg.setAttribute('height','260');
-          crearDiv.setAttribute('class','fotografia');
-          principal.appendChild(crearDiv);
-          crearDiv.appendChild(creaimg);
-
-        } else if(valor>=3 & valor<4){
-          let creaimg = document.createElement('img');
-          creaimg.setAttribute('src', ruta_general+images[i]+".jpg");
-          creaimg.setAttribute('width','195');
-          //creaimg.setAttribute('height','216');
-          creaimg.setAttribute('style','padding:3px');
-          principal.appendChild(creaimg);
-
-        }else if(valor==4){
-          let creaimg = document.createElement('img');
-          creaimg.setAttribute('src', ruta_general+images[i]+".jpg");
-          creaimg.setAttribute('width','195');
-          //creaimg.setAttribute('height','195');
-          creaimg.setAttribute('style','padding:6px');
-          principal.appendChild(creaimg);
-        }
-		else if(valor>4){
-          let creaimg = document.createElement('img');
-          creaimg.setAttribute('src', ruta_general+images[i]+".jpg");
-          creaimg.setAttribute('width','300');
-          //creaimg.setAttribute('height','195');
-          creaimg.setAttribute('style','padding:6px');
-          principal.appendChild(creaimg);
-        }
-      }
-    }
-  </script>
+    cargador.cargar(general, "cont-princ-1");
+    cargador.cargar(detalle, "cont-princ-2");
+  });
+</script>
 </body>
 </html>
