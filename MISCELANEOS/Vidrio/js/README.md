@@ -61,7 +61,6 @@ Ejecuta la carga de imágenes en el contenedor.
     galeria.cargar(general, "cont-princ-1");
 
 ```
-
 ---
 
 ## Ejemplo de Uso Completo
@@ -96,15 +95,17 @@ Ejecuta la carga de imágenes en el contenedor.
     const galeria = new GaleriaImagenes("fotos/");
     galeria.cargar(general, "cont-principal");
 ```
-
 ---
 
+
+## Para usar tu propio placeholder (opcional)
+Suponiendo que tu imagen personalizada se llama ``mi_placeholder.png`` en la carpeta ``fotos/:``
+```javascript
+    galeria.setPlaceholder("fotos/mi_placeholder.png");
+```
 ## 🤝 Contribuciones
 
 ¡Las contribuciones son bienvenidas!  
-Si tienes mejoras, errores que reportar o ideas para funciones nuevas, no dudes en abrir un issue o pull request.
+Si tienes mejoras, errores que reportar o ideas para funciones nuevas, no dudes en abrir un ``issue`` o ``pull request``.
 
 ---
-## 📄 Licencia
-
-Este proyecto está bajo la licencia [MIT](LICENSE).

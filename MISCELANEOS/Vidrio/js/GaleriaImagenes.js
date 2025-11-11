@@ -2,7 +2,7 @@
  * Clase para cargar imágenes dinámicamente dentro de contenedores según cantidad.
  * @author Jonatan Lara
  * @see https://github.com/jonatanLara
- * @version 2.0
+ * @version 2.2
  * @file updateimage.js
  */
 class GaleriaImagenes {
@@ -10,9 +10,11 @@ class GaleriaImagenes {
   /**
    * Crea una instancia del cargador.
    * @param {string} rutaBase - Ruta base donde se encuentran las imágenes (ej: "fotos/").
+   * * @param {string} [placeholder="fotos/no_disponible.png"] - Imagen a usar cuando una imagen falle.
    */
-  constructor(rutaBase) {
+  constructor(rutaBase, placeholder = "fotos/no_disponible.png") {
     this.rutaBase = rutaBase;
+    this.placeholder = placeholder;
   }
 
   /**
@@ -71,6 +73,14 @@ class GaleriaImagenes {
   }
 
   /**
+   * Permite actualizar el placeholder dinámicamente.
+   * @param {string} nuevaRuta - Nueva ruta del placeholder.
+   */
+  setPlaceholder(nuevaRuta) {
+    this.placeholder = nuevaRuta;
+  }
+
+  /**
    * Crea y devuelve una imagen o un contenedor con imagen dentro, según opciones.
    *
    * @param {string} src - Ruta completa de la imagen.
@@ -84,6 +94,13 @@ class GaleriaImagenes {
   crearImagen(src, opciones = {}) {
     const img = document.createElement("img");
     img.src = src;
+
+     // Si falla, usar placeholder configurado
+    img.onerror = () => {
+       console.warn(`⚠️ Imagen no encontrada: ${src}`);
+      img.src = `${this.placeholder}`;
+    };
+
     if (opciones.width) img.width = opciones.width;
     if (opciones.padding) img.style.padding = opciones.padding;
     if (opciones.className) img.classList.add(opciones.className);
