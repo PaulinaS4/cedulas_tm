@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="title" content="Cédula de intervención de material cerámico" />
+    <meta
+      name="description"
+      content="Análisis regional del sureste Mesoamericano. Proyecto marco de salvamento arqueológico. Tren Maya"
+    />
+    <meta
+      name="author"
+      content="Jonatan Lara Ortiz, Ing; Diana Paulina Serrano Roldan; David Ivan Quime Montalvo, Ing"
+    />
+    <meta name="generator" content="Atom" />
+    <meta name="copyright" content="Dirección de Salvamento Arqueológico" />
+    <meta name="created" content="2023-01-24" />
+    <link rel="stylesheet" href="style.css" />
+    <title></title>
+  </head>
+  <body onload="onLoad();">
+    <header>
+      <!--
+       <table class="head">
+        <td class="col0">
+          <img
+            src="banner.png"
+            width="840px"
+            height="60"
+            hspace="0"
+            vspace="0"
+          />
+        </td>
+      </table>
+      -->
+     
+
+      <section class="row-alt">
+          <div style="height: 70px;background-image: url(banner_tt.png); background-size: cover;">
+            <div style="width: 60%; padding-left: 20%; padding-top: 5px;">
+               <p class="h2 color-rojo bold text-center">
+              "PROYECTO DE SALVAMENTO ARQUEOLÓGICO, TREN RÁPIDO TRANSPENINSULAR MÉRIDA-PUNTA VENADO, ESTADOS DE YUCATÁN Y QUINTANA ROO. FASE DE PROSPECCIÓN DE VIABILIDAD DEL PROYECTO CONSTRUCTIVO".
+            </p>
+            <h5 class="h3 color-rojo bold text-center">
+              Responsable académico: Dr. Manuel E. Pérez Rivas
+            </h5>
+            </div>
+           
+          </div>
+      </section>
+    </header>
+
+    <h1 class="center">CÉDULA DE REGISTRO DE MONUMENTOS ARQUEOLÓGICOS</h1>
+
+    <div>
+      <h1 class="h2 bold color-rojo text-align-left">INFORMACIÓN GENERAL</h1>
+      <div class="tabla diseño-tabla">
+        <table class="generales" style="width: 99.5%">
+          <tr>
+            <td class="col1 col-16 h-cell">Levantó</td>
+            <td class="col2 col-16">[%"arqueologo"%]</td>
+            <td class="col1 col-16 h-cell">ID Campo</td>
+            <td class="col2 col-16">[% round("aid",0) %]</td>
+            <td class="col1 col-16 h-cell">Fecha</td>
+            <td class="col2">[%"fecha"%]</td>
+          </tr>
+          <tr>
+            <td class="col1 col-16 h-cell">UTM Este</td>
+            <td class="col2 col-16">[%round(x,2)%]</td>
+            <td class="col1 col-16 h-cell">UTM Norte</td>
+            <td class="col2 col-16">[%round(y,2)%]</td>
+            <td class="col1 col-16 h-cell">M.S.N.M.</td>
+            <td class="col2 col-16">[%"altura"%]</td>
+          </tr>
+          <TR>
+            <td class="col1 col-16 h-cell">Evaluación técnica</td>
+            <td class="col2 col-16" colspan="5">[%"tipo_restr"%]</td>
+          </TR>
+          <tr> 
+             <td class="col1 col-16 h-cell">Cadenamiento</td>
+            <td class="col2 col-16">[%"km"%]</td>
+             <td class="col1 col-16 h-cell">Presencia en tramo</td>
+            <td class="col2 col-16">[%round("trazo")%]</td>
+          </tr>
+        </table>
+      </div>
+
+      <h1 class="h2 bold color-rojo text-align-left">
+        DESCRIPCIÓN DEL MONUMENTO ARQUEOLÓGICO
+      </h1>
+      <div class="tabla diseño-tabla">
+        <table class="generales" style="width: 99.5%">
+          <tr>
+            <td class="col1 col-16 h-cell">Tipo</td>
+            <td class="col2 col-16">[%"tipo"%]</td>
+            <td class="col1 col-16 h-cell">Subclase</td>
+            <td class="col2 col-16">[% "subclase" %]</td>
+            <td class="col1 col-16 h-cell">Ubicación</td>
+            <td class="col2">[%"ubicacion"%]</td>
+          </tr>
+          <tr>
+            <td class="col1 col-16 h-cell">Material constructivo</td>
+            <td class="col2 col-16">[%"mat_constr"%]</td>
+            <td class="col1 col-16 h-cell">Mamposteria</td>
+            <td class="col2 col-16">[% "mampost" %]</td>
+            <td class="col1 col-16 h-cell">Estado de conservación</td>
+            <td class="col2">[%"est_cons"%]</td>
+          </tr>
+          <tr>
+            <td class="col1 col-16 h-cell">Asociado</td>
+            <td class="col2 col-16">[%"asociado"%]</td>
+            <td class="col1 col-16 h-cell">Largo</td>
+            <td class="col2 col-16">[% "largo" %]</td>
+            <td class="col1 col-16 h-cell">Ancho</td>
+            <td class="col2">[%"ancho"%]</td>
+          </tr>
+          <tr>
+            <td class="col1 col-16 h-cell">Diámetro</td>
+            <td class="col2 col-16">[%"diam"%]</td>
+            <td class="col1 col-16 h-cell">Altura o profundidad</td>
+            <td class="col2 col-16">[% "alt_o_prof" %]</td>
+            <td class="col1 col-16 h-cell">Posible función</td>
+            <td class="col2 col-16">[% "posible_fu" %]</td>
+          </tr>
+          <tr>
+             <td class="col1 col-16 h-cell">Descripción</td>
+            <td class="col2 col-16" colspan="5">[%"descripci"%]</td>
+          </tr>
+          <tr>
+             <td class="col1 col-16 h-cell">Observaciones</td>
+            <td class="col2 col-16" colspan="5">[%"observ"%]</td>
+          </tr>
+          <tr>
+             <td class="col1 col-16 h-cell">Tipo de restricción</td>
+            <td class="col2 col-16" colspan="5">[%"tipo_restr"%]</td>
+          </tr>
+          <tr>
+             <td class="col1 col-16 h-cell">Recomendaciones</td>
+            <td class="col2 col-16" colspan="5">[%"recomendac"%]</td>
+          </tr>
+        </table>
+      </div>
+      <div style="display: flex;flex-wrap: nowrap;">
+        <div style="width: 60%;">
+          <h1 class="h2 bold color-rojo text-align-left">FOTOGRAFÍAS</h1>
+        </div>
+         <div style="width: 40%;">
+          <h1 class="h2 bold color-rojo text-align-left">CROQUIS</h1>
+         </div>
+      </div>
+      <div style="display: flex; ">
+        <div id="fotografias" class="fotografias diseño-tabla">
+          <input type="hidden" id="ruta" value =  '[%'file:///' ||ruta_fotos%]' >
+          <input type="hidden" id="foto-1" value='[% "foto_1" %]'></input>
+          <input type="hidden" id="foto-2" value='[% "foto_2" %]'></input>
+        </div>
+        <div id="croquis" class="croquis diseño-tabla">
+          <img style="width:95%;height: 95% ;object-fit: contain; " src='file:///[%ruta_croquis || croquis%]' onerror="this.style.display='none'" >
+        </div>
+      </div>
+      <div>
+        <h1 class="h2 bold color-rojo text-align-left">MAPA DE UBICACIÓN</h1>
+      </div>
+    </div>
+    
+
+    <script>
+      function onLoad() {
+        const FOTOS_BASE_PATH = document.getElementById("ruta").value;
+        const contenedor = document.getElementById("fotografias");
+        const invalidas = ["Falta subir foto", "NO APLICA", "Actualizar URL de foto"];
+        
+        const cargarFoto = (numero) => {
+          const fotoNombre = document.getElementById(`foto-${numero}`).value;
+          
+
+          if (fotoNombre && !invalidas.includes(fotoNombre)) {
+            const img = document.createElement("img");
+            img.src = encodeURI(`${FOTOS_BASE_PATH}${fotoNombre}`);
+
+            img.setAttribute("class", "foto-margin");
+            img.setAttribute("alt", `Foto ${numero}`);
+            contenedor.appendChild(img);
+          }
+        };
+
+        [1, 2].forEach(cargarFoto);
+
+      }
+    </script>
+  </body>
+</html>

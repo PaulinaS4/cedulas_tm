@@ -1,0 +1,362 @@
+@charset "UTF-8";
+/*colors*/
+.color-rojo {
+  color: #3e3e3e;
+}
+
+.color-gris {
+  color: #4f5555;
+}
+
+.color-blanco {
+  color: #fff;
+}
+
+.color-dorado {
+  color: #868686;
+}
+
+.color-dorado_secundario {
+  color: #c9c9c9;
+}
+
+/*background*/
+.background-rojo {
+  background: #3e3e3e;
+}
+
+.background-gris {
+  background: #4f5555;
+}
+
+.background-blanco {
+  background: #fff;
+}
+
+.background-dorado {
+  background: #868686;
+}
+
+.background-dorado_secundario {
+  background: #c9c9c9;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Aleo";
+  color: #4f5555;
+}
+
+body,
+div,
+table,
+thead,
+tbody,
+tfoot,
+tr,
+th,
+td,
+p,
+h5 {
+  margin: 2px;
+}
+
+/*flexbox*/
+.flex {
+  display: flex;
+}
+
+.justify-content-start {
+  justify-content: flex-start;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.align-items-start {
+  align-items: flex-start;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-end {
+  align-items: flex-end;
+}
+
+.flex-wrap-nowrap {
+  flex-wrap: nowrap;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+/*clases universales*/
+.col-10 {
+  width: 10%;
+}
+.col-16 {
+  width: 16.66%;
+}
+.col-20 {
+  width: 20%;
+}
+
+.col-25 {
+  width: 25%;
+}
+
+.col-30 {
+  width: 30%;
+}
+
+.col-33 {
+  width: 33.33%;
+}
+
+.col-40 {
+  width: 40%;
+}
+
+.col-50 {
+  width: 50%;
+}
+
+.col-60 {
+  width: 60%;
+}
+.col-65 {
+  width: 65%;
+}
+
+.col-70 {
+  width: 70%;
+}
+
+.col-80 {
+  width: 80%;
+}
+
+.col-90 {
+  width: 90%;
+}
+
+.col-100 {
+  width: 100%;
+}
+
+/*textos*/
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.h1 {
+  font-size: 14px;
+}
+
+.h2 {
+  font-size: 12px;
+}
+
+.h3 {
+  font-size: 10px;
+}
+
+.h4 {
+  font-size: 8px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+body {
+  box-sizing: border-box;
+  max-width: 855px;
+  /**/
+  /*container = flexbox */
+}
+body header .head {
+  border: 3px #3e3e3e solid;
+  width: 285px;
+  border-radius: 8px;
+  margin: 2px;
+}
+body h1 {
+  color: #3e3e3e;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+body div {
+  font-size: 10px;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  /*padding-left: 20px;*/
+}
+body div p {
+  color: #3e3e3e;
+}
+body .subtitulo {
+  font: "Aleo";
+  font-size: 8px;
+  font-weight: normal;
+}
+body .small {
+  font-family: "Aleo";
+  font-size: small;
+}
+body .rectangulo {
+  border: 3px #868686 solid;
+  width: 20px;
+  height: 8px;
+}
+body .fotografia {
+  padding: 5px;
+}
+body .img-responsive {
+  width: 100%;
+  object-fit: contain;
+}
+body .diseño-tabla {
+  border: 3px #868686 solid;
+  border-radius: 8px;
+  border-spacing: 3px 3px;
+  margin: 2px;
+  padding: 2px;
+}
+body .row,
+body .row-alt {
+  border-radius: 8px;
+  margin-top: 6px;
+  width: 850px;
+}
+body .row {
+  background: #fff;
+  padding: 50px 0 24px 0;
+  display: flex;
+}
+body .row-alt {
+  background: linear-gradient(to right, #fff, #c9c9c9);
+  padding: 5px 0;
+}
+body .logo {
+  float: left;
+  width: 150px;
+  height: 75px;
+  display: block;
+}
+body td.col0 {
+  border: 1px #3e3e3e solid;
+  border-radius: 3px;
+  background: #3e3e3e;
+  padding: 0px;
+}
+body td.col1 {
+  border: 1px #868686 solid;
+  border-radius: 4px;
+  background: #c9c9c9;
+  /*padding: 3px;*/
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  color: #3e3e3e;
+}
+body td.col2 {
+  border: 1px #868686 solid;
+  border-radius: 4px;
+  background: #fff;
+  padding: 3px;
+  font-size: 9px;
+  text-align: center;
+  color: #3e3e3e;
+}
+
+.h-cell {
+  height: 23px;
+}
+
+.h-cell-large {
+  height: 42px;
+}
+
+.h-cell-m {
+  height: 32px;
+}
+
+.fotografias {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  max-width: 60%;
+  max-height: 220px;
+  height: 220px;
+  /* gap: 30px; */
+}
+
+.croquis {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  max-width: 40%;
+  max-height: 220px;
+  height: 220px;
+  /* gap: 30px; */
+}
+
+.fotografias img {
+  max-width: auto;
+  height: 100%;
+}
+
+.foto-margin {
+  margin: 0px 15px;
+}
+
+.imagen-con-fondo {
+  /* Define el color de fondo (blanco en este caso) */
+  background-color: #FFFFFF;
+  /* Asegúrate de establecer un ancho y alto para que el fondo sea visible si la imagen falla */
+  width: 80%;
+  height: 80%;
+}
+/*# sourceMappingURL=style.css.map -*/

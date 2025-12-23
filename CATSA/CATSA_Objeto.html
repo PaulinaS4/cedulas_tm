@@ -242,7 +242,7 @@ array_filter(string_to_array("Tratamiento",','), length(@element) >3)))%]</td>
 				       		<tr>
 				       			<td class="tabla2">
 									<!-- [%format_date(now(),'yyyy-MM-dd')%] -->
-									 [%"_Fecha"%]
+									 [%"Fecha cédula"%]
 								</td>
 				       		</tr>
 						</table>
@@ -260,7 +260,7 @@ array_filter(string_to_array("Tratamiento",','), length(@element) >3)))%]</td>
 					<div style="width:20% " >
 						<h1>Fotografía:</h1>
 						<div style="border: 1.15px solid #909092; height:90px; margin-left:3px; margin-right:5px;" >
-							<img style="height: 90px; margin:auto; display:block; " src='file:///[%"ruta_fotos"||array_first(string_to_array("Fotos fin"))%].jpg'  onerror="this.src='file:///F:/TM_Excavacion/images.png'" >
+							<img style="width:100%;height: 100% ;object-fit: contain; " src='file:///[%"ruta_fotos"||array_first(string_to_array("Fotos fin"))%].jpg'  onerror="this.src='file:///F:/TM_Excavacion/images.png'" >
 						</div>
 					</div>
 				</div>
